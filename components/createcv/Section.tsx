@@ -12,7 +12,7 @@ const Header = styled.div`
 `
 const Section = ({children, title, subtitle, onClick}:{children:ReactNode, title?:string, subtitle?: string, onClick?:Function}) => {
     return(
-      <div>
+      <section>
         <Header className='flex jsb ac'>
           <div>
             <h3 className='h5'>{title}</h3>
@@ -21,7 +21,7 @@ const Section = ({children, title, subtitle, onClick}:{children:ReactNode, title
           {onClick && <Button className='small' onClick={e=>{e.preventDefault();onClick()}}>+ add new</Button>}
         </Header>
         {children}
-      </div>
+      </section>
     )
   }
 

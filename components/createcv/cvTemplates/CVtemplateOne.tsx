@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, SkillType, useCVcontext } from '../../../contexts/AppContext'
-import { GREEN, GREYWHITE } from '../../../data/contants'
+import { CvObjectType, EducationType, EmploymentType, SkillType, useCVcontext } from '../../../contexts/AppContext'
+import { GREEN, GREYWHITE, WHITE } from '../../../data/contants'
 import useWindowSize from '../../../hooks/useWindowSize'
 
 
@@ -52,6 +52,12 @@ const CvTemplateOne = () => {
             <Section title={"Professional Summary"}>
               <p className='sp'>{cvObject.summary}</p>
             </Section>
+            <Section title={"Employment History"}>
+            {cvObject.employment.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+            </Section>
+            <Section title={"Education History"}>
+            {cvObject.education.map((el:EducationType)=><EducationItem {...el} key={el.id}></EducationItem>)}
+            </Section>
             
         </div>
         <div>
@@ -73,7 +79,7 @@ const CvTemplateOne = () => {
             {cvObject.languages.map((el:SkillType)=><SkillInstance title={el.title} grade={el.metric}></SkillInstance>)}
           </SkillsContainer>
         </Section>
-
+        
 
         </div>
     </Container>
@@ -117,10 +123,10 @@ const ProfileSection = ({name, surname, jobTitle, image}:{
 }) => {
   return(
     <ProfileSectionContainer className='flex'>
-      <img src={image || "https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"}></img>
+      <img src={image || "https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"}></img>
       <div className='flex js column'>
-        <p className='h5 t600'>{name} {surname}</p>
-        <p className='sp'>{jobTitle}</p>
+        <p className='h5 t600' style={{color:WHITE}}>{name} {surname}</p>
+        <p className='sp' style={{color:WHITE}}>{jobTitle}</p>
       </div>
     </ProfileSectionContainer>
   )
@@ -155,6 +161,36 @@ const SkillInstance = ({title, grade}:{
   )
 }
 
+
+
+
+const EmploymentItemContainer = styled.div``
+
+
+const EmploymentItem = ({title, startDate, endDate,description, employer, city}:EmploymentType) => {
+  return(<EmploymentItemContainer>
+      <div>
+        <p className='sp t600'>{title} at {employer} ({city})</p>  
+        <p className='caption'>{startDate} - {endDate}</p>
+      </div>
+      <p className='sp'>{description}</p>
+      
+  </EmploymentItemContainer>)
+}
+
+
+const EducationItem = ({school, degree, city, startDate, endDate, description}:EducationType) => {
+  return(
+    <EmploymentItemContainer>
+      <div>
+        <p className='sp t600'>{degree} at {school} ({city})</p>  
+        <p className='caption'>{startDate} - {endDate}</p>
+      </div>
+      <p className='sp'>{description}</p>
+      
+  </EmploymentItemContainer>
+  )
+}
 
 
 

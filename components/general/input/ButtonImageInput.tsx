@@ -1,8 +1,30 @@
 import React from 'react'
 import ImageInput from './ImageInput'
 import styled from 'styled-components'
-import { LIGHTGREY, MAINCOLOR, RED } from '../../../data/contants'
+import { DARKGREY, LIGHTGREY, MAINCOLOR, RED } from '../../../data/contants'
 import { InputStyle } from '../../../styles/global'
+
+
+
+const Container = styled.div`
+display: flex;
+flex-direction:column;
+justify-content: flex-start;
+align-items: flex-start;
+position:relative;
+height: fit-content;
+width: 100%;
+
+>p{
+  font-size: 0.8rem;
+  padding: 0.1rem 0.5rem;
+}
+>label{
+  color: ${DARKGREY};
+  margin-bottom: 0.4rem;
+    line-height: 20px;
+}
+`
 
 
 const SelectImageLabel = styled(InputStyle)`
@@ -12,7 +34,8 @@ align-items: center;
 background:white;
 transition: all 0.3s;
 cursor: pointer;
-margin-top: 1.3rem;
+box-shadow: inset 0px 0px 0px 2px ${MAINCOLOR};
+
 >*{
   color: ${MAINCOLOR};
 }
@@ -41,12 +64,15 @@ const ButtonInputImage = ({image, setImage, imageError, setImageError, label, po
     const [loading, setLoading] = React.useState(false)
   return (
    <ImageInput resize={200} loading={loading} setLoading={setLoading} imageUrl={image} setImageUrl={setImage}  {...props}>
-    <SelectImageLabel as="label"  style={{borderColor: imageError?RED:loading?LIGHTGREY:MAINCOLOR}}   className={`dashedBorder ${image?"selected":""}`}>
-    {loading?
-    // <Spinner style={{animation:"rotation 1s infinite"}}></Spinner>
-    <p style={{animation:"rotation 1s infinite"}}>⌛</p>
-    :<p style={{color: imageError?RED:image?"white":MAINCOLOR}}>{imageError ? "Nicio Imagine" : image ? postInputLabel : label }</p>}
-    </SelectImageLabel>
+    <Container>
+      <label className='sp'>Personal image</label>
+      <SelectImageLabel as="label"  style={{borderColor: imageError?RED:loading?LIGHTGREY:MAINCOLOR}}   className={`${image?"selected":""}`}>
+      {loading?
+      // <Spinner style={{animation:"rotation 1s infinite"}}></Spinner>
+      <p style={{animation:"rotation 1s infinite"}}>⌛</p>
+      :<p style={{color: imageError?RED:image?"white":MAINCOLOR}}>{imageError ? "Nicio Imagine" : image ? postInputLabel : label }</p>}
+      </SelectImageLabel>
+    </Container>
 </ImageInput>
   )
 }

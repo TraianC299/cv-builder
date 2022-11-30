@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react'
 import styled from 'styled-components'
-import { DARKGREY, GREYWHITE } from '../../data/contants'
+import { DARKGREY, GREYWHITE, MAINCOLOR } from '../../data/contants'
 import Collapse from '../general/utilities/Collapse'
 
 
@@ -18,6 +18,15 @@ padding: 1rem;
 const MainContent = styled.div`
 display: flex;
 justify-content: space-between;
+
+:hover{
+  >div:first-child{
+    cur
+  }
+  p{
+    color: ${MAINCOLOR};
+  }
+}
 `
 
 
@@ -32,12 +41,12 @@ const CollapseItem = ({children, title, subtitle, open, setOpen}:{
 
   return (
     <Container>
-        <MainContent onClick={()=>setOpen((p:boolean)=>!p)} className="flex ac">
+        <MainContent onClick={()=>setOpen((p:boolean)=>!p)} className="flex ac pointer">
           <div>
-            <p className='p'>{title}</p>
+            <p className='p t600'>{title}</p>
             <p className='sp'>{subtitle}</p>
           </div>
-          <p className='pointer'>{open?"☝️":"👇"}</p>
+          <p >{open?"☝️":"👇"}</p>
         </MainContent>
         <Collapse on={open}>
           {children}

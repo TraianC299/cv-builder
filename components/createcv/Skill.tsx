@@ -22,7 +22,7 @@ const Skill = ({title, metric, skills, setSkills, edit, id}:{
     edit:boolean
 }) => {
     const [open, setOpen] = useState(edit?true:false)
-    const [titleState, setTitleState] = useState(title || "Not specified")
+    const [titleState, setTitleState] = useState(title || "")
     const [metricState, setMetricState] = useState(metric || 0)
 
 
@@ -36,7 +36,8 @@ useDidMountEffect(()=>{
   skillsPlaceholder[index] = {
     id:id,
     title:titleState,
-    metric:metricState
+    metric:metricState,
+    edit: edit
   }
   setSkills(skillsPlaceholder)
 },[titleState, metricState])

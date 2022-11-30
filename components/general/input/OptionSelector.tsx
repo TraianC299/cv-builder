@@ -11,9 +11,13 @@ height: fit-content;
 width: 100%;
 >.time-picker-button{
     position: absolute;
-    top: 50%;
+    top: calc(50% + 0.7rem);
     right: 0.5rem;
+    border: none;
+    background: transparent;
     transform: translateY(-50%);
+    padding: 5px;
+
     >svg{
         fill: ${LIGHTGREY};
         *{
@@ -107,7 +111,7 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
    
 
     return (
-            <Container ref={ref}>
+            <Container ref={ref} >
             <Input label={label} disabled placeholder={label} value={inputValue}    onFocusCapture={()=>setFocus(true)} {...props}></Input>
             {focus?<StyledAutocompleteContainer style={{pointerEvents:focus?"all":"none", opacity:focus?"1":"0"}} styledHeight={relevantOptions.length}>
                 {relevantOptions.map(option => <Tag 
@@ -120,7 +124,7 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
                     selected={value?value===option.value:false}
                     ></Tag>)}
             </StyledAutocompleteContainer>:null}
-            <button className="time-picker-button" onClick={()=>setFocus(previous=>!previous)} color={GREYWHITE} >{focus?<p>-</p>:<p>+</p>}</button>
+            <button className="time-picker-button pointer" onClick={(e)=>{e.preventDefault();setFocus(previous=>!previous)}} color={GREYWHITE} >{focus?<p>-</p>:<p>+</p>}</button>
             </Container>
     )
 }

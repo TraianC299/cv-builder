@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import {  DARKGREY, RED } from '../../../data/contants'
+import {  DARKGREY, MAINCOLOR, RED } from '../../../data/contants'
 import { InputStyle } from '../../../styles/global'
 
 
@@ -22,6 +22,30 @@ width: 100%;
   margin-bottom: 0.4rem;
     line-height: 20px;
 }
+>div{
+  position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 2px;
+    background-color: ${MAINCOLOR};
+    border-radius: 0px 0px 2px 2px;
+    pointer-events: none;
+    opacity: 0;
+    transform: scaleX(0.5);
+    transition: 0.1s;
+}
+>input{
+  :focus{
+    + div {
+      opacity: 1;
+      transform: scaleX(1);
+
+
+    }
+  }
+}
+
 `
 
 
@@ -44,7 +68,7 @@ interface  InputProps{
   validation?:Function, 
   placeholder?:string,
   onFocusCapture?:Function,
-  props?: []
+  props?: [any]
 }
 
 const Input:React.FC<InputProps> = ({value, setValue, label, error, setError, disabled, rows, rowsMax, helperText, validation,placeholder,onFocusCapture, ...props}) => {
@@ -95,7 +119,8 @@ const Input:React.FC<InputProps> = ({value, setValue, label, error, setError, di
           {...props}
 
           ></InputStyle>
-          <p style={{color: RED}}>{error}</p>
+          {/* <p style={{color: RED}}>{error}</p> */}
+          <div ></div>
           
         </Container>
       )

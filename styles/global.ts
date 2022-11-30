@@ -14,30 +14,16 @@ export const InputStyle = styled.input`
   border:none;
   position: relative;
   line-height: 1rem;
+  outline: none;
   ::placeholder{
     color: #9CA9B4;
     font-weight: 500;
   }
- 
- 
-  
-  
+
  
   
- 
-  :focus{
-    /* outline: none;
-    ::after{
-    z-index:99;
-    position: absolute;
-    content: '';
-    bottom:0;
-    left:0;
-    width: 100%;
-    height: 2px;
-    border-bottom: 2px solid ${MAINCOLOR};
-  } */
-  }
+  
+
  `
 
 

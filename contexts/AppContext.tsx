@@ -8,6 +8,28 @@ export type SkillType = {
     edit?:boolean
 }
 
+export type EmploymentType = {
+    title: string,
+    employer: string,
+    city: string, 
+    description: string,
+    id: string,
+    edit:boolean,
+    startDate: string,
+    endDate: string
+}
+
+export type EducationType = {
+    school: string,
+    degree: string,
+    city: string, 
+    description: string,
+    id: string,
+    edit:boolean,
+    startDate: string,
+    endDate: string
+}
+
 
 export type CvObjectType = {
     summary: string,
@@ -21,7 +43,10 @@ export type CvObjectType = {
     city: string,
     profileImage:string,
     skills: [SkillType] | [],
-    languages:[SkillType] | []
+    languages:[SkillType] | [],
+    employment: [EmploymentType] | [],
+    education: [EducationType] | []
+
 }
 
 const CVcontext = React.createContext<CvObjectType>(
@@ -30,6 +55,8 @@ const CVcontext = React.createContext<CvObjectType>(
     hobbies:"",
     skills: [],
     languages:[],
+    employment:[],
+    education:[],
     email:"",
     phone: "",
     country:"", 
@@ -62,8 +89,9 @@ export const CVprovider = ({children}:{
     surname: "",
     jobTitle: "",
     city:"",
-    profileImage:""
-    
+    profileImage:"",
+    employment: [],
+    education: []
     })
     
 

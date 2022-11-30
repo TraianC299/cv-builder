@@ -112,6 +112,15 @@ b{
   line-height: 1.5;
   letter-spacing: 0.0075em;
 }
+
+.caption{
+  font-size: 0.85rem;
+  color: rgb(130, 139, 162);
+}
+
+.rounded{
+  border-radius: 50%;
+}
 .sp{
   font-size: 0.85rem;
 }

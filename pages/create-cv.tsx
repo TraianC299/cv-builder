@@ -2,11 +2,14 @@ import { nanoid } from 'nanoid'
 import React from 'react'
 import styled from 'styled-components'
 import CvTemplateOne from '../components/createcv/cvTemplates/CVtemplateOne'
+import EducationInstance from '../components/createcv/EducationInstance'
+import EmploymentInstance from '../components/createcv/EmploymentInstance'
 import Section from '../components/createcv/Section'
 import Skill from '../components/createcv/Skill'
 import AutosizeInput from '../components/general/input/AutosizeInput'
 import ButtonInputImage from '../components/general/input/ButtonImageInput'
 import Input from '../components/general/input/Input'
+import MonthYearSelector from '../components/general/input/MonthYearSelector'
 import { CvObjectType, CVprovider, useCVcontext } from '../contexts/AppContext'
 import {  GREYWHITE } from '../data/contants'
 
@@ -50,7 +53,7 @@ padding: 2rem;
 row-gap: 2rem;
 display: flex;
 flex-direction: column;
-border-right: 2px dashed ${GREYWHITE};`
+`
 
 const CreateCvModal = () => {
   const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
@@ -89,13 +92,63 @@ const CreateCvModal = () => {
   }
 
 
+  const addNewEmployment = () => {
+    const noEditLanguages = cvObject.employment.map(el=>({
+      title: el.title,
+      employer: el.employer,
+      city: el.city, 
+      description: el.description,
+      id: el.id,
+      edit:false
+    }))
+    setCvObject((prev:CvObjectType)=>({
+      ...prev,
+      employment:[
+        ...noEditLanguages, {
+          id:nanoid(),
+          title: "",
+      employer: "",
+      city: "", 
+      description: "",
+           edit:true}
+      ]
+    }))
+  }
+
+  const addNewEducation = () => {
+    const noEditLanguages = cvObject.education.map(el=>({
+      school: el.school,
+      degree: el.degree,
+      city: el.city, 
+      description: el.description,
+      id: el.id,
+      edit:false
+    }))
+    setCvObject((prev:CvObjectType)=>({
+      ...prev,
+      education:[
+        ...noEditLanguages, {
+          id:nanoid(),
+          school: "",
+          degree: "",
+          city: "", 
+          description: "",
+           edit:true}
+      ]
+    }))
+  }
+
+
+  
+
+
   return(
     <ModalContainer>
       <Section title='Personal Info'>
       <div className='flex column' style={{rowGap:"0.5rem"}}>
         <div className='flex jc ac' style={{columnGap:"1rem"}}>
           <Input value={cvObject.jobTitle} setValue={(v:InputEvent)=>{setCvObject((prev:CvObjectType)=>({...prev, jobTitle:v}))}} placeholder='eg. Teacher' label="Job Title"></Input>
-          <ButtonInputImage image={cvObject.profileImage}  setImage={(v:string | null)=>{setCvObject((prev:CvObjectType)=>({...prev, profileImage:v}))}} label='Your image'></ButtonInputImage>
+          <ButtonInputImage image={cvObject.profileImage}  setImage={(v:string | null)=>{setCvObject((prev:CvObjectType)=>({...prev, profileImage:v}))}} label='Choosle your image' postInputLabel='Image chosen'></ButtonInputImage>
         </div>
         <div className='flex' style={{columnGap:"1rem"}}>
           <Input value={cvObject.name} setValue={(v:InputEvent)=>{setCvObject((prev:CvObjectType)=>({...prev, name:v}))}} label='First Name'></Input>
@@ -124,6 +177,17 @@ const CreateCvModal = () => {
       <SkillsContainer>{cvObject.languages.map(el=><Skill skills={cvObject.languages} setSkills={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}} key={el.id} id={el.id} edit={el.edit || false} title={el.title} metric={el.metric}></Skill>)}</SkillsContainer>
 
       </Section>
+      <Section title="Employment history" onClick={addNewEmployment}>
+      <SkillsContainer >
+        {cvObject.employment.map(el=><EmploymentInstance key={el.id} id={el.id} edit={el.edit || false} title={el.title} metric={el.metric}></EmploymentInstance>)}
+      </SkillsContainer>
+      </Section>
+      <Section title="Education" onClick={addNewEducation}>
+      {cvObject.education.map(el=><EducationInstance key={el.id}  {...el}></EducationInstance>)}
+
+      </Section>
+
+      
     </ModalContainer>
   )
 }
