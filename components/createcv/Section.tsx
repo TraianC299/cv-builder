@@ -1,0 +1,25 @@
+import { ReactNode } from 'react'
+import styled from 'styled-components'
+import { DARKGREY } from '../../data/contants'
+import { Button } from '../../styles/global'
+
+
+
+
+const Header = styled.div``
+const Section = ({children, title, subtitle, onClick}:{children:ReactNode, title?:string, subtitle?: string, onClick?:Function}) => {
+    return(
+      <div>
+        <Header className='flex jsb ac'>
+          <div>
+            <h3 className='h4'>{title}</h3>
+            <p style={{color: DARKGREY}} className='sp'>{subtitle}</p>
+          </div>
+          {onClick && <Button className='small' onClick={e=>{e.preventDefault();onClick()}}>+ add new</Button>}
+        </Header>
+        {children}
+      </div>
+    )
+  }
+
+  export default Section

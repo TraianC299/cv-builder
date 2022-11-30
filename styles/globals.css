@@ -6,15 +6,218 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: #323C46;
+  font-family: "Red Hat Display", sans-serif;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
+
+
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+b{
+  color: #0074FF;
+}
+
+.t300{
+  font-weight: 300;
+}
+.t400{
+  font-weight: 400;
+}
+.t600{
+  font-weight: 600;
+}
+.t700{
+  font-weight: 700;
+}
+.t900{
+  font-weight: 900;
+}
+.h1 {
+  
+  font-size: 5rem;
+  line-height: 1.167;
+  letter-spacing: -0.01562em;
+}
+.h2 {
+  
+  font-size: 3.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.00833em;
+}
+.h3 {
+  
+  font-size: 3rem;
+  line-height: 1.167;
+  letter-spacing: 0em;
+}
+.h4 {
+  
+  font-size: 2.125rem;
+  line-height: 1.235;
+  font-weight: 600;
+  letter-spacing: 0.00735em;
+}
+.h5 {
+  
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0em;
+}
+.h6 {
+  
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+.p {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.0075em;
+}
+.sp{
+  font-size: 0.85rem;
+}
+
+.flex {
+  display: flex;
+}
+.grid{
+  display: grid;
+}
+
+.row{
+  flex-direction: row;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.jc{
+  justify-content: center;
+}
+
+.ac{
+  align-items: center;
+}
+.afs{
+  align-items: flex-start;
+}
+.jsb{
+  justify-content: space-between;
+}
+.w-full{
+  width: 100%;
+}
+.h-full{
+  height: 100%;
+}
+
+.center {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
+.m-auto{
+  margin: auto;
+}
+
+
+.sectionPadding{
+  max-width: 1300px;
+  margin:auto;
+}
+
+
+.dashedBorder{
+  border: 2px dashed #406AFF !important;
+}
+
+
+@media (max-width: 768px) {
+  .sectionPadding{
+    padding: 1rem 1.5rem;
+  }
+  .h1 {
+  
+    font-size: 3.25rem;
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+  }
+  .h2 {
+    
+    font-size: 2.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.00833em;
+  }
+  .h3 {
+    
+    font-size: 2.25rem;
+    line-height: 1.167;
+    letter-spacing: 0em;
+  }
+  .h4 {
+    
+    font-size: 1.75rem;
+    line-height: 1.235;
+    font-weight: 600;
+    letter-spacing: 0.00735em;
+  }
+  .h5 {
+    
+    font-size: 1.5rem;
+    line-height: 1.334;
+    letter-spacing: 0em;
+  }
+  .h6 {
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+  }
+}
+/* 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -23,4 +226,4 @@ a {
     color: white;
     background: black;
   }
-}
+} */
