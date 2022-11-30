@@ -6,8 +6,10 @@ import Collapse from '../general/utilities/Collapse'
 
 
 const Container = styled.div`
-border: 1px solid ${GREYWHITE};
+border: 2px solid ${GREYWHITE};
+border-radius: 5px;
 padding: 1rem;
+
 .sp{
   color: ${DARKGREY};
 }`
@@ -15,7 +17,8 @@ padding: 1rem;
 
 const MainContent = styled.div`
 display: flex;
-justify-content: space-between;`
+justify-content: space-between;
+`
 
 
 
@@ -29,12 +32,12 @@ const CollapseItem = ({children, title, subtitle, open, setOpen}:{
 
   return (
     <Container>
-        <MainContent onClick={()=>setOpen((p:boolean)=>!p)}>
+        <MainContent onClick={()=>setOpen((p:boolean)=>!p)} className="flex ac">
           <div>
             <p className='p'>{title}</p>
             <p className='sp'>{subtitle}</p>
           </div>
-          <p>-</p>
+          <p className='pointer'>{open?"☝️":"👇"}</p>
         </MainContent>
         <Collapse on={open}>
           {children}

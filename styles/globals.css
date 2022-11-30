@@ -115,7 +115,9 @@ b{
 .sp{
   font-size: 0.85rem;
 }
-
+.pointer{
+  cursor: pointer;
+}
 .flex {
   display: flex;
 }

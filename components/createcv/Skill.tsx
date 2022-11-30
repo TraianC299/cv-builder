@@ -7,7 +7,8 @@ import { SkillType } from '../../contexts/AppContext'
 
 
 
-const experienceLevels = [{label:"Novice", value:1},
+const experienceLevels = [
+{label:"Novice", value:1},
 {label:"Beginner", value:2},
 {label:"Skillful", value:3},
 {label:"Experienced", value:4},
@@ -49,8 +50,8 @@ useDidMountEffect(()=>{
       open={open} 
       setOpen={setOpen}>
       <div style={{columnGap:"0.5rem"}} className='flex'>
-        <Input value={titleState} setValue={setTitleState}></Input>
-        <OptionSelector value={metricState} setValue={setMetricState} options={experienceLevels}></OptionSelector>
+        <Input label="Title" value={titleState} setValue={setTitleState}></Input>
+        <OptionSelector label={"Experience level"} value={metricState} setValue={setMetricState} options={experienceLevels}></OptionSelector>
       </div>
     </CollapseItem>
   )

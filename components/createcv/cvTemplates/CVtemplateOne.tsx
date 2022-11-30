@@ -6,6 +6,7 @@ import useWindowSize from '../../../hooks/useWindowSize'
 
 
 
+
 const Container = styled.div`
 height: 842px;
 width: 595px;
@@ -36,7 +37,9 @@ position: relative;
 
 
 const SkillsContainer = styled.div`
-row-gap: 90px;`
+display: flex;
+flex-direction: column;
+row-gap: 8px;`
 const CvTemplateOne = () => {
   const {height} = useWindowSize()
   const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
@@ -46,19 +49,19 @@ const CvTemplateOne = () => {
     <Container style={{transform: `scale(${height ? height/842 - 0.1 : 1})`}}>
         <div>
           <ProfileSection name={cvObject.name} surname={cvObject.surname} jobTitle={cvObject.jobTitle} image={cvObject.profileImage}></ProfileSection>
-            {/* <Section title={"Personal Info"}>
-              <p>{cvObject.summary}</p>
+            <Section title={"Professional Summary"}>
+              <p className='sp'>{cvObject.summary}</p>
             </Section>
-             */}
+            
         </div>
         <div>
-        {/* <Section title={"Personal Info"}>
-          <p>Location: {cvObject.city}, {cvObject.country}</p>
-          <p>Phone: {cvObject.phone}</p>
-          <p>Email: {cvObject.email}</p>
+        <Section title={"Personal Info"}>
+          <p className='sp'>Location: {cvObject.city}, {cvObject.country}</p>
+          <p className='sp'>Phone: {cvObject.phone}</p>
+          <p className='sp'>Email: {cvObject.email}</p>
         </Section>
         <Section title={"Hobbies"}>
-          <p>{cvObject.hobbies}</p>
+          <p className='sp'>{cvObject.hobbies}</p>
         </Section>
         <Section title="Skills">
           <SkillsContainer>
@@ -69,7 +72,7 @@ const CvTemplateOne = () => {
           <SkillsContainer>
             {cvObject.languages.map((el:SkillType)=><SkillInstance title={el.title} grade={el.metric}></SkillInstance>)}
           </SkillsContainer>
-        </Section> */}
+        </Section>
 
 
         </div>
@@ -87,7 +90,7 @@ const Section = ({children, title}:{
   return(
     <div>
       <p className='p t600'>{title}</p>
-      <p className='sp'>{children}</p>
+      {children}
     </div>
   )
 }
