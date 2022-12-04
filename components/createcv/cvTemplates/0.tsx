@@ -16,6 +16,7 @@ grid-template-columns: 306px 205px;
 column-gap: 1rem;
 background: white;
 position: relative;
+transform-origin:0 0;
 >div{
   display: flex;
   flex-direction: column;
@@ -27,10 +28,10 @@ position: relative;
   position: absolute;
   top:0;
   left:0;
-  height: 135px;
+  height: 125px;
   width: 338px;
   background: ${GREEN};
-  z-index:-1;
+  z-index:0;
   border-radius: 0 0 20px 0;
 }
 `
@@ -40,13 +41,12 @@ const SkillsContainer = styled.div`
 display: flex;
 flex-direction: column;
 row-gap: 8px;`
-const CvTemplateOne = () => {
-  const {height} = useWindowSize()
-  const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
-
+const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
 
   return (
-    <Container style={{transform: `scale(${height ? height/842 - 0.1 : 1})`}}>
+    <Container id="cv-preview" 
+    className={className}
+    >
         <div>
           <ProfileSection name={cvObject.name} surname={cvObject.surname} jobTitle={cvObject.jobTitle} image={cvObject.profileImage}></ProfileSection>
             <Section title={"Professional Summary"}>
@@ -86,7 +86,7 @@ const CvTemplateOne = () => {
   )
 }
 
-export default CvTemplateOne
+export default TemplateZero
 
 
 const Section = ({children, title}:{
@@ -107,6 +107,7 @@ const ProfileSectionContainer = styled.div`
 column-gap: 0.5rem;
 margin-bottom: 32px;
 margin-top:8px;
+z-index:999;
 >img{
   height: 50px;
   width: 50px;
@@ -142,6 +143,7 @@ row-gap: 4px;
   background: ${GREYWHITE};
   height: 5px;
   border-radius: 444px;
+  overflow: hidden;
   >div{
     height: 5px;
     background: ${GREEN};

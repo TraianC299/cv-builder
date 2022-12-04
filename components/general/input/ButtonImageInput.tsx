@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ImageInput from './ImageInput'
 import styled from 'styled-components'
 import { DARKGREY, LIGHTGREY, MAINCOLOR, RED } from '../../../data/contants'
@@ -62,10 +62,17 @@ type ButtonInputImageProps = {
 }
 const ButtonInputImage = ({image, setImage, imageError, setImageError, label, postInputLabel, ...props}:ButtonInputImageProps) => {
     const [loading, setLoading] = React.useState(false)
+
+ 
+
+    // useEffect(()=>{
+    //   setImage("")
+    // },[])
   return (
    <ImageInput resize={200} loading={loading} setLoading={setLoading} imageUrl={image} setImageUrl={setImage}  {...props}>
     <Container>
-      <label className='sp'>Personal image</label>
+      <img style={{display: "none"}} onError={()=>setImage("")} src={image}></img>
+      <label className='sp'>Your photo</label>
       <SelectImageLabel as="label"  style={{borderColor: imageError?RED:loading?LIGHTGREY:MAINCOLOR}}   className={`${image?"selected":""}`}>
       {loading?
       // <Spinner style={{animation:"rotation 1s infinite"}}></Spinner>

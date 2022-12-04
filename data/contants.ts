@@ -1,7 +1,7 @@
 export const BLACK = "#000"
 export const WHITE = "#fff"
 export const BORDERCOLOR = "#D5DDE0"
-export const YELLOW = "#f2e10b"
+export const YELLOW = "#FFE000"
 export const DARKGREY = "rgb(130, 139, 162)"
 export const BLACKGREY = "#323C46"
 export const LIGHTGREY  = "#C4C4C4"

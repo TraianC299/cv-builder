@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {  coloredShadow, device, GREYWHITE, LIGHTGREY, MAINCOLOR, WHITE } from "../data/contants";
 
 export const InputStyle = styled.input`
-
   display: flex;
   width: 100%;
   align-items: center;
@@ -19,11 +18,6 @@ export const InputStyle = styled.input`
     color: #9CA9B4;
     font-weight: 500;
   }
-
- 
-  
-  
-
  `
 
 
@@ -33,9 +27,9 @@ padding: 0.5rem 1rem;
 background-color: ${MAINCOLOR};
 color: white;
 border: none;
-border-radius: 10rem;
+border-radius: 5px;
 font-size: 1rem;
-font-weight: 600;
+font-weight: 500;
 min-height: 42px;
 cursor: pointer;
 transition:   all 0.3s ease-in-out;

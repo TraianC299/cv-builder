@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid'
 import React from 'react'
 import styled from 'styled-components'
-import CvTemplateOne from '../components/createcv/cvTemplates/CVtemplateOne'
+import CvTemplateZero from '../components/createcv/cvTemplates/0'
 import EducationInstance from '../components/createcv/EducationInstance'
 import EmploymentInstance from '../components/createcv/EmploymentInstance'
 import Section from '../components/createcv/Section'
@@ -9,9 +9,14 @@ import Skill from '../components/createcv/Skill'
 import AutosizeInput from '../components/general/input/AutosizeInput'
 import ButtonInputImage from '../components/general/input/ButtonImageInput'
 import Input from '../components/general/input/Input'
-import MonthYearSelector from '../components/general/input/MonthYearSelector'
 import { CvObjectType, CVprovider, useCVcontext } from '../contexts/AppContext'
-import {  GREYWHITE } from '../data/contants'
+import {  DARKGREY, GREYWHITE } from '../data/contants'
+import { Button } from '../styles/global'
+import useWindowSize from '../hooks/useWindowSize'
+import TemplateOne from '../components/createcv/cvTemplates/1'
+import CvPreview from '../components/createcv/CvPreview'
+
+
 
 const SkillsContainer = styled.div`
 display: flex;
@@ -26,21 +31,38 @@ height: 100vh;
 overflow: hidden;
 grid-template-columns: 600px 1fr;
 `
+
+
+
+
+
+
+
+
 const Main = () => {
 
+  const {height, width} = useWindowSize()
+  const {cvObject, setCvObject} = useCVcontext()
+
+
+
   return (
-    <CVprovider>
       <MainContainer className='flex'>
         <CreateCvModal/>
-        <div style={{background: GREYWHITE}} className='flex jc ac'>
-          <CvTemplateOne></CvTemplateOne>
-        </div>
+        <CvPreview></CvPreview>
+
       </MainContainer>
-    </CVprovider>
   )
 }
 
-export default Main
+
+const ContextMain = () => {
+  return(<CVprovider>
+    <Main></Main>
+  </CVprovider>)
+}
+
+export default ContextMain
 
 
 
@@ -59,6 +81,8 @@ const CreateCvModal = () => {
   const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
 
   
+
+
 
   const addNewSkillFunction = () => {
     const noEditSkills = cvObject.skills.map(el=>({
@@ -140,10 +164,12 @@ const CreateCvModal = () => {
 
 
   
+  
 
 
   return(
     <ModalContainer>
+
       <Section title='Personal Info'>
       <div className='flex column' style={{rowGap:"0.5rem"}}>
         <div className='flex jc ac' style={{columnGap:"1rem"}}>
@@ -179,7 +205,7 @@ const CreateCvModal = () => {
       </Section>
       <Section title="Employment history" onClick={addNewEmployment}>
       <SkillsContainer >
-        {cvObject.employment.map(el=><EmploymentInstance key={el.id} id={el.id} edit={el.edit || false} title={el.title} metric={el.metric}></EmploymentInstance>)}
+        {cvObject.employment.map(el=><EmploymentInstance key={el.id}  {...el} edit={el.edit || false}></EmploymentInstance>)}
       </SkillsContainer>
       </Section>
       <Section title="Education" onClick={addNewEducation}>

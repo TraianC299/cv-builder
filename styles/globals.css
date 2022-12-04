@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+
+
 html,
 body {
   padding: 0;
@@ -130,6 +134,9 @@ b{
 .flex {
   display: flex;
 }
+.scroll{
+  overflow: scroll;
+}
 .grid{
   display: grid;
 }
@@ -145,7 +152,9 @@ b{
 .jc{
   justify-content: center;
 }
-
+.h-full{
+  height:100%;
+}
 .ac{
   align-items: center;
 }
@@ -158,8 +167,17 @@ b{
 .w-full{
   width: 100%;
 }
-.h-full{
-  height: 100%;
+
+.gap1{
+  gap:1rem;
+}
+
+.gap05{
+  gap: 0.5rem;
+}
+
+.gap2{
+  gap:2rem;
 }
 
 .center {

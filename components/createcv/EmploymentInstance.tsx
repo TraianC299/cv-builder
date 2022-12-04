@@ -15,9 +15,9 @@ const EmploymentInstance = ({title, employer,city, description, edit, startDate,
     const [titleState, setTitleState] = useState(title || "")
     const [employerState, setEmployerState] = useState(employer || "")
     const [descriptionState, setDescriptionState] = useState(description || "")
-    const [cityState, setCityState] = useState(city)
-    const [startDateState, setStartDateState] = useState(startDate)
-    const [endDateState, setEndDateState] = useState(endDate)
+    const [cityState, setCityState] = useState(city || "")
+    const [startDateState, setStartDateState] = useState(startDate || "")
+    const [endDateState, setEndDateState] = useState(endDate || "")
 
 
 useDidMountEffect(()=>{

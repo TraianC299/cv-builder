@@ -51,7 +51,7 @@ useDidMountEffect(()=>{
       open={open} 
       setOpen={setOpen}>
       <div style={{columnGap:"0.5rem"}} className='flex'>
-        <Input label="Title" value={titleState} setValue={setTitleState}></Input>
+        <Input  label="Title" value={titleState} setValue={setTitleState}></Input>
         <OptionSelector label={"Experience level"} value={metricState} setValue={setMetricState} options={experienceLevels}></OptionSelector>
       </div>
     </CollapseItem>

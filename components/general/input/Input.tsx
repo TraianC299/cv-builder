@@ -117,6 +117,7 @@ const Input:React.FC<InputProps> = ({value, setValue, label, error, setError, di
           placeholder={placeholder}
           onFocusCapture={(e)=>onFocusCapture?onFocusCapture(e):null}
           {...props}
+          
 
           ></InputStyle>
           {/* <p style={{color: RED}}>{error}</p> */}

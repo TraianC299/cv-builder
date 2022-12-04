@@ -76,11 +76,12 @@ const MonthYearSelector = ({value, setValue, label}:{
 }) => {
     const ref = useRef(null)
     const [open, setOpen] = useState(false)
-    const [year, setYear] = useState(new Date().getFullYear())
-    const [month, setMonth] = useState("")
+    const [year, setYear] = useState(Number(value.split(" ")[0]) || new Date().getFullYear())
+    const [month, setMonth] = useState(value.split(" ")[1])
     useClickOutside(ref.current, () => setOpen(false))
 
 
+    console.log(value.split(" "))
     useDidMountEffect(()=>{
         setValue(`${month} ${year}` )
     },[year, month])
@@ -88,7 +89,7 @@ const MonthYearSelector = ({value, setValue, label}:{
 
   return (
     <Container ref={ref}>
-        <Input value={value} onClick={(e)=>{e.preventDefault();setOpen(prev=>!prev)}} label={label}></Input>
+        <Input value={value} onFocusCapture={(e)=>{e.preventDefault();setOpen(prev=>!prev)}} label={label}></Input>
         {open?<Modal>
             <YearContainer>
                 <p className='pointer' onClick={(e)=>{e.preventDefault();setYear(prev=>--prev)}}>-</p>

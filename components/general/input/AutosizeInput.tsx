@@ -66,10 +66,12 @@ const AutosizeInput:React.FC<Props> = ({setValue, value,label, ...props}) => {
         textareaRef.current.style.height = calcHeight(textareaRef.current.value) + "px";
     }
 
+
+
     return (
         <Container>
           <label htmlFor={label} className="sp">{label}</label>
-          <AutosizeTextArea onKeyUp={onKeyUp} as="textarea" value={value}  onChange={e=>setValue(e.target.value)} ref={textareaRef}></AutosizeTextArea>
+          <AutosizeTextArea  onKeyUp={onKeyUp} as="textarea" value={value}  onChange={e=>setValue(e.target.value)} ref={textareaRef}></AutosizeTextArea>
         </Container>
     )
 }

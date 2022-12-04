@@ -1,5 +1,4 @@
 import React, { FormEvent, useEffect, useRef } from 'react'
-import styled from 'styled-components'
 
 
 
@@ -96,12 +95,24 @@ const ImageInput = ({children, loading, setLoading, setImageUrl, resize}:{imageU
       // @ts-ignore
   const handleChange = async (e?: HTMLInputEvent) => {
     if (e.target.files.length > 0) {
+      setLoading(true)
+      const file = e.target.files[0];
       const dataUri = await  fileToDataUri(e.target.files[0])
-      setImageUrl(dataUri)
+      const resizedImage = await resizedataURL(dataUri, resize)
+      const resizedFile =  dataURLtoFile(resizedImage, file.name)
 
+    const formData = new FormData();
+    formData.append('file', resizedFile);
 
-   
-    
+    await fetch(`http://localhost:3000/api/image/upload`, {
+      method: 'POST',
+      body: formData,
+    })
+    .then((res) => res.json())
+    .then((jsonRes) => {
+        setLoading(false)
+        setImageUrl(jsonRes.data.url)
+      })
     }
   };
 

@@ -112,7 +112,7 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
 
     return (
             <Container ref={ref} >
-            <Input label={label} disabled placeholder={label} value={inputValue}    onFocusCapture={()=>setFocus(true)} {...props}></Input>
+            <Input  label={label}  placeholder={label} value={inputValue}  setValue={()=>{}}  onFocusCapture={()=>setFocus(true)} {...props} ></Input>
             {focus?<StyledAutocompleteContainer style={{pointerEvents:focus?"all":"none", opacity:focus?"1":"0"}} styledHeight={relevantOptions.length}>
                 {relevantOptions.map(option => <Tag 
                     onClick={()=>complete({...option})} 

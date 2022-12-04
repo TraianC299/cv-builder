@@ -1,4 +1,5 @@
-import React, {ReactNode, useContext, useState} from 'react'
+import React, {ReactNode, useContext} from 'react'
+import useLocalStorage from '../hooks/useLocalStorage'
 
 
 export type SkillType = {
@@ -45,27 +46,30 @@ export type CvObjectType = {
     skills: [SkillType] | [],
     languages:[SkillType] | [],
     employment: [EmploymentType] | [],
-    education: [EducationType] | []
-
+    education: [EducationType] | [],
+    template: number
 }
 
-const CVcontext = React.createContext<CvObjectType>(
+const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: React.Dispatch<React.SetStateAction<any>> }>(
     {
-        summary:"",
-    hobbies:"",
-    skills: [],
-    languages:[],
-    employment:[],
-    education:[],
-    email:"",
-    phone: "",
-    country:"", 
-    name: "", 
-    surname: "",
-    jobTitle: "",
-    city:"",
-    profileImage:""
-    
+        cvObject:{
+            summary:"",
+            hobbies:"",
+            skills: [],
+            languages:[],
+            email:"",
+            phone: "",
+            country:"", 
+            name: "", 
+            surname: "",
+            jobTitle: "",
+            city:"",
+            profileImage:"",
+            employment: [],
+            education: [],
+            template: 1
+        },
+        setCvObject:()=>{}
     }
 )
 export const useCVcontext=()=>{
@@ -77,7 +81,7 @@ export const useCVcontext=()=>{
 export const CVprovider = ({children}:{
     children:ReactNode
 }) => {
-    const [cvObject, setCvObject] = useState<CvObjectType>({
+    const [cvObject, setCvObject] = useLocalStorage<CvObjectType>("cvobject",{
         summary:"",
     hobbies:"",
     skills: [],
@@ -91,8 +95,11 @@ export const CVprovider = ({children}:{
     city:"",
     profileImage:"",
     employment: [],
-    education: []
+    education: [],
+    template:1
     })
+
+
     
 
 
@@ -104,6 +111,7 @@ export const CVprovider = ({children}:{
 
 
     
+
 
 
 
