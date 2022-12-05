@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import styled from 'styled-components';
 import { CvObjectType, useCVcontext } from '../../contexts/AppContext';
 import { DARKGREY } from '../../data/contants';
@@ -31,8 +31,19 @@ display: flex;
 justify-content: center;
 align-items: center;
 padding: 1rem;
-
 column-gap: 1rem;
+opacity:0;
+height:0;
+position: absolute;
+bottom:0;
+pointer-events: none;
+&.open{
+  height: calc(126px + 1rem);
+  opacity:1;
+  bottom:0;
+  pointer-events: all;
+
+}
 `
 
 
@@ -55,10 +66,12 @@ async function getPDF(cvObject:CvObjectType, template:number) {
 const CvPreview = () => {
     const {height} = useWindowSize()
     const {cvObject, setCvObject} = useCVcontext()
-
+    const [openTemplates, setOpenTemplates] = useState(false)
+    const [loading, setLoading] = useState(false)
 
 
     const generatePDF = async () => {
+      setLoading(true)
         try{
           const response = await getPDF(cvObject, cvObject
             .template)
@@ -68,8 +81,11 @@ const CvPreview = () => {
           link.href = window.URL.createObjectURL(blob)
           link.download = `your-file-name.pdf`
           link.click()
+
         }catch(e){
             console.log(e)
+        }finally{
+          setLoading(false)
         }
     }
 
@@ -81,8 +97,8 @@ const CvPreview = () => {
     ]
 
   return (
-    <div className='flex column ac jc' style={{background: DARKGREY}}>
-          <div className=' flex column gap1 h-full'>
+    <div className='flex column ac jc' style={{background: DARKGREY, position:"relative"}}>
+          <div style={{transform:`translateY(${openTemplates? "calc(-126px - 1rem)":0})`}} className=' flex column gap1 transition'>
             <Container  scaleFactor={height ? height/842 - 0.2 : 1}>
               {/* <TemplateOne
               cvObject={cvObject}></TemplateOne> */}
@@ -90,18 +106,18 @@ const CvPreview = () => {
               
             </Container>
             <div  className='flex jsb'>
-              <Button className='small'>Select Template</Button>
-              <Button className='small' onClick={(e)=>{e.preventDefault();generatePDF()}}>Download Pdf</Button>
+              <Button className='small' onClick={()=>setOpenTemplates(prev=>!prev)}>Select Template</Button>
+              <Button className='small' onClick={(e)=>{e.preventDefault();generatePDF()}}>{loading?<p style={{animation:"rotation 1s infinite"}} >⌛</p>:"Download Pdf"}</Button>
             </div>
           </div>
-            <TemplatesContainer>
+            <TemplatesContainer className={openTemplates?"open transition":""}>
                 <Template onClick={()=>setCvObject(prev=>({...prev, template:0}))}>
                     <Image  width={79} height={126} src={imageZero}></Image>
                 </Template>
                 <Template onClick={()=>setCvObject(prev=>({...prev, template:1}))}>
                     <Image  width={79} height={126} src={imageOne}></Image>
                 </Template>
-                <Template onClick={()=>setCvObject(prev=>({...prev, template:2}))}>
+                <Template  onClick={()=>setCvObject(prev=>({...prev, template:2}))}>
                     <Image  width={79} height={126} src={imageTwo}></Image>
                 </Template>
               
