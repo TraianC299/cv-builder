@@ -29,7 +29,7 @@ color: white;
 border: none;
 border-radius: 5px;
 font-size: 1rem;
-font-weight: 500;
+font-weight: 600;
 min-height: 42px;
 cursor: pointer;
 transition:   all 0.3s ease-in-out;
