@@ -11,13 +11,11 @@ import imageOne from "../../assets/images/cv-images/1.jpg"
 import imageTwo from "../../assets/images/cv-images/2.jpg"
 import Image from 'next/image';
 import TemplateTwo from './cvTemplates/2';
+import { TemplateContainerStyleProps } from '../../types';
 
 
 
-
-
-
-const Container = styled.div`
+const Container = styled.div<TemplateContainerStyleProps>`
 height: ${props=>842 *props.scaleFactor}px;
 width: ${props=>565 *props.scaleFactor}px;
 >div{
@@ -111,14 +109,14 @@ const CvPreview = () => {
             </div>
           </div>
             <TemplatesContainer className={openTemplates?"open transition":""}>
-                <Template onClick={()=>setCvObject(prev=>({...prev, template:0}))}>
-                    <Image  width={79} height={126} src={imageZero}></Image>
+                <Template onClick={()=>setCvObject((prev:CvObjectType)=>({...prev, template:0}))}>
+                    <Image  width={79} height={126} src={imageZero} alt="template one"></Image>
                 </Template>
-                <Template onClick={()=>setCvObject(prev=>({...prev, template:1}))}>
-                    <Image  width={79} height={126} src={imageOne}></Image>
+                <Template onClick={()=>setCvObject((prev:CvObjectType)=>({...prev, template:1}))} >
+                    <Image  width={79} height={126} src={imageOne} alt="template two"></Image>
                 </Template>
-                <Template  onClick={()=>setCvObject(prev=>({...prev, template:2}))}>
-                    <Image  width={79} height={126} src={imageTwo}></Image>
+                <Template  onClick={()=>setCvObject((prev:CvObjectType)=>({...prev, template:2}))}>
+                    <Image  width={79} height={126} src={imageTwo} alt="template three"></Image>
                 </Template>
               
             </TemplatesContainer>

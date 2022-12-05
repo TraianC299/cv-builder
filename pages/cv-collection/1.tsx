@@ -4,8 +4,9 @@ import {  CvObjectType } from '../../contexts/AppContext'
 import useWindowSize from '../../hooks/useWindowSize'
 import TemplateOne from '../../components/createcv/cvTemplates/1'
 import styled from 'styled-components'
+import { TemplateContainerStyleProps } from '../../types'
 
-const TemplateOneScaled = styled(TemplateOne)`
+const TemplateOneScaled = styled(TemplateOne)<TemplateContainerStyleProps>`
 transform: scale(${props=>props.scaleFactor});
 transform-origin: 0 0;
 `

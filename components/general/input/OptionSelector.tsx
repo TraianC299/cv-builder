@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { MouseEventHandler, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import useClickOutside from '../../../hooks/useClickOutside'
  import { GREYWHITE, LIGHTGREY, MAINCOLOR, shadow600, WHITE } from '../../../data/contants'
@@ -27,6 +27,7 @@ width: 100%;
     
 }
 `
+
 
 const StyledAutocompleteContainer = styled.div`
 background: ${WHITE};
@@ -78,16 +79,26 @@ position: relative;
 
 
 
-const getInitialValue = (value, options) => {
+const getInitialValue = (value:OptionSelectorProps["value"], options:OptionSelectorProps["options"]) => {
     const option = options.find(option => option.value === value)
     return option?option.label:""
 }
 
 
-const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, label, ...props}) => {
+type OptionSelectorProps = {
+    options: {label:string, value:any}[] | [],
+    value: any,
+    setValue: React.Dispatch<React.SetStateAction<any>>,
+    noAddOption?: boolean,
+    withImage?:boolean,
+    label: string,
+    props?: React.PropsWithChildren[]
+}
+
+const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, label, ...props}:OptionSelectorProps) => {
     const [relevantOptions, setRelevantOptions] = React.useState([...options])
     const [focus, setFocus] = React.useState(false)
-    const [inputValue, setInputValue] = useState(value?getInitialValue(value, options):"")
+    const [inputValue, setInputValue] = useState<string>(value?getInitialValue(value, options):"")
     const ref = useRef(null);
     useClickOutside(ref.current, () => setFocus(false))
 
@@ -103,7 +114,7 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
 
 
 
-    const complete = ({label, value}) => {
+    const complete = ({label, value}:{label:OptionSelectorProps["label"], value:OptionSelectorProps["value"]}) => {
         setFocus(false)
         setInputValue(label)
         setValue(value)
@@ -113,14 +124,11 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
     return (
             <Container ref={ref} >
             <Input  label={label}  placeholder={label} value={inputValue}  setValue={()=>{}}  onFocusCapture={()=>setFocus(true)} {...props} ></Input>
-            {focus?<StyledAutocompleteContainer style={{pointerEvents:focus?"all":"none", opacity:focus?"1":"0"}} styledHeight={relevantOptions.length}>
+            {focus?<StyledAutocompleteContainer style={{pointerEvents:focus?"all":"none", opacity:focus?"1":"0"}}>
                 {relevantOptions.map(option => <Tag 
                     onClick={()=>complete({...option})} 
                     key={option.label}
                     label={option.label}
-                    value={option.value}
-                    withImage={withImage}
-                    image={option.image}
                     selected={value?value===option.value:false}
                     ></Tag>)}
             </StyledAutocompleteContainer>:null}
@@ -132,11 +140,16 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
 export default OptionSelector
 
 
-const Tag = ({label, selected, withImage, image, onClick}) => {
+const Tag = ({label, selected, image, onClick}:{
+    label: string,
+    selected:boolean, 
+    image?: string,
+    onClick: MouseEventHandler<HTMLDivElement>
+}) => {
     
 
     return (
-        <TagContainer className={selected?"selected":""} onClick={onClick}>{withImage?<img src={image}></img>:null}<p>{label}</p></TagContainer>
+        <TagContainer className={selected?"selected":""} onClick={onClick}>{image?<img src={image}></img>:null}<p>{label}</p></TagContainer>
     )
 }
 

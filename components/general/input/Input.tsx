@@ -68,7 +68,7 @@ interface  InputProps{
   validation?:Function, 
   placeholder?:string,
   onFocusCapture?:Function,
-  props?: [any]
+  props?: any[]
 }
 
 const Input:React.FC<InputProps> = ({value, setValue, label, error, setError, disabled, rows, rowsMax, helperText, validation,placeholder,onFocusCapture, ...props}) => {

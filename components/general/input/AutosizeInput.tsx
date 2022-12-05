@@ -50,20 +50,18 @@ const AutosizeTextArea = styled(InputStyle)`
         setError?: Function,
   }
 const AutosizeInput:React.FC<Props> = ({setValue, value,label, ...props}) => {
-    const textareaRef = useRef(null);
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-    // useEffect(() => {
-    //     textareaRef.current.addEventListener("keyup", () => {
-    //         textareaRef.current.style.height = calcHeight(textareaRef.current.value) + "px";
-    //       });
-    // },[])
+
 
 
 
 
 
     const onKeyUp = () => {
+      if(textareaRef.current){
         textareaRef.current.style.height = calcHeight(textareaRef.current.value) + "px";
+      }
     }
 
 

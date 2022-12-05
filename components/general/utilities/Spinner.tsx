@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { BLACKGREY } from '../../../data/contants';
 import SpinnerSvg from "../../assets/svg/spinner.svg";
-import { BLACKGREY } from '../../styles/styles';
 
 
 
@@ -13,7 +13,10 @@ width: 1.25rem;
   fill: ${BLACKGREY};
 }`
 
-const Spinner = ({ className, ...props}) => {
+const Spinner = ({ className, ...props}:{
+  className?: string
+  props: any[]
+}) => {
   return (
     
       <Rotation {...props} className={className}></Rotation>

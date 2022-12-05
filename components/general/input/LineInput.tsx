@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled from "styled-components"
-import { GREYWHITE, LIGHTGREY, MAINCOLOR } from '../../data/colors'
-import {  RED } from '../../styles/styles'
+import { RED, MAINCOLOR} from '../../../data/contants'
 
 
 const InputContainer = styled.div`
@@ -32,13 +31,25 @@ font-size: inherit;
 `
 
 
+type LineInputType = {
+    error: string,
+    setError: React.Dispatch<React.SetStateAction<string>>,
+    placeholder: string, 
+    value: string,
+    setValue: React.Dispatch<React.SetStateAction<string>>,
+    props: any[]
+}
 
-const LineInput = ({button, error, setError, placeholder, value, setValue, ...props}) => {
-    const textArea = useRef(null)
+
+const LineInput = ({ error, setError, placeholder, value, setValue, ...props}:LineInputType) => {
+    const textArea = useRef<HTMLTextAreaElement>(null)
 
     useEffect(()=>{
-        textArea.current.style.height = "auto";
-        textArea.current.style.height = textArea.current.scrollHeight + "px";
+        if(textArea.current){
+
+            textArea.current.style.height = "auto";
+            textArea.current.style.height = textArea.current.scrollHeight + "px";
+        }
     },[value])
     return (
         <InputContainer>

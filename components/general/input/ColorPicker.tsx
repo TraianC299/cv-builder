@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { InputStyle, MAINCOLOR } from '../../styles/styles'
+import { MAINCOLOR } from '../../../data/contants'
+import { InputStyle } from '../../../styles/global'
 
 
 
@@ -52,7 +53,14 @@ width: 20px;
 border-radius: 50%;
 background: ${props => props.color};
 right: 10%;`
-const ColorPicker = ({color, setColor, label}) => {
+
+
+type ColorPickerProps = {
+  color:string,
+  setColor: React.Dispatch<React.SetStateAction<string>>
+  label:string
+}
+const ColorPicker = ({color, setColor, label}:ColorPickerProps) => {
     return (
         <Container  className={color?"selected":''}>
             <input 

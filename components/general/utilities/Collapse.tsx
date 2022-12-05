@@ -9,14 +9,14 @@ const Collapse = ({children, on}:{
     children:ReactNode,
     on: boolean
 })=>{
-    const divRef = React.useRef(null);
+    const divRef = React.useRef<HTMLDivElement>(null);
 
     const [height, setHeight] = React.useState(0);
     const [overflow, setOverflow] = React.useState("hidden")
 
 
     React.useEffect(()=>{
-        if(on){
+        if(on && divRef.current){
             setHeight(divRef.current.scrollHeight)
             return
         }

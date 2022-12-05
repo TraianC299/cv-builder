@@ -25,8 +25,8 @@ const EducationInstance = ({
     const [degreeState, setDegreeState] = useState(degree || "")
     const [descriptionState, setDescriptionState] = useState(description || "")
     const [cityState, setCityState] = useState(city)
-    const [startDateState, setStartDateState] = useState(startDate)
-    const [endDateState, setEndDateState] = useState(endDate)
+    const [startDateState, setStartDateState] = useState(startDate || "")
+    const [endDateState, setEndDateState] = useState(endDate || "")
 
 
 useDidMountEffect(()=>{

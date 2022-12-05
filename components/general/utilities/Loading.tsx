@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import { MAINCOLOR } from '../../styles/styles'
+import { MAINCOLOR } from '../../../data/contants'
 
 
 
@@ -64,7 +64,7 @@ const Ellipsis = styled.div`
   `
 const Loading = () => {
   return (
-    <Ellipsis class="lds-ellipsis"><div></div><div></div><div></div><div></div></Ellipsis>
+    <Ellipsis className="lds-ellipsis"><div></div><div></div><div></div><div></div></Ellipsis>
   )
 }
 
