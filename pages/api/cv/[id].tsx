@@ -62,12 +62,11 @@ res: NextApiResponse
     } = req;
 
     const {id} = query
-console.log(id)
 
     switch(method){
         case "POST": {
             try{
-                const pdf=  await printPDF(JSON.parse(body), id)
+                const pdf=  await printPDF(JSON.parse(body), typeof(id)==="string"?id:"1")
                 res
                 .status(200)
                 .setHeader('Content-Type', 'application/pdf')
