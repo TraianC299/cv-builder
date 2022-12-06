@@ -23,26 +23,22 @@ background: ${WHITE};
 &.not-stuck{
     background: transparent;
     
-    a{
-        color: transparent;
+    a, button{
+        opacity:0;
     }
-    button{
-        background: transparent;
-        color: transparent;
+    #logo{
+        opacity: 1;
     }
 }
 
 @media ${device.laptopSmall}{
     &.not-stuck{
     background: transparent;
-    .desktop-link{
-        color: ${WHITE};
+    a, button{
+        opacity:0;
     }
-   
-    button{
-        background: ${WHITE};
-        color: ${MAINCOLOR};
-        box-shadow: none;
+    #logo{
+        opacity: 1;
     }
 }
 }

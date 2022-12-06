@@ -16,7 +16,6 @@ width:100%;
 @media ${device.laptopSmall}{
     display: flex;
     flex-direction: row;
-    border-radius: 0.5rem;
     padding: 4rem;
     padding-right:0;
     align-items: center;
@@ -49,7 +48,7 @@ padding-bottom:0;
 
 const TestimonialsContainerStyles = styled.div`
 display: grid;
-grid-template-columns: 90% 90% 90% 90% 90%;
+grid-template-columns: 90% 90% 90%;
 padding: 2rem;
 overflow-y: hidden;
 scroll-snap-type: x mandatory;
@@ -70,18 +69,22 @@ scroll-behavior: smooth;
   scrollbar-width: none;  /* Firefox */
 
 @media ${device.laptopSmall}{
-    grid-template-columns: 18rem 18rem 18rem 18rem 18rem;
+    grid-template-columns: 18rem 18rem 18rem;
     >div{
         scroll-snap-align: none;
     }
 }
 
 @media ${device.tabletSmallPortrait}{
-    grid-template-columns: 15rem 15rem 15rem 15rem 15rem;
+    grid-template-columns: 15rem 15rem 15rem;
 }
 `
 
-
+const templateImages = [
+    image1,
+    image2,
+    image3,
+]
 
  
 
@@ -107,14 +110,12 @@ const TemplatesSection = () => {
         </TextContentStyles>
                 <Wrapper>
                     <PointsContainer id="testimonials-slider-controller-desktop">
-                    {[...Array(5)].map((i, index)=>(
+                    {[...Array(templateImages.length)].map((i, index)=>(
                         <button key={index} onClick={()=>setNumber(index)} className={number === index ? "active":""}/>
                     ))}
                     </PointsContainer>
                     <TestimonialsContainerStyles ref={ref}>
-                        <Testimonial src={image1}  ></Testimonial>
-                        <Testimonial src={image2}  ></Testimonial>
-                        <Testimonial src={image3}  ></Testimonial>
+                        {templateImages.map((image, index)=><Testimonial selected={index===number} src={image}></Testimonial>)}
                         </TestimonialsContainerStyles>
                 </Wrapper>
     </Container>
@@ -129,7 +130,7 @@ align-items: center;
 column-gap: 1rem;
 position: absolute;
 bottom: -1rem;
-left:6.5rem;
+left:8rem;
 >button{
     width: 1rem;
     height: 1rem;
@@ -177,6 +178,10 @@ position: relative;
 
     }
 }
+&.selected{
+    transform: scale(1.1);
+}
+
 `
 
 
@@ -184,12 +189,13 @@ position: relative;
 
 interface TestimonialProps {
     src: StaticImport;
+    selected: boolean;
 }
 
-const Testimonial:React.FC<TestimonialProps> = ({ src}) => {
+const Testimonial:React.FC<TestimonialProps> = ({ src, selected }) => {
     const isMobile = useMediaQuery(device.mobileSmallPortrait)
     return(
-        <TextimonialContainerStyle >
+        <TextimonialContainerStyle className={selected?'selected transition':"transition"}>
             <Image alt='' height={427} width={293} src={src}></Image>
             <div className='flex ac jc transition' >
                 <Button className='small'>Try it now</Button>
