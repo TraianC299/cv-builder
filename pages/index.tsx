@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../components/home/Footer'
 import Hero from '../components/home/Hero'
+import Menu from '../components/home/Menu'
 import TemplatesSection from '../components/home/TemplatesSection'
 import styles from '../styles/Home.module.css'
 
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Menu></Menu>
         <Hero></Hero>
        <TemplatesSection></TemplatesSection>
        <Footer></Footer>

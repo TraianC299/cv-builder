@@ -15,7 +15,7 @@ background: #eff2f9;
 overflow: hidden;
 ::before{
     content: '';
-    z-index: 2;
+    z-index: 9;
     position: absolute;
     left: 0;
     right: 0;
