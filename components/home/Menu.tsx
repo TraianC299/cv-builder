@@ -13,7 +13,7 @@ import Collapse from '../general/utilities/Collapse'
 
 const Header = styled.nav`
 width: 100%;
-position: fixed;
+position: sticky;
 top:0;
 z-index: 10;
 left:0;
@@ -150,7 +150,6 @@ const Menu = () => {
             </DesktopMenuItem>
         
            </DesktopMenuLinksContainerStyles>
-           <a href="https://admin.beelocals.com/login"><Button  className='desktop-contact-us-button'>{"Log in"}</Button></a>
            <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex center'><MenuSvg/>Menu</MobileMenuButton>
                <MobileMenuModal open={openMenu} setOpen={setOpenMenu}></MobileMenuModal>
         </Container>
@@ -322,7 +321,9 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
         </Button>
     </MobileMenuModalHeaderStyles>
     <MobileLinkContainerStyles>
-        <MobileLinkStyles><div className='main-title'>{("About us")}</div></MobileLinkStyles>
+        <MobileLinkStyles><Link href="about-us">
+            <div className='main-title'>{("About us")}</div>
+        </Link></MobileLinkStyles>
         <MobileLinkStyles><Link href="/blog" className='main-title'>{("Blog")}</Link></MobileLinkStyles>
         <MobileLinkStyles onClick={()=>setOpenServices(previous=>!previous)}>
             <div className='main-title'>{("language")}<ArrowSvg/></div>

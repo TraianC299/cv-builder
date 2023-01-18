@@ -13,6 +13,7 @@ height: 100vh;
 width: 100%;
 background: #eff2f9;
 overflow: hidden;
+
 ::before{
     content: '';
     z-index: 9;
@@ -151,7 +152,6 @@ overflow: hidden;
                 }
                             `
 const Hero = () => {
-    const {width} = useWindowSize()
   return (
     <Container>
         <div className='w-full h-full flex column ac jc text gap1'>

@@ -9,7 +9,7 @@ const Container = styled.div`
 border: 2px solid ${GREYWHITE};
 border-radius: 5px;
 padding: 1rem;
-
+flex-grow: 1;
 .sp{
   color: ${DARKGREY};
 }`
@@ -21,7 +21,7 @@ justify-content: space-between;
 
 :hover{
   >div:first-child{
-    cur
+
   }
   p{
     color: ${MAINCOLOR};
@@ -31,27 +31,31 @@ justify-content: space-between;
 
 
 
-const CollapseItem = ({children, title, subtitle, open, setOpen}:{
+const CollapseItem = ({children, title, subtitle, open, setOpen, onDelete}:{
   children: ReactNode,
   title: string, 
   subtitle: string,
   open:boolean, 
-  setOpen: Function
+  setOpen: Function,
+  onDelete?: Function
 }) => {
 
   return (
-    <Container>
-        <MainContent onClick={()=>setOpen((p:boolean)=>!p)} className="flex ac pointer">
-          <div>
-            <p className='p t600'>{title}</p>
-            <p className='sp'>{subtitle}</p>
-          </div>
-          <p >{open?"☝️":"👇"}</p>
-        </MainContent>
-        <Collapse on={open}>
-          {children}
-        </Collapse>
-    </Container>
+    <div className='flex gap1 ac w-full'>
+      <Container>
+          <MainContent onClick={()=>setOpen((p:boolean)=>!p)} className="flex ac pointer">
+            <div>
+              <p className='p t600'>{title}</p>
+              <p className='sp'>{subtitle}</p>
+            </div>
+            <p >{open?"☝️":"👇"}</p>
+          </MainContent>
+          <Collapse on={open}>
+            {children}
+          </Collapse>
+      </Container>
+      {onDelete && <button style={{border:"none"}} onClick={onDelete}>🗑️</button>}
+    </div>
   )
 }
 

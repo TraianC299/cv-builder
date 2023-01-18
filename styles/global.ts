@@ -52,6 +52,7 @@ box-shadow: ${coloredShadow};
   background-color: transparent;
   color: ${MAINCOLOR};
   box-shadow: none;
+  padding-left:0;
 }
 
 :disabled{

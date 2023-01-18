@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import TemplateTwo from '../../components/createcv/cvTemplates/2'
 import { TemplateContainerStyleProps } from '../../types'
 
-const TemplateOneScaled = styled(TemplateTwo)<TemplateContainerStyleProps>`
+const TemplateTwoScaled = styled(TemplateTwo)<TemplateContainerStyleProps>`
 transform: scale(${props=>props.scaleFactor});
 transform-origin: 0 0;
 `
@@ -19,9 +19,9 @@ const Template = ({localStorageCv}: {localStorageCv:CvObjectType}) => {
 
 
   return (
-            <TemplateOneScaled
+            <TemplateTwoScaled
             scaleFactor={width ? width/595: 1}
-           cvObject={localStorageCv}></TemplateOneScaled>
+           cvObject={localStorageCv}></TemplateTwoScaled>
   )
 }
 

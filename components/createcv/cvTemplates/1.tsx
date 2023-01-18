@@ -74,6 +74,9 @@ const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:st
             <Section title={"Employment History"}>
             {cvObject.employment.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
             </Section>
+            <Section title={"Internships"}>
+            {cvObject.internships.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+            </Section>
             <Section title={"Education History"}>
             {cvObject.education.map((el:EducationType)=><EducationItem {...el} key={el.id}></EducationItem>)}
             </Section>

@@ -15,6 +15,8 @@ import { Button } from '../styles/global'
 import useWindowSize from '../hooks/useWindowSize'
 import TemplateOne from '../components/createcv/cvTemplates/1'
 import CvPreview from '../components/createcv/CvPreview'
+import InternshipInstance from '../components/createcv/InternshipInstance'
+import { NextPage } from 'next'
 
 
 
@@ -139,6 +141,30 @@ const CreateCvModal = () => {
     }))
   }
 
+
+  const addInternship = () => {
+    const noEditInternships = cvObject.internships.map(el=>({
+      title: el.title,
+      employer: el.employer,
+      city: el.city, 
+      description: el.description,
+      id: el.id,
+      edit:false
+    }))
+    setCvObject((prev:CvObjectType)=>({
+      ...prev,
+      internships:[
+        ...noEditInternships, {
+          id:nanoid(),
+          title: "",
+      employer: "",
+      city: "", 
+      description: "",
+      edit:true}
+      ]
+    }))
+  }
+
   const addNewEducation = () => {
     const noEditLanguages = cvObject.education.map(el=>({
       school: el.school,
@@ -212,9 +238,18 @@ const CreateCvModal = () => {
       {cvObject.education.map(el=><EducationInstance key={el.id}  {...el}></EducationInstance>)}
 
       </Section>
+      <Section title="Internships" onClick={addInternship}>
+      {cvObject.internships.map(el=><InternshipInstance key={el.id}  {...el}></InternshipInstance>)}
+
+      </Section>
 
       
     </ModalContainer>
   )
 }
 
+ContextMain.getLayout = function getLayout(page:NextPage) {
+  return (
+      page
+  )
+}

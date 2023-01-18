@@ -5,6 +5,9 @@ import Hero from '../components/home/Hero'
 import Menu from '../components/home/Menu'
 import TemplatesSection from '../components/home/TemplatesSection'
 import styles from '../styles/Home.module.css'
+import ThreeCVsection from '../components/home/ThreeCVsection'
+import FAQsection from '../components/home/FAQsection'
+import FeaturesSection from '../components/home/FeaturesSection'
 
 export default function Home() {
   return (
@@ -15,16 +18,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <Menu></Menu>
         <Hero></Hero>
+        <ThreeCVsection/>
+        <FeaturesSection></FeaturesSection>
        <TemplatesSection></TemplatesSection>
-       <Footer></Footer>
-      </main>
+       <FAQsection></FAQsection>
 
-      <footer className={styles.footer}>
-        
-      </footer>
+  
     </div>
   )
 }

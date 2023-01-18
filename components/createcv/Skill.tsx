@@ -46,6 +46,7 @@ useDidMountEffect(()=>{
 
   return (
     <CollapseItem 
+    onDelete={()=>setSkills(skills.filter(el=>el.id!==id))} 
       title={titleState || "Not Specified"} 
       subtitle={experienceLevels.find(el=>el.value===metricState)?.label || "Not Specified either"} 
       open={open} 

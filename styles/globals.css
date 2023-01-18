@@ -24,6 +24,11 @@ a {
 }
 
 
+button{
+  cursor: pointer;
+  border: none;
+  background: none;
+}
 
 * {
   padding: 0;
@@ -106,7 +111,7 @@ b{
   letter-spacing: 0em;
 }
 .h6 {
-  
+  color: rgb(130, 139, 162);
   font-size: 1.25rem;
   line-height: 1.6;
   letter-spacing: 0.0075em;

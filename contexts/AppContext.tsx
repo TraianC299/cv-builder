@@ -47,6 +47,7 @@ export type CvObjectType = {
     languages:[SkillType] | [],
     employment: [EmploymentType] | [],
     education: [EducationType] | [],
+    internships: [EmploymentType] | [],
     template: number
 }
 
@@ -67,6 +68,7 @@ const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: Rea
             profileImage:"",
             employment: [],
             education: [],
+            internships:[],
             template: 1
         },
         setCvObject:()=>{}
@@ -96,6 +98,7 @@ export const CVprovider = ({children}:{
     profileImage:"",
     employment: [],
     education: [],
+    internships:[],
     template:1
     })
 

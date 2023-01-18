@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { CvObjectType, EducationType, EmploymentType, SkillType, useCVcontext } from '../../../contexts/AppContext'
-import { GREEN, GREYWHITE, WHITE, YELLOW } from '../../../data/contants'
+import {  GREYWHITE, YELLOW } from '../../../data/contants'
 
 
 
@@ -82,6 +82,9 @@ const TemplateTwo = ({cvObject, className}:{cvObject:CvObjectType, className?:st
               <Section title={"Employment History"}>
               {cvObject.employment.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
               </Section>
+              <Section title={"Internships"}>
+            {cvObject.internships.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+            </Section>
               <Section title={"Education History"}>
               {cvObject.education.map((el:EducationType)=><EducationItem {...el} key={el.id}></EducationItem>)}
               </Section>
@@ -101,13 +104,25 @@ const TemplateTwo = ({cvObject, className}:{cvObject:CvObjectType, className?:st
 export default TemplateTwo
 
 
+
+const SectionTitle = styled.p`
+:after{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: ${YELLOW};
+  margin-top: 4px;
+  margin-bottom: 4px;
+
+}`
 const Section = ({children, title}:{
   children:ReactNode,
   title: string
 })=> {
   return(
     <div>
-      <p className='p t600'>{title}</p>
+      <SectionTitle className='p t600'>{title}</SectionTitle>
       {children}
     </div>
   )

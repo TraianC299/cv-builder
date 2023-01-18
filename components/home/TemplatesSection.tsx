@@ -1,16 +1,16 @@
-import React, { useEffect, useRef } from 'react'
+import React, {  useRef } from 'react'
 import styled from 'styled-components'
 import useDidMountEffect from '../../hooks/useDidMountEffect'
 import useMediaQuery from '../../hooks/useMediaQuery'
-import { DARKGREY, device, MAINCOLOR, shadow600 } from '../../data/contants'
+import { BLACKGREY, device, GREYWHITE } from '../../data/contants'
 import image1 from '../../assets/images/cv-images/0.jpg'
 import image2 from '../../assets/images/cv-images/1.jpg'
 import image3 from '../../assets/images/cv-images/2.jpg'
 
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { Button } from '../../styles/global'
 const Container = styled.div`
-background-color: ${DARKGREY};
+background-color: ${GREYWHITE};
 min-height: 40rem;
 width:100%;
 @media ${device.laptopSmall}{
@@ -36,7 +36,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
-color: white;
+color: ${BLACKGREY};
 row-gap:1rem;
 padding: 1.5rem;
 padding-bottom:0;
@@ -103,8 +103,8 @@ const TemplatesSection = () => {
   return (
     <Container>
         <TextContentStyles>
-            <h2 className='h3'>Your opinion matters</h2>
-            <p>Focusing on our customer , feel free to contact us and leave us a review, but until then , here are some of them:</p>
+            <h2 className='h3'>Templates and design options</h2>
+            <p>We offer a variety of templates and design options to choose from, ensuring that you can create a CV that reflects your personal style and brand. Whether you're a creative professional looking for a unique layout or a more traditional job seeker seeking a classic design, we have a template that will suit your needs. Take a look at our selection:</p>
           
 
         </TextContentStyles>
@@ -139,7 +139,7 @@ left:8rem;
     background-color: transparent;
     cursor: pointer;
     &.active{
-        background-color: white;
+        background-color: ${BLACKGREY};
     }
 
 }
@@ -188,7 +188,7 @@ position: relative;
 
 
 interface TestimonialProps {
-    src: StaticImport;
+    src: StaticImageData;
     selected: boolean;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { DARKGREY, MAINCOLOR } from '../../data/contants';
+import { BLACKGREY, DARKGREY, GREYWHITE, MAINCOLOR } from '../../data/contants';
    
 const Badge = styled.div`
 width: 150px;
@@ -17,9 +17,9 @@ const Badges = styled.div`
 
  const Box = styled.footer`
   padding: 80px 30px;
-  background: ${DARKGREY};
+  background: ${GREYWHITE};
   width: 100%;
-  margin-top: 5vh;
+  margin-top: 5rem;
 
    
   @media (max-width: 1000px) {
@@ -43,7 +43,7 @@ const Badges = styled.div`
   text-align: left;
 
   >a{
-    color: #ffffff80;
+    color: ${BLACKGREY};
   margin-bottom: 20px;
   font-size: 18px;
   text-decoration: none;
@@ -71,7 +71,7 @@ const Badges = styled.div`
    
  const Heading = styled.p`
   font-size: 24px;
-  color: #fff;
+  color: ${BLACKGREY};
   margin-bottom: 25px;
   font-weight: bold;
 `;
