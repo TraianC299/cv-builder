@@ -12,7 +12,8 @@ import { Button } from '../../styles/global'
 const Container = styled.div`
 background-color: ${GREYWHITE};
 min-height: 40rem;
-width:100%;
+flex: 1;
+margin: 0 2rem;
 @media ${device.laptopSmall}{
     display: flex;
     flex-direction: row;
@@ -98,13 +99,12 @@ const TemplatesSection = () => {
         }
     },[number])
 
-    console.log(number)
 
   return (
     <Container>
         <TextContentStyles>
-            <h2 className='h3'>Templates and design options</h2>
-            <p>We offer a variety of templates and design options to choose from, ensuring that you can create a CV that reflects your personal style and brand. Whether you're a creative professional looking for a unique layout or a more traditional job seeker seeking a classic design, we have a template that will suit your needs. Take a look at our selection:</p>
+            <h2 className='h2'>Templates and design options</h2>
+            <p className='h6'>We offer a variety of templates and design options to choose from, ensuring that you can create a CV that reflects your personal style and brand. Whether you're a creative professional looking for a unique layout or a more traditional job seeker seeking a classic design, we have a template that will suit your needs. Take a look at our selection:</p>
           
 
         </TextContentStyles>

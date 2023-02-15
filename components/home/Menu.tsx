@@ -11,6 +11,11 @@ import { BLACKGREY, device, shadow600, WHITE, MAINCOLOR } from '../../data/conta
 import { Button } from '../../styles/global'
 import Collapse from '../general/utilities/Collapse'
 
+
+
+
+
+
 const Header = styled.nav`
 width: 100%;
 position: sticky;
@@ -20,7 +25,7 @@ left:0;
 padding:0.75rem 1.5rem;
 background: ${WHITE};
 
-&.not-stuck{
+/* &.not-stuck{
     background: transparent;
     
     a, button{
@@ -29,10 +34,11 @@ background: ${WHITE};
     #logo{
         opacity: 1;
     }
-}
+} */
 
 @media ${device.laptopSmall}{
-    &.not-stuck{
+    padding: 1.5rem 2rem;
+    /* &.not-stuck{
     background: transparent;
     a, button{
         opacity:0;
@@ -40,36 +46,16 @@ background: ${WHITE};
     #logo{
         opacity: 1;
     }
-}
+} */
 }
 `
 
 const Container = styled.div`
 width: 100%;
-max-width: 1300px;
 margin:auto;
 display: flex;
 align-items: center;
-justify-content: space-between;
-
-
-
-
-
-
-.desktop-contact-us-button{
-        display: none;
-    }
-   
-@media ${device.laptopSmall} {
-    #logo{
-    max-width: 15rem !important;
-}
-    
-    .desktop-contact-us-button{
-        display: block;
-    }
-}`
+justify-content: space-between;`
 
 const MobileMenuButton = styled(Button)`
 column-gap: 8px;
@@ -83,13 +69,13 @@ line-height: 1;
 const DesktopMenuLinksContainerStyles = styled.div`
 display: none;
 @media ${device.laptopSmall}{
-    margin: auto;
-    margin-right:3rem;
-    display: flex;
+margin: auto;
+margin-left:3rem;
+display: flex;
 align-items: center;
-justify-content: space-between;
+justify-content: flex-start;
 column-gap: 2rem;
-
+width: 100%;
 }`
 
 
@@ -129,7 +115,6 @@ const Menu = () => {
     <Header
     id="header" 
     className={stuck?"stuck transition":"not-stuck transition"}
-
     >
         <Container   className='flex'>
            <Link href="/" id="logo">
@@ -148,9 +133,11 @@ const Menu = () => {
             }>
                 {"Language"}
             </DesktopMenuItem>
+            <div className='flex-1'></div>
+            <Button >Sign up</Button>
         
            </DesktopMenuLinksContainerStyles>
-           <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex center'><MenuSvg/>Menu</MobileMenuButton>
+            <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex center'><MenuSvg/>Menu</MobileMenuButton>
                <MobileMenuModal open={openMenu} setOpen={setOpenMenu}></MobileMenuModal>
         </Container>
     </Header>
@@ -172,12 +159,12 @@ const DesktopMenuItem:React.FC<DesktopMenuItemProps> = ({children,link,  submenu
     
     return(
      
-        <MenuItem  className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"}><Link href={submenu?"":link}>{children}</Link>
+        <div  className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} style={{color:BLACKGREY}}><Link href={submenu?"":link}>{children}</Link>
         {submenu && <SubMenuContainer>
             {submenu}
          
         </SubMenuContainer>}
-        </MenuItem>
+        </div>
     )
 }
 
@@ -321,9 +308,11 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
         </Button>
     </MobileMenuModalHeaderStyles>
     <MobileLinkContainerStyles>
-        <MobileLinkStyles><Link href="about-us">
-            <div className='main-title'>{("About us")}</div>
-        </Link></MobileLinkStyles>
+        <MobileLinkStyles>
+            <Link href="about-us" className='main-title'>
+                {("About us")}
+            </Link>
+        </MobileLinkStyles>
         <MobileLinkStyles><Link href="/blog" className='main-title'>{("Blog")}</Link></MobileLinkStyles>
         <MobileLinkStyles onClick={()=>setOpenServices(previous=>!previous)}>
             <div className='main-title'>{("language")}<ArrowSvg/></div>

@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
 
         <Hero></Hero>
-        <ThreeCVsection/>
+        {/* <ThreeCVsection/> */}
         <FeaturesSection></FeaturesSection>
        <TemplatesSection></TemplatesSection>
        <FAQsection></FAQsection>

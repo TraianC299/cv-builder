@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react'
 import styled from 'styled-components';
 import { CvObjectType, useCVcontext } from '../../contexts/AppContext';
-import { DARKGREY } from '../../data/contants';
+import { GREY } from '../../data/contants';
 import useWindowSize from '../../hooks/useWindowSize';
 import { Button } from '../../styles/global';
 import TemplateZero from './cvTemplates/0';
@@ -95,8 +95,8 @@ const CvPreview = () => {
     ]
 
   return (
-    <div className='flex column ac jc' style={{background: DARKGREY, position:"relative"}}>
-          <div style={{transform:`translateY(${openTemplates? "calc(-126px - 1rem)":0})`}} className=' flex column gap1 transition'>
+    <div className='flex column ac jc' style={{background: GREY, position:"relative"}}>
+          <div style={{transform:`translateY(${openTemplates? "calc(-126px - 1rem)":0})`}} className=' flex column gap-4 transition'>
             <Container  scaleFactor={height ? height/842 - 0.2 : 1}>
               {/* <TemplateOne
               cvObject={cvObject}></TemplateOne> */}

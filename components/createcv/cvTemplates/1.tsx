@@ -96,7 +96,7 @@ const Section = ({children, title}:{
 })=> {
   return(
     <div>
-      <p className='p t600'>{title}</p>
+      <p className='p font-semibold'>{title}</p>
       {children}
     </div>
   )
@@ -130,7 +130,7 @@ const ProfileSection = ({name, surname, jobTitle, image}:{
     <ProfileSectionContainer className='flex column ac jc'>
       <img src={image || "https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"}></img>
       <div className='flex js column'>
-        <p className='h6 t600' >{name} {surname}</p>
+        <p className='h6 font-semibold' >{name} {surname}</p>
         <p className='sp' >{jobTitle}</p>
       </div>
     </ProfileSectionContainer>
@@ -176,7 +176,7 @@ const EmploymentItemContainer = styled.div``
 const EmploymentItem = ({title, startDate, endDate,description, employer, city}:EmploymentType) => {
   return(<EmploymentItemContainer>
       <div>
-        <p className='sp t600'>{title} at {employer} ({city})</p>  
+        <p className='sp font-semibold'>{title} at {employer} ({city})</p>  
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
       <p className='sp'>{description}</p>
@@ -189,7 +189,7 @@ const EducationItem = ({school, degree, city, startDate, endDate, description}:E
   return(
     <EmploymentItemContainer>
       <div>
-        <p className='sp t600'>{degree} at {school} ({city})</p>  
+        <p className='sp font-semibold'>{degree} at {school} ({city})</p>  
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
       <p className='sp'>{description}</p>

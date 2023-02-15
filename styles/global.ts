@@ -27,13 +27,11 @@ padding: 0.5rem 1rem;
 background-color: ${MAINCOLOR};
 color: white;
 border: none;
-border-radius: 5px;
 font-size: 1rem;
 font-weight: 600;
 min-height: 42px;
 cursor: pointer;
 transition:   all 0.3s ease-in-out;
-box-shadow: ${coloredShadow};
 
 
 &.small{

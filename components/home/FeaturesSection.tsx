@@ -17,6 +17,7 @@ color: ${BLACKGREY};
     display: flex;
     padding: 2rem 0rem;
     align-items: center;
+    gap: 5rem;
 
 }`
 
@@ -52,8 +53,8 @@ const FeaturesSection = () => {
   return (
     <FeaturesContainerStyles className='sectionPadding'>
         <TextContentStyles>
-            <h2 className='h3'>Services we offer</h2>
-            <p className='h6'>We provide a wide range of services mostly oriented in the Translation service provisioning with extra focus on Website, Gaming, and Software Development localization fields, as well as DTP and Machine Learning solutions. With a long history of experience working in the technical and creative areas, our Project Managers are ready to help you with your needs no matter the complexity.</p>
+            <h2 className='h2'>Why would you choose us?</h2>
+            <p className='h6'>ChatGPT is a chatbot developed by OpenAI and launched in November 2022. It is built on top of OpenAI's GPT-3 family of large language models and has been fine-tuned using both.</p>
         </TextContentStyles>
         <ServicesContainerStyles>
             {/* <Feature link="/services/translation-editing-and-proofreading" svg={<TemplatesSvg/>} title="Wide selection of templates and design options" description="To ensure the highest quality we always make sure the deliverables are double checked by the second linguist and by our Project Management team. We apply this mothod to all our Translation / Localization services."></Feature> */}

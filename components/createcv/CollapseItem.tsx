@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react'
 import styled from 'styled-components'
-import { DARKGREY, GREYWHITE, MAINCOLOR } from '../../data/contants'
+import { GREY, GREYWHITE, MAINCOLOR } from '../../data/contants'
 import Collapse from '../general/utilities/Collapse'
 
 
@@ -11,7 +11,7 @@ border-radius: 5px;
 padding: 1rem;
 flex-grow: 1;
 .sp{
-  color: ${DARKGREY};
+  color: ${GREY};
 }`
 
 
@@ -41,11 +41,11 @@ const CollapseItem = ({children, title, subtitle, open, setOpen, onDelete}:{
 }) => {
 
   return (
-    <div className='flex gap1 ac w-full'>
+    <div className='flex gap-4 ac w-full'>
       <Container>
           <MainContent onClick={()=>setOpen((p:boolean)=>!p)} className="flex ac pointer">
             <div>
-              <p className='p t600'>{title}</p>
+              <p className='p font-medium'>{title}</p>
               <p className='sp'>{subtitle}</p>
             </div>
             <p >{open?"☝️":"👇"}</p>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
-import { BLACKGREY, DARKGREY, GREYWHITE, MAINCOLOR } from '../../data/contants'
+import { BLACKGREY, GREY, GREYWHITE, MAINCOLOR } from '../../data/contants'
 import Link from 'next/link'
 import { Button } from '../../styles/global'
 import useScrollPosition from '../../hooks/useScrollPosition'
@@ -107,7 +107,7 @@ h1, h2, h3{
   color: ${BLACKGREY};
 }
 *{
-  color: ${DARKGREY};
+  color: ${GREY};
 }
 img{
       max-width:100%;
@@ -171,7 +171,7 @@ const BlogPage = ({post}) => {
         </Title>
         <BlogContent  className='blog sectionPadding' dangerouslySetInnerHTML={{__html: post.content}}></BlogContent>
         <CallToAction className='sectionPadding'>
-          <p style={{textAlign:"center"}} className="p t600">After reading this you might want to try out CV-builder, it's free so just give it a try</p>
+          <p style={{textAlign:"center"}} className="p font-semibold">After reading this you might want to try out CV-builder, it's free so just give it a try</p>
           <Link href="/create"><Button>{"Create your blog"}</Button></Link>
         </CallToAction>
       </Container>

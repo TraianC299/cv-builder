@@ -13,7 +13,7 @@ const salam = () => {
    
 
   return (
-    <Container className='flex column gap05'>
+    <Container className='flex column gap-2'>
         {list.map((item, index)=>(<DraggableComponent
         placeholder={placeholder}
         setPlaceholder={setPlaceholder}

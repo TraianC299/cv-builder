@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import ImageInput from './ImageInput'
 import styled from 'styled-components'
-import { DARKGREY, LIGHTGREY, MAINCOLOR, RED } from '../../../data/contants'
+import { GREY, LIGHTGREY, MAINCOLOR, RED } from '../../../data/contants'
 import { InputStyle } from '../../../styles/global'
 
 
@@ -20,7 +20,7 @@ width: 100%;
   padding: 0.1rem 0.5rem;
 }
 >label{
-  color: ${DARKGREY};
+  color: ${GREY};
   margin-bottom: 0.4rem;
     line-height: 20px;
 }

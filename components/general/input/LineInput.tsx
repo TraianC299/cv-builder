@@ -21,6 +21,7 @@ border-bottom: 1.5px solid ${MAINCOLOR};
 font-size: 1rem;
 font-family: inherit;
 font-size: inherit;
+font-family: inherit;
 :focus{
     outline: none;
 }

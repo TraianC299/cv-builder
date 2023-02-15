@@ -44,7 +44,7 @@ min-height: 400px;
 `
 const ThreeCVsection = () => {
   return (
-    <Container className='sectionPadding gap2'>
+    <Container className='sectionPadding gap-8'>
 <TextContentStyle className='flex column afs'>
     <h3 className='h3'>
 Try our professional Resume builder now!</h3>

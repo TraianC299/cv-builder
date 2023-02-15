@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import {  DARKGREY, MAINCOLOR, RED } from '../../../data/contants'
+import {  GREY, MAINCOLOR, RED } from '../../../data/contants'
 import { InputStyle } from '../../../styles/global'
 
 
@@ -18,7 +18,7 @@ width: 100%;
   padding: 0.1rem 0.5rem;
 }
 >label{
-  color: ${DARKGREY};
+  color: ${GREY};
   margin-bottom: 0.4rem;
     line-height: 20px;
 }

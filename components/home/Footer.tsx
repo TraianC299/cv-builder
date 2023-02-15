@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { BLACKGREY, DARKGREY, GREYWHITE, MAINCOLOR } from '../../data/contants';
+import { BLACKGREY, GREY, GREYWHITE, MAINCOLOR } from '../../data/contants';
    
 const Badge = styled.div`
 width: 150px;

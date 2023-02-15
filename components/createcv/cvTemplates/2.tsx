@@ -58,7 +58,7 @@ const TemplateTwo = ({cvObject, className}:{cvObject:CvObjectType, className?:st
       <Container2>
         <ColoredSection>
           <Section title={"Personal Info"}>
-            <div className='flex column gap05'>
+            <div className='flex column gap-2'>
               <p className='sp'>Location: {cvObject.city}, {cvObject.country}</p>
               <p className='sp'>Phone: {cvObject.phone}</p>
               <p className='sp'>Email: {cvObject.email}</p>
@@ -69,7 +69,7 @@ const TemplateTwo = ({cvObject, className}:{cvObject:CvObjectType, className?:st
           </Section>
         
           <Section title="Languages">
-            <div className='flex column gap05'>
+            <div className='flex column gap-2'>
               {cvObject.languages.map((el:SkillType)=><SkillInstance title={el.title} grade={el.metric}></SkillInstance>)}
             </div>
           </Section>
@@ -122,7 +122,7 @@ const Section = ({children, title}:{
 })=> {
   return(
     <div>
-      <SectionTitle className='p t600'>{title}</SectionTitle>
+      <SectionTitle className='p font-semibold'>{title}</SectionTitle>
       {children}
     </div>
   )
@@ -159,7 +159,7 @@ const ProfileSection = ({name, surname, jobTitle, image}:{
     <ProfileSectionContainer className='flex column ac jc'>
       <img src={image || "https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"}></img>
       <div className='flex js column'>
-        <p className='h4 t600' >{name} {surname}</p>
+        <p className='h4 font-semibold' >{name} {surname}</p>
         <p className='h6' >{jobTitle}</p>
       </div>
     </ProfileSectionContainer>
@@ -205,7 +205,7 @@ const EmploymentItemContainer = styled.div``
 const EmploymentItem = ({title, startDate, endDate,description, employer, city}:EmploymentType) => {
   return(<EmploymentItemContainer>
       <div>
-        <p className='sp t600'>{title} at {employer} ({city})</p>  
+        <p className='sp font-semibold'>{title} at {employer} ({city})</p>  
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
       <p className='sp'>{description}</p>
@@ -218,7 +218,7 @@ const EducationItem = ({school, degree, city, startDate, endDate, description}:E
   return(
     <EmploymentItemContainer>
       <div>
-        <p className='sp t600'>{degree} at {school} ({city})</p>  
+        <p className='sp font-semibold'>{degree} at {school} ({city})</p>  
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
       <p className='sp'>{description}</p>

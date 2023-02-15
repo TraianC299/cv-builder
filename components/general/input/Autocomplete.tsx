@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import useDidMountEffect from '../../../hooks/useDidMountEffect'
-import { DARKGREY, GREYWHITE, MAINCOLOR, shadow600 } from '../../../data/contants'
+import { GREY, GREYWHITE, MAINCOLOR, shadow600 } from '../../../data/contants'
 import Input from './Input'
 import useClickOutside from '../../../hooks/useClickOutside'
 
@@ -48,7 +48,7 @@ cursor: pointer;
 border-bottom: 0.5px solid ${GREYWHITE};
 justify-content:space-between ;
 >p{
-    color:${DARKGREY};
+    color:${GREY};
     font-size: 0.8rem;
 }
 :hover{

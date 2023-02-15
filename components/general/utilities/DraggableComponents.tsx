@@ -13,7 +13,7 @@ const DraggableComponents = ({children}) => {
    
 
   return (
-    <Container className='flex column gap05'>
+    <Container className='flex column gap-2'>
         {children}
         {/* {list.map((item, index)=>(<DraggableComponent
         placeholder={placeholder}

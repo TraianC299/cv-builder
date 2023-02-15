@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import { BLACKGREY, DARKGREY, device, shadow600 } from '../../data/contants'
+import { BLACKGREY, GREY, device, shadow600 } from '../../data/contants'
 import CoverImage from './CoverImage'
 import BlogAuthorInterface from '../../interfaces/blog-author'
 import DateFormatter from './DateFormatter'
@@ -28,12 +28,12 @@ row-gap:0.5rem;
 }
 >span{
     font-size: 0.9rem;
-    color: ${DARKGREY};
+    color: ${GREY};
     text-transform: uppercase;
     margin-bottom:-0.5rem;
 }
 >p{
-    color: ${DARKGREY}90;
+    color: ${GREY}90;
     display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;  

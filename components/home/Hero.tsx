@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import { BORDERCOLOR } from '../../data/contants'
+import { BORDERCOLOR, LIGHTGREY } from '../../data/contants'
 import useWindowSize from '../../hooks/useWindowSize'
 import { Button } from '../../styles/global'
 
@@ -10,8 +10,9 @@ import { Button } from '../../styles/global'
 const Container = styled.div`
 position: relative;
 height: 100vh;
-width: 100%;
-background: #eff2f9;
+flex: 1;
+margin: 0 2rem;
+background: ${LIGHTGREY};
 overflow: hidden;
 
 ::before{
@@ -154,10 +155,10 @@ overflow: hidden;
 const Hero = () => {
   return (
     <Container>
-        <div className='w-full h-full flex column ac jc text gap1'>
-            <h1 className='h2'>Only 2% of resumes make it past the first round. Be in the top 2%</h1>
+        <div className='w-full h-full flex column ac jc text gap-4'>
+            <h1 className='h1'>Only 2% of resumes make it past the first round. Be in the top 2%</h1>
             <p className='h6'>Use professional field-tested resume templates that follow the exact ‘resume rules’ employers look for. Easy to use and done within minutes - try now for free!</p>
-            <Link href="create-cv"><Button className='flex ac jc gap05'>Try it now <p className='sp t300'>It's free</p></Button></Link>
+            <Link href="create-cv"><Button className='flex ac jc gap-2'>Try it now <p className='sp t300'>It's free</p></Button></Link>
         </div>
         {Array.from({length: 15}).map((_, i) => <div className='card' ></div>)}
     </Container>

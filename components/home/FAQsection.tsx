@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Collapse from '../general/utilities/Collapse'
+import { GREY, MAINCOLOR } from '../../data/contants'
 
 
 const Container = styled.div`
@@ -15,17 +16,20 @@ const QuestionStyle = styled.div`
 const Question = ({question, answer}:{question:string, answer:string}) => {
     const [open, setOpen] = useState(false)
     return (
-        <QuestionStyle><div className='flex w-full jsb'><p className='h6'>{question}</p> <div className='pointer transition' style={{transform: `rotate(${open?180:0}deg)`}} onClick={()=>setOpen(prev=>!prev)}>👇</div></div>
+        <QuestionStyle>
+            <div className='flex w-full jsb'><p className='h5 mb-2'>{question}</p> 
+                <div className='pointer transition h6' style={{color:MAINCOLOR}} onClick={()=>setOpen(prev=>!prev)}>{open?"-":"+"}</div>
+            </div>
         <Collapse on={open}>
-            <p style={{paddingTop:"1rem"}} className='p'>{answer}</p>
+            <p className='p' style={{color: GREY, paddingTop:"1rem"}}>{answer}</p>
         </Collapse>
         </QuestionStyle>
     )
 }
 const FAQsection = () => {
   return (
-    <Container className='w-full flex column jc ac gap2 sectionPadding' style={{maxWidth:"800px", margin:"auto"}}>
-        <h3 className='h4' >Frequently Asked Questions</h3>
+    <Container className='w-full flex column jc ac gap-8 sectionPadding' style={{maxWidth:"800px", margin:"auto"}}>
+        <h3 className='h2' >Frequently Asked Questions</h3>
         <div >
             <Question question={"Is this CV building website free to use?"} answer={"Yes, this website is completely free to use. There are no fees or subscriptions required to create and download your CV."}></Question>
             <Question question={"Can I customize the layout and design of my CV?"} answer={"While this website offers a range of well-designed templates to choose from, it does not allow for customization of the design beyond selecting a template. However, you can still personalize your CV by adding your own content and information."}></Question>

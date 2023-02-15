@@ -1,6 +1,6 @@
 import {  ReactPropTypes, useCallback, useEffect, useRef } from "react";
 import styled from "styled-components";
-import { DARKGREY } from "../../../data/contants";
+import { GREY } from "../../../data/contants";
 import { InputStyle } from "../../../styles/global";
 
 // Dealing with Textarea Height
@@ -29,7 +29,7 @@ width: 100%;
   padding: 0.1rem 0.5rem;
 }
 >label{
-  color: ${DARKGREY};
+  color: ${GREY};
   margin-bottom: 0.4rem;
     line-height: 20px;
 }
