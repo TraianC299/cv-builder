@@ -159,12 +159,12 @@ const DesktopMenuItem:React.FC<DesktopMenuItemProps> = ({children,link,  submenu
     
     return(
      
-        <div  className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} style={{color:BLACKGREY}}><Link href={submenu?"":link}>{children}</Link>
+        <MenuItem  className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} style={{color:BLACKGREY, position:"relative"}}><Link href={submenu?"":link}>{children}</Link>
         {submenu && <SubMenuContainer>
             {submenu}
          
         </SubMenuContainer>}
-        </div>
+        </MenuItem>
     )
 }
 
@@ -184,7 +184,6 @@ background-color: white;
 box-shadow:${shadow600};
 transform: translateY(-10%);
 transition: all 0.15s ease-in-out;
-border-radius: 1rem;
 pointer-events: none;
 
 
@@ -195,7 +194,6 @@ align-items: center;
 justify-content: flex-start;
 font-weight: 600;
 font-size: 0.9rem;
-border-radius: 0.5rem;
 margin:auto;
 width: 100%;
 color: ${MAINCOLOR};
@@ -219,11 +217,8 @@ const MenuItem = styled.div`
     align-items: center;
     justify-content: center;
     height:2.5rem;
-    padding: 0 1.5rem;
-    color: ${MAINCOLOR};
-    font-weight: 600;
+    padding: 0 1rem;
     cursor: pointer;
-    border-radius: 1rem;
     position: relative;
 ::after{
     content: "";
@@ -250,18 +245,7 @@ const MenuItem = styled.div`
 
 
 &.active, .active{
-    position: relative;
-    ::before{
-        content: "";
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        right:10px;
-        background-color: ${MAINCOLOR};
-
-        border-radius: 5px;
-
-    }
+    border-bottom: 2px solid ${MAINCOLOR};
 }
 
     `

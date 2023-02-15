@@ -38,6 +38,7 @@ width: 100%;
 
 const AutosizeTextArea = styled(InputStyle)`
   padding-top: 15px;
+  font-family: inherit;
   padding-bottom:0;`
 
 

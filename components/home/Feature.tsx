@@ -26,10 +26,10 @@ padding: 2rem;
     svg{
         height: 1.5rem;
         width: auto;
-        fill: ${MAINCOLOR}; 
-        *{
+        /* fill: ${MAINCOLOR};  */
+        /* *{
             fill: ${MAINCOLOR};
-        }
+        } */
     }
 }
 >p{

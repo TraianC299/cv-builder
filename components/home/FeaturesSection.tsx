@@ -4,7 +4,6 @@ import {  BLACKGREY, device } from '../../data/contants'
 import SaveSvg from '../../assets/svg/features/save.svg'
 import Editor from '../../assets/svg/features/editor.svg'
 import PdfSvg from '../../assets/svg/features/pdf.svg'
-import TemplatesSvg from '../../assets/svg/features/templates.svg'
 import FreeSvg from '../../assets/svg/features/free.svg'
 import Feature from './Feature'
  

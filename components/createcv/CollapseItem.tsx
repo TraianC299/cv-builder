@@ -54,7 +54,7 @@ const CollapseItem = ({children, title, subtitle, open, setOpen, onDelete}:{
             {children}
           </Collapse>
       </Container>
-      {onDelete && <button style={{border:"none"}} onClick={onDelete}>🗑️</button>}
+      {onDelete && <button style={{border:"none"}} onClick={()=>onDelete()}>🗑️</button>}
     </div>
   )
 }
