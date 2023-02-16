@@ -1,4 +1,4 @@
 export interface TemplateContainerStyleProps {
     scaleFactor: number;
-    mobileScaleFactor: number;
+    mobileScaleFactor?: number;
   }

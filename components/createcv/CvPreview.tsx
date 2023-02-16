@@ -53,7 +53,7 @@ width: ${props=>565 *props.scaleFactor}px;
 
 @media ${device.mobileSmallPortrait}{
   width: 100vw;
-  height: ${props=>842 *props.mobileScaleFactor}px;
+  height: ${props=>842 * (props.mobileScaleFactor ?? 1)}px;
   >div{
   transform: scale(${props=>props.mobileScaleFactor});;
 }
