@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import ImageInput from './ImageInput'
 import styled from 'styled-components'
-import { GREY, LIGHTGREY, MAINCOLOR, RED } from '../../../data/contants'
+import { BLACK, GREY, LIGHTGREY, MAINCOLOR, RED } from '../../../data/contants'
 import { InputStyle } from '../../../styles/global'
 
 
@@ -14,7 +14,6 @@ align-items: flex-start;
 position:relative;
 height: fit-content;
 width: 100%;
-
 >p{
   font-size: 0.8rem;
   padding: 0.1rem 0.5rem;
@@ -22,7 +21,7 @@ width: 100%;
 >label{
   color: ${GREY};
   margin-bottom: 0.4rem;
-    line-height: 20px;
+  line-height: 20px;
 }
 `
 
@@ -34,15 +33,15 @@ align-items: center;
 background:white;
 transition: all 0.3s;
 cursor: pointer;
-box-shadow: inset 0px 0px 0px 2px ${MAINCOLOR};
+box-shadow: inset 0px 0px 0px 2px ${BLACK};
 
 >*{
-  color: ${MAINCOLOR};
+  color: ${BLACK};
 }
 
 
 &.selected{
-  background: ${MAINCOLOR};
+  background: ${BLACK};
   >*{
     color:white;
   }
@@ -73,11 +72,11 @@ const ButtonInputImage = ({image, setImage, imageError, setImageError, label, po
     <Container>
       <img style={{display: "none"}} onError={()=>setImage("")} src={image}></img>
       <label className='sp'>Your photo</label>
-      <SelectImageLabel as="label"  style={{borderColor: imageError?RED:loading?LIGHTGREY:MAINCOLOR}}   className={`${image?"selected":""}`}>
+      <SelectImageLabel as="label"  style={{borderColor: imageError?RED:loading?LIGHTGREY:BLACK}}   className={`${image?"selected":""}`}>
       {loading?
       // <Spinner style={{animation:"rotation 1s infinite"}}></Spinner>
       <p style={{animation:"rotation 1s infinite"}}>⌛</p>
-      :<p style={{color: imageError?RED:image?"white":MAINCOLOR}}>{imageError ? "Nicio Imagine" : image ? postInputLabel : label }</p>}
+      :<p style={{color: imageError?RED:image?"white":BLACK}}>{imageError ? "Nicio Imagine" : image ? postInputLabel : label }</p>}
       </SelectImageLabel>
     </Container>
 </ImageInput>

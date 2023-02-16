@@ -42,7 +42,7 @@ row-gap:1rem;
 
 
 @media ${device.laptopSmall}{
-
+    max-width: 500px;
     width: 55%;
 
 }

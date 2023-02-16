@@ -15,7 +15,7 @@ margin: 0 2rem;
 background: ${LIGHTGREY};
 overflow: hidden;
 
-::before{
+/* ::before{
     content: '';
     z-index: 9;
     position: absolute;
@@ -41,7 +41,7 @@ overflow: hidden;
     bottom: 0;
     -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
-}
+} */
 .text{
     position: absolute;
     left:50%;

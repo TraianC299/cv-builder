@@ -97,6 +97,17 @@ line-height: 60px;
   line-height: 1.5;
   letter-spacing: 0.0075em;
 }
+.sp{
+  font-size: 0.85rem;
+}
+
+.ssp{
+  font-size: 0.65rem;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
 
 .caption{
   font-size: 0.85rem;
@@ -106,9 +117,7 @@ line-height: 60px;
 .rounded{
   border-radius: 50%;
 }
-.sp{
-  font-size: 0.85rem;
-}
+
 .pointer{
   cursor: pointer;
 }

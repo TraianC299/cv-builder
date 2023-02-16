@@ -6,6 +6,7 @@ import { BLACKGREY, device, GREYWHITE } from '../../data/contants'
 import image1 from '../../assets/images/cv-images/0.jpg'
 import image2 from '../../assets/images/cv-images/1.jpg'
 import image3 from '../../assets/images/cv-images/2.jpg'
+import image4 from '../../assets/images/cv-images/3.jpg'
 
 import Image, { StaticImageData } from 'next/image'
 import { Button } from '../../styles/global'
@@ -41,6 +42,7 @@ color: ${BLACKGREY};
 row-gap:1rem;
 padding: 1.5rem;
 padding-bottom:0;
+max-width: 500px;
 @media ${device.laptopSmall}{
     width: 55%;
 }
@@ -82,9 +84,9 @@ scroll-behavior: smooth;
 `
 
 const templateImages = [
+    image4,
     image1,
     image2,
-    image3,
 ]
 
  
@@ -115,7 +117,7 @@ const TemplatesSection = () => {
                     ))}
                     </PointsContainer>
                     <TestimonialsContainerStyles ref={ref}>
-                        {templateImages.map((image, index)=><Testimonial selected={index===number} src={image}></Testimonial>)}
+                        {templateImages.map((image, index)=><Testimonial scaleFactor={1 - Math.abs(number - index)*0.1} src={image}></Testimonial>)}
                         </TestimonialsContainerStyles>
                 </Wrapper>
     </Container>
@@ -189,13 +191,13 @@ position: relative;
 
 interface TestimonialProps {
     src: StaticImageData;
-    selected: boolean;
+    scaleFactor: number;
 }
 
-const Testimonial:React.FC<TestimonialProps> = ({ src, selected }) => {
+const Testimonial:React.FC<TestimonialProps> = ({ src, scaleFactor }) => {
     const isMobile = useMediaQuery(device.mobileSmallPortrait)
     return(
-        <TextimonialContainerStyle className={selected?'selected transition':"transition"}>
+        <TextimonialContainerStyle style={{transform: `scale(${scaleFactor})`}} className={"transition"}>
             <Image alt='' height={427} width={293} src={src}></Image>
             <div className='flex ac jc transition' >
                 <Button className='small'>Try it now</Button>

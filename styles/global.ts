@@ -6,7 +6,7 @@ export const InputStyle = styled.input`
   width: 100%;
   align-items: center;
   justify-content: flex-start;
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
   font-size: 1rem;
   padding: 1rem ;
   background: ${GREYWHITE};

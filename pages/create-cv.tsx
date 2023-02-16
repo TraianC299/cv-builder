@@ -10,13 +10,12 @@ import AutosizeInput from '../components/general/input/AutosizeInput'
 import ButtonInputImage from '../components/general/input/ButtonImageInput'
 import Input from '../components/general/input/Input'
 import { CvObjectType, CVprovider, useCVcontext } from '../contexts/AppContext'
-import {  GREY, GREYWHITE } from '../data/contants'
-import { Button } from '../styles/global'
 import useWindowSize from '../hooks/useWindowSize'
 import TemplateOne from '../components/createcv/cvTemplates/1'
 import CvPreview from '../components/createcv/CvPreview'
 import InternshipInstance from '../components/createcv/InternshipInstance'
 import { NextPage } from 'next'
+import { device } from '../data/contants'
 
 
 
@@ -32,6 +31,11 @@ display: grid;
 height: 100vh;
 overflow: hidden;
 grid-template-columns: 600px 1fr;
+
+@media ${device.mobileSmallPortrait}{
+  grid-template-columns: 1fr;
+
+}
 `
 
 
@@ -42,9 +46,6 @@ grid-template-columns: 600px 1fr;
 
 
 const Main = () => {
-
-  const {height, width} = useWindowSize()
-  const {cvObject, setCvObject} = useCVcontext()
 
 
 
@@ -200,7 +201,7 @@ const CreateCvModal = () => {
       <div className='flex column' style={{rowGap:"0.5rem"}}>
         <div className='flex jc ac' style={{columnGap:"1rem"}}>
           <Input value={cvObject.jobTitle} setValue={(v:InputEvent)=>{setCvObject((prev:CvObjectType)=>({...prev, jobTitle:v}))}} placeholder='eg. Teacher' label="Job Title"></Input>
-          <ButtonInputImage image={cvObject.profileImage}  setImage={(v:string | null)=>{setCvObject((prev:CvObjectType)=>({...prev, profileImage:v}))}} label='Choosle your image' postInputLabel='Image chosen'></ButtonInputImage>
+          <ButtonInputImage image={cvObject.profileImage}  setImage={(v:string | null)=>{setCvObject((prev:CvObjectType)=>({...prev, profileImage:v}))}} label='Choose your image' postInputLabel='Image chosen'></ButtonInputImage>
         </div>
         <div className='flex' style={{columnGap:"1rem"}}>
           <Input value={cvObject.name} setValue={(v:InputEvent)=>{setCvObject((prev:CvObjectType)=>({...prev, name:v}))}} label='First Name'></Input>
