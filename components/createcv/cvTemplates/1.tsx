@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { CvObjectType, EducationType, EmploymentType, SkillType, useCVcontext } from '../../../contexts/AppContext'
-import { GREEN, GREYWHITE, WHITE, YELLOW } from '../../../data/contants'
+import { DARKBLUE, YELLOW } from '../../../data/contants'
+import { WHITE } from '../../../data/contants'
 
 
 
@@ -11,7 +12,7 @@ height: 842px;
 width: 595px;
 
 display: grid;
-grid-template-columns: 242px 314px;
+grid-template-columns: 222px 373px;
 
 background: white;
 position: relative;
@@ -34,7 +35,10 @@ row-gap: 8px;`
 
 
 const ColoredSection = styled.div`
-background: #f5f5f5;
+background: ${DARKBLUE};
+*{
+  color: white;
+}
 `
 const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
 
@@ -110,8 +114,8 @@ margin-bottom: 8px;
 margin-top:8px;
 z-index:999;
 >img{
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -144,13 +148,13 @@ width:100%;
 row-gap: 4px;
 >div{
   width:100%;
-  background: white;
+  background: ${WHITE}50;
   height: 5px;
   border-radius: 444px;
   overflow: hidden;
   >div{
     height: 5px;
-    background: ${YELLOW};
+    background: ${WHITE};
   }
 }`
 const SkillInstance = ({title, grade}:{

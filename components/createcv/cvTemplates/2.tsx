@@ -9,7 +9,7 @@ import {  GREYWHITE, YELLOW } from '../../../data/contants'
 const Container = styled.div`
 height: 842px;
 width: 595px;
-padding: 48px;
+padding: 24px;
 background: white;
 position: relative;
 transform-origin:0 0;
@@ -24,7 +24,7 @@ column-gap: 24px;
 
 const Container2 = styled.div`
 display: grid;
-grid-template-columns: 137px 338px;
+grid-template-columns: 137px 364px;
 column-gap: 24px;
 >div{
   display: flex;
@@ -131,10 +131,10 @@ const Section = ({children, title}:{
 
 
 const ProfileSectionContainer = styled(Container2)`
-
 margin-bottom: 8px;
 margin-top:8px;
 z-index:999;
+justify-content: start;
 >div{
   row-gap: 0rem;
 }
@@ -143,6 +143,7 @@ z-index:999;
   width: 100px;
   border-radius: 50%;
   object-fit: cover;
+  margin-left: auto;
 }
 p{
     text-align:left;

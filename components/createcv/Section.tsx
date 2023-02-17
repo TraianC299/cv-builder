@@ -15,7 +15,9 @@ const Section = ({children, title, subtitle, onClick}:{children:ReactNode, title
       <section>
         <Header className='flex jsb ac'>
           <div>
-            <h3 className='h5 font-normal'>{title}</h3>
+            <div className='flex ac jfs'>
+              <h3 className='h5 font-normal'>{title}</h3>
+            </div>
             <p style={{color: GREY}} className='sp'>{subtitle}</p>
           </div>
           {onClick && <Button className='small' onClick={e=>{e.preventDefault();onClick()}}>+ add new</Button>}

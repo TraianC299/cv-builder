@@ -1,5 +1,5 @@
 export const BLACK = "#000"
-export const WHITE = "#fff"
+export const WHITE = "#ffffff"
 export const BORDERCOLOR = "#D5DDE0"
 export const YELLOW = "#FFE000"
 export const GREY = "#636363"
@@ -9,7 +9,8 @@ export const GREYWHITE = "#F5F5F5"
 export const RED  = "#FF5252"
 export const MAINCOLOR = "#E44141"
 export const GREEN = "#15CF74"
-
+export const DARKGREEN = "#0F9D58"
+export const DARKBLUE = "#082a4d"
 
 export const shadow600  = "0px 20px 30px rgba(14, 36, 58, 0.1)"
 export const coloredShadow = "0 10px 20px -10px rgba(0, 116, 255, 0.5);"

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {  BLACKGREY, device } from '../../data/contants'
+import {  BLACKGREY, GREEN, GREY, LIGHTGREY, device } from '../../data/contants'
 import SaveSvg from '../../assets/svg/features/save.svg'
 import Editor from '../../assets/svg/features/editor.svg'
 import PdfSvg from '../../assets/svg/features/pdf.svg'
@@ -23,13 +23,14 @@ color: ${BLACKGREY};
 const ServicesContainerStyles = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-grid-gap: 1rem;
-
+/* grid-gap: 1rem; */
+gap:2px;
+background-color: ${LIGHTGREY};
 @media ${device.laptopSmall}{
     width: 45%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 1rem;
+    /* grid-gap: 1rem; */
 }`
 
 const TextContentStyles = styled.div`

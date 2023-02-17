@@ -46,7 +46,7 @@ opacity: 1;
 
 const Container = styled.div<TemplateContainerStyleProps>`
 height: ${props=>842 *props.scaleFactor}px;
-width: ${props=>565 *props.scaleFactor}px;
+width: ${props=>595 *props.scaleFactor}px;
 >div{
   transform: scale(${props=>props.scaleFactor});
 }
@@ -151,7 +151,7 @@ const CvPreview = () => {
               
             </Container>
             <div  className='flex jsb'>
-              <Button className='small' onClick={()=>setOpenTemplates(prev=>!prev)}>Select Template</Button>
+              <Button className='small text' style={{color:"white"}} onClick={()=>setOpenTemplates(prev=>!prev)}>Select Template</Button>
               <Button className='small' onClick={(e)=>{e.preventDefault();generatePDF()}}>{loading?<p style={{animation:"rotation 1s infinite"}} >⌛</p>:"Download Pdf"}</Button>
             </div>
           </div>

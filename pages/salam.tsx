@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import useMousePosition from '../hooks/useMousePosition'
 const Container = styled.ul``
 
 const salam = () => {
-    const [placeholder, setPlaceholder] = React.useState(0)
+    const [placeholder, setPlaceholder] = React.useState<number | null>(null)
     const [list, setList] = React.useState(["A","B","C","D","E"])
-    const [overIndex, setOverIndex] = React.useState(null)
+    const [overIndex, setOverIndex] = React.useState<number | null>(null)
    
 
 
@@ -67,9 +66,21 @@ transition: 0.3s cubic-bezier(0.2, 1, 0.1, 1);
 }
 `
 
+type DraggableComponentProps = {
+    children:React.ReactNode,
+    placeholder: number | null,
+    setPlaceholder: React.Dispatch<React.SetStateAction<number | null>>,
+    list: string[],
+    setList: React.Dispatch<React.SetStateAction<string[]>>,
+    index: number,
+    overIndex: number | null,
+    setOverIndex: React.Dispatch<React.SetStateAction<number | null>>
+}
 
-const DraggableComponent = ({children, placeholder, setPlaceholder, list, setList, index, overIndex, setOverIndex})=> {
-    function onDragStart(e:DragEvent<HTMLDivElement>, index:number) {
+
+const DraggableComponent = ({children, placeholder, setPlaceholder, list, setList, index, overIndex, setOverIndex}:DraggableComponentProps)=> {
+    function onDragStart(e: any | undefined, index:number) {
+        if(!e)return
         e.target.visibility = 'hidden';
         e.target.style.opacity = '0.001';
         e.dataTransfer.effectAllowed = 'move';
@@ -79,18 +90,16 @@ const DraggableComponent = ({children, placeholder, setPlaceholder, list, setLis
         // e.dataTransfer.setData('text/html', e.target.innerHTML);
       }
 
-    const onDragEnd = (e: DragEvent<HTMLDivElement>) => {
+    const onDragEnd = (e:any ) => {
         e.target.style.opacity = '1';
         e.target.visibility = 'visible';
         setOverIndex(null)
-       
-
     }
-    function onDragDrop(ev:DragEvent<HTMLDivElement>, index:number) {
+    function onDragDrop(ev:React.DragEvent<HTMLDivElement>, index:number) {
         ev.stopPropagation();
         //rearrange list
         const listPLaceholder = [...list]
-        const item = listPLaceholder.splice(placeholder, 1)[0]
+        const item = listPLaceholder.splice(placeholder ??1, 1)[0]
         listPLaceholder.splice(index, 0, item)
         setList(listPLaceholder)
         setPlaceholder(null)
@@ -107,18 +116,30 @@ const DraggableComponent = ({children, placeholder, setPlaceholder, list, setLis
       }
 
 
-      function handleDragEnter(e:DragEvent<HTMLDivElement>) {
-        e.target.classList.add('over');
-        setOverIndex(index)
-      }
-      function handleDragLeave(e:DragEvent<HTMLDivElement>) {
-        e.target.classList.remove('over');
-      }
-    
-      function handleDragOver(e:DragEvent<HTMLDivElement>) {
+      console.log(overIndex)
+
+    function handleDragEnter(e:React.DragEvent<HTMLDivElement>){
+        
         e.preventDefault();
-        return false;
-      }
+        e.stopPropagation();
+        setOverIndex(index)
+    }
+    function handleDragLeave(e:React.DragEvent<HTMLDivElement>){
+
+        e.preventDefault();
+        e.stopPropagation();
+        setOverIndex(null)
+    }
+    function handleDragOver(e:React.DragEvent<HTMLDivElement>){
+
+        e.preventDefault();
+        e.stopPropagation();
+        setOverIndex(index)
+    }
+
+
+
+
 
 
       
@@ -130,7 +151,7 @@ const DraggableComponent = ({children, placeholder, setPlaceholder, list, setLis
         onDragStart={(e)=>onDragStart(e, index)} 
         onDragEnd={(e)=>onDragEnd(e)} 
         draggable={true} 
-        className={`flex ac jc ${overIndex===index?"over":""}`}
+        className={`flex ac jc transition ${overIndex===index?"over":""}`}
         aria-roledescription="This is a draggable item. Press space to lift.">{children}
         </DraggabbleContainerStyle>)
 }

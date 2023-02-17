@@ -12,9 +12,10 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
-border-radius: 8px;
+
 row-gap: 8px;
 padding: 2rem;
+background: white;
 >div{
     padding: 0.75rem;
     width: fit-content;
@@ -52,7 +53,7 @@ font-size: 0.9rem;
 
 @media ${device.laptopSmall}{
     padding: 1.5rem;
-    transform: scale(0.9);
+    transform: scale(1);
    >h4{
     min-height: 3.5rem;
    }

@@ -29,6 +29,13 @@ export default Template
 
 
 
+Template.getLayout = function getLayout(page: React.ReactNode) {
+  return (
+    <>
+      {page}
+    </>
+  )
+}
 
 export const getServerSideProps:GetServerSideProps = async (context) => {
   

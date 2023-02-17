@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { CvObjectType, EducationType, EmploymentType, SkillType, useCVcontext } from '../../../contexts/AppContext'
-import { GREEN, GREYWHITE, WHITE } from '../../../data/contants'
-import useWindowSize from '../../../hooks/useWindowSize'
+import { GREEN, GREYWHITE, MAINCOLOR, WHITE } from '../../../data/contants'
 
 
 
@@ -17,6 +16,7 @@ column-gap: 1rem;
 background: white;
 position: relative;
 transform-origin:0 0;
+overflow: hidden;
 >div{
   display: flex;
   flex-direction: column;
@@ -28,9 +28,9 @@ transform-origin:0 0;
   position: absolute;
   top:0;
   left:0;
-  height: 125px;
+  height: 150px;
   width: 338px;
-  background: ${GREEN};
+  background: ${MAINCOLOR};
   z-index:0;
   border-radius: 0 0 20px 0;
 }
@@ -149,7 +149,7 @@ row-gap: 4px;
   overflow: hidden;
   >div{
     height: 5px;
-    background: ${GREEN};
+    background: ${MAINCOLOR};
   }
 }`
 const SkillInstance = ({title, grade}:{

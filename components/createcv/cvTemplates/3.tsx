@@ -30,7 +30,7 @@ transform-origin:0 0;
 }
 `
 
-const Container2 = styled.div`
+const InfoSection = styled.div`
 width: 100%;
 justify-content: space-between;
 display: grid;
@@ -55,6 +55,13 @@ grid-gap: 1rem;
 
 
 
+const SecondContainer = styled.div`
+div:last-child{
+    border: none !important;
+}
+`
+
+
 const TemplateTwo = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
 
 
@@ -64,7 +71,7 @@ const TemplateTwo = ({cvObject, className}:{cvObject:CvObjectType, className?:st
     // style={{transform: `scale(${height ? height/842 - 0.1 : 1})`}}
     >
         <ProfileSection name={cvObject.name} surname={cvObject.surname} jobTitle={cvObject.jobTitle} image={cvObject.profileImage}></ProfileSection>
-      <Container2>
+      <InfoSection>
         <div >
           <Section style={{borderTop:"2px solid black"}} title={"Hobbies"}>
             <p className='sp'>{cvObject.hobbies}</p>
@@ -77,7 +84,7 @@ const TemplateTwo = ({cvObject, className}:{cvObject:CvObjectType, className?:st
           </Section>
         
           </div>
-          <div style={{borderLeft:"2px solid black"}}>
+          <SecondContainer style={{borderLeft:"2px solid black"}}>
               <Section style={{borderTop:"2px solid black"}} title={"Professional Summary"}>
                 <p className='sp'>{cvObject.summary}</p>
               </Section>
@@ -90,20 +97,23 @@ const TemplateTwo = ({cvObject, className}:{cvObject:CvObjectType, className?:st
               <Section title={"Education History"}>
               {cvObject.education.map((el:EducationType)=><EducationItem {...el} key={el.id}></EducationItem>)}
               </Section>
-              <Section style={{border:"none"}} title="Skills">
+              <Section title="Skills">
             <SkillsContainer>
               {cvObject.skills.map((el:SkillType)=><SkillInstance title={el.title} grade={el.metric}></SkillInstance>)}
             </SkillsContainer>
           </Section>
         
-          </div>
-      </Container2>
+          </SecondContainer>
+      </InfoSection>
         
     </Container>
   )
 }
 
 export default TemplateTwo
+
+
+
 
 
 

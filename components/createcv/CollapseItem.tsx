@@ -6,7 +6,7 @@ import Collapse from '../general/utilities/Collapse'
 
 
 const Container = styled.div`
-border: 2px solid ${GREYWHITE};
+border: 1px solid ${GREYWHITE};
 border-radius: 5px;
 padding: 1rem;
 flex-grow: 1;
