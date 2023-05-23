@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Input from '../general/input/Input'
-import OptionSelector from '../general/input/OptionSelector'
+import Input from '../system/input/Input'
+import OptionSelector from '../system/input/OptionSelector'
 import CollapseItem from './CollapseItem'
 import useDidMountEffect from '../../hooks/useDidMountEffect'
 import { SkillType } from '../../contexts/AppContext'

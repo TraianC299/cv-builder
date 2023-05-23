@@ -127,7 +127,19 @@ justify-content: center;
 margin: 5rem 0;
 row-gap: 1rem;
 `
-const BlogPage = ({post}) => {
+
+type Props = {
+  post: {
+    slug: any
+    title: string
+    description: string
+    keywords: string
+    image: string
+    content: string
+  }
+}
+
+const BlogPage = ({post}:Props) => {
   const router = useRouter()
 
   const scrollPosition = useScrollPosition()
@@ -184,7 +196,7 @@ export default BlogPage
 
 
 
-export async function getStaticProps({ params }: Params) {
+export async function getStaticProps({ params }:any) {
   const post = getPostBySlug(params.slug, [
     'title',
     'date',

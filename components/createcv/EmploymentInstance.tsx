@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Input from '../general/input/Input'
+import Input from '../system/input/Input'
 import CollapseItem from './CollapseItem'
 import useDidMountEffect from '../../hooks/useDidMountEffect'
 import { CvObjectType, EmploymentType, useCVcontext } from '../../contexts/AppContext'
-import AutosizeInput from '../general/input/AutosizeInput'
-import MonthYearSelector from '../general/input/MonthYearSelector'
+import AutosizeInput from '../system/input/AutosizeInput'
+import MonthYearSelector from '../system/input/MonthYearSelector'
 
 
 

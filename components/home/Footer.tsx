@@ -95,7 +95,7 @@ const Footer = () => {
             </Column> */}
             <Column>
               <Heading>{"Contact"}</Heading>
-              <a href = "mailto: info@easttranslator.com">info@easttranslators.com</a>
+              <a href = "mailto: info@resumelio.com">info@easttranslators.com</a>
               <a href = "tel: +37369513786">Tel: +37369513786</a>
             </Column>
             {/* <Column>

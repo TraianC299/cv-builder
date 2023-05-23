@@ -85,8 +85,8 @@ scroll-behavior: smooth;
 
 const templateImages = [
     image4,
-    image1,
     image2,
+    image3,
 ]
 
  

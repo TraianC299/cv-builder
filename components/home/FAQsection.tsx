@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Collapse from '../general/utilities/Collapse'
+import Collapse from '../system/utilities/Collapse'
 import { GREY, MAINCOLOR } from '../../data/contants'
 
 

@@ -116,7 +116,6 @@ const DraggableComponent = ({children, placeholder, setPlaceholder, list, setLis
       }
 
 
-      console.log(overIndex)
 
     function handleDragEnter(e:React.DragEvent<HTMLDivElement>){
         

@@ -9,7 +9,7 @@ import Link from 'next/link'
 import { useRouter } from "next/router";
 import { BLACKGREY, device, shadow600, WHITE, MAINCOLOR } from '../../data/contants'
 import { Button } from '../../styles/global'
-import Collapse from '../general/utilities/Collapse'
+import Collapse from '../system/utilities/Collapse'
 
 
 

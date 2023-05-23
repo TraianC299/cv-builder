@@ -3,12 +3,12 @@ const useMousePosition = () => {
   const [
     mousePosition,
     setMousePosition
-  ] = React.useState({ x: null, y: null });
+  ] = React.useState<{x:null | number, y:null | number,}>({ x: null, y: null });
   React.useEffect(() => {
-    const updateMousePosition = (ev) => {
+    const updateMousePosition = (ev:MouseEvent) => {
       setMousePosition({ x: ev.clientX, y: ev.clientY });
     };
-    window.addEventListener('mousemove', updateMousePosition);
+    window.addEventListener('mousemove', (e)=>updateMousePosition(e));
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
     };
