@@ -14,7 +14,6 @@ color: ${BLACKGREY};
 
 @media ${device.laptopSmall}{
     display: flex;
-    padding: 2rem 0rem;
     align-items: center;
     gap: 5rem;
 
@@ -24,13 +23,20 @@ const ServicesContainerStyles = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 /* grid-gap: 1rem; */
-gap:2px;
-background-color: ${LIGHTGREY};
+gap:1rem;
+>div{
+    border-bottom: 1px solid ${LIGHTGREY};
+}
 @media ${device.laptopSmall}{
+    gap:2px;
+    background-color: ${LIGHTGREY};
+    
     width: 45%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    /* grid-gap: 1rem; */
+    >div{
+    border-bottom: none;
+    }
 }`
 
 const TextContentStyles = styled.div`
@@ -40,6 +46,7 @@ flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
 row-gap:1rem;
+margin-bottom: 2rem;
 
 
 @media ${device.laptopSmall}{

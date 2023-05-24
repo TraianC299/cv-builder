@@ -9,39 +9,12 @@ import { Button } from '../../styles/global'
 
 const Container = styled.div`
 position: relative;
-height: 100vh;
+height: 80vh;
 flex: 1;
-margin: 0 2rem;
+margin: 0 1rem;
 background: ${LIGHTGREY};
 overflow: hidden;
 
-/* ::before{
-    content: '';
-    z-index: 9;
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 160px;
-    width:100%;
-    background: -webkit-gradient(linear,left top,left bottom,from ${BORDERCOLOR},to(rgba(239,242,249,0)));
-    background: linear-gradient(to bottom,${BORDERCOLOR},rgba(239,242,249,0));
-    pointer-events: none;
-
-}
-::after{
-    content: '';
-    z-index: 9;
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 160px;
-    background: -webkit-gradient(linear,left top,left bottom,from(${BORDERCOLOR}),to(rgba(239,242,249,0)));
-    background: linear-gradient(to bottom,${BORDERCOLOR},rgba(239,242,249,0));
-    pointer-events: none;
-    bottom: 0;
-    -webkit-transform: scaleY(-1);
-    transform: scaleY(-1);
-} */
 .text{
     position: absolute;
     left:50%;
@@ -50,6 +23,7 @@ overflow: hidden;
     margin:auto;
     text-align:center;
     z-index: 2;
+    padding: 0 1rem;
 }
 @keyframes slide {
     0% {
@@ -139,7 +113,7 @@ overflow: hidden;
                 z-index: 0;
                 height: 100%;
                 width: 100%;
-                background: url("https://resume.io/assets/media/skeleton-3e3de1e4a53f043e9f188.png");
+                background: url("/assets/images/hero-card.png");
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -156,8 +130,8 @@ const Hero = () => {
   return (
     <Container>
         <div className='w-full h-full flex column ac jc text gap-4'>
-            <h1 className='h1'>Only 2% of resumes make it past the first round. Be in the top 2%</h1>
-            <p className='h6'>Use professional field-tested resume templates that follow the exact ‘resume rules’ employers look for. Easy to use and done within minutes - try now for free!</p>
+            <h1 className='h1'>Land Your Dream Job With a Stand-Out CV</h1>
+            <p className='h6'>Create a professional, tailor-made CV in minutes with our user-friendly builder. No design skills needed!</p>
             <Link href="create-cv"><Button className='flex ac jc gap-2'>Try it now <p className='sp t300'>It's free</p></Button></Link>
         </div>
         {Array.from({length: 15}).map((_, i) => <div className='card' ></div>)}

@@ -1,9 +1,9 @@
 import { nanoid } from 'nanoid'
 import React from 'react'
 import styled from 'styled-components'
-import CvTemplateZero from '../components/createcv/cvTemplates/0'
-import EducationInstance from '../components/createcv/EducationInstance'
-import EmploymentInstance from '../components/createcv/EmploymentInstance'
+import CvTemplateZero from '../components/templates/0'
+import EducationInput from '../components/createcv/EducationInput'
+import EmploymentInput from '../components/createcv/EmploymentInput'
 import Section from '../components/createcv/Section'
 import Skill from '../components/createcv/Skill'
 import AutosizeInput from '../components/system/input/AutosizeInput'
@@ -11,11 +11,12 @@ import ButtonInputImage from '../components/system/input/ButtonImageInput'
 import Input from '../components/system/input/Input'
 import { CvObjectType, CVprovider, useCVcontext } from '../contexts/AppContext'
 import useWindowSize from '../hooks/useWindowSize'
-import TemplateOne from '../components/createcv/cvTemplates/1'
+import TemplateOne from '../components/templates/1'
 import CvPreview from '../components/createcv/CvPreview'
-import InternshipInstance from '../components/createcv/InternshipInstance'
+import InternshipInput from '../components/createcv/InternshipInput'
 import { NextPage } from 'next'
 import { device } from '../data/contants'
+import { PageSEO } from '../components/utilities/SEO'
 
 
 
@@ -195,6 +196,11 @@ const CreateCvModal = () => {
 
 
   return(
+    <>
+    <PageSEO
+    title="Create your CV"
+    description="Create your CV with our easy to use CV creator. Choose from multiple templates and create your CV in minutes."
+    />
     <ModalContainer>
 
       <Section title='Personal Info'>
@@ -232,20 +238,21 @@ const CreateCvModal = () => {
       </Section>
       <Section title="Employment history" onClick={addNewEmployment}>
       <SkillsContainer >
-        {cvObject.employment.map(el=><EmploymentInstance key={el.id}  {...el} edit={el.edit || false}></EmploymentInstance>)}
+        {cvObject.employment.map(el=><EmploymentInput key={el.id}  {...el} edit={el.edit || false}></EmploymentInput>)}
       </SkillsContainer>
       </Section>
       <Section title="Education" onClick={addNewEducation}>
-      {cvObject.education.map(el=><EducationInstance key={el.id}  {...el}></EducationInstance>)}
+      {cvObject.education.map(el=><EducationInput key={el.id}  {...el}></EducationInput>)}
 
       </Section>
       <Section title="Internships" onClick={addInternship}>
-      {cvObject.internships.map(el=><InternshipInstance key={el.id}  {...el}></InternshipInstance>)}
+      {cvObject.internships.map(el=><InternshipInput key={el.id}  {...el}></InternshipInput>)}
 
       </Section>
 
       
     </ModalContainer>
+    </>
   )
 }
 

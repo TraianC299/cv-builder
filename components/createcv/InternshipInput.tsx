@@ -9,7 +9,7 @@ import MonthYearSelector from '../system/input/MonthYearSelector'
 
 
 
-const EmploymentInstance = ({title, employer,city, description, edit, startDate, endDate, id}:EmploymentType) => {
+const InternshipInput = ({title, employer,city, description, edit, startDate, endDate, id}:EmploymentType) => {
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
     const [open, setOpen] = useState(edit?true:false)
     const [titleState, setTitleState] = useState(title || "")
@@ -25,9 +25,9 @@ useDidMountEffect(()=>{
 },[edit])
 
 useDidMountEffect(()=>{
-  const index = cvObject.employment.findIndex(el=>el.id===id)
-  const skillsPlaceholder = [...cvObject.employment]
-  skillsPlaceholder[index] = {
+  const index = cvObject.internships.findIndex(el=>el.id===id)
+  const internshipsPlaceholder = [...cvObject.internships]
+  internshipsPlaceholder[index] = {
     id:id,
     title:titleState,
     employer: employerState,
@@ -38,7 +38,7 @@ useDidMountEffect(()=>{
     endDate: endDateState
   }
   setCvObject((prev:CvObjectType)=>({
-    ...prev, employment:skillsPlaceholder
+    ...prev, internships:internshipsPlaceholder
   }))
 },[titleState, descriptionState, cityState, startDateState, endDateState, employerState])
 
@@ -73,4 +73,4 @@ useDidMountEffect(()=>{
 
 
 
-export default EmploymentInstance
+export default InternshipInput

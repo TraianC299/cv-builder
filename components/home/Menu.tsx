@@ -4,12 +4,10 @@ import LogoSvg from "../../assets/svg/logo.svg"
 import MenuSvg from "../../assets/svg/menu.svg"
 import MenuLogo from "../../assets/svg/menuLogo.svg"
 import CloseSvg from "../../assets/svg/close.svg"
-import ArrowSvg from "../../assets/svg/arrowDown.svg"
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { BLACKGREY, device, shadow600, WHITE, MAINCOLOR } from '../../data/contants'
 import { Button } from '../../styles/global'
-import Collapse from '../system/utilities/Collapse'
 
 
 
@@ -22,7 +20,7 @@ position: sticky;
 top:0;
 z-index: 10;
 left:0;
-padding:0.75rem 1.5rem;
+padding:0.75rem 1rem;
 background: ${WHITE};
 
 /* &.not-stuck{
@@ -114,7 +112,7 @@ const Menu = () => {
   return (
     <Header
     id="header" 
-    className={stuck?"stuck transition":"not-stuck transition"}
+    className={stuck?"stuck transition sectionPadding":"not-stuck transition sectionPadding"}
     >
         <Container   className='flex'>
            <Link href="/" id="logo">
@@ -123,7 +121,7 @@ const Menu = () => {
            <DesktopMenuLinksContainerStyles>
             <DesktopMenuItem  link="/about-us">{"About us"}</DesktopMenuItem>
             <DesktopMenuItem link="/blog">{"Blog"}</DesktopMenuItem>
-            <DesktopMenuItem link="/services" submenu={
+            {/* <DesktopMenuItem link="/services" submenu={
                 <>
                 <Link className={router.locale === "ro" ? "active" : ""} href="/" locale="ro">{"Romanian"}</Link>
                 <Link className={router.locale === "en" ? "active" : ""} href="/" locale="en">{"English"}</Link>
@@ -132,9 +130,9 @@ const Menu = () => {
                 </>
             }>
                 {"Language"}
-            </DesktopMenuItem>
+            </DesktopMenuItem> */}
             <div className='flex-1'></div>
-            <Button >Sign up</Button>
+            <Link href={"/create-cv"}><Button >Start now</Button></Link>
         
            </DesktopMenuLinksContainerStyles>
             <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex center'><MenuSvg/>Menu</MobileMenuButton>
@@ -265,7 +263,7 @@ const MobileMenuModalHeaderStyles = styled(Container)`
 margin:0;
 position: auto;
 background: transparent;
-padding:0.75rem 1.5rem;
+padding:0.75rem 1rem;
 >svg{
     cursor: pointer;
 }`
@@ -298,7 +296,7 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
             </Link>
         </MobileLinkStyles>
         <MobileLinkStyles><Link href="/blog" className='main-title'>{("Blog")}</Link></MobileLinkStyles>
-        <MobileLinkStyles onClick={()=>setOpenServices(previous=>!previous)}>
+        {/* <MobileLinkStyles onClick={()=>setOpenServices(previous=>!previous)}>
             <div className='main-title'>{("language")}<ArrowSvg/></div>
             <Collapse on={openServices}>
             <MobileSubMenuContainerStyle>
@@ -308,7 +306,7 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
             </MobileSubMenuContainerStyle>
 
             </Collapse>
-        </MobileLinkStyles>
+        </MobileLinkStyles> */}
      
     </MobileLinkContainerStyles>
         </MobileMenuModalStyles>
@@ -351,7 +349,7 @@ pointer-events: none;
 `
 
 const MobileLinkContainerStyles = styled.div`
-padding: 1.5rem;
+padding: 1rem;
 display: flex;
 flex-direction: column;
 width: 100%;

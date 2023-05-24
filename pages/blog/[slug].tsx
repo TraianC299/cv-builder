@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import Head from 'next/head'
 import { BLACKGREY, GREY, GREYWHITE, MAINCOLOR } from '../../data/contants'
 import Link from 'next/link'
 import { Button } from '../../styles/global'
@@ -9,6 +8,8 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { getAllPosts, getPostBySlug } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
+import { BlogSEO } from '../../components/utilities/SEO'
+import BlogPostInterface from '../../interfaces/blog-post'
 
 
 const Wrapper = styled.main`
@@ -129,14 +130,7 @@ row-gap: 1rem;
 `
 
 type Props = {
-  post: {
-    slug: any
-    title: string
-    description: string
-    keywords: string
-    image: string
-    content: string
-  }
+  post: BlogPostInterface
 }
 
 const BlogPage = ({post}:Props) => {
@@ -158,33 +152,30 @@ const BlogPage = ({post}:Props) => {
 
   return (
  <article>
- <Head>
-        <title>{post.title}</title>
-        {/* <link rel="canonical" href={`https://beelocals.com/blog/${props.queryTitle}`}></link> */}
-        <meta name="description" content={post.description} />
-        <meta name="keywords" content={post.keywords} />
-        <meta name="author" content="Ionel Vrabii" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.description} />
-        <meta property="og:image" content={post.image} />
-        {/* <meta property="og:url" content={`https://beelocals.com/blog/${props.queryTitle}`} /> */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="https://beelocals.com" />
-        
- </Head>
+ <BlogSEO
+        title={post.title}
+        summary={post.excerpt}
+        images={post.coverImage}
+        date={post.date}
+        authorDetails={[{
+          name: post.author.name,
+          avatar: post.author.picture,
+        }]} 
+        url={`/blog/${post.slug}`}
+      />
+
     <Wrapper >
       <progress  className='blog-progress-indicator' value={percentageRead} max={100} ></progress>
       <Container >
         <Title className='sectionPadding'>
           <h1 className='h1'>{post.title}</h1>
           <p>Read it in <b>5 minutes</b></p>
-          <h2 className='h6 t300'>{post.description}</h2>
+          <h2 className='h6 t300'>{post.excerpt}</h2>
         </Title>
         <BlogContent  className='blog sectionPadding' dangerouslySetInnerHTML={{__html: post.content}}></BlogContent>
         <CallToAction className='sectionPadding'>
           <p style={{textAlign:"center"}} className="p font-semibold">After reading this you might want to try out CV-builder, it's free so just give it a try</p>
-          <Link href="/create"><Button>{"Create your blog"}</Button></Link>
+          <Link href="/create-cv"><Button>{"Create your own cv"}</Button></Link>
         </CallToAction>
       </Container>
     </Wrapper>

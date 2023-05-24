@@ -1,13 +1,13 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import { CvObjectType, useCVcontext } from '../../contexts/AppContext';
 import { GREY, LIGHTGREY, WHITE, device } from '../../data/contants';
 import useWindowSize from '../../hooks/useWindowSize';
 import { Button } from '../../styles/global';
-import TemplateZero from './cvTemplates/0';
-import TemplateOne from './cvTemplates/1';
-import TemplateTwo from './cvTemplates/2';
-import TemplateThree from './cvTemplates/3';
+import TemplateZero from '../templates/0';
+import TemplateOne from '../templates/1';
+import TemplateTwo from '../templates/2';
+import TemplateThree from '../templates/3';
 import imageZero from "../../assets/images/cv-images/0.jpg"
 import imageOne from "../../assets/images/cv-images/1.jpg"
 import imageTwo from "../../assets/images/cv-images/2.jpg"

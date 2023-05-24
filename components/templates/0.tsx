@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, SkillType, useCVcontext } from '../../../contexts/AppContext'
-import { GREEN, GREYWHITE, MAINCOLOR, WHITE } from '../../../data/contants'
+import { CvObjectType, EducationType, EmploymentType, SkillType, useCVcontext } from '../../contexts/AppContext'
+import { GREEN, GREYWHITE, MAINCOLOR, WHITE } from '../../data/contants'
 
 
 

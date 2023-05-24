@@ -14,7 +14,7 @@ const Container = styled.div`
 background-color: ${GREYWHITE};
 min-height: 40rem;
 flex: 1;
-margin: 0 2rem;
+margin: 0 1rem;
 @media ${device.laptopSmall}{
     display: flex;
     flex-direction: row;
@@ -40,7 +40,7 @@ justify-content: flex-start;
 align-items: flex-start;
 color: ${BLACKGREY};
 row-gap:1rem;
-padding: 1.5rem;
+padding: 1rem;
 padding-bottom:0;
 max-width: 500px;
 @media ${device.laptopSmall}{
@@ -51,12 +51,12 @@ max-width: 500px;
 
 const TestimonialsContainerStyles = styled.div`
 display: grid;
-grid-template-columns: 90% 90% 90%;
-padding: 2rem;
+grid-template-columns: 100% 100% 100% 100%;
+padding: 1rem;
 overflow-y: hidden;
 scroll-snap-type: x mandatory;
 scroll-snap-stop: always;
-column-gap: 2rem;
+column-gap: 1rem;
 position: relative;
 scroll-behavior: smooth;
 ::-webkit-scrollbar {
@@ -64,6 +64,7 @@ scroll-behavior: smooth;
 }
 >div{
     scroll-snap-align: center;
+    width: 100%;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -72,14 +73,14 @@ scroll-behavior: smooth;
   scrollbar-width: none;  /* Firefox */
 
 @media ${device.laptopSmall}{
-    grid-template-columns: 18rem 18rem 18rem;
+    grid-template-columns: 18rem 18rem 18rem 18rem 18rem 18rem 18rem 18rem 18rem;
     >div{
         scroll-snap-align: none;
     }
 }
 
 @media ${device.tabletSmallPortrait}{
-    grid-template-columns: 15rem 15rem 15rem;
+    grid-template-columns: 15rem 15rem 15rem 15rem;
 }
 `
 
@@ -87,6 +88,7 @@ const templateImages = [
     image4,
     image2,
     image3,
+    image1,
 ]
 
  
@@ -97,7 +99,7 @@ const TemplatesSection = () => {
 
     useDidMountEffect(()=>{
         if(ref.current){
-            ref.current.scrollLeft = ((ref.current.scrollWidth/5) * number)
+            ref.current.scrollTo({left: 304 * number, behavior: 'smooth'})
         }
     },[number])
 
@@ -107,8 +109,6 @@ const TemplatesSection = () => {
         <TextContentStyles>
             <h2 className='h2'>Templates and design options</h2>
             <p className='h6'>We offer a variety of templates and design options to choose from, ensuring that you can create a CV that reflects your personal style and brand. Whether you're a creative professional looking for a unique layout or a more traditional job seeker seeking a classic design, we have a template that will suit your needs. Take a look at our selection:</p>
-          
-
         </TextContentStyles>
                 <Wrapper>
                     <PointsContainer id="testimonials-slider-controller-desktop">
@@ -137,7 +137,7 @@ left:8rem;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    border: 1px solid white;
+    border: 1px solid black;
     background-color: transparent;
     cursor: pointer;
     &.active{
@@ -157,7 +157,7 @@ export default TemplatesSection
 
 
 
-const TextimonialContainerStyle = styled.div`
+const TextimonialContainerStyle = styled.div<{scaleFactor:number}>`
 height: 427px;
 width: 293px;
 position: relative;
@@ -184,6 +184,7 @@ position: relative;
     transform: scale(1.1);
 }
 
+
 `
 
 
@@ -195,10 +196,9 @@ interface TestimonialProps {
 }
 
 const Testimonial:React.FC<TestimonialProps> = ({ src, scaleFactor }) => {
-    const isMobile = useMediaQuery(device.mobileSmallPortrait)
     return(
-        <TextimonialContainerStyle style={{transform: `scale(${scaleFactor})`}} className={"transition"}>
-            <Image alt='' height={427} width={293} src={src}></Image>
+        <TextimonialContainerStyle scaleFactor={scaleFactor}  className={"transition"}>
+            <Image alt='' fill src={src}></Image>
             <div className='flex ac jc transition' >
                 <Button className='small'>Try it now</Button>
             </div>

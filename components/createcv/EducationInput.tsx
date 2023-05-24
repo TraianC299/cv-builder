@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import Input from '../system/input/Input'
 import CollapseItem from './CollapseItem'
 import useDidMountEffect from '../../hooks/useDidMountEffect'
-import { CvObjectType, EducationType, EmploymentType, useCVcontext } from '../../contexts/AppContext'
+import { CvObjectType, EducationType, useCVcontext } from '../../contexts/AppContext'
 import AutosizeInput from '../system/input/AutosizeInput'
 import MonthYearSelector from '../system/input/MonthYearSelector'
 
 
 
 
-const EducationInstance = ({
+const EducationInput = ({
     school,
     degree,
     city, 
@@ -82,4 +82,4 @@ useDidMountEffect(()=>{
 
 
 
-export default EducationInstance
+export default EducationInput

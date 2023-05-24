@@ -67,7 +67,7 @@ const BlogPreview = ({  title,
     <div  >
       <CoverImage slug={slug} title={title} src={coverImage} />
     </div>
-    <h3  className="h3">
+    <h3 className="h3">
       <Link
         as={`/blog/${slug}`}
         href="/blog/[slug]"

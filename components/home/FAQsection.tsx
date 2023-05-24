@@ -1,11 +1,19 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Collapse from '../system/utilities/Collapse'
-import { GREY, MAINCOLOR } from '../../data/contants'
+import { GREY, MAINCOLOR, device } from '../../data/contants'
 
 
 const Container = styled.div`
-padding: 5rem 0;`
+margin: 1rem ;
+max-width: 800px;
+@media ${device.laptopSmall}{
+    margin: auto;
+    margin-top: 2rem;
+}
+`
+
+
 const QuestionStyle = styled.div`
     border-bottom: 1px solid #e5e5e5;
     text-align: left;
@@ -28,7 +36,7 @@ const Question = ({question, answer}:{question:string, answer:string}) => {
 }
 const FAQsection = () => {
   return (
-    <Container className='w-full flex column jc ac gap-8 sectionPadding' style={{maxWidth:"800px", margin:"auto"}}>
+    <Container className='flex column jc ac gap-8'>
         <h3 className='h2' >Frequently Asked Questions</h3>
         <div >
             <Question question={"Is this CV building website free to use?"} answer={"Yes, this website is completely free to use. There are no fees or subscriptions required to create and download your CV."}></Question>

@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next'
 import React from 'react'
 import {  CvObjectType } from '../../contexts/AppContext'
 import useWindowSize from '../../hooks/useWindowSize'
-import TemplateOne from '../../components/createcv/cvTemplates/1'
+import TemplateOne from '../../components/templates/1'
 import styled from 'styled-components'
 import { TemplateContainerStyleProps } from '../../types'
 

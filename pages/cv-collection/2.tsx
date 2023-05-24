@@ -3,7 +3,7 @@ import React from 'react'
 import {  CvObjectType } from '../../contexts/AppContext'
 import useWindowSize from '../../hooks/useWindowSize'
 import styled from 'styled-components'
-import TemplateTwo from '../../components/createcv/cvTemplates/2'
+import TemplateTwo from '../../components/templates/2'
 import { TemplateContainerStyleProps } from '../../types'
 
 const TemplateTwoScaled = styled(TemplateTwo)<TemplateContainerStyleProps>`
