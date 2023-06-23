@@ -5,6 +5,7 @@ import useWindowSize from '../../hooks/useWindowSize'
 import TemplateZero from '../../components/templates/0'
 import styled from 'styled-components'
 import { TemplateContainerStyleProps } from '../../types'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 
 
@@ -66,3 +67,15 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
   // Pass data to the page via props
   return { props: { localStorageCv: localStorageCv  }}
 }
+
+
+//getServeSideProps wors too
+export const getStaticProps = async ({ locale }: {
+  locale: string;
+}) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["create-cv"])),
+    },
+  };
+};

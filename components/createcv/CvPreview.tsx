@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import { CvObjectType, useCVcontext } from '../../contexts/AppContext';
-import { GREY, LIGHTGREY, WHITE, device } from '../../data/contants';
 import useWindowSize from '../../hooks/useWindowSize';
 import { Button } from '../../styles/global';
 import TemplateZero from '../templates/0';
@@ -14,6 +13,8 @@ import imageTwo from "../../assets/images/cv-images/2.jpg"
 import imageThree from "../../assets/images/cv-images/3.jpg"
 import Image from 'next/image';
 import { TemplateContainerStyleProps } from '../../types';
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES';
+import COLORS from '@/constants/COLORS';
 
 const OpenCvPreviewButton = styled(Button)`
 position: absolute;
@@ -21,7 +22,7 @@ bottom: 1rem;
 left: 1rem;
 z-index: 1;
 
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
   display: none;
 }
 
@@ -29,10 +30,10 @@ z-index: 1;
 
 
 const CvPreviewStyles = styled.div`
-background-color: ${GREY};
+background-color: ${COLORS.GREY};
 position: relative;
 opacity: 1;
-@media ${device.mobileSmallPortrait}{
+@media ${MEDIAQUERIES.mobileSmallPortrait}{
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -51,7 +52,7 @@ width: ${props=>595 *props.scaleFactor}px;
   transform: scale(${props=>props.scaleFactor});
 }
 
-@media ${device.mobileSmallPortrait}{
+@media ${MEDIAQUERIES.mobileSmallPortrait}{
   width: 100vw;
   height: ${props=>842 * (props.mobileScaleFactor ?? 1)}px;
   >div{
@@ -74,10 +75,10 @@ position: absolute;
 top:0;
 left:0;
 pointer-events: none;
-background: ${WHITE};
+background: ${COLORS.WHITE};
 height: 100%;
 gap: 1rem;
-background: ${LIGHTGREY};
+background: ${COLORS.LIGHTGREY};
 &.open{
   width: calc(119px + 2rem);
   opacity:1;

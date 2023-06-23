@@ -2,9 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import BlogPreview from '../../components/blog/BlogPreview'
 import { device } from '../../data/contants'
-import { getAllPosts } from '../../lib/api'
 import BlogPostInterface from '../../interfaces/blog-post'
 import { PageSEO } from '../../components/utilities/SEO'
+import BlogService from '../../services/BlogService'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 const BlogsContainer = styled.main`
 display: grid;
@@ -19,7 +21,7 @@ margin-top: 1rem;
 `
 const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
  
-
+  const {t} = useTranslation("blog")
   return (
   <>
   <PageSEO
@@ -27,7 +29,7 @@ const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
   description='Discover our extensive collection of CV writing advice, tips, and guidance in our blog. Learn how to craft the perfect CV and land your dream job with our free online CV builder.'
   ></PageSEO>
     <section className='sectionPadding'>
-      <h2 className='h3'>Stories:</h2>
+      <h2 className='h3'>{t("blogs")}:</h2>
       <BlogsContainer>
         { allPosts.length > 0 && allPosts.map((post) => {
           return <BlogPreview
@@ -50,8 +52,10 @@ const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
 
 export default Page
 
-export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+export const getStaticProps = async ({locale}:{
+  locale:string
+}) => {
+  const allPosts = BlogService.getAllPosts([
     'title',
     'date',
     'slug',
@@ -62,6 +66,13 @@ export const getStaticProps = async () => {
 
 
   return {
-    props: { allPosts },
+    props: { 
+      allPosts,
+      ...(await serverSideTranslations(locale, ["blog", "common"])),
+     },
+    
+    
   }
 }
+
+

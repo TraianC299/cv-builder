@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-import { BLACKGREY, GREY, GREYWHITE, MAINCOLOR } from '../../data/contants';
-   
+import { useTranslation } from 'next-i18next'
+import COLORS from '@/constants/COLORS';
+
 const Badge = styled.div`
 width: 150px;
 >img{
@@ -17,7 +18,7 @@ const Badges = styled.div`
 
  const Box = styled.footer`
   padding: 80px 30px;
-  background: ${GREYWHITE};
+  background: ${COLORS.GREYWHITE};
   width: 100%;
   margin-top: 5rem;
 
@@ -43,13 +44,13 @@ const Badges = styled.div`
   text-align: left;
 
   >a{
-    color: ${BLACKGREY};
+    color: ${COLORS.BLACKGREY};
   margin-bottom: 20px;
   font-size: 18px;
   text-decoration: none;
    
   &:hover {
-      color: ${MAINCOLOR};
+      color: ${COLORS.MAINCOLOR};
       transition: 200ms ease-in;
   }
   }
@@ -71,13 +72,13 @@ const Badges = styled.div`
    
  const Heading = styled.p`
   font-size: 24px;
-  color: ${BLACKGREY};
+  color: ${COLORS.BLACKGREY};
   margin-bottom: 25px;
   font-weight: bold;
 `;
  
 const Footer = () => {
-
+const {t} = useTranslation()
     return (
       <Box>
         {/* <h1 style={{ color: "green", 
@@ -94,7 +95,7 @@ const Footer = () => {
               <Link href={`/privacy-policy`}>{"Privacy Policy"}</Link>
             </Column> */}
             <Column>
-              <Heading>{"Contact"}</Heading>
+              <Heading>{t("contact-us")}</Heading>
               <a href = "mailto: info@resumelio.com">traianciochina@gmail.com</a>
               <a href = "tel: +37369513786">Tel: +37369513786</a>
             </Column>

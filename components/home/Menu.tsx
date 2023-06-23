@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import LogoSvg from "../../assets/svg/logo.svg"
 import MenuSvg from "../../assets/svg/menu.svg"
 import MenuLogo from "../../assets/svg/menuLogo.svg"
-import CloseSvg from "../../assets/svg/close.svg"
 import Link from 'next/link'
 import { useRouter } from "next/router";
-import { BLACKGREY, device, shadow600, WHITE, MAINCOLOR } from '../../data/contants'
 import { Button } from '../../styles/global'
-
+import { useTranslation } from 'next-i18next'
+import {GrFormClose} from 'react-icons/gr'
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+import COLORS from '@/constants/COLORS'
 
 
 
@@ -16,12 +17,8 @@ import { Button } from '../../styles/global'
 
 const Header = styled.nav`
 width: 100%;
-position: sticky;
-top:0;
-z-index: 10;
-left:0;
 padding:0.75rem 1rem;
-background: ${WHITE};
+background: ${COLORS.WHITE};
 
 /* &.not-stuck{
     background: transparent;
@@ -34,17 +31,8 @@ background: ${WHITE};
     }
 } */
 
-@media ${device.laptopSmall}{
-    padding: 1.5rem 2rem;
-    /* &.not-stuck{
-    background: transparent;
-    a, button{
-        opacity:0;
-    }
-    #logo{
-        opacity: 1;
-    }
-} */
+@media ${MEDIAQUERIES.laptopSmall}{
+
 }
 `
 
@@ -58,15 +46,22 @@ justify-content: space-between;`
 const MobileMenuButton = styled(Button)`
 column-gap: 8px;
 line-height: 1;
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
     display: none;
 }
 `
 
 
+const LogoContainer = styled(Link)`
+>svg{
+    height: 2rem;
+    width: auto;
+}
+`
+
 const DesktopMenuLinksContainerStyles = styled.div`
 display: none;
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
 margin: auto;
 margin-left:3rem;
 display: flex;
@@ -81,7 +76,7 @@ const Menu = () => {
     const [openMenu, setOpenMenu] = React.useState(false)
     const router = useRouter();
     const [stuck, setStuck] = React.useState(false)
-
+    const {t} = useTranslation()
 
     useEffect(() => {
         if(router.asPath==="/"){
@@ -109,36 +104,40 @@ const Menu = () => {
 
 
 
+
+    
   return (
-    <Header
-    id="header" 
-    className={stuck?"stuck transition sectionPadding":"not-stuck transition sectionPadding"}
-    >
-        <Container   className='flex'>
-           <Link href="/" id="logo">
-                   <LogoSvg style={{cursor:"pointer"}} ></LogoSvg>
-           </Link>
-           <DesktopMenuLinksContainerStyles>
-            <DesktopMenuItem  link="/about-us">{"About us"}</DesktopMenuItem>
-            <DesktopMenuItem link="/blog">{"Blog"}</DesktopMenuItem>
-            {/* <DesktopMenuItem link="/services" submenu={
-                <>
-                <Link className={router.locale === "ro" ? "active" : ""} href="/" locale="ro">{"Romanian"}</Link>
-                <Link className={router.locale === "en" ? "active" : ""} href="/" locale="en">{"English"}</Link>
-                <Link className={router.locale === "ru" ? "active" : ""} href="/" locale="ru">{"Russian"}</Link>
-             
-                </>
-            }>
-                {"Language"}
-            </DesktopMenuItem> */}
-            <div className='flex-1'></div>
-            <Link href={"/create-cv"}><Button >Start now</Button></Link>
+    <div className='w-full sticky' style={{background:"white", position: 'sticky', top:0, zIndex:999}}>
+        <Header
+        id="header"
+        className={stuck?"stuck transition sectionPadding":"not-stuck transition sectionPadding"}
+        >
+            <Container   className='flex'>
+               <LogoContainer href="/" id="logo">
+                       <LogoSvg style={{cursor:"pointer"}} ></LogoSvg>
+               </LogoContainer>
+               <DesktopMenuLinksContainerStyles>
+                <DesktopMenuItem  link="/about-us">{t("about-us")}</DesktopMenuItem>
+                <DesktopMenuItem link="/blog">{t("blog")}</DesktopMenuItem>
+                {/* <DesktopMenuItem link="/services" submenu={
+                    <>
+                    <Link className={router.locale === "ro" ? "active" : ""} href="/" locale="ro">{"Romanian"}</Link>
+                    <Link className={router.locale === "en" ? "active" : ""} href="/" locale="en">{"English"}</Link>
+                    <Link className={router.locale === "ru" ? "active" : ""} href="/" locale="ru">{"Russian"}</Link>
         
-           </DesktopMenuLinksContainerStyles>
-            <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex center'><MenuSvg/>Menu</MobileMenuButton>
-               <MobileMenuModal open={openMenu} setOpen={setOpenMenu}></MobileMenuModal>
-        </Container>
-    </Header>
+                    </>
+                }>
+                    {"Language"}
+                </DesktopMenuItem> */}
+                <div className='flex-1'></div>
+                <Link href={"/create-cv"}><Button >{t("start-now")}</Button></Link>
+        
+               </DesktopMenuLinksContainerStyles>
+                <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex center'><MenuSvg/>Menu</MobileMenuButton>
+                   <MobileMenuModal open={openMenu} setOpen={setOpenMenu}></MobileMenuModal>
+            </Container>
+        </Header>
+    </div>
   )
 }
 
@@ -157,8 +156,8 @@ const DesktopMenuItem:React.FC<DesktopMenuItemProps> = ({children,link,  submenu
     
     return(
      
-        <MenuItem  className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} style={{color:BLACKGREY, position:"relative"}}><Link href={submenu?"":link}>{children}</Link>
-        {submenu && <SubMenuContainer>
+        <MenuItem  className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} style={{color:COLORS.BLACKGREY, position:"relative"}}><Link href={submenu?"":link}>{children}</Link>
+        {submenu && <SubMenuContainer className='shadow-md'>
             {submenu}
          
         </SubMenuContainer>}
@@ -179,7 +178,6 @@ top: calc(100% + 1rem);
 left: 0;
 opacity:0;
 background-color: white;
-box-shadow:${shadow600};
 transform: translateY(-10%);
 transition: all 0.15s ease-in-out;
 pointer-events: none;
@@ -194,13 +192,13 @@ font-weight: 600;
 font-size: 0.9rem;
 margin:auto;
 width: 100%;
-color: ${MAINCOLOR};
+color: ${COLORS.MAINCOLOR};
 cursor:pointer;
 
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
     height:3rem;
     :hover{
-    background: ${MAINCOLOR}10;
+    background: ${COLORS.MAINCOLOR}10;
 }
 }
 }
@@ -227,8 +225,8 @@ const MenuItem = styled.div`
     height:2rem;
 }
 :hover{
-    background: ${MAINCOLOR}10;
-    color: ${MAINCOLOR};
+    background: ${COLORS.MAINCOLOR}10;
+    color: ${COLORS.MAINCOLOR};
 
     >div{
         opacity:1;
@@ -243,7 +241,7 @@ const MenuItem = styled.div`
 
 
 &.active, .active{
-    border-bottom: 2px solid ${MAINCOLOR};
+    border-bottom: 2px solid ${COLORS.MAINCOLOR};
 }
 
     `
@@ -285,8 +283,8 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
        <Link aria-label={"Home"} href="/">
            <MenuLogo />
        </Link>
-       <Button onClick={()=>setOpen(previous=>!previous)} className='flex center' style={{columnGap:"10px", background:"white", color:BLACKGREY}}>
-        {("Close")}<CloseSvg/>
+       <Button onClick={()=>setOpen(previous=>!previous)} className='flex center' style={{columnGap:"10px", background:"white", color:COLORS.BLACKGREY}}>
+        {("Close")}<GrFormClose className='h6'/>
         </Button>
     </MobileMenuModalHeaderStyles>
     <MobileLinkContainerStyles>
@@ -333,7 +331,7 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: ${MAINCOLOR};
+background: ${COLORS.MAINCOLOR};
 z-index: 2;
 flex-direction: column;
 align-items: center;

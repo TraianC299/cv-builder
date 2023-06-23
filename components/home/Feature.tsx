@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import {  BLACKGREY, GREYWHITE, MAINCOLOR, device, shadow600 } from '../../data/contants'
 import Link from 'next/link'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import { Button } from '../../styles/global'
+import {useTranslation} from 'next-i18next'
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+import COLORS from '@/constants/COLORS'
 
 
 
@@ -17,7 +19,7 @@ background: white;
 >div{
     padding: 0.75rem;
     width: fit-content;
-    background-color: ${MAINCOLOR}20;
+    background-color: ${COLORS.MAINCOLOR}20;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,14 +27,14 @@ background: white;
     svg{
         height: 1.5rem;
         width: auto;
-        /* fill: ${MAINCOLOR};  */
+        /* fill: ${COLORS.MAINCOLOR};  */
         /* *{
-            fill: ${MAINCOLOR};
+            fill: ${COLORS.MAINCOLOR};
         } */
     }
 }
 >p{
-    color: ${BLACKGREY};
+    color: ${COLORS.BLACKGREY};
     font-weight: 300;
     display: -webkit-box;
 -webkit-line-clamp: 5;
@@ -49,7 +51,7 @@ font-size: 0.9rem;
 
 
 
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
     
     padding: 1.5rem;
     transform: scale(1);
@@ -89,7 +91,8 @@ type FeatureProps = {
     link: string
 }
 const Feature:React.FC<FeatureProps> = ({title, description, svg, link}) => {
-    const isMobile = useMediaQuery(device.mobileSmallPortrait)
+    const isMobile = useMediaQuery(MEDIAQUERIES.mobileSmallPortrait)
+    const {t} = useTranslation()
     return (
         <FeatureContainerStyles className='transition'>
             <div>{svg}</div>
@@ -97,7 +100,7 @@ const Feature:React.FC<FeatureProps> = ({title, description, svg, link}) => {
             <p className='sp'>{description}</p>
             <Link href={link}>
                 <ReadMoreButton  className='text transition'>
-                Read More
+                {t("read-more")}
                 </ReadMoreButton>
             </Link>
         </FeatureContainerStyles>

@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import ImageInput from './ImageInput'
 import styled from 'styled-components'
-import { BLACK, GREY, LIGHTGREY, MAINCOLOR, RED } from '../../../data/contants'
 import { InputStyle } from '../../../styles/global'
+import { useTranslation } from 'react-i18next'
+import COLORS from '@/constants/COLORS'
 
 
 
@@ -19,7 +20,7 @@ width: 100%;
   padding: 0.1rem 0.5rem;
 }
 >label{
-  color: ${GREY};
+  color: ${COLORS.GREY};
   margin-bottom: 0.4rem;
   line-height: 20px;
 }
@@ -33,15 +34,15 @@ align-items: center;
 background:white;
 transition: all 0.3s;
 cursor: pointer;
-box-shadow: inset 0px 0px 0px 2px ${BLACK};
+box-shadow: inset 0px 0px 0px 2px ${COLORS.BLACK};
 
 >*{
-  color: ${BLACK};
+  color: ${COLORS.BLACK};
 }
 
 
 &.selected{
-  background: ${BLACK};
+  background: ${COLORS.BLACK};
   >*{
     color:white;
   }
@@ -61,7 +62,7 @@ type ButtonInputImageProps = {
 }
 const ButtonInputImage = ({image, setImage, imageError, setImageError, label, postInputLabel, ...props}:ButtonInputImageProps) => {
     const [loading, setLoading] = React.useState(false)
-
+    const {t} = useTranslation()
  
 
     // useEffect(()=>{
@@ -71,12 +72,12 @@ const ButtonInputImage = ({image, setImage, imageError, setImageError, label, po
    <ImageInput resize={200} loading={loading} setLoading={setLoading} imageUrl={image} setImageUrl={setImage}  {...props}>
     <Container>
       <img style={{display: "none"}} onError={()=>setImage("")} src={image}></img>
-      <label className='sp'>Your photo</label>
-      <SelectImageLabel as="label"  style={{borderColor: imageError?RED:loading?LIGHTGREY:BLACK}}   className={`${image?"selected":""}`}>
+      <label className='sp'>{t("your-photo")}</label>
+      <SelectImageLabel as="label"  style={{borderColor: imageError?COLORS.RED:loading?COLORS.GREY:COLORS.BLACK}}   className={`${image?"selected":""}`}>
       {loading?
       // <Spinner style={{animation:"rotation 1s infinite"}}></Spinner>
       <p style={{animation:"rotation 1s infinite"}}>⌛</p>
-      :<p style={{color: imageError?RED:image?"white":BLACK}}>{imageError ? "Nicio Imagine" : image ? postInputLabel : label }</p>}
+      :<p style={{color: imageError?COLORS.RED:image?"white":COLORS.BLACK}}>{imageError ? "Nicio Imagine" : image ? postInputLabel : label }</p>}
       </SelectImageLabel>
     </Container>
 </ImageInput>

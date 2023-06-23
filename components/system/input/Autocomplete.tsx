@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import useDidMountEffect from '../../../hooks/useDidMountEffect'
-import { GREY, GREYWHITE, MAINCOLOR, shadow600 } from '../../../data/contants'
 import Input from './Input'
 import useClickOutside from '../../../hooks/useClickOutside'
+import COLORS from '@/constants/COLORS'
 
 
 
@@ -29,7 +29,6 @@ height: fit-content;
 position: absolute;
 top:105%;
 mix-blend-mode: normal;
-box-shadow: ${shadow600};
 max-height: 25vh;
 overflow: scroll;
 background-color: transparent;
@@ -45,14 +44,14 @@ padding-left: 10px;
 background-color: white;
 min-height: 5vh;
 cursor: pointer;
-border-bottom: 0.5px solid ${GREYWHITE};
+border-bottom: 0.5px solid ${COLORS.GREYWHITE};
 justify-content:space-between ;
 >p{
-    color:${GREY};
+    color:${COLORS.GREY};
     font-size: 0.8rem;
 }
 :hover{
-    background-color: ${GREYWHITE};
+    background-color: ${COLORS.GREYWHITE};
 }
 >img{
     height: 3vh;
@@ -68,7 +67,7 @@ justify-content:space-between ;
     justify-content: flex-end;
     border-radius: 50%;
     margin-right: 10px;
-    color:${MAINCOLOR};
+    color:${COLORS.MAINCOLOR};
     font-weight: 600;
 }
 `
@@ -143,7 +142,7 @@ const Autocomplete:React.FC<Props> = ({options, value, setValue, noAddOption, wi
                 value={inputValue}  
                 setValue={setInputValue} 
                 onFocusCapture={()=>setFocus(true)}></Input>
-            {<StyledAutocompleteContainer style={{pointerEvents:focus?"all":"none", opacity:focus?"1":"0"}} >
+            {<StyledAutocompleteContainer className='shadow-md' style={{pointerEvents:focus?"all":"none", opacity:focus?"1":"0"}} >
                 {relevantOptions.map(option => <TagContainer onClick={()=>complete(option)} key={option.id}>{withImage?<img src={option.image}></img>:null}<p>{option.title}</p><div className='currencySymbol'>{option.symbol}</div></TagContainer>)}
                 {relevantOptions.length==0 && <TagContainer onClick={()=>noAddOption?null:complete(inputValue)} ><p>{noAddOption?"No such option":"Add new tag: "+ inputValue}</p></TagContainer>}
             </StyledAutocompleteContainer>}

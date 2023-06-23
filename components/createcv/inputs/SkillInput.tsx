@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Input from '../system/input/Input'
-import OptionSelector from '../system/input/OptionSelector'
-import CollapseItem from './CollapseItem'
-import useDidMountEffect from '../../hooks/useDidMountEffect'
-import { SkillType } from '../../contexts/AppContext'
+import Input from '../../system/input/Input'
+import OptionSelector from '../../system/input/OptionSelector'
+import CollapseItem from '../CollapseItem'
+import useDidMountEffect from '../../../hooks/useDidMountEffect'
+import { SkillType } from '../../../contexts/AppContext'
+import { useTranslation } from 'next-i18next'
 
 
 
@@ -13,7 +14,7 @@ const experienceLevels = [
 {label:"Skillful", value:3},
 {label:"Experienced", value:4},
 {label:"Expert", value:5}]
-const Skill = ({title, metric, skills, setSkills, edit, id}:{
+const SkillInput = ({title, metric, skills, setSkills, edit, id}:{
     title: string,
     metric: number,
     id: string,
@@ -21,6 +22,7 @@ const Skill = ({title, metric, skills, setSkills, edit, id}:{
     setSkills: React.Dispatch<React.SetStateAction<SkillType[]>>,
     edit:boolean
 }) => {
+  const {t} = useTranslation("create-cv")
     const [open, setOpen] = useState(edit?true:false)
     const [titleState, setTitleState] = useState(title || "")
     const [metricState, setMetricState] = useState(metric || 0)
@@ -47,8 +49,8 @@ useDidMountEffect(()=>{
   return (
     <CollapseItem 
     onDelete={()=>setSkills(skills.filter(el=>el.id!==id))} 
-      title={titleState || "Not Specified"} 
-      subtitle={experienceLevels.find(el=>el.value===metricState)?.label || "Not Specified either"} 
+      title={titleState || t("not-specified")} 
+      subtitle={experienceLevels.find(el=>el.value===metricState)?.label || t("not-specified")} 
       open={open} 
       setOpen={setOpen}>
       <div style={{columnGap:"0.5rem"}} className='flex'>
@@ -59,7 +61,7 @@ useDidMountEffect(()=>{
   )
 }
 
-export default Skill
+export default SkillInput
 
 
 

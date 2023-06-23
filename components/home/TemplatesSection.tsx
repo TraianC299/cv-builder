@@ -1,21 +1,23 @@
 import React, {  useRef } from 'react'
 import styled from 'styled-components'
 import useDidMountEffect from '../../hooks/useDidMountEffect'
-import useMediaQuery from '../../hooks/useMediaQuery'
-import { BLACKGREY, device, GREYWHITE } from '../../data/contants'
 import image1 from '../../assets/images/cv-images/0.jpg'
 import image2 from '../../assets/images/cv-images/1.jpg'
 import image3 from '../../assets/images/cv-images/2.jpg'
 import image4 from '../../assets/images/cv-images/3.jpg'
-
 import Image, { StaticImageData } from 'next/image'
 import { Button } from '../../styles/global'
+import { useTranslation } from 'next-i18next'
+import COLORS from '@/constants/COLORS'
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+
+
 const Container = styled.div`
-background-color: ${GREYWHITE};
+background-color: ${COLORS.GREYWHITE};
 min-height: 40rem;
 flex: 1;
 margin: 0 1rem;
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
     display: flex;
     flex-direction: row;
     padding: 4rem;
@@ -38,12 +40,12 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
-color: ${BLACKGREY};
+color: ${COLORS.BLACKGREY};
 row-gap:1rem;
 padding: 1rem;
 padding-bottom:0;
 max-width: 500px;
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
     width: 55%;
 }
     
@@ -72,14 +74,14 @@ scroll-behavior: smooth;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
     grid-template-columns: 18rem 18rem 18rem 18rem 18rem 18rem 18rem 18rem 18rem;
     >div{
         scroll-snap-align: none;
     }
 }
 
-@media ${device.tabletSmallPortrait}{
+@media ${MEDIAQUERIES.tabletSmallPortrait}{
     grid-template-columns: 15rem 15rem 15rem 15rem;
 }
 `
@@ -96,7 +98,7 @@ const templateImages = [
 const TemplatesSection = () => {
     const ref = useRef<HTMLDivElement | null>(null)
     const [number, setNumber] = React.useState(0)
-
+    const {t} = useTranslation()
     useDidMountEffect(()=>{
         if(ref.current){
             ref.current.scrollTo({left: 304 * number, behavior: 'smooth'})
@@ -107,8 +109,8 @@ const TemplatesSection = () => {
   return (
     <Container>
         <TextContentStyles>
-            <h2 className='h2'>Templates and design options</h2>
-            <p className='h6'>We offer a variety of templates and design options to choose from, ensuring that you can create a CV that reflects your personal style and brand. Whether you're a creative professional looking for a unique layout or a more traditional job seeker seeking a classic design, we have a template that will suit your needs. Take a look at our selection:</p>
+            <h2 className='h2'>{t("templates-section-title")}</h2>
+            <p className='p'>{t("templates-section-subtitle")}</p>
         </TextContentStyles>
                 <Wrapper>
                     <PointsContainer id="testimonials-slider-controller-desktop">
@@ -141,12 +143,12 @@ left:8rem;
     background-color: transparent;
     cursor: pointer;
     &.active{
-        background-color: ${BLACKGREY};
+        background-color: ${COLORS.BLACKGREY};
     }
 
 }
 
-@media ${device.mobileSmallPortrait}{
+@media ${MEDIAQUERIES.mobileSmallPortrait}{
     display: none;
 }`
 

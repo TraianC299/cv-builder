@@ -4,6 +4,8 @@ import styles from '../styles/Home.module.css'
 import FAQsection from '../components/home/FAQsection'
 import FeaturesSection from '../components/home/FeaturesSection'
 import { PageSEO } from '../components/utilities/SEO'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import ThreeCVsection from '../components/home/ThreeCVsection'
 
 export default function Home() {
   return (
@@ -14,12 +16,24 @@ export default function Home() {
         ></PageSEO>
 
         <Hero></Hero>
-        {/* <ThreeCVsection/> */}
         <FeaturesSection></FeaturesSection>
        <TemplatesSection></TemplatesSection>
        <FAQsection></FAQsection>
+        {/* <ThreeCVsection/> */}
 
   
     </div>
   )
 }
+
+
+//getServeSideProps wors too
+export const getStaticProps = async ({ locale }: {
+  locale: string;
+}) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+};

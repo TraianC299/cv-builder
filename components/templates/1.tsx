@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { CvObjectType, EducationType, EmploymentType, SkillType, useCVcontext } from '../../contexts/AppContext'
-import { DARKBLUE, YELLOW } from '../../data/contants'
-import { WHITE } from '../../data/contants'
+import { useTranslation } from 'next-i18next'
+import COLORS from '@/constants/COLORS'
 
 
 
@@ -35,14 +35,14 @@ row-gap: 8px;`
 
 
 const ColoredSection = styled.div`
-background: ${DARKBLUE};
+background: ${COLORS.DARKBLUE};
 *{
   color: white;
 }
 `
 const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
 
-
+const {t} = useTranslation('')
   return (
     <Container id="cv-preview" 
     className={className}
@@ -50,38 +50,38 @@ const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:st
     ><ColoredSection>
         <ProfileSection name={cvObject.name} surname={cvObject.surname} jobTitle={cvObject.jobTitle} image={cvObject.profileImage}></ProfileSection>
 
-        <Section title={"Personal Info"}>
-          <p className='sp'>Location: {cvObject.city}, {cvObject.country}</p>
-          <p className='sp'>Phone: {cvObject.phone}</p>
-          <p className='sp'>Email: {cvObject.email}</p>
+        <Section title={t("personal-info")}>
+          <p className='sp'>{t("location")}: {cvObject.city}, {cvObject.country}</p>
+          <p className='sp'>{t("phone")}: {cvObject.phone}</p>
+          <p className='sp'>{t("email")}: {cvObject.email}</p>
         </Section>
-        <Section title={"Hobbies"}>
+        <Section title={t("hobbies")}>
           <p className='sp'>{cvObject.hobbies}</p>
         </Section>
-        <Section title="Skills">
+        {cvObject.skills &&<Section title="Skills">
           <SkillsContainer>
-            {cvObject.skills.map((el:SkillType)=><SkillInstance title={el.title} grade={el.metric}></SkillInstance>)}
+            {cvObject.skills.map((el:SkillType)=><SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
           </SkillsContainer>
-        </Section>
-        <Section title="Languages">
+        </Section>}
+        {cvObject.languages && <Section title="Languages">
           <SkillsContainer>
-            {cvObject.languages.map((el:SkillType)=><SkillInstance title={el.title} grade={el.metric}></SkillInstance>)}
+            {cvObject.languages.map((el:SkillType)=><SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
           </SkillsContainer>
-        </Section>
+        </Section>}
         
 
         </ColoredSection>
         <div>
-            <Section title={"Professional Summary"}>
+            <Section title={t("professional-summary")}>
               <p className='sp'>{cvObject.summary}</p>
             </Section>
-            <Section title={"Employment History"}>
+            <Section title={t("employment")}>
             {cvObject.employment.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
             </Section>
-            <Section title={"Internships"}>
+            <Section title={t("internships")}>
             {cvObject.internships.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
             </Section>
-            <Section title={"Education History"}>
+            <Section title={t("education")}>
             {cvObject.education.map((el:EducationType)=><EducationItem {...el} key={el.id}></EducationItem>)}
             </Section>
             
@@ -98,6 +98,8 @@ const Section = ({children, title}:{
   children:ReactNode,
   title: string
 })=> {
+  const {t} = useTranslation()
+
   return(
     <div>
       <p className='p font-semibold'>{title}</p>
@@ -130,6 +132,8 @@ const ProfileSection = ({name, surname, jobTitle, image}:{
   jobTitle:string,
   image: string
 }) => {
+  const {t} = useTranslation()
+
   return(
     <ProfileSectionContainer className='flex column ac jc'>
       <img src={image || "https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"}></img>
@@ -148,19 +152,21 @@ width:100%;
 row-gap: 4px;
 >div{
   width:100%;
-  background: ${WHITE}50;
+  background: ${COLORS.WHITE}50;
   height: 5px;
   border-radius: 444px;
   overflow: hidden;
   >div{
     height: 5px;
-    background: ${WHITE};
+    background: ${COLORS.WHITE};
   }
 }`
 const SkillInstance = ({title, grade}:{
   title:string, 
   grade:number
 }) => {
+  const {t} = useTranslation()
+
   return(
     <SkillInstanceContainer className='flex column'>
       <p className='sp'>{title}</p>
@@ -178,9 +184,11 @@ const EmploymentItemContainer = styled.div``
 
 
 const EmploymentItem = ({title, startDate, endDate,description, employer, city}:EmploymentType) => {
+  const {t} = useTranslation()
+
   return(<EmploymentItemContainer>
       <div>
-        <p className='sp font-semibold'>{title} at {employer} ({city})</p>  
+        <p className='sp font-semibold'>{title} {t("at")} {employer} ({city})</p>  
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
       <p className='sp'>{description}</p>
@@ -190,10 +198,12 @@ const EmploymentItem = ({title, startDate, endDate,description, employer, city}:
 
 
 const EducationItem = ({school, degree, city, startDate, endDate, description}:EducationType) => {
+  const {t} = useTranslation()
+
   return(
     <EmploymentItemContainer>
       <div>
-        <p className='sp font-semibold'>{degree} at {school} ({city})</p>  
+        <p className='sp font-semibold'>{degree} {t("at")} {school} ({city})</p>  
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
       <p className='sp'>{description}</p>

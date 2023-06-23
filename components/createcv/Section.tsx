@@ -1,27 +1,57 @@
-import { ReactNode } from 'react'
+import { MouseEventHandler, ReactNode } from 'react'
 import styled from 'styled-components'
 import { GREY } from '../../data/contants'
 import { Button } from '../../styles/global'
+import {FaRegTrashAlt} from 'react-icons/fa'
+import { CvObjectType, useCVcontext } from '../../contexts/AppContext'
+import { DefaultTFuncReturn } from 'i18next'
+import { useTranslation } from 'next-i18next'
 
 
 
 
 
-const Header = styled.div`
-  margin-bottom: 1rem;
-`
-const Section = ({children, title, subtitle, onClick}:{children:ReactNode, title?:string, subtitle?: string, onClick?:Function}) => {
+
+
+const TitleContainer = styled.div`
+>svg{
+  opacity: 0;
+  cursor: pointer;
+}
+:hover{
+  >svg{
+    opacity: 1;
+  }
+}`
+
+const Section = ({children, title, subtitle, onClick, objectKey}:{children:ReactNode, title?:string | DefaultTFuncReturn, subtitle?: string |DefaultTFuncReturn, onClick?:Function, 
+  objectKey?:"summary" | "hobbies" | "skills" | "languages" | "employment" | "education" | "internships" 
+}) => {
+  const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
+  const {t} = useTranslation("create-cv")
+  const onDelete:MouseEventHandler<SVGSVGElement> = (e)=>{
+    e.preventDefault()
+    e.stopPropagation()
+    console.log(objectKey)
+    if(!objectKey) return
+    const newCvObject = {...cvObject}
+    delete newCvObject[objectKey]
+    setCvObject(newCvObject)
+    
+  }
+
     return(
       <section>
-        <Header className='flex jsb ac'>
+        <div className='flex jsb ac mb-4'>
           <div>
-            <div className='flex ac jfs'>
+            <TitleContainer className='flex ac jfs gap-4 transition'>
               <h3 className='h5 font-normal'>{title}</h3>
-            </div>
+              <FaRegTrashAlt onClick={onDelete} className='transition' color='red'/>
+            </TitleContainer>
             <p style={{color: GREY}} className='sp'>{subtitle}</p>
           </div>
-          {onClick && <Button className='small' onClick={e=>{e.preventDefault();onClick()}}>+ add new</Button>}
-        </Header>
+          {onClick && <Button className='small' onClick={e=>{e.preventDefault();onClick()}}>+ {t("add-new")}</Button>}
+        </div>
         {children}
       </section>
     )

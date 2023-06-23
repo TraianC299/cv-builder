@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MAINCOLOR } from '../../../data/contants'
 import { InputStyle } from '../../../styles/global'
+import COLORS from '@/constants/COLORS'
 
 
 
@@ -30,14 +30,14 @@ align-items: center;
 background:white;
 transition: all 0.3s;
 cursor: pointer;
-color:${MAINCOLOR};
+color:${COLORS.MAINCOLOR};
 
 >*{
-  color:${MAINCOLOR};
+  color:${COLORS.MAINCOLOR};
 }
 
 &.selected{
-  background: ${MAINCOLOR};
+  background: ${COLORS.MAINCOLOR};
   color: white;
   >*{
     color:white;

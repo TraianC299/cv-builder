@@ -1,6 +1,6 @@
+import COLORS from '@/constants/COLORS'
 import React, { useEffect, useRef } from 'react'
 import styled from "styled-components"
-import { RED, MAINCOLOR} from '../../../data/contants'
 
 
 const InputContainer = styled.div`
@@ -17,7 +17,7 @@ const InputStyle = styled.input`
 width: 100%;
 padding: 0.55rem;
 border: none;
-border-bottom: 1.5px solid ${MAINCOLOR};
+border-bottom: 1.5px solid ${COLORS.MAINCOLOR};
 font-size: 1rem;
 font-family: inherit;
 font-size: inherit;
@@ -27,7 +27,7 @@ font-family: inherit;
 }
 
 &.error{
-    border-bottom: 1.5px solid ${RED};
+    border-bottom: 1.5px solid ${COLORS.RED};
 }
 `
 
@@ -67,7 +67,7 @@ const LineInput = ({ error, setError, placeholder, value, setValue, ...props}:Li
             onChange={(e)=>setValue(e.target.value)}
             {...props}>
             </InputStyle>
-            <p style={{color: RED}}>{error} </p>
+            <p style={{color: COLORS.RED}}>{error} </p>
         </InputContainer>
     )
 }

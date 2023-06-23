@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { BLACKGREY, GREY, GREYWHITE, MAINCOLOR } from '../../data/contants'
 import Link from 'next/link'
 import { Button } from '../../styles/global'
 import useScrollPosition from '../../hooks/useScrollPosition'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import { getAllPosts, getPostBySlug } from '../../lib/api'
-import markdownToHtml from '../../lib/markdownToHtml'
 import { BlogSEO } from '../../components/utilities/SEO'
 import BlogPostInterface from '../../interfaces/blog-post'
+import BlogService from '../../services/BlogService'
+import COLORS from '@/constants/COLORS'
 
 
 const Wrapper = styled.main`
@@ -37,7 +36,7 @@ progress{
 }
 
 progress[value]::-webkit-progress-value {
-  background: ${MAINCOLOR};
+  background: ${COLORS.MAINCOLOR};
     background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 :after{
@@ -46,7 +45,7 @@ progress[value]::-webkit-progress-value {
             width: 100%;
             height: 100%;
             max-height: 30rem;
-            background: linear-gradient(to bottom, ${MAINCOLOR}20 0%, rgba(255, 255, 255, 0) 100%);
+            background: linear-gradient(to bottom, ${COLORS.MAINCOLOR}20 0%, rgba(255, 255, 255, 0) 100%);
             right: 0;
             top: 0;
             pointer-events: none;
@@ -105,16 +104,16 @@ padding-bottom: 3rem;
 const BlogContent = styled.div`
 margin:auto;
 h1, h2, h3{
-  color: ${BLACKGREY};
+  color: ${COLORS.BLACKGREY};
 }
 *{
-  color: ${GREY};
+  color: ${COLORS.GREY};
 }
 img{
       max-width:100%;
       margin:auto;
       border-radius:1rem;
-      border: 2px solid ${GREYWHITE};
+      border: 2px solid ${COLORS.GREYWHITE};
     }
 `
 
@@ -188,7 +187,7 @@ export default BlogPage
 
 
 export async function getStaticProps({ params }:any) {
-  const post = getPostBySlug(params.slug, [
+  const post = BlogService.getPostBySlug(params.slug, [
     'title',
     'date',
     'slug',
@@ -197,7 +196,7 @@ export async function getStaticProps({ params }:any) {
     'ogImage',
     'coverImage',
   ])
-  const content = await markdownToHtml(post.content || '')
+  const content = await BlogService.markdownToHtml(post.content || '')
 
   return {
     props: {
@@ -210,7 +209,7 @@ export async function getStaticProps({ params }:any) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = BlogService.getAllPosts(['slug'])
 
   return {
     paths: posts.map((post) => {

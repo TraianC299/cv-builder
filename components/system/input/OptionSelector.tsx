@@ -1,8 +1,8 @@
 import React, { MouseEventHandler, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import useClickOutside from '../../../hooks/useClickOutside'
- import { GREYWHITE, LIGHTGREY, MAINCOLOR, shadow600, WHITE } from '../../../data/contants'
 import Input from './Input'
+import COLORS from '@/constants/COLORS'
 
 const Container = styled.div`
 position: relative;
@@ -19,9 +19,9 @@ width: 100%;
     padding: 5px;
 
     >svg{
-        fill: ${LIGHTGREY};
+        fill: ${COLORS.LIGHTGREY};
         *{
-            fill: ${LIGHTGREY};
+            fill: ${COLORS.LIGHTGREY};
         }
     }
     
@@ -30,13 +30,12 @@ width: 100%;
 
 
 const StyledAutocompleteContainer = styled.div`
-background: ${WHITE};
+background: ${COLORS.WHITE};
 z-index: 2;
 width: 100%;
 height: fit-content;
 position: absolute;
 top:105%;
-box-shadow:${shadow600};
 max-height: 20rem;
 overflow: scroll;
 background-color: transparent;
@@ -54,7 +53,7 @@ height: 3rem;
 cursor: pointer;
 position: relative;
 :hover{
-    background-color: ${GREYWHITE};
+    background-color: ${COLORS.GREYWHITE};
 }
 >img{
     height: 2.5rem;
@@ -72,7 +71,7 @@ position: relative;
         width: 0.5rem;
         height: 0.5rem;
         border-radius: 50%;
-        background-color: ${MAINCOLOR};
+        background-color: ${COLORS.MAINCOLOR};
     }
 }
 `
@@ -124,7 +123,7 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
     return (
             <Container ref={ref} >
             <Input  label={label}  placeholder={label} value={inputValue}  setValue={()=>{}}  onFocusCapture={()=>setFocus(true)} {...props} ></Input>
-            {focus?<StyledAutocompleteContainer style={{pointerEvents:focus?"all":"none", opacity:focus?"1":"0"}}>
+            {focus?<StyledAutocompleteContainer style={{pointerEvents:focus?"all":"none", opacity:focus?"1":"0"}} className='shadow-md'>
                 {relevantOptions.map(option => <Tag 
                     onClick={()=>complete({...option})} 
                     key={option.label}
@@ -132,7 +131,7 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
                     selected={value?value===option.value:false}
                     ></Tag>)}
             </StyledAutocompleteContainer>:null}
-            <button className="time-picker-button pointer" onClick={(e)=>{e.preventDefault();setFocus(previous=>!previous)}} color={GREYWHITE} >{focus?<p>-</p>:<p>+</p>}</button>
+            <button className="time-picker-button pointer" onClick={(e)=>{e.preventDefault();setFocus(previous=>!previous)}} color={COLORS.GREYWHITE} >{focus?<p>-</p>:<p>+</p>}</button>
             </Container>
     )
 }

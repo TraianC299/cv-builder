@@ -5,6 +5,7 @@ import useWindowSize from '../../hooks/useWindowSize'
 import styled from 'styled-components'
 import TemplateTwo from '../../components/templates/2'
 import { TemplateContainerStyleProps } from '../../types'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const TemplateTwoScaled = styled(TemplateTwo)<TemplateContainerStyleProps>`
 transform: scale(${props=>props.scaleFactor});
@@ -61,3 +62,15 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
   // Pass data to the page via props
   return { props: { localStorageCv: localStorageCv  }}
 }
+
+
+//getServeSideProps wors too
+export const getStaticProps = async ({ locale }: {
+  locale: string;
+}) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["create-cv"])),
+    },
+  };
+};

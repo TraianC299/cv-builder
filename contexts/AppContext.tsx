@@ -17,7 +17,7 @@ export type EmploymentType = {
     id: string,
     edit:boolean,
     startDate: string,
-    endDate: string
+    endDate: string,
 }
 
 export type EducationType = {
@@ -28,7 +28,7 @@ export type EducationType = {
     id: string,
     edit:boolean,
     startDate: string,
-    endDate: string
+    endDate: string;
 }
 
 
@@ -50,6 +50,15 @@ export type CvObjectType = {
     internships: [EmploymentType] | [],
     template: number
 }
+
+
+export const CVcategories = [
+    "skills",
+    "languages",
+    "employment",
+    "education",
+    "internships",
+]
 
 const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: React.Dispatch<React.SetStateAction<any>> }>(
     {

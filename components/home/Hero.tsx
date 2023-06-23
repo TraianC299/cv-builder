@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { BORDERCOLOR, LIGHTGREY } from '../../data/contants'
 import useWindowSize from '../../hooks/useWindowSize'
 import { Button } from '../../styles/global'
+import { useTranslation } from 'next-i18next'
 
 
 
@@ -127,12 +128,13 @@ overflow: hidden;
                 }
                             `
 const Hero = () => {
+    const {t} = useTranslation()
   return (
     <Container>
         <div className='w-full h-full flex column ac jc text gap-4'>
-            <h1 className='h1'>Land Your Dream Job With a Stand-Out CV</h1>
-            <p className='h6'>Create a professional, tailor-made CV in minutes with our user-friendly builder. No design skills needed!</p>
-            <Link href="create-cv"><Button className='flex ac jc gap-2'>Try it now <p className='sp t300'>It's free</p></Button></Link>
+            <h1 className='h1'>{t("hero-title")}</h1>
+            <p className='h6'>{t("hero-subtitle")}</p>
+            <Link href="create-cv"><Button className='flex ac jc gap-2'>{t("try-it-now")}<p className='sp t300'>{t("free")}</p></Button></Link>
         </div>
         {Array.from({length: 15}).map((_, i) => <div className='card' ></div>)}
     </Container>

@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
-import { GREYWHITE, MAINCOLOR } from '../../../data/contants'
 import useClickOutside from '../../../hooks/useClickOutside'
 import useDidMountEffect from '../../../hooks/useDidMountEffect'
 import Input from './Input'
+import COLORS from '@/constants/COLORS'
 
 
 
@@ -14,7 +14,7 @@ width: 100%;`
 const Modal = styled.div`
 overflow: hidden;
 border-radius: 10px;
-background: ${GREYWHITE};
+background: ${COLORS.GREYWHITE};
 position: absolute;
 top: 100%;
 width: fit-content;
@@ -30,7 +30,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 div{
-    background: ${MAINCOLOR};
+    background: ${COLORS.MAINCOLOR};
     padding: 0.5rem 1rem;
     border-radius: 66px;
     color: white;
@@ -47,11 +47,11 @@ align-items: center;
     padding: 5px;
     border-radius: 10px;
     :hover{
-        color: ${MAINCOLOR};
+        color: ${COLORS.MAINCOLOR};
         cursor: pointer;
     }
     &.selected{
-        background: ${MAINCOLOR};
+        background: ${COLORS.MAINCOLOR};
         color: white;
     }
 }

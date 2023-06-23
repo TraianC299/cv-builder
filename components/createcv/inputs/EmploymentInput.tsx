@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
-import Input from '../system/input/Input'
-import CollapseItem from './CollapseItem'
-import useDidMountEffect from '../../hooks/useDidMountEffect'
-import { CvObjectType, EmploymentType, useCVcontext } from '../../contexts/AppContext'
-import AutosizeInput from '../system/input/AutosizeInput'
-import MonthYearSelector from '../system/input/MonthYearSelector'
+import Input from '../../system/input/Input'
+import CollapseItem from '../CollapseItem'
+import useDidMountEffect from '../../../hooks/useDidMountEffect'
+import { CvObjectType, EmploymentType, useCVcontext } from '../../../contexts/AppContext'
+import AutosizeInput from '../../system/input/AutosizeInput'
+import MonthYearSelector from '../../system/input/MonthYearSelector'
+import { useTranslation } from 'next-i18next'
 
 
 
-
-const InternshipInput = ({title, employer,city, description, edit, startDate, endDate, id}:EmploymentType) => {
+interface Props extends EmploymentType{
+  onDelete?:Function
+}
+const EmploymentInput = ({title, employer,city, description, edit, startDate, endDate, id, onDelete}:Props) => {
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
     const [open, setOpen] = useState(edit?true:false)
     const [titleState, setTitleState] = useState(title || "")
@@ -19,15 +22,17 @@ const InternshipInput = ({title, employer,city, description, edit, startDate, en
     const [startDateState, setStartDateState] = useState(startDate || "")
     const [endDateState, setEndDateState] = useState(endDate || "")
 
+    const {t} = useTranslation("create-cv")
 
 useDidMountEffect(()=>{
   setOpen(edit)
 },[edit])
 
 useDidMountEffect(()=>{
-  const index = cvObject.internships.findIndex(el=>el.id===id)
-  const internshipsPlaceholder = [...cvObject.internships]
-  internshipsPlaceholder[index] = {
+
+  const index = cvObject.employment.findIndex(el=>el.id===id)
+  const skillsPlaceholder = [...cvObject.employment]
+  skillsPlaceholder[index] = {
     id:id,
     title:titleState,
     employer: employerState,
@@ -38,7 +43,7 @@ useDidMountEffect(()=>{
     endDate: endDateState
   }
   setCvObject((prev:CvObjectType)=>({
-    ...prev, internships:internshipsPlaceholder
+    ...prev, employment:skillsPlaceholder
   }))
 },[titleState, descriptionState, cityState, startDateState, endDateState, employerState])
 
@@ -46,22 +51,23 @@ useDidMountEffect(()=>{
 
   return (
     <CollapseItem 
-      title={titleState || "Not Specified"} 
-      subtitle={employerState || "Not Specified either"} 
+    onDelete={onDelete}
+      title={titleState || t("not-specified")} 
+      subtitle={employerState || t("not-specified")} 
       open={open} 
       setOpen={setOpen}>
       <div style={{columnGap:"0.5rem"}} className='flex'>
-        <Input label="Job title" value={titleState} setValue={setTitleState}></Input>
-        <Input label="Employer" value={employerState} setValue={setEmployerState} ></Input>
+        <Input label={t("job-title")} value={titleState} setValue={setTitleState}></Input>
+        <Input label={t("employer")} value={employerState} setValue={setEmployerState} ></Input>
       </div>
       <div style={{columnGap:"0.5rem"}} className='flex'>
         <div style={{columnGap:"0.5rem", width:"100%"}} className='flex'>
             <MonthYearSelector  value={startDateState} setValue={setStartDateState} label="Start Date"></MonthYearSelector>
-            <MonthYearSelector value={endDateState} setValue={setEndDateState} label="End Date"></MonthYearSelector>
+            <MonthYearSelector value={endDateState} setValue={setEndDateState} label={t("end-date")}></MonthYearSelector>
         </div>
-        <Input label="City" value={cityState} setValue={setCityState} ></Input>
+        <Input label={t("city")} value={cityState} setValue={setCityState} ></Input>
       </div>
-      <AutosizeInput label='Description' value={descriptionState} setValue={setDescriptionState}></AutosizeInput>
+      <AutosizeInput label={t("description")} value={descriptionState} setValue={setDescriptionState}></AutosizeInput>
     </CollapseItem>
   )
 }
@@ -73,4 +79,4 @@ useDidMountEffect(()=>{
 
 
 
-export default InternshipInput
+export default EmploymentInput

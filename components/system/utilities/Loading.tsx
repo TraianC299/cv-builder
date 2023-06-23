@@ -1,6 +1,6 @@
+import COLORS from '@/constants/COLORS'
 import React from 'react'
 import styled from "styled-components"
-import { MAINCOLOR } from '../../../data/contants'
 
 
 
@@ -18,7 +18,7 @@ const Ellipsis = styled.div`
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background: ${MAINCOLOR};
+    background: ${COLORS.MAINCOLOR};
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
    div:nth-child(1) {

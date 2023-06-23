@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import Input from '../system/input/Input'
-import CollapseItem from './CollapseItem'
-import useDidMountEffect from '../../hooks/useDidMountEffect'
-import { CvObjectType, EducationType, useCVcontext } from '../../contexts/AppContext'
-import AutosizeInput from '../system/input/AutosizeInput'
-import MonthYearSelector from '../system/input/MonthYearSelector'
+import Input from '../../system/input/Input'
+import CollapseItem from '../CollapseItem'
+import useDidMountEffect from '../../../hooks/useDidMountEffect'
+import { CvObjectType, EducationType, useCVcontext } from '../../../contexts/AppContext'
+import AutosizeInput from '../../system/input/AutosizeInput'
+import MonthYearSelector from '../../system/input/MonthYearSelector'
+import { useTranslation } from 'next-i18next'
 
 
 
-
+interface Props extends EducationType{
+  onDelete?:Function
+}
 const EducationInput = ({
     school,
     degree,
@@ -17,8 +20,10 @@ const EducationInput = ({
     id,
     edit,
     startDate,
-    endDate
-}:EducationType) => {
+    endDate,
+    onDelete
+}:Props) => {
+  const {t} = useTranslation("create-cv")
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
     const [open, setOpen] = useState(edit?true:false)
     const [schoolState, setSchoolState] = useState(school || "")
@@ -55,8 +60,9 @@ useDidMountEffect(()=>{
 
   return (
     <CollapseItem 
-      title={schoolState?`${schoolState} - ${degreeState}` : "Not Specified"} 
-      subtitle={startDateState?`${startDateState} - ${endDateState}` : "Not Specified either"} 
+    onDelete={onDelete}
+      title={schoolState?`${schoolState} - ${degreeState}` : t("not-specified")} 
+      subtitle={startDateState?`${startDateState} - ${endDateState}` : t("not-specified")} 
       open={open} 
       setOpen={setOpen}>
       <div style={{columnGap:"0.5rem"}} className='flex'>
@@ -65,12 +71,12 @@ useDidMountEffect(()=>{
       </div>
       <div style={{columnGap:"0.5rem"}} className='flex'>
         <div style={{columnGap:"0.5rem", width:"100%"}} className='flex'>
-            <MonthYearSelector  value={startDateState} setValue={setStartDateState} label="Start Date"></MonthYearSelector>
-            <MonthYearSelector value={endDateState} setValue={setEndDateState} label="End Date"></MonthYearSelector>
+            <MonthYearSelector  value={startDateState} setValue={setStartDateState} label={t("start-date")}></MonthYearSelector>
+            <MonthYearSelector value={endDateState} setValue={setEndDateState} label={t("end-date")}></MonthYearSelector>
         </div>
-        <Input label="City" value={cityState} setValue={setCityState} ></Input>
+        <Input label={t("city")} value={cityState} setValue={setCityState} ></Input>
       </div>
-      <AutosizeInput label='Description' value={descriptionState} setValue={setDescriptionState}></AutosizeInput>
+      <AutosizeInput label={t("description")} value={descriptionState} setValue={setDescriptionState}></AutosizeInput>
     </CollapseItem>
   )
 }
