@@ -2,7 +2,7 @@ import React, {  useState } from 'react'
 import Input from '../../system/input/Input'
 import CollapseItem from '../CollapseItem'
 import useDidMountEffect from '../../../hooks/useDidMountEffect'
-import { SkillType } from '../../../contexts/AppContext'
+import {  SkillType } from '../../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import LevelSelector from '@/components/system/input/LevelSelector'
 import LEVELS from '@/constants/LEVELS'
@@ -17,7 +17,7 @@ flex-direction: column;
 
 interface SkillInputProps {
     title: string,
-    metric: 1 | 2 | 3 | 4 | 5 | null,
+    metric: SkillType["metric"],
     id: string,
     skills: [SkillType] | [],
     setSkills: React.Dispatch<React.SetStateAction<SkillType[]>>,
@@ -41,7 +41,7 @@ useDidMountEffect(()=>{
   skillsPlaceholder[index] = {
     id:id,
     title:titleState,
-    metric:metricState ||0,
+    metric:metricState,
     edit: edit
   }
   setSkills(skillsPlaceholder)
@@ -58,7 +58,7 @@ useDidMountEffect(()=>{
       setOpen={setOpen}>
       <Container className='flex gap-4'>
         <Input  label="Title" value={titleState} setValue={setTitleState}></Input>
-        <LevelSelector label={"Experience level"} value={metricState} onChange={(v:1 | 2 | 3 | 4 | 5 | null)=>{
+        <LevelSelector label={"Experience level"} value={metricState} onChange={(v:SkillType["metric"])=>{
           setMetricState(v)
         }}/>
       </Container>

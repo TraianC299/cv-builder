@@ -184,13 +184,13 @@ justify-content: space-between;
 }`
 const SkillInstance = ({ title, grade }: {
   title: string,
-  grade: number
+  grade: SkillType["metric"] 
 }) => {
   return (
     <SkillInstanceContainer className='flex ac jsb'>
       <p className='sp'>{title}</p>
       <div className='flex'>
-        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < grade ? COLORS.YELLOW : COLORS.GREYWHITE }}></div>)}
+        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < (grade ||0) ? COLORS.YELLOW : COLORS.GREYWHITE }}></div>)}
 
       </div>
     </SkillInstanceContainer>

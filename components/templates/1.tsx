@@ -166,7 +166,7 @@ row-gap: 4px;
 }`
 const SkillInstance = ({title, grade}:{
   title:string, 
-  grade:number
+  grade: SkillType["metric"] 
 }) => {
   const {t} = useTranslation()
 
@@ -174,7 +174,7 @@ const SkillInstance = ({title, grade}:{
     <SkillInstanceContainer className='flex column'>
       <p className='sp'>{title}</p>
       <div>
-          <div style={{width: `${grade*20}%`}}></div>
+          <div style={{width: `${grade?grade*20:0}%`}}></div>
       </div>
     </SkillInstanceContainer>
   )

@@ -3,7 +3,7 @@ import useLocalStorage from '../hooks/useLocalStorage'
 
 
 export type SkillType = {
-    metric: number,
+    metric: 1 | 2 | 3 | 4 | 5 | null,
     title: string,
     id:string,
     edit?:boolean

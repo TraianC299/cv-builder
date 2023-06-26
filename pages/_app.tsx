@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import Layout from '../components/layouts/Layout'
-import { Component, ReactElement, ReactNode } from 'react'
+import { Component, ComponentType, ReactElement, ReactNode } from 'react'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
@@ -22,4 +22,4 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
 
 
-  export default appWithTranslation(MyApp)
+  export default appWithTranslation(MyApp as ComponentType<AppPropsWithLayout>)
