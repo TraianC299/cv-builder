@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import BlogPreview from '../../components/blog/BlogPreview'
-import { device } from '../../data/contants'
 import BlogPostInterface from '../../interfaces/blog-post'
 import { PageSEO } from '../../components/utilities/SEO'
 import BlogService from '../../services/BlogService'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 
 const BlogsContainer = styled.main`
 display: grid;
@@ -15,7 +15,7 @@ grid-gap: 2rem;
 margin-top: 1rem;
 
 
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
   grid-template-columns: repeat(2, 1fr);
 }
 `

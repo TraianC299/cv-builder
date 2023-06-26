@@ -2,11 +2,11 @@ import React from 'react'
 import Section from '../Section'
 import Input from '../../system/input/Input'
 import ButtonInputImage from '../../system/input/ButtonImageInput'
-import { CvObjectType, useCVcontext } from '../../../contexts/AppContext'
+import { CvObjectType, useCV } from '../../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 
 const InfoSection = () => {
-  const { cvObject, setCvObject }: { cvObject: CvObjectType, setCvObject: React.Dispatch<React.SetStateAction<any>> } = useCVcontext()
+  const { cvObject, setCvObject }: { cvObject: CvObjectType, setCvObject: React.Dispatch<React.SetStateAction<any>> } = useCV()
   const { t } = useTranslation("create-cv")
 
   return (
@@ -14,7 +14,7 @@ const InfoSection = () => {
       <div className='flex column' style={{ rowGap: "0.5rem" }}>
         <div className='flex jc ac gap-4' >
           <Input value={cvObject.jobTitle} setValue={(v: InputEvent) => { setCvObject((prev: CvObjectType) => ({ ...prev, jobTitle: v })) }} placeholder='eg. Teacher' label={t("job-title")}></Input>
-          <ButtonInputImage image={cvObject.profileImage} setImage={(v: string | null) => { setCvObject((prev: CvObjectType) => ({ ...prev, profileImage: v })) }} label={t("your-photo")} postInputLabel='Image chosen'></ButtonInputImage>
+          <ButtonInputImage image={cvObject.profileImage} setImage={(v: string | null) => { setCvObject((prev: CvObjectType) => ({ ...prev, profileImage: v })) }} label={t("your-photo")}></ButtonInputImage>
         </div>
         <div className='flex gap-4' >
           <Input value={cvObject.name} setValue={(v: InputEvent) => { setCvObject((prev: CvObjectType) => ({ ...prev, name: v })) }} label={t("last-name")}></Input>

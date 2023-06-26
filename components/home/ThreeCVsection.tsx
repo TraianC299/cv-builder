@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { Button } from '../../styles/global'
 import Link from 'next/link'
-import { device } from '../../data/contants'
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 
 
 
@@ -15,7 +15,7 @@ justify-content: center;
 flex-direction: column;
 width: 100%;
 height: fit-content;
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
     flex-direction: row;
     height: 40rem;
     padding-top: 2rem;
@@ -26,7 +26,7 @@ height: fit-content;
 const TextContentStyle = styled.div`
 width: 100%;
 row-gap: 1rem;
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
     width: 50%;
 
 }
@@ -36,7 +36,7 @@ const ImageContainer  = styled.div`
 width: 100%;
 position: relative;
 min-height: 400px;
-@media ${device.laptopSmall}{
+@media ${MEDIAQUERIES.laptopSmall}{
     width: 50%;
     height: 100%;
 

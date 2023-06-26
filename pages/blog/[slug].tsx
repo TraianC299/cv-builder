@@ -139,14 +139,14 @@ const BlogPage = ({post}:Props) => {
   const [percentageRead, setPercentageRead] = React.useState(0)
 
 
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
-  }
   useEffect(()=>{
     const scrollPercentage = Math.round((scrollPosition / (document.body.clientHeight - window.innerHeight)) * 100)
     setPercentageRead(scrollPercentage)
   },[scrollPosition])
 
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />
+  }  
 
 
   return (

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, SkillType, useCVcontext } from '../../contexts/AppContext'
+import { CvObjectType, EducationType, EmploymentType, SkillType, useCV } from '../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 
@@ -42,7 +42,7 @@ background: ${COLORS.DARKBLUE};
 `
 const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
 
-const {t} = useTranslation('')
+  const { t } = useTranslation("create-cv")
   return (
     <Container id="cv-preview" 
     className={className}
@@ -75,15 +75,15 @@ const {t} = useTranslation('')
             <Section title={t("professional-summary")}>
               <p className='sp'>{cvObject.summary}</p>
             </Section>
-            <Section title={t("employment")}>
+            {cvObject.employment && <Section title={t("employment")}>
             {cvObject.employment.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-            </Section>
-            <Section title={t("internships")}>
+            </Section>}
+            {cvObject.internships && <Section title={t("internships")}>
             {cvObject.internships.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-            </Section>
-            <Section title={t("education")}>
+            </Section>}
+            {cvObject.education && <Section title={t("education")}>
             {cvObject.education.map((el:EducationType)=><EducationItem {...el} key={el.id}></EducationItem>)}
-            </Section>
+            </Section>}
             
         </div>
         
@@ -92,6 +92,9 @@ const {t} = useTranslation('')
 }
 
 export default TemplateOne
+
+
+
 
 
 const Section = ({children, title}:{

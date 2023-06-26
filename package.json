@@ -42,6 +42,8 @@
   "devDependencies": {
     "@types/sortablejs": "^1.15.1",
     "@types/styled-components": "^5.1.26",
-    "babel-plugin-styled-components": "^2.0.7"
+    "babel-plugin-styled-components": "^2.0.7",
+    "eslint": "8.43.0",
+    "eslint-config-next": "13.4.7"
   }
 }

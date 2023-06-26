@@ -1,11 +1,11 @@
 import { MouseEventHandler, ReactNode } from 'react'
 import styled from 'styled-components'
-import { GREY } from '../../data/contants'
 import { Button } from '../../styles/global'
 import {FaRegTrashAlt} from 'react-icons/fa'
-import { CvObjectType, useCVcontext } from '../../contexts/AppContext'
+import { CvObjectType, useCV } from '../../contexts/AppContext'
 import { DefaultTFuncReturn } from 'i18next'
 import { useTranslation } from 'next-i18next'
+import COLORS from '@/constants/COLORS'
 
 
 
@@ -24,10 +24,10 @@ const TitleContainer = styled.div`
   }
 }`
 
-const Section = ({children, title, subtitle, onClick, objectKey}:{children:ReactNode, title?:string | DefaultTFuncReturn, subtitle?: string |DefaultTFuncReturn, onClick?:Function, 
-  objectKey?:"summary" | "hobbies" | "skills" | "languages" | "employment" | "education" | "internships" 
+const Section = ({children, title, subtitle, onClick, objectKey, deletable}:{children:ReactNode, title?:string | DefaultTFuncReturn, subtitle?: string |DefaultTFuncReturn, onClick?:Function, 
+  objectKey?:"summary" | "hobbies" | "skills" | "languages" | "employment" | "education" | "internships", deletable?:boolean
 }) => {
-  const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
+  const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
   const {t} = useTranslation("create-cv")
   const onDelete:MouseEventHandler<SVGSVGElement> = (e)=>{
     e.preventDefault()
@@ -37,7 +37,6 @@ const Section = ({children, title, subtitle, onClick, objectKey}:{children:React
     const newCvObject = {...cvObject}
     delete newCvObject[objectKey]
     setCvObject(newCvObject)
-    
   }
 
     return(
@@ -46,9 +45,9 @@ const Section = ({children, title, subtitle, onClick, objectKey}:{children:React
           <div>
             <TitleContainer className='flex ac jfs gap-4 transition'>
               <h3 className='h5 font-normal'>{title}</h3>
-              <FaRegTrashAlt onClick={onDelete} className='transition' color='red'/>
+              {deletable && <FaRegTrashAlt onClick={onDelete} className='transition' color='red'/>}
             </TitleContainer>
-            <p style={{color: GREY}} className='sp'>{subtitle}</p>
+            <p style={{color: COLORS.GREY}} className='sp'>{subtitle}</p>
           </div>
           {onClick && <Button className='small' onClick={e=>{e.preventDefault();onClick()}}>+ {t("add-new")}</Button>}
         </div>

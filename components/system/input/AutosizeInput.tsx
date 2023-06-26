@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { InputStyle } from '../../../styles/global';
+import Input from './Input';
 
 
 type AutoResizingTextareaProps = {
@@ -19,14 +20,17 @@ const AutosizeInput = ({ value, setValue, ...restProps }:AutoResizingTextareaPro
   }, [value]); // Run effect whenever value changes
 
   return (
-    <InputStyle
-      as="textarea"
-      ref={textareaRef}
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-      {...restProps}
-      style={{ ...restProps.style, overflow: 'hidden', resize: 'none' }}
-    />
+    <Input.Wrapper>
+      <Input.Label>{restProps.label}</Input.Label>
+      <InputStyle
+        as="textarea"
+        ref={textareaRef}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        {...restProps}
+        style={{ ...restProps.style, overflow: 'hidden', resize: 'none' }}
+      />
+    </Input.Wrapper>
   );
 };
 

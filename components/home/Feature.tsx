@@ -10,12 +10,16 @@ import COLORS from '@/constants/COLORS'
 
 
 const FeatureContainerStyles = styled.div`
-display: flex;
+display: grid;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
 row-gap: 8px;
 background: white;
+height: 100%;
+>a{
+    align-self: flex-end;
+}
 >div{
     padding: 0.75rem;
     width: fit-content;

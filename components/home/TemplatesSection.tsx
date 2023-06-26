@@ -16,7 +16,6 @@ const Container = styled.div`
 background-color: ${COLORS.GREYWHITE};
 min-height: 40rem;
 flex: 1;
-margin: 0 1rem;
 @media ${MEDIAQUERIES.laptopSmall}{
     display: flex;
     flex-direction: row;
@@ -119,7 +118,7 @@ const TemplatesSection = () => {
                     ))}
                     </PointsContainer>
                     <TestimonialsContainerStyles ref={ref}>
-                        {templateImages.map((image, index)=><Testimonial scaleFactor={1 - Math.abs(number - index)*0.1} src={image}></Testimonial>)}
+                        {templateImages.map((image, index)=><Testimonial key={index} scaleFactor={1 - Math.abs(number - index)*0.1} src={image}></Testimonial>)}
                         </TestimonialsContainerStyles>
                 </Wrapper>
     </Container>

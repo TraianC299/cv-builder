@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from '../Section'
 import { ReactSortable } from 'react-sortablejs'
-import { CvObjectType, useCVcontext } from '../../../contexts/AppContext'
+import { CvObjectType, useCV } from '../../../contexts/AppContext'
 import { nanoid } from 'nanoid'
 import InternshipInput from '../inputs/InternshipInput'
 import { useTranslation } from 'next-i18next'
@@ -9,7 +9,7 @@ import { useTranslation } from 'next-i18next'
 
 const InternshipsSection = () => {
   const {t} = useTranslation("create-cv")
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
+    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
     const addInternship = () => {
       const noEditInternships = cvObject.internships.map(el=>({
         title: el.title,
@@ -41,6 +41,7 @@ const InternshipsSection = () => {
     }
   return (
     <Section 
+    deletable
     objectKey="internships"
     title={t("internships")}
     onClick={addInternship}>
@@ -49,7 +50,7 @@ const InternshipsSection = () => {
     list={cvObject.internships}
     setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
     handle=".handle"
-    >{cvObject.internships.map(el=><InternshipInput 
+    >{cvObject?.internships?.map(el=><InternshipInput 
       onDelete={()=>deleteInternship(el.id)}
       {...el}
       key={el.id}  

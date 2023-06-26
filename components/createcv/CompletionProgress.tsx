@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
+import { useCV } from 'contexts/AppContext'
 
 
 const Container = styled.div`
@@ -27,9 +28,8 @@ position: relative;
 }
 
 `
-const CompletionProgress = ({progress}:{
-    progress: number
-}) => {
+const CompletionProgress = () => {
+    const {progress} = useCV()
     const { t } = useTranslation("create-cv")
     return (
         <Container>
@@ -37,7 +37,7 @@ const CompletionProgress = ({progress}:{
                 <ScoreContainer>{progress}%</ScoreContainer>
                 <p>{t("profile-completion")}</p>
             </div>
-            <ProgressBar />
+            <ProgressBar progress={progress}/>
         </Container>
     )
 }
@@ -60,10 +60,14 @@ overflow: hidden;
     transition: width 0.3s ease-in-out;
 }
 `
-const ProgressBar = () => {
+
+interface ProgressBarProps {
+    progress: number
+}
+const ProgressBar = ({progress}:ProgressBarProps) => {
     return (
         <ProgressBarContainer>
-            <div style={{ width: "50%" }}></div>
+            <div style={{ width: `${progress}%` }}></div>
         </ProgressBarContainer>
     )
 }

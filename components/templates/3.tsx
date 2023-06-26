@@ -16,7 +16,6 @@ position: relative;
 transform-origin:0 0;
 *{
   white-space: normal;
-  font-family: 'Montserrat', sans-serif;
   word-wrap: break-word;
 }
 
@@ -97,15 +96,15 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
           <Section style={{ borderTop: "2px solid black" }} title={t("professional-summary")}>
             <p className='sp'>{cvObject.summary}</p>
           </Section>
-          <Section title={t("employment")}>
+          {cvObject.employment &&<Section title={t("employment")}>
             {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-          </Section>
-          <Section title={t("internships")}>
+          </Section>}
+          {cvObject.internships && <Section title={t("internships")}>
             {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-          </Section>
-          <Section title={t("education")}>
+          </Section>}
+         {cvObject.education && <Section title={t("education")}>
             {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
-          </Section>
+          </Section>}
           {cvObject.skills && <Section title="Skills">
             <SkillsContainer>
               {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Input from '../../system/input/Input'
 import CollapseItem from '../CollapseItem'
 import useDidMountEffect from '../../../hooks/useDidMountEffect'
-import { CvObjectType, EmploymentType, useCVcontext } from '../../../contexts/AppContext'
+import { CvObjectType, EmploymentType, useCV } from '../../../contexts/AppContext'
 import AutosizeInput from '../../system/input/AutosizeInput'
 import MonthYearSelector from '../../system/input/MonthYearSelector'
 import { useTranslation } from 'next-i18next'
@@ -13,7 +13,7 @@ interface Props extends EmploymentType{
   onDelete?:Function
 }
 const EmploymentInput = ({title, employer,city, description, edit, startDate, endDate, id, onDelete}:Props) => {
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
+    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
     const [open, setOpen] = useState(edit?true:false)
     const [titleState, setTitleState] = useState(title || "")
     const [employerState, setEmployerState] = useState(employer || "")
@@ -56,18 +56,20 @@ useDidMountEffect(()=>{
       subtitle={employerState || t("not-specified")} 
       open={open} 
       setOpen={setOpen}>
-      <div style={{columnGap:"0.5rem"}} className='flex'>
-        <Input label={t("job-title")} value={titleState} setValue={setTitleState}></Input>
-        <Input label={t("employer")} value={employerState} setValue={setEmployerState} ></Input>
-      </div>
-      <div style={{columnGap:"0.5rem"}} className='flex'>
-        <div style={{columnGap:"0.5rem", width:"100%"}} className='flex'>
-            <MonthYearSelector  value={startDateState} setValue={setStartDateState} label="Start Date"></MonthYearSelector>
-            <MonthYearSelector value={endDateState} setValue={setEndDateState} label={t("end-date")}></MonthYearSelector>
+      <div className='flex column gap-4'>
+        <div  className='flex gap-4'>
+          <Input label={t("job-title")} value={titleState} setValue={setTitleState}></Input>
+          <Input label={t("employer")} value={employerState} setValue={setEmployerState} ></Input>
         </div>
-        <Input label={t("city")} value={cityState} setValue={setCityState} ></Input>
-      </div>
+        <div  className='flex gap-4'>
+          <div style={{ width:"100%"}} className='flex gap-4'>
+              <MonthYearSelector  value={startDateState} setValue={setStartDateState} label="Start Date"></MonthYearSelector>
+              <MonthYearSelector value={endDateState} setValue={setEndDateState} label={t("end-date")}></MonthYearSelector>
+          </div>
+          <Input label={t("city")} value={cityState} setValue={setCityState} ></Input>
+        </div>
       <AutosizeInput label={t("description")} value={descriptionState} setValue={setDescriptionState}></AutosizeInput>
+      </div>
     </CollapseItem>
   )
 }

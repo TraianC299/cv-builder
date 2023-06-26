@@ -37,24 +37,21 @@ width: 100%;
 
 
 
-interface  InputProps{
+interface  InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
   value: string,
   setValue:Function,
-  label?: string,
+  label?: string | ReactNode,
   error?:string,
   setError?:Function,
-  disabled?: boolean,
-  defaultValue?: string,
   rows?:number,
   rowsMax?:number, 
   helperText?: string,
   validation?:Function, 
   placeholder?:string,
-  onFocusCapture?:Function,
   props?: any[]
-}
+} 
 
-const Input= ({value, setValue, label, error, setError, disabled, rows, rowsMax, helperText, validation,placeholder,onFocusCapture, ...props}:InputProps) => {
+const Input= ({value, setValue, label, error, setError, disabled, rows, rowsMax, helperText, validation,placeholder, ...props}:InputProps) => {
 
  
       return(
@@ -90,11 +87,12 @@ const Input= ({value, setValue, label, error, setError, disabled, rows, rowsMax,
     margin-bottom: 0.4rem;
     line-height: 20px;
     `
-    Input.Label = ({children}:{
+    Input.Label = ({children, ...rest}:{
       children:ReactNode
+      [x:string]:any
     })=> {
       return(
-        <LabelStyles className='sp'>{children}</LabelStyles>
+        <LabelStyles className={`sp ${rest.className}`} {...rest}>{children}</LabelStyles>
       )
     }
 
@@ -103,7 +101,7 @@ const Input= ({value, setValue, label, error, setError, disabled, rows, rowsMax,
     })=> {
 
       return(
-        <p style={{color: "red"}}>{error}</p>
+        <p style={{color: "red", }}>{error}</p>
       )
     }
 
@@ -123,3 +121,6 @@ const Input= ({value, setValue, label, error, setError, disabled, rows, rowsMax,
       )
     }
 
+
+
+   

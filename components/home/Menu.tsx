@@ -10,14 +10,17 @@ import { useTranslation } from 'next-i18next'
 import {GrFormClose} from 'react-icons/gr'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
-
-
+import {BiChevronDown, BiChevronUp} from 'react-icons/bi'
+import Collapse from '../system/utilities/Collapse'
+import OptionSelector from '../system/input/OptionSelector'
+import useDidMountEffect from 'hooks/useDidMountEffect'
+import LANGUAGES from '@/constants/LANGUAGES'
 
 
 
 const Header = styled.nav`
 width: 100%;
-padding:0.75rem 1rem;
+padding:1rem;
 background: ${COLORS.WHITE};
 
 /* &.not-stuck{
@@ -78,6 +81,7 @@ const Menu = () => {
     const [stuck, setStuck] = React.useState(false)
     const {t} = useTranslation()
 
+
     useEffect(() => {
         if(router.asPath==="/"){
             document.onscroll = (e) => {
@@ -93,7 +97,7 @@ const Menu = () => {
             setStuck(true)
         }
         
-}, [])
+    }, [])
 
 
     useEffect(() => {
@@ -103,6 +107,10 @@ const Menu = () => {
       }, [router.asPath]);
 
 
+
+      useDidMountEffect(()=>{
+
+      },[])
 
 
     
@@ -119,16 +127,27 @@ const Menu = () => {
                <DesktopMenuLinksContainerStyles>
                 <DesktopMenuItem  link="/about-us">{t("about-us")}</DesktopMenuItem>
                 <DesktopMenuItem link="/blog">{t("blog")}</DesktopMenuItem>
-                {/* <DesktopMenuItem link="/services" submenu={
+                <DesktopMenuItem link="/services" submenu={
                     <>
-                    <Link className={router.locale === "ro" ? "active" : ""} href="/" locale="ro">{"Romanian"}</Link>
-                    <Link className={router.locale === "en" ? "active" : ""} href="/" locale="en">{"English"}</Link>
-                    <Link className={router.locale === "ru" ? "active" : ""} href="/" locale="ru">{"Russian"}</Link>
-        
+                    {LANGUAGES.map(language=>(
+                    <Link key={language.locale} className={router.locale === language.locale ? "active" : ""} href="/" locale={language.locale}>{language.emoji} {language.label}</Link>
+                    ))}
                     </>
                 }>
-                    {"Language"}
-                </DesktopMenuItem> */}
+                   {t("language")}
+                </DesktopMenuItem>
+                {/* <div style={{
+                    maxWidth: "200px",
+                }}>
+                    <OptionSelector
+                    value={language}
+                    setValue={setLanguage}
+                    options={[
+                        {label:"Romanian", value:"ro"},
+                        {label:"English", value:"en"},
+                        {label:"Russian", value:"ru"},
+                    ]}></OptionSelector>
+                </div> */}
                 <div className='flex-1'></div>
                 <Link href={"/create-cv"}><Button >{t("start-now")}</Button></Link>
         
@@ -156,7 +175,8 @@ const DesktopMenuItem:React.FC<DesktopMenuItemProps> = ({children,link,  submenu
     
     return(
      
-        <MenuItem  className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} style={{color:COLORS.BLACKGREY, position:"relative"}}><Link href={submenu?"":link}>{children}</Link>
+        <MenuItem  className={!submenu && router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} style={{color:COLORS.BLACKGREY, position:"relative"}}>
+            <Link href={submenu?"":link}>{children}</Link>
         {submenu && <SubMenuContainer className='shadow-md'>
             {submenu}
          
@@ -188,11 +208,9 @@ padding-left: 0.75rem;
 display: flex;
 align-items: center;
 justify-content: flex-start;
-font-weight: 600;
 font-size: 0.9rem;
 margin:auto;
 width: 100%;
-color: ${COLORS.MAINCOLOR};
 cursor:pointer;
 
 @media ${MEDIAQUERIES.laptopSmall}{
@@ -208,7 +226,6 @@ cursor:pointer;
 
 
 const MenuItem = styled.div`
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -216,35 +233,44 @@ const MenuItem = styled.div`
     padding: 0 1rem;
     cursor: pointer;
     position: relative;
-::after{
-    content: "";
-    position: absolute;
-    top:100%;
-    left: 0;
-    width:100%;
-    height:2rem;
-}
-:hover{
-    background: ${COLORS.MAINCOLOR}10;
-    color: ${COLORS.MAINCOLOR};
-
-    >div{
-        opacity:1;
-        transform: translateY(0%);
-        pointer-events: all;
+    ::after{
+        content: "";
+        position: absolute;
+        top:100%;
+        left: 0;
+        width:100%;
+        height:2rem;
     }
-    >svg{
-        transform: scale(1.1);
+    :hover{
+        background: ${COLORS.MAINCOLOR}10;
+        color: ${COLORS.MAINCOLOR};
 
+        >div{
+            opacity:1;
+            transform: translateY(0%);
+            pointer-events: all;
+        }
+        >svg{
+            transform: scale(1.1);
+
+        }
     }
-}
 
-
-&.active, .active{
-    border-bottom: 2px solid ${COLORS.MAINCOLOR};
-}
-
-    `
+    &.active, .active{
+        position: relative;
+        ::before{
+            content: "";
+            position: absolute;
+            top:50%;
+            right: 0;
+            width:0.5rem;
+            height:0.5rem;
+            background: ${COLORS.MAINCOLOR};
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+    }
+`
 
 
 
@@ -274,15 +300,15 @@ interface MobileMenuModalProps {
 
 const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
     const [openServices, setOpenServices] = React.useState(false)
-
+    const {t} = useTranslation()
 
     
     return(
         <MobileMenuModalStyles className={open? "open transition" : 'transition'} style={{opacity: open? 1 : 0, transform: `translateY(${open?0:"-2rem"})`}}>
             <MobileMenuModalHeaderStyles style={{position: "static"}} className='flex'>
-       <Link aria-label={"Home"} href="/">
-           <MenuLogo />
-       </Link>
+           <LogoContainer aria-label={"Home"} href="/" id="logo">
+               <MenuLogo />
+           </LogoContainer>
        <Button onClick={()=>setOpen(previous=>!previous)} className='flex center' style={{columnGap:"10px", background:"white", color:COLORS.BLACKGREY}}>
         {("Close")}<GrFormClose className='h6'/>
         </Button>
@@ -294,8 +320,8 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
             </Link>
         </MobileLinkStyles>
         <MobileLinkStyles><Link href="/blog" className='main-title'>{("Blog")}</Link></MobileLinkStyles>
-        {/* <MobileLinkStyles onClick={()=>setOpenServices(previous=>!previous)}>
-            <div className='main-title'>{("language")}<ArrowSvg/></div>
+        <MobileLinkStyles onClick={()=>setOpenServices(previous=>!previous)}>
+            <div className='main-title'>{t("language")}{openServices?<BiChevronUp/>:<BiChevronDown/>}</div>
             <Collapse on={openServices}>
             <MobileSubMenuContainerStyle>
                 <Link href="/" locale="ro">{("Romanian")}</Link>
@@ -304,7 +330,7 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
             </MobileSubMenuContainerStyle>
 
             </Collapse>
-        </MobileLinkStyles> */}
+        </MobileLinkStyles>
      
     </MobileLinkContainerStyles>
         </MobileMenuModalStyles>

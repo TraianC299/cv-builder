@@ -1,18 +1,17 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, SkillType, useCVcontext } from '../../contexts/AppContext'
+import { CvObjectType, EducationType, EmploymentType, SkillType, useCV } from '../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
-
 
 
 
 const Container = styled.div`
 height: 842px;
 width: 595px;
-padding: 2rem;
 display: grid;
 grid-template-columns: 306px 205px;
+justify-content: center;
 column-gap: 1rem;
 background: white;
 position: relative;
@@ -24,17 +23,6 @@ overflow: hidden;
   row-gap:16px;
 }
 
-::after{
-  content:"";
-  position: absolute;
-  top:0;
-  left:0;
-  height: 150px;
-  width: 338px;
-  background: ${COLORS.MAINCOLOR};
-  z-index:0;
-  border-radius: 0 0 20px 0;
-}
 `
 
 
@@ -43,7 +31,7 @@ display: flex;
 flex-direction: column;
 row-gap: 8px;`
 const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
-  const {t} = useTranslation()
+  const { t } = useTranslation("create-cv")
   return (
     <Container id="cv-preview" 
     className={className}
@@ -53,18 +41,18 @@ const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:s
             <Section title={t("professional-summary")}>
               <p className='sp'>{cvObject.summary}</p>
             </Section>
-            <Section title={t("employment")}>
+            {cvObject.employment && <Section title={t("employment")}>
             {cvObject.employment.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-            </Section>
-            <Section title={t("internships")}>
+            </Section>}
+            {cvObject.internships && <Section title={t("internships")}>
             {cvObject.internships.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-            </Section>
-            <Section title={t("education")}>
+            </Section>}
+            {cvObject.education && <Section title={t("education")}>
             {cvObject.education.map((el:EducationType)=><EducationItem {...el} key={el.id}></EducationItem>)}
-            </Section>
+            </Section>}
             
         </div>
-        <div>
+        <div className='p-4'>
         <Section title={t("personal-info")}>
           <p className='sp'>{t("location")}: {cvObject.city}, {cvObject.country}</p>
           <p className='sp'>{t("phone")}: {cvObject.phone}</p>
@@ -73,11 +61,11 @@ const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:s
         <Section title={t("hobbies")}>
           <p className='sp'>{cvObject.hobbies}</p>
         </Section>
-        <Section title="Skills">
+        {cvObject.skills&&<Section title="Skills">
           <SkillsContainer>
             {cvObject.skills.map((el:SkillType)=><SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
           </SkillsContainer>
-        </Section>
+        </Section>}
         {cvObject.languages && <Section title="Languages">
           <SkillsContainer>
             {cvObject.languages.map((el:SkillType)=><SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
@@ -109,9 +97,19 @@ const Section = ({children, title}:{
 
 const ProfileSectionContainer = styled.div`
 column-gap: 0.5rem;
-margin-bottom: 32px;
-margin-top:8px;
+padding: 1rem;
 z-index:999;
+background: ${COLORS.MAINCOLOR};
+position: relative;
+left: -34px;
+padding-left: 34px;
+width: calc(100% + 34px);
+border-radius: 0 0 16px 0;
+min-height: 100px;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+word-break: break-word;
 >img{
   height: 50px;
   width: 50px;

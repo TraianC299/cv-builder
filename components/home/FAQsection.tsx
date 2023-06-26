@@ -4,6 +4,7 @@ import Collapse from '../system/utilities/Collapse'
 import { useTranslation } from 'next-i18next'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
+import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 
 const Container = styled.div`
 margin: 1rem ;
@@ -27,7 +28,7 @@ const Question = ({question, answer}:{question:string, answer:string}) => {
     return (
         <QuestionStyle>
             <div className='flex w-full jsb'><p className='h5 mb-2'>{question}</p> 
-                <div className='pointer transition h6' style={{color:COLORS.MAINCOLOR}} onClick={()=>setOpen(prev=>!prev)}>{open?"-":"+"}</div>
+                <div className='pointer transition h6' style={{color:COLORS.MAINCOLOR}} onClick={()=>setOpen(prev=>!prev)}>{open?<BiChevronUp className='h5'/>:<BiChevronDown className='h5'/>}</div>
             </div>
         <Collapse on={open}>
             <p className='p' style={{color: COLORS.GREY, paddingTop:"1rem"}}>{answer}</p>

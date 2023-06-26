@@ -21,7 +21,7 @@
     "skillful": "Skillful",
     "experienced": "Experienced",
     "expert": "Expert",
-    "add-new": "add new",
+    "add-new": "add",
     "title": "Title",
     "experience-level": "Experience level",
     "employment": "Employment history",
@@ -37,5 +37,7 @@
     "location": "Location",
     "at": "at",
     "languages": "Languages",
+    "language": "Language",
+    "template": "Template",
     "not-specified": "Not specified"
 }

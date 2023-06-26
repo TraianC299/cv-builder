@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BLACKGREY } from '../../../data/contants';
 import SpinnerSvg from "../../assets/svg/spinner.svg";
+import COLORS from '@/constants/COLORS';
 
 
 
@@ -10,7 +10,7 @@ animation: rotation 1s infinite;
 height: 1.25rem;
 width: 1.25rem;
 *{
-  fill: ${BLACKGREY};
+  fill: ${COLORS.BLACKGREY};
 }`
 
 const Spinner = ({ className, ...props}:{

@@ -1,14 +1,14 @@
 import React from 'react'
 import Section from '../Section'
 import { ReactSortable } from 'react-sortablejs'
-import { CvObjectType, useCVcontext } from '../../../contexts/AppContext'
+import { CvObjectType, useCV } from '../../../contexts/AppContext'
 import { nanoid } from 'nanoid'
 import SkillInput from '../inputs/SkillInput'
 import { useTranslation } from 'next-i18next'
 
 
 const SkillsSection = () => {
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
+    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
     const {t} = useTranslation("create-cv")
     const addNewSkillFunction = () => {
         const noEditSkills = cvObject.skills.map(el=>({
@@ -26,6 +26,7 @@ const SkillsSection = () => {
       }
   return (
     <Section 
+    deletable
     objectKey="skills"
     title={t("skills")}
     onClick={addNewSkillFunction}>

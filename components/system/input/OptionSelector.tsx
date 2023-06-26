@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import useClickOutside from '../../../hooks/useClickOutside'
 import Input from './Input'
 import COLORS from '@/constants/COLORS'
+import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 
 const Container = styled.div`
 position: relative;
@@ -11,19 +12,14 @@ height: fit-content;
 width: 100%;
 >.time-picker-button{
     position: absolute;
-    top: calc(50% + 0.7rem);
+    top: calc(50% + 1rem);
     right: 0.5rem;
     border: none;
     background: transparent;
     transform: translateY(-50%);
     padding: 5px;
 
-    >svg{
-        fill: ${COLORS.LIGHTGREY};
-        *{
-            fill: ${COLORS.LIGHTGREY};
-        }
-    }
+  
     
 }
 `
@@ -87,14 +83,13 @@ const getInitialValue = (value:OptionSelectorProps["value"], options:OptionSelec
 type OptionSelectorProps = {
     options: {label:string, value:any}[] | [],
     value: any,
-    setValue: React.Dispatch<React.SetStateAction<any>>,
+    onChange: (value:any) => void,
     noAddOption?: boolean,
-    withImage?:boolean,
     label: string,
     props?: React.PropsWithChildren[]
 }
 
-const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, label, ...props}:OptionSelectorProps) => {
+const OptionSelector = ({options=[], value, noAddOption, label, onChange, ...props}:OptionSelectorProps) => {
     const [relevantOptions, setRelevantOptions] = React.useState([...options])
     const [focus, setFocus] = React.useState(false)
     const [inputValue, setInputValue] = useState<string>(value?getInitialValue(value, options):"")
@@ -116,7 +111,7 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
     const complete = ({label, value}:{label:OptionSelectorProps["label"], value:OptionSelectorProps["value"]}) => {
         setFocus(false)
         setInputValue(label)
-        setValue(value)
+        onChange(value)
     }
    
 
@@ -131,7 +126,7 @@ const OptionSelector = ({options=[], value, setValue, noAddOption, withImage, la
                     selected={value?value===option.value:false}
                     ></Tag>)}
             </StyledAutocompleteContainer>:null}
-            <button className="time-picker-button pointer" onClick={(e)=>{e.preventDefault();setFocus(previous=>!previous)}} color={COLORS.GREYWHITE} >{focus?<p>-</p>:<p>+</p>}</button>
+            <button className="time-picker-button pointer" onClick={(e)=>{e.preventDefault();setFocus(previous=>!previous)}} color={COLORS.GREYWHITE} >{focus?<BiChevronUp className='h6'/>:<BiChevronDown className='h6'/>}</button>
             </Container>
     )
 }

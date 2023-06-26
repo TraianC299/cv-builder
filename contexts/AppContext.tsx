@@ -60,7 +60,7 @@ export const CVcategories = [
     "internships",
 ]
 
-const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: React.Dispatch<React.SetStateAction<any>> }>(
+const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: React.Dispatch<React.SetStateAction<any>>, progress:number }>(
     {
         cvObject:{
             summary:"",
@@ -80,10 +80,11 @@ const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: Rea
             internships:[],
             template: 1
         },
-        setCvObject:()=>{}
+        setCvObject:()=>{},
+        progress:0
     }
 )
-export const useCVcontext=()=>{
+export const useCV=()=>{
         return useContext(CVcontext)
     }
 
@@ -94,35 +95,70 @@ export const CVprovider = ({children}:{
 }) => {
     const [cvObject, setCvObject] = useLocalStorage<CvObjectType>("cvobject",{
         summary:"",
-    hobbies:"",
-    skills: [],
-    languages:[],
-    email:"",
-    phone: "",
-    country:"", 
-    name: "", 
-    surname: "",
-    jobTitle: "",
-    city:"",
-    profileImage:"",
-    employment: [],
-    education: [],
-    internships:[],
-    template:1
+        hobbies:"",
+        skills: [],
+        languages:[],
+        email:"",
+        phone: "",
+        country:"", 
+        name: "", 
+        surname: "",
+        jobTitle: "",
+        city:"",
+        profileImage:"",
+        employment: [],
+        education: [],
+        internships:[],
+        template:1
     })
 
 
     
 
 
-    
+    const  calculateProgress = ()=>{
+        let progress = 0
+        if(cvObject.name && cvObject.surname && cvObject.jobTitle && cvObject.city && cvObject.country && cvObject.email && cvObject.phone && cvObject.profileImage){
+            progress+=10
+        }
+        if(cvObject.summary){
+            progress+=10
+        }
+        if(cvObject.hobbies){
+            progress+=10
+        }
+        if(cvObject.skills.length>0){
+            progress+=10
+        }
+        if(cvObject.languages.length>0){
+            progress+=10
+        }
+        if(cvObject.employment.length>0){
+            progress+=10
+        }
+        if(cvObject.education.length>0){
+            progress+=10
+        }
+        if(cvObject.internships.length>0){
+            progress+=10
+        }
+        return progress
+
+    }
+
+    const progress = calculateProgress()
+
     
     let value={
-        cvObject, setCvObject
+        cvObject, 
+        setCvObject,
+        progress
     }
 
 
     
+
+
 
 
 

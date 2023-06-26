@@ -2,8 +2,10 @@ import React, { useEffect } from 'react'
 import ImageInput from './ImageInput'
 import styled from 'styled-components'
 import { InputStyle } from '../../../styles/global'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
+import { ImSpinner2 } from 'react-icons/im'
+import { BiCheck } from 'react-icons/bi'
 
 
 
@@ -62,22 +64,17 @@ type ButtonInputImageProps = {
 }
 const ButtonInputImage = ({image, setImage, imageError, setImageError, label, postInputLabel, ...props}:ButtonInputImageProps) => {
     const [loading, setLoading] = React.useState(false)
-    const {t} = useTranslation()
+    const {t} = useTranslation("create-cv")
  
-
-    // useEffect(()=>{
-    //   setImage("")
-    // },[])
   return (
    <ImageInput resize={200} loading={loading} setLoading={setLoading} imageUrl={image} setImageUrl={setImage}  {...props}>
     <Container>
       <img style={{display: "none"}} onError={()=>setImage("")} src={image}></img>
       <label className='sp'>{t("your-photo")}</label>
       <SelectImageLabel as="label"  style={{borderColor: imageError?COLORS.RED:loading?COLORS.GREY:COLORS.BLACK}}   className={`${image?"selected":""}`}>
-      {loading?
-      // <Spinner style={{animation:"rotation 1s infinite"}}></Spinner>
-      <p style={{animation:"rotation 1s infinite"}}>⌛</p>
-      :<p style={{color: imageError?COLORS.RED:image?"white":COLORS.BLACK}}>{imageError ? "Nicio Imagine" : image ? postInputLabel : label }</p>}
+      {loading &&<ImSpinner2 className='h6' style={{animation:"rotation 1s infinite"}}/>}
+      {image && <BiCheck className='h6' color='white'/>}
+      {!loading && !image && <p style={{color: imageError?COLORS.RED:COLORS.BLACK}}>{imageError ? "..." : label }</p>}
       </SelectImageLabel>
     </Container>
 </ImageInput>

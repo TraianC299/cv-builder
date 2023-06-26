@@ -4,6 +4,7 @@ import useClickOutside from '../../../hooks/useClickOutside'
 import useDidMountEffect from '../../../hooks/useDidMountEffect'
 import Input from './Input'
 import COLORS from '@/constants/COLORS'
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 
 
 
@@ -16,9 +17,9 @@ overflow: hidden;
 border-radius: 10px;
 background: ${COLORS.GREYWHITE};
 position: absolute;
-top: 100%;
+top: calc(100% + 0.5rem);
 width: fit-content;
-padding: 1rem;
+padding: 0.5rem;
 z-index:99;
 `
 
@@ -31,8 +32,7 @@ justify-content: space-between;
 align-items: center;
 div{
     background: ${COLORS.MAINCOLOR};
-    padding: 0.5rem 1rem;
-    border-radius: 66px;
+    padding: 0.25rem 0.5rem;
     color: white;
 }
 `
@@ -44,11 +44,8 @@ grid-template-columns: repeat(4, 5ch);
 justify-items: center;
 align-items: center;
 >div{
-    padding: 5px;
-    border-radius: 10px;
     :hover{
         color: ${COLORS.MAINCOLOR};
-        cursor: pointer;
     }
     &.selected{
         background: ${COLORS.MAINCOLOR};
@@ -57,7 +54,8 @@ align-items: center;
 }
 `
 
-const months = ["Jan",
+const months = [
+"Jan",
 "Feb",
 "Mar",
 "Apr",
@@ -88,15 +86,15 @@ const MonthYearSelector = ({value, setValue, label}:{
 
   return (
     <Container ref={ref}>
-        <Input value={value} onFocusCapture={(e: { preventDefault: () => void })=>{e.preventDefault();setOpen(prev=>!prev)}} label={label} setValue={()=>{}}></Input>
-        {open?<Modal>
+        <Input value={value} onFocus={(e: { preventDefault: () => void })=>{e.preventDefault();setOpen(prev=>!prev)}} label={label} setValue={()=>{}}></Input>
+        {open?<Modal className='shadow-md'>
             <YearContainer>
-                <p className='pointer' onClick={(e)=>{e.preventDefault();setYear(prev=>--prev)}}>-</p>
-                <div className='flex jc ac'>{year}</div>
-                <p className='pointer' onClick={(e)=>{e.preventDefault();setYear(prev=>++prev)}}>+</p>
+                <BiChevronLeft className="h6 pointer" onClick={(e)=>{e.preventDefault();setYear(prev=>--prev)}}></BiChevronLeft>
+                <div className='flex jc ac p rounded-sm'>{year}</div>
+                <BiChevronRight className="h6 pointer" onClick={(e)=>{e.preventDefault();setYear(prev=>++prev)}}></BiChevronRight>
             </YearContainer>
             <MonthGrid>
-                {months.map((el:string)=><div className={month===el?"selected":""} onClick={(e)=>{e.preventDefault();setMonth(el)}}>{el}</div>)}
+                {months.map((el:string)=><div key={el} className={`sp rounded-sm p-2 pointer ${month===el?"selected":""}`} onClick={(e)=>{e.preventDefault();setMonth(el)}}>{el}</div>)}
             </MonthGrid>
         </Modal>:null}
     </Container>

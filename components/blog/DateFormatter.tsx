@@ -1,4 +1,4 @@
-import { GREY } from "../../data/contants";
+import COLORS from "@/constants/COLORS";
 
 type Props = {
   dateString: string
@@ -6,7 +6,7 @@ type Props = {
 const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
 const DateFormatter = ({ dateString }: Props) => {
-  return <time className="p" style={{textTransform:"capitalize", color:GREY}} dateTime={dateString}>{new Date(dateString).toLocaleDateString("en", options)}</time>
+  return <time className="p" style={{textTransform:"capitalize", color:COLORS.GREY}} dateTime={dateString}>{new Date(dateString).toLocaleDateString("en", options)}</time>
 }
 
 export default DateFormatter

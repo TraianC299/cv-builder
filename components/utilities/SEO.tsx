@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import siteMetadata from '../../data/siteMetadata'
 import { FC } from 'react';
+import METADATA from '@/constants/METADATA';
 
 
 interface CommonSEOProps {
@@ -19,9 +19,9 @@ interface CommonSEOProps {
         <title>{title}</title>
         <meta name="robots" content="follow, index" />
         <meta name="description" content={description} />
-        <meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
+        <meta property="og:url" content={`${METADATA.siteUrl}${router.asPath}`} />
         <meta property="og:type" content={ogType} />
-        <meta property="og:site_name" content={siteMetadata.title} />
+        <meta property="og:site_name" content={METADATA.title} />
         <meta property="og:description" content={description} />
         <meta property="og:title" content={title} />
         {Array.isArray(ogImage) ? (
@@ -31,7 +31,7 @@ interface CommonSEOProps {
         )}
         <link
           rel="canonical"
-          href={canonicalUrl ? canonicalUrl : `${siteMetadata.siteUrl}${router.asPath}`}
+          href={canonicalUrl ? canonicalUrl : `${METADATA.siteUrl}${router.asPath}`}
         />
       </Head>
     );
@@ -44,7 +44,7 @@ type PageSEOProps = {
     }
     
 export const PageSEO = ({ title, description }:PageSEOProps) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const ogImageUrl = METADATA.siteUrl + METADATA.socialBanner
   return (
     <CommonSEO
       title={title}
@@ -63,7 +63,7 @@ type TagSEOProps = {
     }
 
 export const TagSEO = ({ title, description }:TagSEOProps) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const ogImageUrl = METADATA.siteUrl + METADATA.socialBanner
   const router = useRouter()
   return (
     <>
@@ -78,7 +78,7 @@ export const TagSEO = ({ title, description }:TagSEOProps) => {
           rel="alternate"
           type="application/rss+xml"
           title={`${description} - RSS feed`}
-          href={`${siteMetadata.siteUrl}${router.asPath}/feed.xml`}
+          href={`${METADATA.siteUrl}${router.asPath}/feed.xml`}
         />
       </Head>
     </>
@@ -113,7 +113,7 @@ export const BlogSEO = ({
   const modifiedAt = new Date(lastmod || date).toISOString()
   let imagesArr =
     images.length === 0
-      ? [siteMetadata.socialBanner]
+      ? [METADATA.socialBanner]
       : typeof images === 'string'
       ? [images]
       : images
@@ -122,7 +122,7 @@ export const BlogSEO = ({
     return {
       '@type': 'ImageObject',
       // @ts-ignore
-      url: img.includes('http') ? img : siteMetadata.siteUrl + img,
+      url: img.includes('http') ? img : METADATA.siteUrl + img,
     }
   })
 
@@ -137,7 +137,7 @@ export const BlogSEO = ({
   } else {
     authorList = {
       '@type': 'Person',
-      name: siteMetadata.author,
+      name: METADATA.author,
     }
   }
 
@@ -155,10 +155,10 @@ export const BlogSEO = ({
     author: authorList,
     publisher: {
       '@type': 'Organization',
-      name: siteMetadata.author,
+      name: METADATA.author,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
+        url: `${METADATA.siteUrl}${METADATA.siteLogo}`,
       },
     },
     description: summary,

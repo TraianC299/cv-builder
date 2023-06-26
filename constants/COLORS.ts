@@ -7,10 +7,12 @@ const BLACKGREY = "#323C46"
 const LIGHTGREY  = "#f5f5f5"
 const GREYWHITE = "#F5F5F5"
 const RED  = "#FF5252"
-const MAINCOLOR = "#4275e0"
+const MAINCOLOR = "#FF9800"
 const GREEN = "#15CF74"
 const DARKGREEN = "#0F9D58"
 const DARKBLUE = "#082a4d"
+const ORANGE = "#FF9800"
+const PURPLE = "#9C27B0"
 
 
 const COLORS = {
@@ -26,7 +28,9 @@ const COLORS = {
     MAINCOLOR,
     GREEN,
     DARKGREEN,
-    DARKBLUE
+    DARKBLUE,
+    ORANGE,
+    PURPLE
 }
 
 export default COLORS

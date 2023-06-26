@@ -1,12 +1,12 @@
 import React from 'react'
 import Section from '../Section'
 import { ReactSortable } from 'react-sortablejs'
-import { CvObjectType, useCVcontext } from '../../../contexts/AppContext'
+import { CvObjectType, useCV } from '../../../contexts/AppContext'
 import { nanoid } from 'nanoid'
 import EmploymentInput from '../inputs/EmploymentInput'
 import { useTranslation } from 'next-i18next'
 const EmploymentSection = () => {
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCVcontext()
+    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
     const {t} = useTranslation("create-cv")
   const addNewEmployment = () => {
     const noEditLanguages = cvObject.employment.map(el=>({
@@ -39,7 +39,7 @@ const deleteEmployment = (id:string) => {
 }
 
   return (
-    <Section 
+    <Section deletable
     objectKey="employment"
     title={t("employment")}
     onClick={addNewEmployment}>
@@ -48,7 +48,7 @@ const deleteEmployment = (id:string) => {
       list={cvObject.employment}
       setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
       handle=".handle"
-      >{cvObject.employment.map(el=><EmploymentInput
+      >{cvObject?.employment?.map(el=><EmploymentInput
        key={el.id}  
        {...el} 
        edit={el.edit || false}

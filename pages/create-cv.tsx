@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { CVprovider } from '../contexts/AppContext'
 import CvPreview from '../components/createcv/CvPreview'
 import { NextPage } from 'next'
-import { device } from '../data/contants'
 import { PageSEO } from '../components/utilities/SEO'
 import Form from '../components/createcv/Form'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 
 
 
@@ -17,7 +17,7 @@ display: grid;
 height: 100vh;
 overflow: hidden;
 grid-template-columns: 600px 1fr;
-@media ${device.mobileSmallPortrait}{
+@media ${MEDIAQUERIES.mobileSmallPortrait}{
   grid-template-columns: 1fr;
 
 }

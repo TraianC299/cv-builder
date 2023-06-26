@@ -38,5 +38,7 @@
     "location": "Locație",
     "at": "la",
     "languages": "Limbi",
-    "not-specified": "Nu este specificat"
+    "template": "Șablon",
+    "not-specified": "Nu este specificat",
+    "language": "Limba"
 }
