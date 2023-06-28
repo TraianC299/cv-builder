@@ -18,7 +18,7 @@ const Badges = styled.div`
 
  const Box = styled.footer`
   padding: 80px 30px;
-  background: ${COLORS.GREYWHITE};
+  background: ${COLORS.LIGHTGREY};
   width: 100%;
   margin-top: 5rem;
 

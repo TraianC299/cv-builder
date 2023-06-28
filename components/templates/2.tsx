@@ -1,13 +1,14 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, SkillType, useCV } from '../../contexts/AppContext'
+import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType, useCV } from '../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
+import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 
 
 
-const Container = styled.div`
+const Container = styled(FontScaleWrapper)`
 height: 842px;
 width: 595px;
 padding: 24px;
@@ -88,11 +89,15 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
           {cvObject.education &&<Section title={t("education")}>
             {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
           </Section>}
+          {cvObject.projects && <Section title={t("projects")}>
+            {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
+          </Section>}
           {cvObject.skills && <Section title="Skills">
             <SkillsContainer>
               {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
             </SkillsContainer>
           </Section>}
+          
 
         </div>
       </Container2>
@@ -190,7 +195,7 @@ const SkillInstance = ({ title, grade }: {
     <SkillInstanceContainer className='flex ac jsb'>
       <p className='sp'>{title}</p>
       <div className='flex'>
-        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < (grade ||0) ? COLORS.YELLOW : COLORS.GREYWHITE }}></div>)}
+        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < (grade ||0) ? COLORS.YELLOW : COLORS.LIGHTGREY }}></div>)}
 
       </div>
     </SkillInstanceContainer>
@@ -217,7 +222,20 @@ const EmploymentItem = ({ title, startDate, endDate, description, employer, city
 }
 
 
-const EducationItem = ({ school, degree, city, startDate, endDate, description }: EducationType) => {
+const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) => {
+
+  return (<div>
+    <div>
+      <p className='sp font-semibold'>{title}</p>
+      <p className='caption'>{startDate} - {endDate}</p>
+    </div>
+    <p className='sp'>{description}</p>
+
+  </div>)
+}
+
+
+const EducationItem = ({ school, degree, city, startDate, endDate }: EducationType) => {
   const { t } = useTranslation()
 
   return (
@@ -226,7 +244,6 @@ const EducationItem = ({ school, degree, city, startDate, endDate, description }
         <p className='sp font-semibold'>{degree} {t("at")} {school} ({city})</p>
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
-      <p className='sp'>{description}</p>
 
     </EmploymentItemContainer>
   )

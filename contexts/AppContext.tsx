@@ -1,5 +1,6 @@
 import React, {ReactNode, useContext} from 'react'
 import useLocalStorage from '../hooks/useLocalStorage'
+import { useRouter } from 'next/router'
 
 
 export type SkillType = {
@@ -24,11 +25,20 @@ export type EducationType = {
     school: string,
     degree: string,
     city: string, 
-    description: string,
     id: string,
     edit:boolean,
     startDate: string,
     endDate: string;
+}
+
+
+export type ProjectType = {
+    title: string,
+    description: string,
+    id: string,
+    edit:boolean,
+    startDate: string,
+    endDate: string,
 }
 
 
@@ -48,7 +58,9 @@ export type CvObjectType = {
     employment: [EmploymentType] | [],
     education: [EducationType] | [],
     internships: [EmploymentType] | [],
-    template: number
+    projects: [ProjectType] | []
+    template: number,
+    language: string
 }
 
 
@@ -58,28 +70,31 @@ export const CVcategories = [
     "employment",
     "education",
     "internships",
+    "projects"
 ]
-
+const initialCvObject:CvObjectType = {
+    summary:"",
+    hobbies:"",
+    skills: [],
+    languages:[],
+    email:"",
+    phone: "",
+    country:"", 
+    name: "", 
+    surname: "",
+    jobTitle: "",
+    city:"",
+    profileImage:"",
+    employment: [],
+    education: [],
+    internships:[],
+    projects:[],
+    template: 1,
+    language: "en"
+}
 const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: React.Dispatch<React.SetStateAction<any>>, progress:number }>(
     {
-        cvObject:{
-            summary:"",
-            hobbies:"",
-            skills: [],
-            languages:[],
-            email:"",
-            phone: "",
-            country:"", 
-            name: "", 
-            surname: "",
-            jobTitle: "",
-            city:"",
-            profileImage:"",
-            employment: [],
-            education: [],
-            internships:[],
-            template: 1
-        },
+        cvObject:initialCvObject,
         setCvObject:()=>{},
         progress:0
     }
@@ -94,22 +109,7 @@ export const CVprovider = ({children}:{
     children:ReactNode
 }) => {
     const [cvObject, setCvObject] = useLocalStorage<CvObjectType>("cvobject",{
-        summary:"",
-        hobbies:"",
-        skills: [],
-        languages:[],
-        email:"",
-        phone: "",
-        country:"", 
-        name: "", 
-        surname: "",
-        jobTitle: "",
-        city:"",
-        profileImage:"",
-        employment: [],
-        education: [],
-        internships:[],
-        template:1
+        ...initialCvObject,
     })
 
 
@@ -127,19 +127,22 @@ export const CVprovider = ({children}:{
         if(cvObject.hobbies){
             progress+=10
         }
-        if(cvObject.skills.length>0){
+        if(cvObject?.skills?.length>0){
             progress+=10
         }
-        if(cvObject.languages.length>0){
+        if(cvObject?.languages?.length>0){
             progress+=10
         }
-        if(cvObject.employment.length>0){
+        if(cvObject?.employment?.length>0){
             progress+=10
         }
-        if(cvObject.education.length>0){
+        if(cvObject?.education?.length>0){
             progress+=10
         }
-        if(cvObject.internships.length>0){
+        if(cvObject?.internships?.length>0){
+            progress+=10
+        }
+        if(cvObject?.projects?.length>0){
             progress+=10
         }
         return progress

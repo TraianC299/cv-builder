@@ -1,31 +1,29 @@
 import React from 'react'
 import Section from '../Section'
 import { ReactSortable } from 'react-sortablejs'
-import { CvObjectType, useCV } from '../../../contexts/AppContext'
+import { CvObjectType, EducationType, useCV } from '../../../contexts/AppContext'
 import { nanoid } from 'nanoid'
-import EducationInput from '../inputs/EducationInput'
 import { useTranslation } from 'next-i18next'
+import EducationInput from '../inputs/EducationInput'
 const EducationSection = () => {
   const {t} = useTranslation("create-cv")
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
     const addNewEducation = () => {
-        const noEditLanguages = cvObject.education.map(el=>({
+        const noEditEducation = cvObject.education.map(el=>({
           school: el.school,
           degree: el.degree,
           city: el.city, 
-          description: el.description,
           id: el.id,
           edit:false
         }))
         setCvObject((prev:CvObjectType)=>({
           ...prev,
           education:[
-            ...noEditLanguages, {
+            ...noEditEducation, {
               id:nanoid(),
               school: "",
               degree: "",
               city: "", 
-              description: "",
                edit:true}
           ]
         }))
@@ -49,9 +47,9 @@ const EducationSection = () => {
       list={cvObject.education}
       setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
       handle=".handle">
-        {cvObject?.education?.map(el=><EducationInput
+        {cvObject?.education?.map(el=><EducationSection.Input
          key={el.id}  {...el}
-         onDelete={deleteEducation}></EducationInput>)}
+         onDelete={deleteEducation}></EducationSection.Input>)}
       </ReactSortable>
 
       </Section>
@@ -59,3 +57,14 @@ const EducationSection = () => {
 }
 
 export default EducationSection
+
+
+
+
+
+EducationSection.Input = EducationInput
+
+
+
+
+

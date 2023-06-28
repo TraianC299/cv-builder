@@ -3,8 +3,8 @@ import Section from '../Section'
 import { ReactSortable } from 'react-sortablejs'
 import { CvObjectType, useCV } from '../../../contexts/AppContext'
 import { nanoid } from 'nanoid'
-import EmploymentInput from '../inputs/EmploymentInput'
 import { useTranslation } from 'next-i18next'
+import EmploymentInput from '../inputs/EmploymentInput'
 const EmploymentSection = () => {
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
     const {t} = useTranslation("create-cv")
@@ -48,14 +48,19 @@ const deleteEmployment = (id:string) => {
       list={cvObject.employment}
       setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
       handle=".handle"
-      >{cvObject?.employment?.map(el=><EmploymentInput
+      >{cvObject?.employment?.map(el=><EmploymentSection.Input
        key={el.id}  
        {...el} 
        edit={el.edit || false}
        onDelete={deleteEmployment}
-       ></EmploymentInput>)}</ReactSortable>
+       ></EmploymentSection.Input>)}</ReactSortable>
     </Section>
   )
 }
 
 export default EmploymentSection
+
+
+
+
+EmploymentSection.Input = EmploymentInput

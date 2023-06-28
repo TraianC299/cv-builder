@@ -12,15 +12,11 @@ height: fit-content;
 width: 100%;
 >.time-picker-button{
     position: absolute;
-    top: calc(50% + 1rem);
+    bottom: 0px;
     right: 0.5rem;
     border: none;
     background: transparent;
-    transform: translateY(-50%);
-    padding: 5px;
-
-  
-    
+    padding: 0.75rem 0;
 }
 `
 
@@ -36,6 +32,9 @@ max-height: 20rem;
 overflow: scroll;
 background-color: transparent;
 border-radius: 0.5rem;
+background: ${COLORS.WHITE};
+padding: 0.5rem;
+
 
 `
 const TagContainer = styled.div`
@@ -44,12 +43,12 @@ width: 100%;
 display: flex;
 align-items: center;
 padding-left: 1rem;
-background-color: white;
 height: 3rem;
 cursor: pointer;
 position: relative;
+
 :hover{
-    background-color: ${COLORS.GREYWHITE};
+    background-color: ${COLORS.MAINCOLOR}20;
 }
 >img{
     height: 2.5rem;
@@ -59,16 +58,8 @@ position: relative;
 }
 
 &.selected{
-    :before{
-        content: "";
-        position: absolute;
-        top: calc(50% - 0.25rem);
-        right: 1rem;
-        width: 0.5rem;
-        height: 0.5rem;
-        border-radius: 50%;
-        background-color: ${COLORS.MAINCOLOR};
-    }
+    background-color: ${COLORS.MAINCOLOR};
+    color: white;
 }
 `
 
@@ -126,7 +117,7 @@ const OptionSelector = ({options=[], value, noAddOption, label, onChange, ...pro
                     selected={value?value===option.value:false}
                     ></Tag>)}
             </StyledAutocompleteContainer>:null}
-            <button className="time-picker-button pointer" onClick={(e)=>{e.preventDefault();setFocus(previous=>!previous)}} color={COLORS.GREYWHITE} >{focus?<BiChevronUp className='h6'/>:<BiChevronDown className='h6'/>}</button>
+            <button className="time-picker-button pointer" onClick={(e)=>{e.preventDefault();setFocus(previous=>!previous)}} color={COLORS.LIGHTGREY} >{focus?<BiChevronUp className='h6'/>:<BiChevronDown className='h6'/>}</button>
             </Container>
     )
 }
@@ -143,7 +134,7 @@ const Tag = ({label, selected, image, onClick}:{
     
 
     return (
-        <TagContainer className={selected?"selected":""} onClick={onClick}>{image?<img src={image}></img>:null}<p>{label}</p></TagContainer>
+        <TagContainer className={`rounded-sm ${selected?"selected":""}`} onClick={onClick}>{image?<img src={image}></img>:null}<p>{label}</p></TagContainer>
     )
 }
 

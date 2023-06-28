@@ -44,14 +44,14 @@ padding-left: 10px;
 background-color: white;
 min-height: 5vh;
 cursor: pointer;
-border-bottom: 0.5px solid ${COLORS.GREYWHITE};
+border-bottom: 0.5px solid ${COLORS.LIGHTGREY};
 justify-content:space-between ;
 >p{
     color:${COLORS.GREY};
     font-size: 0.8rem;
 }
 :hover{
-    background-color: ${COLORS.GREYWHITE};
+    background-color: ${COLORS.LIGHTGREY};
 }
 >img{
     height: 3vh;

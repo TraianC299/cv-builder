@@ -3,8 +3,8 @@ import Section from '../Section'
 import { ReactSortable } from 'react-sortablejs'
 import { CvObjectType, useCV } from '../../../contexts/AppContext'
 import { nanoid } from 'nanoid'
-import InternshipInput from '../inputs/InternshipInput'
 import { useTranslation } from 'next-i18next'
+import InternshipInput from '../inputs/InternshipInput'
 
 
 const InternshipsSection = () => {
@@ -50,14 +50,26 @@ const InternshipsSection = () => {
     list={cvObject.internships}
     setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
     handle=".handle"
-    >{cvObject?.internships?.map(el=><InternshipInput 
+    >{cvObject?.internships?.map(el=><InternshipsSection.Input 
       onDelete={()=>deleteInternship(el.id)}
       {...el}
       key={el.id}  
-      ></InternshipInput>)}</ReactSortable>
+      ></InternshipsSection.Input>)}</ReactSortable>
 
     </Section>
   )
 }
 
 export default InternshipsSection
+
+
+
+
+ InternshipsSection.Input = InternshipInput
+
+
+
+
+
+
+

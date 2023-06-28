@@ -113,7 +113,7 @@ img{
       max-width:100%;
       margin:auto;
       border-radius:1rem;
-      border: 2px solid ${COLORS.GREYWHITE};
+      border: 2px solid ${COLORS.LIGHTGREY};
     }
 `
 

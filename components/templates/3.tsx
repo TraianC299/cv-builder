@@ -1,13 +1,14 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, SkillType } from '../../contexts/AppContext'
+import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from '../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
+import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 
 
 
-const Container = styled.div`
+const Container = styled(FontScaleWrapper)`
 height: 842px;
 width: 595px;
 padding: 1rem;
@@ -19,15 +20,8 @@ transform-origin:0 0;
   word-wrap: break-word;
 }
 
-.h6{
-    font-size: 0.8rem;
-}
 
-.sp{
-    font-size: 0.8rem;
-    margin: 0;
-    padding: 0;
-}
+
 `
 
 const InfoSection = styled.div`
@@ -45,13 +39,6 @@ margin-top: 24px;
 `
 
 
-const SkillsContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-gap: 1rem;
-`
-
-
 
 
 
@@ -66,55 +53,53 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
   const { t } = useTranslation("create-cv")
 
   return (
-    <Container id="cv-preview"
-      className={className}
-    // style={{transform: `scale(${height ? height/842 - 0.1 : 1})`}}
-    >
-      <ProfileSection 
-      email={cvObject.email}
-      phone={cvObject.phone}
-      city={cvObject.city}
-      country={cvObject.country}
-      name={cvObject.name} 
-      surname={cvObject.surname} 
-      jobTitle={cvObject.jobTitle} 
-      image={cvObject.profileImage}></ProfileSection>
-      <InfoSection>
-        <div >
-          <Section style={{ borderTop: "2px solid black" }} title={t("hobbies")}>
-            <p className='sp'>{cvObject.hobbies}</p>
-          </Section>
-
-          {cvObject.languages && <Section title={t("languages")}>
-            <div className='flex column gap-2'>
-              {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-            </div>
-          </Section>}
-
-        </div>
-        <SecondContainer style={{ borderLeft: "2px solid black" }}>
-          <Section style={{ borderTop: "2px solid black" }} title={t("professional-summary")}>
-            <p className='sp'>{cvObject.summary}</p>
-          </Section>
-          {cvObject.employment &&<Section title={t("employment")}>
-            {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-          </Section>}
-          {cvObject.internships && <Section title={t("internships")}>
-            {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-          </Section>}
-         {cvObject.education && <Section title={t("education")}>
-            {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
-          </Section>}
-          {cvObject.skills && <Section title="Skills">
-            <SkillsContainer>
-              {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-            </SkillsContainer>
-          </Section>}
-
-        </SecondContainer>
-      </InfoSection>
-
-    </Container>
+      <Container id="cv-preview"
+        className={className}
+      >
+        <ProfileSection
+        email={cvObject.email}
+        phone={cvObject.phone}
+        city={cvObject.city}
+        country={cvObject.country}
+        name={cvObject.name}
+        surname={cvObject.surname}
+        jobTitle={cvObject.jobTitle}
+        image={cvObject.profileImage}></ProfileSection>
+        <InfoSection>
+          <div >
+            <Section style={{ borderTop: "2px solid black" }} title={t("hobbies")}>
+              <p className='sp'>{cvObject.hobbies}</p>
+            </Section>
+            {cvObject.languages && <Section title={t("languages")}>
+              <div className='flex column gap-2'>
+                {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
+              </div>
+            </Section>}
+            {cvObject.skills && <Section title="Skills">
+              <div className='flex column gap-2'>
+                {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
+              </div>
+            </Section>}
+          </div>
+          <SecondContainer style={{ borderLeft: "2px solid black" }}>
+            <Section style={{ borderTop: "2px solid black" }} title={t("professional-summary")}>
+              <p className='sp'>{cvObject.summary}</p>
+            </Section>
+            {cvObject.employment &&<Section title={t("employment")}>
+              {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+            </Section>}
+            {cvObject.internships && <Section title={t("internships")}>
+              {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+            </Section>}
+           {cvObject.education && <Section title={t("education")}>
+              {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
+            </Section>}
+            {cvObject.projects &&<Section title={t("projects")}>
+              {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
+            </Section>}
+          </SecondContainer>
+        </InfoSection>
+      </Container>
   )
 }
 
@@ -132,7 +117,7 @@ const Section = ({ children, title, style }: {
   style?: Object
 }) => {
   return (
-    <div className='p-4' style={{ borderBottom: "2px solid black", ...style }}>
+    <div className='p-3' style={{ borderBottom: "2px solid black", ...style }}>
       <p className='sp font-semibold uppercase pb-4'>{title}</p>
       {children}
     </div>
@@ -177,9 +162,8 @@ width:100%;
 row-gap: 4px;
 >div{
   width:100%;
-  background: ${COLORS.GREYWHITE};
+  background: ${COLORS.LIGHTGREY};
   height: 5px;
-  border-radius: 444px;
   overflow: hidden;
   >div{
     height: 5px;
@@ -202,34 +186,46 @@ const SkillInstance = ({ title, grade }: {
 
 
 
-const EmploymentItemContainer = styled.div``
 
 
 const EmploymentItem = ({ title, startDate, endDate, description, employer, city }: EmploymentType) => {
   const { t } =useTranslation("create-cv")
 
   return (
-  <EmploymentItemContainer>
+  <div>
     <div>
       <p className='sp font-semibold'>{title} {t("at")} {employer} ({city})</p>
       <p className='caption'>{startDate} - {endDate}</p>
     </div>
     <p className='sp'>{description}</p>
-  </EmploymentItemContainer>)
+  </div>)
 }
 
 
-const EducationItem = ({ school, degree, city, startDate, endDate, description }: EducationType) => {
+
+const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) => {
+
+  return (
+  <div>
+    <div>
+      <p className='sp font-semibold'>{title}</p>
+      <p className='caption'>{startDate} - {endDate}</p>
+    </div>
+    <p className='sp'>{description}</p>
+  </div>)
+}
+
+
+const EducationItem = ({ school, degree, city, startDate, endDate }: EducationType) => {
   const { t } = useTranslation("create-cv")
 
   return (
-    <EmploymentItemContainer>
+    <div>
       <div>
         <p className='sp font-semibold'>{degree} {t("at")} {school} ({city})</p>
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
-      <p className='sp'>{description}</p>
-    </EmploymentItemContainer>
+    </div>
   )
 }
 

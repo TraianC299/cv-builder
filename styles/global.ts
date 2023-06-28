@@ -11,7 +11,7 @@ export const InputStyle = styled.input`
   /* border-radius: 0.25rem; */
   font-size: 1rem;
   padding: 0.75rem ;
-  background: ${COLORS.GREYWHITE};
+  background: ${COLORS.LIGHTGREY};
   border:none;
   position: relative;
   line-height: 1rem;
@@ -37,7 +37,7 @@ font-weight: 600;
 min-height: 42px;
 cursor: pointer;
 transition:   all 0.1s ease-in-out;
-
+min-width: 3rem;
 
 &.small{
   padding: 0.25rem 0.5rem;
@@ -63,8 +63,7 @@ transition:   all 0.1s ease-in-out;
 }
 
 :disabled{
-  background-color: ${COLORS.LIGHTGREY};
-  color: ${COLORS.WHITE};
+  background-color: ${COLORS.MAINCOLOR}50;
   cursor: not-allowed;
   box-shadow: none;
   

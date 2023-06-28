@@ -14,6 +14,7 @@ import { useTranslation } from 'next-i18next';
 import { ImSpinner2 } from 'react-icons/im'
 import { FiEye } from 'react-icons/fi';
 import { IoClose } from 'react-icons/io5'
+import { useRouter } from 'next/router';
 
 const EyeButton = styled.button`
 height: 3rem;
@@ -66,8 +67,8 @@ overflow: hidden;
 
 
 
-async function getPDF(cvObject: CvObjectType, template: number) {
-  return await fetch(`/api/cv/${template}`, {
+async function getPDF(cvObject: CvObjectType) {
+  return await fetch(`/api/cv/`, {
     method: "POST",
     headers: {
       'Accept': 'application/pdf'
@@ -84,11 +85,16 @@ const CvPreview = () => {
   const [loading, setLoading] = useState(false)
   const { t } = useTranslation("create-cv")
 
+  const router = useRouter()
+
   const generatePDF = async () => {
     setLoading(true)
     try {
-      const response = await getPDF(cvObject, cvObject
-        .template)
+      console.log(cvObject.language)
+      const response = await getPDF({
+        ...cvObject,
+        language: router.locale || 'en'
+      })
       const something = await response.arrayBuffer()
       const blob = new Blob([something], { type: 'application/pdf' })
       const link = document.createElement('a')
@@ -121,7 +127,7 @@ const CvPreview = () => {
           </Container>
           <div className='flex jsb'>
             <div></div>
-            <Button disabled={loading} className='small' onClick={(e) => { e.preventDefault(); generatePDF() }}>{loading ? <ImSpinner2 style={{ animation: "rotation 1s infinite" }} /> : t("download-pdf")}</Button>
+            <Button disabled={loading} className='small' onClick={(e) => { e.preventDefault(); generatePDF() }}>{loading ? <ImSpinner2 className='h6 animate-spin	' color={COLORS.WHITE} /> : t("download-pdf")}</Button>
           </div>
         </div>
       </CvPreviewStyles>

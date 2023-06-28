@@ -13,9 +13,10 @@ import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 
 
 const Container = styled.div`
-background-color: ${COLORS.GREYWHITE};
+background-color: ${COLORS.LIGHTGREY};
 min-height: 40rem;
 flex: 1;
+border-radius: 0.5rem;
 @media ${MEDIAQUERIES.laptopSmall}{
     display: flex;
     flex-direction: row;

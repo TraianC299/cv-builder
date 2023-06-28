@@ -22,21 +22,10 @@ const Header = styled.nav`
 width: 100%;
 padding:1rem;
 background: ${COLORS.WHITE};
+max-width: 1400px;
 
-/* &.not-stuck{
-    background: transparent;
-    
-    a, button{
-        opacity:0;
-    }
-    #logo{
-        opacity: 1;
-    }
-} */
 
-@media ${MEDIAQUERIES.laptopSmall}{
 
-}
 `
 
 const Container = styled.div`
@@ -115,7 +104,7 @@ const Menu = () => {
 
     
   return (
-    <div className='w-full sticky' style={{background:"white", position: 'sticky', top:0, zIndex:999}}>
+    <div className='w-full sticky flex ac jc' style={{background:"white", position: 'sticky', top:0, zIndex:999}}>
         <Header
         id="header"
         className={stuck?"stuck transition sectionPadding":"not-stuck transition sectionPadding"}
@@ -130,25 +119,24 @@ const Menu = () => {
                 <DesktopMenuItem link="/services" submenu={
                     <>
                     {LANGUAGES.map(language=>(
-                    <Link key={language.locale} className={router.locale === language.locale ? "active" : ""} href="/" locale={language.locale}>{language.emoji} {language.label}</Link>
+                    <Link key={language.locale} className={router.locale === language.locale ? "active" : ""} href="/" locale={language.locale}>{language.emoji}  {language.label}</Link>
                     ))}
                     </>
                 }>
                    {t("language")}
                 </DesktopMenuItem>
+            
+                <div className='flex-1'></div>
                 {/* <div style={{
                     maxWidth: "200px",
                 }}>
                     <OptionSelector
-                    value={language}
-                    setValue={setLanguage}
-                    options={[
-                        {label:"Romanian", value:"ro"},
-                        {label:"English", value:"en"},
-                        {label:"Russian", value:"ru"},
-                    ]}></OptionSelector>
+                  value={"ro"}
+                    options={LANGUAGES.map(el=>({
+                        value: el.locale,
+                        label: `${el.emoji} ${el.label}`
+                    }))}></OptionSelector>
                 </div> */}
-                <div className='flex-1'></div>
                 <Link href={"/create-cv"}><Button >{t("start-now")}</Button></Link>
         
                </DesktopMenuLinksContainerStyles>
@@ -175,11 +163,10 @@ const DesktopMenuItem:React.FC<DesktopMenuItemProps> = ({children,link,  submenu
     
     return(
      
-        <MenuItem  className={!submenu && router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} style={{color:COLORS.BLACKGREY, position:"relative"}}>
-            <Link href={submenu?"":link}>{children}</Link>
+        <MenuItem  className={!submenu && router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} >
+            <Link className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} href={submenu?"":link}>{children}</Link>
         {submenu && <SubMenuContainer className='shadow-md'>
             {submenu}
-         
         </SubMenuContainer>}
         </MenuItem>
     )
@@ -201,7 +188,7 @@ background-color: white;
 transform: translateY(-10%);
 transition: all 0.15s ease-in-out;
 pointer-events: none;
-
+border-radius: 0.5rem;
 
 >a{
 padding-left: 0.75rem;
@@ -212,7 +199,6 @@ font-size: 0.9rem;
 margin:auto;
 width: 100%;
 cursor:pointer;
-
 @media ${MEDIAQUERIES.laptopSmall}{
     height:3rem;
     :hover{
@@ -233,6 +219,8 @@ const MenuItem = styled.div`
     padding: 0 1rem;
     cursor: pointer;
     position: relative;
+    border-radius: 0.25rem;
+
     ::after{
         content: "";
         position: absolute;
@@ -255,20 +243,20 @@ const MenuItem = styled.div`
 
         }
     }
-
+    a{
+        border-radius: 0.25rem;
+        color: ${COLORS.BLACKGREY};
+    }
     &.active, .active{
         position: relative;
-        ::before{
-            content: "";
-            position: absolute;
-            top:50%;
-            right: 0;
-            width:0.5rem;
-            height:0.5rem;
+        background: ${COLORS.MAINCOLOR};
+        color: ${COLORS.WHITE} !important;
+        overflow: hidden;
+        :hover{
             background: ${COLORS.MAINCOLOR};
-            border-radius: 50%;
-            transform: translateY(-50%);
+            color: ${COLORS.WHITE};
         }
+
     }
 `
 

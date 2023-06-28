@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import puppeteer from "puppeteer"
-import { CvObjectType } from '../../../contexts/AppContext';
+import { CvObjectType } from '../../contexts/AppContext';
 
 // async function savePdf(){
 //     const browser  = await puppeteer.launch({headless:true})
@@ -16,7 +16,7 @@ import { CvObjectType } from '../../../contexts/AppContext';
 // }
 
  
-async function printPDF(body:CvObjectType, id:string) {
+async function printPDF(CV:CvObjectType) {
     try{
         const browser = await puppeteer.launch({ headless: true });
         const page = await browser.newPage();
@@ -24,17 +24,17 @@ async function printPDF(body:CvObjectType, id:string) {
       
         const cookie = {
             "name": "cvobject",
-            "value":JSON.stringify(body),
-            "url": `http://localhost:3000/cv-collection/${id}`,
+            "value":JSON.stringify(CV),
+            "url": `http://localhost:3000/${CV.language}/cv-collection/${CV.template}`,
             "expires": new Date().getTime() + 10000,
             "httpOnly": true,
             "path": "/",
             // "sameSite": "Lax",
             "secure": false,
         }
-        await page.setCookie(cookie);       
+        await page.setCookie(cookie);  
 
-        await page.goto(`http://localhost:3000/cv-collection/${id}`, {waitUntil: 'networkidle2'});
+        await page.goto(`http://localhost:3000/${CV.language}/cv-collection/${CV.template}`, {waitUntil: 'networkidle2'});
 
         const pdf = await page.pdf({ format: 'A4', printBackground:true});
        
@@ -58,15 +58,13 @@ res: NextApiResponse
     const {
         method,
         body,
-        query
     } = req;
 
-    const {id} = query
 
     switch(method){
         case "POST": {
             try{
-                const pdf=  await printPDF(JSON.parse(body), typeof(id)==="string"?id:"1")
+                const pdf=  await printPDF(JSON.parse(body))
                 res
                 .status(200)
                 .setHeader('Content-Type', 'application/pdf')

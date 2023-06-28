@@ -1,12 +1,13 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, SkillType, useCV } from '../../contexts/AppContext'
+import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from '../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
+import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 
 
-const Container = styled.div`
+const Container = styled(FontScaleWrapper)`
 height: 842px;
 width: 595px;
 display: grid;
@@ -24,6 +25,8 @@ overflow: hidden;
 }
 
 `
+
+
 
 
 const SkillsContainer = styled.div`
@@ -50,9 +53,12 @@ const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:s
             {cvObject.education && <Section title={t("education")}>
             {cvObject.education.map((el:EducationType)=><EducationItem {...el} key={el.id}></EducationItem>)}
             </Section>}
+            {cvObject.projects && <Section title={t("projects")}>
+            {cvObject.projects.map((el)=><ProjectItem {...el} key={el.id}></ProjectItem>)}
+            </Section>}
             
         </div>
-        <div className='p-4'>
+        <div className='p-4 relative'>
         <Section title={t("personal-info")}>
           <p className='sp'>{t("location")}: {cvObject.city}, {cvObject.country}</p>
           <p className='sp'>{t("phone")}: {cvObject.phone}</p>
@@ -170,35 +176,46 @@ const SkillInstance = ({title, grade}:{
 
 
 
-const EmploymentItemContainer = styled.div``
 
 
 const EmploymentItem = ({title, startDate, endDate,description, employer, city}:EmploymentType) => {
   const {t} = useTranslation()
 
-  return(<EmploymentItemContainer>
+  return(<div>
       <div>
         <p className='sp font-semibold'>{title} {t("at")} {employer} ({city})</p>  
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
       <p className='sp'>{description}</p>
       
-  </EmploymentItemContainer>)
+  </div>)
 }
 
-
-const EducationItem = ({school, degree, city, startDate, endDate, description}:EducationType) => {
+const ProjectItem = ({title, startDate, endDate,description}:ProjectType) => {
   const {t} = useTranslation()
 
-  return(
-    <EmploymentItemContainer>
+  return(<div>
       <div>
-        <p className='sp font-semibold'>{degree} {t("at")} {school} ({city})</p>  
+        <p className='sp font-semibold'>{title}</p>  
         <p className='caption'>{startDate} - {endDate}</p>
       </div>
       <p className='sp'>{description}</p>
       
-  </EmploymentItemContainer>
+  </div>)
+}
+
+
+const EducationItem = ({school, degree, city, startDate, endDate}:EducationType) => {
+  const {t} = useTranslation()
+
+  return(
+    <div>
+      <div>
+        <p className='sp font-semibold'>{degree} {t("at")} {school} ({city})</p>  
+        <p className='caption'>{startDate} - {endDate}</p>
+      </div>
+      
+  </div>
   )
 }
 

@@ -19,6 +19,14 @@ margin-top: 1rem;
   grid-template-columns: repeat(2, 1fr);
 }
 `
+
+const Container = styled.section`
+padding: 0 1rem;
+max-width: 1400px;
+
+margin:auto;
+
+`
 const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
  
   const {t} = useTranslation("blog")
@@ -28,7 +36,7 @@ const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
   title='Explore Expert CV Writing Tips & Advice | Free Online CV Builder Blog'
   description='Discover our extensive collection of CV writing advice, tips, and guidance in our blog. Learn how to craft the perfect CV and land your dream job with our free online CV builder.'
   ></PageSEO>
-    <section className='sectionPadding'>
+    <Container className='sectionPadding'>
       <h2 className='h3'>{t("blogs")}:</h2>
       <BlogsContainer>
         { allPosts.length > 0 && allPosts.map((post) => {
@@ -45,7 +53,7 @@ const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
       </BlogsContainer>
 
         
-    </section>
+    </Container>
     </>
   )
 }

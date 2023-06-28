@@ -10,7 +10,7 @@ import { FiChevronUp } from 'react-icons/fi'
 
 
 const Container = styled.div`
-border: 1px solid ${COLORS.GREYWHITE};
+border: 1px solid ${COLORS.LIGHTGREY};
 border-radius: 5px;
 padding: 1rem;
 flex-grow: 1;

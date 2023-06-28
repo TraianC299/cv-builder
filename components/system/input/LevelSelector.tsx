@@ -74,7 +74,7 @@ const LevelSelector = ({value, onChange, label}:LevelSelectorProps) => {
     
   return (
     <Input.Wrapper>
-    <Input.Label className="flex gap-2">{label}: <p style={{color: values[value || 1]?.color}}>{values[value || 1]?.name || "..."}</p></Input.Label>
+    <Input.Label >{label}: {values[value || 1]?.name || "..."}</Input.Label>
         <OptionsContainer className='flex rounded-sm'>
             {Object.keys(values).map((key, index) => {
                 return <Option key={index} type='button'  onClick={() => onChange(key)} ></Option>

@@ -32,12 +32,15 @@ const SkillsSection = () => {
     onClick={addNewSkillFunction}>
         <ReactSortable
         className='flex column gap-2'
-        list={cvObject.languages}
-        setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
+        list={cvObject.skills}
+        setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, skills:v}))}}
         handle=".handle"
-        >{cvObject.skills.map(el=><SkillInput skills={cvObject.skills} setSkills={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, skills:v}))}} key={el.id} id={el.id} edit={el.edit || false} title={el.title} metric={el.metric}></SkillInput>)}</ReactSortable>
+        >{cvObject?.skills?.map(el=><SkillsSection.Input skills={cvObject.skills} setSkills={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, skills:v}))}} key={el.id} id={el.id} edit={el.edit || false} title={el.title} metric={el.metric}></SkillsSection.Input>)}</ReactSortable>
       </Section>
   )
 }
 
 export default SkillsSection
+
+
+SkillsSection.Input = SkillInput

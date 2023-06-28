@@ -3,7 +3,7 @@ import Section from '../Section'
 import { ReactSortable } from 'react-sortablejs'
 import { CvObjectType, useCV } from '../../../contexts/AppContext'
 import { nanoid } from 'nanoid'
-import Skill from '../inputs/SkillInput'
+import SkillInput from '../inputs/SkillInput'
 import { useTranslation } from 'next-i18next'
 
 const LanguagesSection = () => {
@@ -35,15 +35,14 @@ const LanguagesSection = () => {
         setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
         handle=".handle"
         >
-          {cvObject.languages && cvObject.languages.map(el=><Skill 
-          
+          {cvObject.languages && cvObject.languages.map(el=><LanguagesSection.Input 
           skills={cvObject.languages} 
           setSkills={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}} 
           id={el.id} 
           edit={el.edit || false} 
           title={el.title} 
           metric={el.metric}
-          key={el.id} ></Skill>)}
+          key={el.id} ></LanguagesSection.Input>)}
         </ReactSortable>
       
 
@@ -52,3 +51,6 @@ const LanguagesSection = () => {
 }
 
 export default LanguagesSection
+
+
+LanguagesSection.Input = SkillInput

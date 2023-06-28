@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import useWindowSize from '../../hooks/useWindowSize'
 import { Button } from '../../styles/global'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
@@ -13,6 +12,10 @@ position: relative;
 height: 85vh;
 background: ${COLORS.LIGHTGREY};
 overflow: hidden;
+max-height: 800px;
+border-radius: 0.5rem;
+
+
 
 .text{
     position: absolute;

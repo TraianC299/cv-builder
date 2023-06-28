@@ -15,7 +15,7 @@ width: 100%;`
 const Modal = styled.div`
 overflow: hidden;
 border-radius: 10px;
-background: ${COLORS.GREYWHITE};
+background: ${COLORS.LIGHTGREY};
 position: absolute;
 top: calc(100% + 0.5rem);
 width: fit-content;

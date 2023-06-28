@@ -11,17 +11,13 @@ import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 
 
 const Container = styled.div`
-padding: 1rem;
+padding: 0 1rem;
 max-width: 1400px;
 display: flex;
 flex-direction: column;
 gap: 2rem;
-@media ${MEDIAQUERIES.laptopSmall}{
-  padding: 0 2.5rem;
-}
-@media (max-width: 1400px){
-  padding: 0 1rem;
-}
+margin:auto;
+
 `
 export default function Home() {
   return (
