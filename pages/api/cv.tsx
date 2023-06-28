@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import puppeteer from "puppeteer"
 import { CvObjectType } from '../../contexts/AppContext';
+import BASE_URL from '@/constants/BASE_URL';
 
 // async function savePdf(){
 //     const browser  = await puppeteer.launch({headless:true})
@@ -25,7 +26,7 @@ async function printPDF(CV:CvObjectType) {
         const cookie = {
             "name": "cvobject",
             "value":JSON.stringify(CV),
-            "url": `http://localhost:3000/${CV.language}/cv-collection/${CV.template}`,
+            "url": `${BASE_URL}/${CV.language}/cv-collection/${CV.template}`,
             "expires": new Date().getTime() + 10000,
             "httpOnly": true,
             "path": "/",
@@ -34,7 +35,7 @@ async function printPDF(CV:CvObjectType) {
         }
         await page.setCookie(cookie);  
 
-        await page.goto(`http://localhost:3000/${CV.language}/cv-collection/${CV.template}`, {waitUntil: 'networkidle2'});
+        await page.goto(`${BASE_URL}/${CV.language}/cv-collection/${CV.template}`, {waitUntil: 'networkidle2'});
 
         const pdf = await page.pdf({ format: 'A4', printBackground:true});
        
