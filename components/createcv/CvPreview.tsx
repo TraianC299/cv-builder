@@ -91,7 +91,6 @@ const CvPreview = () => {
   const generatePDF = async () => {
     setLoading(true)
     try {
-      console.log(cvObject.language)
       const response = await getPDF({
         ...cvObject,
         language: router.locale || 'en'

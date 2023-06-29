@@ -25,6 +25,12 @@ transform-origin:0 0;
   padding: 1.5rem;
 }
 
+*{
+  white-space: pre-line;
+  word-wrap: break-word;
+  
+}
+
 
 `
 
@@ -74,7 +80,7 @@ const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:st
         </ColoredSection>
         <div>
             <Section title={t("professional-summary")}>
-              <p className='sp'>{cvObject.summary}</p>
+              <p className='sp preline'>{cvObject.summary}</p>
             </Section>
             {cvObject.employment && <Section title={t("employment")}>
             {cvObject.employment.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}

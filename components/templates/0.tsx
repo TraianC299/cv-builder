@@ -24,6 +24,12 @@ overflow: hidden;
   row-gap:16px;
 }
 
+*{
+  white-space: pre-line;
+  word-wrap: break-word;
+  
+}
+
 `
 
 
@@ -42,7 +48,7 @@ const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:s
         <div>
           <ProfileSection name={cvObject.name} surname={cvObject.surname} jobTitle={cvObject.jobTitle} image={cvObject.profileImage}></ProfileSection>
             <Section title={t("professional-summary")}>
-              <p className='sp'>{cvObject.summary}</p>
+              <p className='sp preline'>{cvObject.summary}</p>
             </Section>
             {cvObject.employment && <Section title={t("employment")}>
             {cvObject.employment.map((el:EmploymentType)=><EmploymentItem {...el} key={el.id}></EmploymentItem>)}

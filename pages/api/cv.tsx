@@ -34,8 +34,9 @@ async function printPDF(CV:CvObjectType) {
             "secure": false,
         }
         await page.setCookie(cookie);  
-
-        await page.goto(`${BASE_URL}/${CV.language}/cv-collection/${CV.template}`, {waitUntil: 'networkidle2'});
+        const url = `${BASE_URL}/${CV.language}/cv-collection/${CV.template}`
+        console.log(url)
+        await page.goto(url, {waitUntil: 'networkidle2'});
 
         const pdf = await page.pdf({ format: 'A4', printBackground:true});
        

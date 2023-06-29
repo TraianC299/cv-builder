@@ -17,8 +17,9 @@ position: relative;
 transform-origin:0 0;
 column-gap: 24px;
 *{
-  white-space: normal;
+  white-space: pre-line;
   word-wrap: break-word;
+  
 }
 
 `
@@ -78,7 +79,7 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
         </ColoredSection>
         <div>
           <Section title={t("professional-summary")}>
-            <p className='sp'>{cvObject.summary}</p>
+            <p className='sp preline'>{cvObject.summary}</p>
           </Section>
           {cvObject.employment && <Section title={t("employment")}>
             {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}

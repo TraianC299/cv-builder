@@ -67,7 +67,7 @@ const ButtonInputImage = ({image, setImage, imageError, setImageError, label, po
     const {t} = useTranslation("create-cv")
  
   return (
-   <ImageInput resize={200} loading={loading} setLoading={setLoading} imageUrl={image} setImageUrl={setImage}  {...props}>
+   <ImageInput resize={400} loading={loading} setLoading={setLoading} imageUrl={image} setImageUrl={setImage}  {...props}>
     <Container>
       <img style={{display: "none"}} onError={()=>setImage("")} src={image}></img>
       <label className='sp'>{t("your-photo")}</label>

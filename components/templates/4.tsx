@@ -4,8 +4,8 @@ import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } f
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import FontScaleWrapper from '../createcv/FontScaleWrapper'
-import {MdStarRate} from 'react-icons/md'
-
+import {GiFlowerStar} from 'react-icons/gi'
+import { IoSparklesSharp } from 'react-icons/io5'
 
 const Container = styled(FontScaleWrapper)`
 height: 842px;
@@ -21,7 +21,7 @@ font-family: 'Noto Serif Display', serif !important;
 
 
 *{
-  white-space: normal;
+  white-space: pre-line;
   word-wrap: break-word;
 }
 
@@ -33,12 +33,11 @@ const InfoSection = styled.div`
 width: 100%;
 justify-content: space-between;
 display: grid;
-grid-template-columns: 167px 396px;
+grid-template-columns: 167px 1fr;
 margin-top: 24px;
 >div{
   display: flex;
   flex-direction: column;
-  row-gap:2px;
 }
 `
 
@@ -50,6 +49,13 @@ const SecondContainer = styled.div`
 div:last-child{
     border: none !important;
 }
+`
+
+const SkillsContainer = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+column-gap: 2rem;
+row-gap: 1rem;
 `
 
 
@@ -84,11 +90,7 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
                 {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
               </div>
             </Section>}
-            {cvObject.skills && <Section title="Skills">
-              <div className='flex column gap-2'>
-                {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-              </div>
-            </Section>}
+           
           </div>
           <SecondContainer >
           
@@ -103,6 +105,11 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
             </Section>}
             {cvObject.projects &&<Section title={t("projects")}>
               {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
+            </Section>}
+            {cvObject.skills && <Section title="Skills">
+              <SkillsContainer >
+                {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
+              </SkillsContainer>
             </Section>}
           </SecondContainer>
         </InfoSection>
@@ -139,13 +146,14 @@ const Section = ({ children, title, style }: {
 const ProfileSectionContainer = styled.div`
 width: 100%;
 display: grid;
-grid-template-columns: 167px 396px;
+grid-template-columns: 167px 1fr;
 position: relative;
 padding-bottom: 2rem;
 >img{
     min-height: 207px;
     object-fit: cover;
     border-radius: 50px;
+    padding: 0.5rem;
 }
 >img, div{
     width: 100%;
@@ -178,15 +186,15 @@ const ProfileSection = ({ name, surname, jobTitle, summary, image }: {
   return (
     <ProfileSectionContainer >
       <img className='p3' width={167} src={image || "https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"}></img>
-      <div className='flex js column name-position p-3' >
+      <div className='flex js column name-position p-3 gap-2' >
         <p className='h1 font-semibold uppercase text-left' >{name} {surname}</p>
-        <p className='sp uppercase' >{jobTitle}</p>
-        <p className='sp font-light' >{summary}</p>
+        <p style={{color:COLORS.YELLOW}} className='sp uppercase' >{jobTitle}</p>
+        <p className='sp font-light preline'>{summary}</p>
       </div>
       <div className='aesthetics flex ac jsb'>
-        <MdStarRate size={24} color={COLORS.YELLOW} />
+        <IoSparklesSharp size={24} color={COLORS.YELLOW} />
           <div className='line'></div>
-          <MdStarRate size={24} color={COLORS.YELLOW} />
+          <IoSparklesSharp size={24} color={COLORS.YELLOW} />
 
       </div>
       
@@ -204,6 +212,7 @@ row-gap: 4px;
   background: ${COLORS.WHITE};
   height: 5px;
   overflow: hidden;
+  border-radius: 5px;
   >div{
     height: 5px;
     background: ${COLORS.YELLOW};
@@ -230,7 +239,7 @@ const EmploymentItem = ({ title, startDate, endDate, description, employer, city
 
   return (
     <div className='flex jfs afs gap-2'>
-    <MdStarRate className='sp w-max' color={COLORS.YELLOW}/>
+    <GiFlowerStar className='sp w-max' color={COLORS.YELLOW}/>
     <div>
       <p className='ssp'>{startDate} - {endDate}</p>
       <p className='sp font-semibold'>{title} {t("at")} {employer} ({city})</p>
@@ -245,7 +254,7 @@ const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) =>
 
   return (
     <div className='flex jfs afs gap-2'>
-    <MdStarRate className='sp' color={COLORS.YELLOW}/>
+    <GiFlowerStar className='sp' color={COLORS.YELLOW}/>
     <div>
         <p className='ssp'>{startDate} - {endDate}</p>
         <p className='sp font-semibold'>{title}</p>
@@ -260,7 +269,7 @@ const EducationItem = ({ school, degree, city, startDate, endDate }: EducationTy
 
   return (
     <div className='flex jfs afs gap-2'>
-        <MdStarRate className='sp' color={COLORS.YELLOW}/>
+        <GiFlowerStar className='sp' color={COLORS.YELLOW}/>
       <div>
         <p className='ssp'>{startDate} - {endDate}</p>
         <p className='sp font-semibold'>{degree} {t("at")} {school} ({city})</p>

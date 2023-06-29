@@ -364,6 +364,10 @@ line-height: 1.2;
   padding: 2rem !important;
 }
 
+.preline{
+  white-space: pre-line;
+}
+
 
 .animate-spin{
   animation: spin 1s linear infinite;

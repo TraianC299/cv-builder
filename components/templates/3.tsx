@@ -16,7 +16,7 @@ background: white;
 position: relative;
 transform-origin:0 0;
 *{
-  white-space: normal;
+  white-space: pre-line;
   word-wrap: break-word;
 }
 
