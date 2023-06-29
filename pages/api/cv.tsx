@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import puppeteer from "puppeteer"
 import { CvObjectType } from '../../contexts/AppContext';
 import BASE_URL from '@/constants/BASE_URL';
+const chrome = require('chrome-aws-lambda');
 
 // async function savePdf(){
 //     const browser  = await puppeteer.launch({headless:true})
@@ -19,7 +20,15 @@ import BASE_URL from '@/constants/BASE_URL';
  
 async function printPDF(CV:CvObjectType) {
     try{
-        const browser = await puppeteer.launch({ headless: true });
+        const browser = await puppeteer.launch(
+            process.env.NODE_ENV === 'production'
+              ? {
+                  args: chrome.args,
+                  executablePath: await chrome.executablePath,
+                  headless: chrome.headless,
+                }
+              : {}
+          );
         const page = await browser.newPage();
 
         const url = `${BASE_URL}/${CV.language}/cv-collection/${CV.template}`
