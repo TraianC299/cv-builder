@@ -28,7 +28,6 @@
     "next": "13.0.5",
     "next-cookies": "^2.0.3",
     "next-i18next": "^13.2.2",
-    "puppeteer": "^19.3.0",
     "puppeteer-core": "^20.7.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
