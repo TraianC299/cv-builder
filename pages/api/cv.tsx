@@ -45,7 +45,7 @@ async function printPDF(CV:CvObjectType) {
         await page.setCookie(cookie);  
         await page.goto(url, {waitUntil: 'networkidle2'});
 
-        const pdf = await page.pdf({ format: 'A4', printBackground:true});
+        const pdf = await page.pdf({ format: 'a4', printBackground:true});
        
         await browser.close();
         return pdf
