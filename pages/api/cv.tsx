@@ -1,10 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import puppeteer from "puppeteer"
+import puppeteer from "puppeteer-core"
 import { CvObjectType } from '../../contexts/AppContext';
 import BASE_URL from '@/constants/BASE_URL';
-const chrome = require('chrome-aws-lambda');
-
+import chrome from 'chrome-aws-lambda';
 // async function savePdf(){
 //     const browser  = await puppeteer.launch({headless:true})
 //     const page = await browser.newPage()
