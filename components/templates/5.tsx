@@ -60,10 +60,6 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
       >
 
         <ProfileSection
-        email={cvObject.email}
-        phone={cvObject.phone}
-        city={cvObject.city}
-        country={cvObject.country}
         name={cvObject.name}
         surname={cvObject.surname}
         jobTitle={cvObject.jobTitle}

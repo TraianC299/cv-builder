@@ -130,7 +130,6 @@ const ProfileSection = ({name, surname, jobTitle, image}:{
   jobTitle:string,
   image: string
 }) => {
-  const {t} = useTranslation()
 
   return(
     <ProfileSectionContainer className='flex'>

@@ -174,7 +174,6 @@ const ProfileSection = ({ name, surname, jobTitle, summary, image }: {
   image: string,
   summary: string
 }) => {
-  const { t } = useTranslation("create-cv")
 
   return (
     <ProfileSectionContainer >
