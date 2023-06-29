@@ -20,7 +20,6 @@ export const InputStyle = styled.input`
   border-radius: 0.25rem;
   ::placeholder{
     color: #9CA9B4;
-    font-weight: 500;
   }
  `
 

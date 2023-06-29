@@ -8,6 +8,7 @@ p{
 }
 .h1{
   font-size: 40px !important;
+  line-height: 1.2;
 }
 .h2 {
 font-size: 30px !important;

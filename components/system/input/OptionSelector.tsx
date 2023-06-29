@@ -23,7 +23,7 @@ width: 100%;
 
 const StyledAutocompleteContainer = styled.div`
 background: ${COLORS.WHITE};
-z-index: 2;
+z-index: 3;
 width: 100%;
 height: fit-content;
 position: absolute;

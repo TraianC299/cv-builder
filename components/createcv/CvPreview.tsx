@@ -7,6 +7,7 @@ import TemplateZero from '../templates/0';
 import TemplateOne from '../templates/1';
 import TemplateTwo from '../templates/2';
 import TemplateThree from '../templates/3';
+import TemplateFour from '../templates/4';
 import { TemplateContainerStyleProps } from '../../types';
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES';
 import COLORS from '@/constants/COLORS';
@@ -114,7 +115,8 @@ const CvPreview = () => {
     <TemplateZero cvObject={cvObject}></TemplateZero>,
     <TemplateOne cvObject={cvObject}></TemplateOne>,
     <TemplateTwo cvObject={cvObject}></TemplateTwo>,
-    <TemplateThree cvObject={cvObject}></TemplateThree>
+    <TemplateThree cvObject={cvObject}></TemplateThree>,
+    <TemplateFour cvObject={cvObject}></TemplateFour>
   ]
 
   return (
