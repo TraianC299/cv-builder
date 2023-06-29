@@ -1,3 +1,4 @@
+import BASE_URL from '@/constants/BASE_URL';
 import React, {  useRef } from 'react'
 
 
@@ -109,7 +110,7 @@ const ImageInput = ({children, loading, setLoading, setImageUrl, resize}:{imageU
         const formData = new FormData();
         formData.append('file', resizedFile);
     
-        await fetch(`http://localhost:3000/api/image/upload`, {
+        await fetch(`${BASE_URL}/api/image/upload`, {
           method: 'POST',
           body: formData,
         })

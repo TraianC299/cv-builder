@@ -1,33 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import puppeteer from "puppeteer-core"
 import { CvObjectType } from '../../contexts/AppContext';
 import BASE_URL from '@/constants/BASE_URL';
-import chrome from 'chrome-aws-lambda';
-// async function savePdf(){
-//     const browser  = await puppeteer.launch({headless:true})
-//     const page = await browser.newPage()
-//     await page.goto("http://localhost:3000", {waitUntil:"networkidle0"})
-//     // await page.addStyleTag({
-//     //     content:"#save-button {display: none}"
-//     // })
-//     const pdf = await page.pdf({format: "A4"})
-//     await browser.close()
-//     return pdf
-// }
+import BackendService from 'services/BackendService.service';
+
+
 
  
 async function printPDF(CV:CvObjectType) {
     try{
-        const browser = await puppeteer.launch(
-            process.env.NODE_ENV === 'production'
-              ? {
-                  args: chrome.args,
-                  executablePath: await chrome.executablePath,
-                  headless: chrome.headless,
-                }
-              : {}
-          );
+        const browser = await BackendService.getBrowserInstance()
         const page = await browser.newPage();
 
         const url = `${BASE_URL}/${CV.language}/cv-collection/${CV.template}`
@@ -45,7 +27,7 @@ async function printPDF(CV:CvObjectType) {
         await page.setCookie(cookie);  
         await page.goto(url, {waitUntil: 'networkidle2'});
 
-        const pdf = await page.pdf({ format: 'a4', printBackground:true});
+        const pdf = await page.pdf({ format: 'A4', printBackground:true});
        
         await browser.close();
         return pdf
@@ -89,5 +71,3 @@ res: NextApiResponse
     
    
 }
-
-
