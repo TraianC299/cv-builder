@@ -18,7 +18,7 @@
     "@types/react-dom": "18.0.9",
     "aws-sdk": "^2.1267.0",
     "axios": "^1.2.0",
-    "chrome-aws-lambda": "^10.1.0",
+    "chrome-aws-lambda": "5.5.0",
     "formidable-serverless": "^1.1.1",
     "gray-matter": "^4.0.3",
     "html2canvas": "^1.4.1",
