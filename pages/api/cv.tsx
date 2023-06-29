@@ -22,11 +22,12 @@ async function printPDF(CV:CvObjectType) {
         const browser = await puppeteer.launch({ headless: true });
         const page = await browser.newPage();
 
+        const url = `${BASE_URL}/${CV.language}/cv-collection/${CV.template}`
       
         const cookie = {
             "name": "cvobject",
             "value":JSON.stringify(CV),
-            "url": `${BASE_URL}/${CV.language}/cv-collection/${CV.template}`,
+            "url": url,
             "expires": new Date().getTime() + 10000,
             "httpOnly": true,
             "path": "/",
@@ -34,8 +35,6 @@ async function printPDF(CV:CvObjectType) {
             "secure": false,
         }
         await page.setCookie(cookie);  
-        const url = `${BASE_URL}/${CV.language}/cv-collection/${CV.template}`
-        console.log(url)
         await page.goto(url, {waitUntil: 'networkidle2'});
 
         const pdf = await page.pdf({ format: 'A4', printBackground:true});

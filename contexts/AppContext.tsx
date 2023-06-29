@@ -1,6 +1,5 @@
 import React, {ReactNode, useContext} from 'react'
 import useLocalStorage from '../hooks/useLocalStorage'
-import { useRouter } from 'next/router'
 
 
 const example = {
