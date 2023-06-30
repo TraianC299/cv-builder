@@ -2,14 +2,21 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { CvObjectType } from '../../contexts/AppContext';
 import BASE_URL from '@/constants/BASE_URL';
-import BackendService from 'services/BackendService.service';
+import chromium from 'chrome-aws-lambda'
 
 
 
  
 async function printPDF(CV:CvObjectType) {
     try{
-        const browser = await BackendService.getBrowserInstance()
+        const browser = await chromium.puppeteer.launch({
+            args: chromium.args,
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath,
+            headless: true,
+            ignoreHTTPSErrors: true,
+          });
+        
         const page = await browser.newPage();
 
         const url = `${BASE_URL}/${CV.language}/cv-collection/${CV.template}`
@@ -32,6 +39,7 @@ async function printPDF(CV:CvObjectType) {
         await browser.close();
         return pdf
     }catch(e){
+        console.log(e)
         return e
     }
   
