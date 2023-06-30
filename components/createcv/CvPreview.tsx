@@ -16,6 +16,7 @@ import { ImSpinner2 } from 'react-icons/im'
 import { FiEye } from 'react-icons/fi';
 import { IoClose } from 'react-icons/io5'
 import { useRouter } from 'next/router';
+import BASE_URL from '@/constants/BASE_URL';
 
 const EyeButton = styled.button`
 height: 3rem;
