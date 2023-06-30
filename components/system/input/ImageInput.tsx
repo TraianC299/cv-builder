@@ -110,7 +110,7 @@ const ImageInput = ({children, loading, setLoading, setImageUrl, resize}:{imageU
         const formData = new FormData();
         formData.append('file', resizedFile);
     
-        await fetch(`${BASE_URL}/api/image/upload`, {
+        await fetch(`/api/image/upload`, {
           method: 'POST',
           body: formData,
         })
