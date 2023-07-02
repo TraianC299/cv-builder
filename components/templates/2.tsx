@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react'
-import styled from 'styled-components'
+import React, { ReactNode, useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components'
 import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType, useCV } from '../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
@@ -39,9 +39,10 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
   const { t } = useTranslation(["create-cv", "common"])
 
   return (
-    <Container id="cv-preview"
+    <Container 
+    color={cvObject.color}
+    id="cv-preview"
       className={className}
-    // style={{transform: `scale(${height ? height/842 - 0.1 : 1})`}}
     >
       <ProfileSection name={cvObject.name} surname={cvObject.surname} jobTitle={cvObject.jobTitle} image={cvObject.profileImage}></ProfileSection>
       <Container2>
@@ -105,7 +106,7 @@ const SectionTitle = styled.p`
   display: block;
   width: 30px;
   height: 2px;
-  background: ${COLORS.YELLOW};
+  background: ${props=>props.theme.color || COLORS.YELLOW};
   margin-top: 4px;
   margin-bottom: 4px;
 
@@ -146,7 +147,7 @@ position: relative;
 .yellow-ball{
   height: 300px;
   width: 100px;
-  background: ${COLORS.YELLOW};
+  background:${props=>props.theme.color || COLORS.YELLOW};
   position: absolute;
   top: -200px;
   left: 18px;
@@ -196,11 +197,12 @@ const SkillInstance = ({ title, grade }: {
   title: string,
   grade: SkillType["metric"] 
 }) => {
+  const theme = useContext(ThemeContext)
   return (
     <SkillInstanceContainer className='flex ac jsb'>
       <p className='sp'>{title}</p>
       <div className='flex'>
-        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < (grade ||0) ? COLORS.YELLOW : COLORS.LIGHTGREY }}></div>)}
+        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < (grade ||0) ? (theme.color || COLORS.YELLOW) : COLORS.LIGHTGREY }}></div>)}
 
       </div>
     </SkillInstanceContainer>

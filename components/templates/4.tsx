@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from '../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
@@ -7,13 +7,13 @@ import FontScaleWrapper from '../createcv/FontScaleWrapper'
 import {GiFlowerStar} from 'react-icons/gi'
 import { IoSparklesSharp } from 'react-icons/io5'
 
-const Container = styled(FontScaleWrapper)`
+const Container = styled.div`
 padding: 2rem;
-background: ${COLORS.DARKGREEN};
+background: ${props => props.theme.color};
 position: relative;
 color: white;
 font-family: 'Noto Serif Display', serif !important;
-
+height: 100%;
 
 
 `
@@ -52,57 +52,59 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
   const { t } = useTranslation(["create-cv", "common"])
 
   return (
-      <Container id="cv-preview"
-        className={className}
-      >
-
-        <ProfileSection
-        name={cvObject.name}
-        surname={cvObject.surname}
-        jobTitle={cvObject.jobTitle}
-        summary={cvObject.summary}
-        image={cvObject.profileImage}></ProfileSection>
-        <InfoSection>
-          <div >
-            <Section title={t("personal-info")}>
+      <FontScaleWrapper color={cvObject.color}>
+        <Container
+        id="cv-preview"
+          className={className}
+        >
+          <ProfileSection
+          name={cvObject.name}
+          surname={cvObject.surname}
+          jobTitle={cvObject.jobTitle}
+          summary={cvObject.summary}
+          image={cvObject.profileImage}></ProfileSection>
+          <InfoSection>
+            <div >
+              <Section title={t("personal-info")}>
+                  <div className='flex column gap-2'>
+                      <div className='sp' >{t("location")}: {cvObject.city} {cvObject.country}</div>
+                      <div className='sp' >{t("phone")}: {cvObject.phone}</div>
+                      <div className='sp' >{t("email")}: {cvObject.email}</div>
+                  </div>
+              </Section>
+              <Section  title={t("hobbies")}>
+                <p className='sp'>{cvObject.hobbies}</p>
+              </Section>
+              {cvObject.languages && <Section title={t("languages")}>
                 <div className='flex column gap-2'>
-                    <div className='sp' >{t("location")}: {cvObject.city} {cvObject.country}</div>
-                    <div className='sp' >{t("phone")}: {cvObject.phone}</div>
-                    <div className='sp' >{t("email")}: {cvObject.email}</div>
+                  {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
                 </div>
-            </Section>
-            <Section  title={t("hobbies")}>
-              <p className='sp'>{cvObject.hobbies}</p>
-            </Section>
-            {cvObject.languages && <Section title={t("languages")}>
-              <div className='flex column gap-2'>
-                {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-              </div>
-            </Section>}
-           
-          </div>
-          <SecondContainer >
-          
-            {cvObject.employment &&<Section title={t("employment")}>
-              {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-            </Section>}
-            {cvObject.internships && <Section title={t("internships")}>
-              {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-            </Section>}
-           {cvObject.education && <Section title={t("education")}>
-              {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
-            </Section>}
-            {cvObject.projects &&<Section title={t("projects")}>
-              {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
-            </Section>}
-            {cvObject.skills && <Section title="Skills">
-              <SkillsContainer >
-                {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-              </SkillsContainer>
-            </Section>}
-          </SecondContainer>
-        </InfoSection>
-      </Container>
+              </Section>}
+        
+            </div>
+            <SecondContainer >
+        
+              {cvObject.employment &&<Section title={t("employment")}>
+                {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+              </Section>}
+              {cvObject.internships && <Section title={t("internships")}>
+                {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+              </Section>}
+             {cvObject.education && <Section title={t("education")}>
+                {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
+              </Section>}
+              {cvObject.projects &&<Section title={t("projects")}>
+                {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
+              </Section>}
+              {cvObject.skills && <Section title="Skills">
+                <SkillsContainer >
+                  {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
+                </SkillsContainer>
+              </Section>}
+            </SecondContainer>
+          </InfoSection>
+        </Container>
+      </FontScaleWrapper>
   )
 }
 
@@ -113,6 +115,10 @@ export default Template
 
 
 const SectionContainer = styled.div`
+background: ${props => {
+  console.log(props)
+  return props.theme.color
+  }};
 >p{
     padding-bottom: 0.5rem;
 }`
@@ -122,6 +128,7 @@ const Section = ({ children, title, style }: {
   title: string,
   style?: Object
 }) => {
+
   return (
     <SectionContainer className='p-3' style={style}>
       <p className='h5 uppercase pb-4'>{title}</p>

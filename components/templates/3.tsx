@@ -43,8 +43,10 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
   const { t } = useTranslation(["create-cv", "common"])
 
   return (
-      <Container id="cv-preview"
-        className={className}
+      <Container 
+      id="cv-preview"
+      className={className}
+      color={cvObject.color}
       >
         <ProfileSection
         email={cvObject.email}

@@ -1,5 +1,6 @@
+import COLORS from '@/constants/COLORS'
 import React from 'react'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 
 const Container = styled.div`
@@ -49,10 +50,18 @@ font-size: 30px !important;
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode
     className?: string,
+    color?: string
 } 
-const FontScaleWrapper = ({children,className}:Props) => {
+const FontScaleWrapper = ({children,className, color}:Props) => {
+  const theme = {
+    color: color
+  };
+  
   return (
-    <Container className={className}>{children}</Container>
+    <ThemeProvider theme={theme}>
+
+      <Container className={className}>{children}</Container>
+    </ThemeProvider>
   )
 }
 

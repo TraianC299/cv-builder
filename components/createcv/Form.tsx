@@ -38,10 +38,6 @@ const Form = () => {
 
   
 
-  const isPresent = (key: string) => {
-    return Object.keys(cvObject).includes(key)
-  }
-
   return (
     <>
       <PageSEO

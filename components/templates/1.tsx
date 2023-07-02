@@ -33,7 +33,7 @@ row-gap: 8px;`
 
 
 const ColoredSection = styled.div`
-background: ${COLORS.DARKBLUE};
+background: ${props=>props.theme.color || COLORS.DARKBLUE};
 *{
   color: white;
 }
@@ -44,6 +44,7 @@ const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:st
   return (
     <Container id="cv-preview" 
     className={className}
+    color={cvObject.color}
     // style={{transform: `scale(${height ? height/842 - 0.1 : 1})`}}
     ><ColoredSection>
         <ProfileSection name={cvObject.name} surname={cvObject.surname} jobTitle={cvObject.jobTitle} image={cvObject.profileImage}></ProfileSection>

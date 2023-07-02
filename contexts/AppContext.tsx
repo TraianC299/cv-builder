@@ -1,4 +1,4 @@
-import React, {ReactNode, useContext} from 'react'
+import React, {Dispatch, ReactNode, useContext} from 'react'
 import useLocalStorage from '../hooks/useLocalStorage'
 
 
@@ -158,7 +158,8 @@ export type CvObjectType = {
     internships: [EmploymentType] | [],
     projects: [ProjectType] | []
     template: number,
-    language: string
+    language: string,
+    color?: string
 }
 
 
@@ -188,7 +189,8 @@ const initialCvObject:CvObjectType = {
     internships:[],
     projects:[],
     template: 1,
-    language: "en"
+    language: "en",
+    color: ""
 }
 const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: React.Dispatch<React.SetStateAction<any>>, progress:number }>(
     {
@@ -197,7 +199,7 @@ const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: Rea
         progress:0
     }
 )
-export const useCV=()=>{
+export const useCV=():{ cvObject: CvObjectType; setCvObject: Dispatch<CvObjectType>; progress: number; }=>{
         return useContext(CVcontext)
     }
 

@@ -37,8 +37,10 @@ row-gap: 8px;`
 const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
   const { t } = useTranslation(["create-cv", "common"])
   return (
-    <Container id="cv-preview" 
+    <Container 
+    id="cv-preview" 
     className={className}
+    color={cvObject.color}
     >
         <div>
           <ProfileSection name={cvObject.name} surname={cvObject.surname} jobTitle={cvObject.jobTitle} image={cvObject.profileImage}></ProfileSection>
@@ -106,7 +108,7 @@ const ProfileSectionContainer = styled.div`
 column-gap: 0.5rem;
 padding: 1rem;
 z-index:999;
-background: ${COLORS.MAINCOLOR};
+background: ${props=>props.theme.color||COLORS.MAINCOLOR};
 position: relative;
 left: -34px;
 padding-left: 34px;
@@ -156,7 +158,7 @@ row-gap: 4px;
   overflow: hidden;
   >div{
     height: 5px;
-    background: ${COLORS.MAINCOLOR};
+    background: ${props=>props.theme.color||COLORS.MAINCOLOR};
   }
 }`
 const SkillInstance = ({title, grade}:{
