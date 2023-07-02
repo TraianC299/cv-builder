@@ -1,5 +1,5 @@
 ---
-title: 'L'importance d'un CV bien structuré'
+title: "L'importance d'un CV bien structuré"
 excerpt: 'Un CV bien structuré est essentiel pour donner une bonne impression. Apprenez à créer un CV clair, concis et percutant.'
 coverImage: '/assets/blog/preview/well-structured-cv.jpg'
 date: '2023-05-29T05:35:07.322Z'

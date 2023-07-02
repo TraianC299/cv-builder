@@ -1,6 +1,6 @@
 ---
-title: 'L'art d'écrire une lettre de motivation efficace'
-excerpt: 'Une lettre de motivation bien rédigée peut être votre billet pour décrocher l'emploi de vos rêves. Voici quelques conseils pour faire la bonne impression.'
+title: "L'art d'écrire une lettre de motivation efficace"
+excerpt: "Une lettre de motivation bien rédigée peut être votre billet pour décrocher l'emploi de vos rêves. Voici quelques conseils pour faire la bonne impression."
 coverImage: '/assets/blog/preview/tips-for-cover-letter.jpg'
 date: '2023-05-25T05:35:07.322Z'
 slug: 'tips-for-cover-letter'
