@@ -3,7 +3,7 @@ title: 'Die Bedeutung eines gut strukturierten Lebenslaufs'
 excerpt: 'Ein gut strukturierter Lebenslauf ist entscheidend, um einen guten Eindruck zu machen. Erfahren Sie, wie Sie einen klaren, prägnanten und wirkungsvollen Lebenslauf erstellen können.'
 coverImage: '/assets/blog/preview/well-structured-cv.jpg'
 date: '2023-05-29T05:35:07.322Z'
-slug: 'die-bedeutung-eines-gut-strukturierten-lebenslaufs'
+slug: 'the-importance-of-a-well-structured-cv'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

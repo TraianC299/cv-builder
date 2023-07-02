@@ -3,7 +3,7 @@ title: 'Cum să optimizați CV-ul pentru ATS (Sisteme de Urmărire a Candidațil
 excerpt: 'Sistemele de Urmărire a Candidaților (ATS) pot face diferența în procesul de aplicare la un loc de muncă. Iată câteva sfaturi pentru a vă optimiza CV-ul pentru ATS.'
 coverImage: '/assets/blog/preview/cv-tips-for-ats.jpg'
 date: '2023-05-24T05:35:07.322Z'
-slug: 'optimizați-cv-ul-pentru-ats'
+slug: 'cv-tips-for-ats'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

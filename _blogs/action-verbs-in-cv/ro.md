@@ -3,7 +3,7 @@ title: 'Puterea verbelor de acțiune în CV-ul tău'
 excerpt: 'Verbele de acțiune pot transforma CV-ul tău dintr-unul plictisitor într-unul captivant. Descoperă cum să le utilizezi eficient.'
 coverImage: '/assets/blog/preview/action-verbs-in-cv.jpg'
 date: '2023-05-26T05:35:07.322Z'
-slug: 'verbe-actiune-cv'
+slug: 'action-verbs-in-cv'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

@@ -3,7 +3,7 @@ title: 'Wie Sie Ihren Lebenslauf für ATS (Bewerber-Tracking-Systeme) optimieren
 excerpt: 'Bewerber-Tracking-Systeme (ATS) können über Erfolg oder Misserfolg Ihrer Bewerbung entscheiden. Hier sind einige Tipps, um Ihren Lebenslauf für ATS zu optimieren.'
 coverImage: '/assets/blog/preview/cv-tips-for-ats.jpg'
 date: '2023-05-24T05:35:07.322Z'
-slug: 'lebenslauf-für-ats-optimieren'
+slug: 'cv-tips-for-ats'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

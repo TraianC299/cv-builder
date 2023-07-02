@@ -10,6 +10,7 @@ import BlogPostInterface from '../../interfaces/blog-post'
 import BlogService from '../../services/BlogService'
 import COLORS from '@/constants/COLORS'
 import LANGUAGES from '@/constants/LANGUAGES'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 
 const Wrapper = styled.main`
@@ -204,19 +205,21 @@ export async function getStaticProps({ params, locale }:any) {
       post: {
         ...post,
         content,
+        
       },
+      ...(await serverSideTranslations(locale, ["blog", "common"])),
     },
   }
 }
 
 export async function getStaticPaths() {
-  const posts = BlogService.getAllPosts(['slug'])
+  const slugs = BlogService.getPostSlugs()
   const paths:any[] = []
-  posts.forEach((post:any) => {
+  slugs.forEach((slug:any) => {
     LANGUAGES.forEach(el=>{
       paths.push({
         params: {
-          slug: post.slug,
+          slug: slug,
         },
         locale: el.locale
       })

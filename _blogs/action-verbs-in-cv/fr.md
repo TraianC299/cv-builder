@@ -3,7 +3,7 @@ title: 'Le pouvoir des verbes d'action dans votre CV'
 excerpt: 'Les verbes d'action peuvent transformer votre CV de fade à captivant. Découvrez comment les utiliser efficacement.'
 coverImage: '/assets/blog/preview/action-verbs-in-cv.jpg'
 date: '2023-05-26T05:35:07.322Z'
-slug: 'verbes-action-cv'
+slug: 'action-verbs-in-cv'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

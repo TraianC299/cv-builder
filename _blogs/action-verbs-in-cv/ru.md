@@ -3,7 +3,7 @@ title: 'Сила глаголов действия в вашем резюме'
 excerpt: 'Глаголы действия могут превратить ваше резюме из скучного в убедительное. Узнайте, как использовать их эффективно.'
 coverImage: '/assets/blog/preview/action-verbs-in-cv.jpg'
 date: '2023-05-26T05:35:07.322Z'
-slug: 'сила-глаголов-действия-в-вашем-резюме'
+slug: 'action-verbs-in-cv'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

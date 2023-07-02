@@ -2,8 +2,8 @@
 title: '5 советов по написанию хорошего резюме'
 excerpt: 'Написание хорошего резюме не всегда является простой задачей, вот 5 основных советов, которые помогут вам сделать это проще.'
 coverImage: '/assets/blog/preview/5tips.jpg'
-date: '2020-03-16T05:35:07.322Z'
-slug: '5-советов-по-написанию-хорошего-резюме'
+date: '2023-05-25T05:35:07.322Z'
+slug: '5-tips-for-cv'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

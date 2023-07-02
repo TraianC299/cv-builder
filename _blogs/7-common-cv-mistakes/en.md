@@ -3,7 +3,7 @@ title: 'Avoiding Common CV Mistakes'
 excerpt: 'CV mistakes can cost you the job. Discover some common errors and how to avoid them.'
 coverImage: '/assets/blog/preview/7-common-cv-mistakes.jpg'
 date: '2023-05-28T05:35:07.322Z'
-slug: 'avoiding-common-cv-mistakes'
+slug: '7-common-cv-mistakes'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

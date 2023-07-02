@@ -3,7 +3,7 @@ title: '5 Tipps für das Schreiben eines guten Lebenslaufs'
 excerpt: 'Das Verfassen eines guten Lebenslaufs ist nicht immer einfach. Hier sind 5 grundlegende Tipps, um es Ihnen zu erleichtern.'
 coverImage: '/assets/blog/preview/5tips.jpg'
 date: '2020-03-16T05:35:07.322Z'
-slug: '5-tipps-fur-das-schreiben-eines-guten-lebenslaufs'
+slug: '5-tips-for-cv'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

@@ -3,7 +3,7 @@ title: 'Die Kraft der Handlungsverben in Ihrem Lebenslauf'
 excerpt: 'Handlungsverben können Ihren Lebenslauf von gewöhnlich zu überzeugend verwandeln. Erfahren Sie, wie Sie sie effektiv einsetzen können.'
 coverImage: '/assets/blog/preview/action-verbs-in-cv.jpg'
 date: '2023-05-26T05:35:07.322Z'
-slug: 'handlungsverben-im-lebenslauf'
+slug: 'action-verbs-in-cv'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

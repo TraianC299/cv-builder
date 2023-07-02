@@ -3,7 +3,7 @@ title: 'Важность хорошо структурированного ре�
 excerpt: 'Хорошо структурированное резюме имеет большое значение для создания хорошего впечатления. Узнайте, как создать понятное, краткое и впечатляющее резюме.'
 coverImage: '/assets/blog/preview/well-structured-cv.jpg'
 date: '2023-05-29T05:35:07.322Z'
-slug: 'важность-хорошо-структурированного-резюме'
+slug: 'the-importance-of-a-well-structured-cv'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

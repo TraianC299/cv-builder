@@ -3,7 +3,7 @@ title: 'Искусство написания эффективного сопр�
 excerpt: 'Грамотно составленное сопроводительное письмо может стать вашим билетом к получению работы мечты. Вот несколько советов, которые помогут вам произвести правильное впечатление.'
 coverImage: '/assets/blog/preview/tips-for-cover-letter.jpg'
 date: '2023-05-25T05:35:07.322Z'
-slug: 'искусство-написания-эффективного-сопроводительного-письма'
+slug: 'tips-for-cover-letter'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

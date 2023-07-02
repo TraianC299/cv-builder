@@ -3,7 +3,7 @@ title: '5 sfaturi pentru redactarea unui CV bun'
 excerpt: 'Redactarea unui CV bun nu este întotdeauna o sarcină ușoară, aici sunt 5 sfaturi de bază pentru a face lucrurile mai simple.'
 coverImage: '/assets/blog/preview/5tips.jpg'
 date: '2020-03-16T05:35:07.322Z'
-slug: '5-sfaturi-pentru-redactarea-unui-cv'
+slug: '5-tips-for-cv'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

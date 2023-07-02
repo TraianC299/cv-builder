@@ -3,7 +3,7 @@ title: 'Éviter les erreurs courantes dans un CV'
 excerpt: 'Les erreurs dans un CV peuvent vous coûter le poste. Découvrez quelques erreurs courantes et comment les éviter.'
 coverImage: '/assets/blog/preview/7-common-cv-mistakes.jpg'
 date: '2023-05-28T05:35:07.322Z'
-slug: 'eviter-les-erreurs-courantes-dans-un-cv'
+slug: '7-common-cv-mistakes'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

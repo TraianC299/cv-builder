@@ -3,7 +3,7 @@ title: 'Comment optimiser votre CV pour les ATS (Systèmes de suivi des candidat
 excerpt: 'Les systèmes de suivi des candidatures (ATS) peuvent faire la différence dans votre processus de candidature. Voici quelques conseils pour optimiser votre CV pour les ATS.'
 coverImage: '/assets/blog/preview/cv-tips-for-ats.jpg'
 date: '2023-05-24T05:35:07.322Z'
-slug: 'optimiser-cv-pour-les-ats'
+slug: 'cv-tips-for-ats'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

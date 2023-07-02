@@ -13,7 +13,6 @@ async function markdownToHtml(markdown: string) {
 const postsDirectory = join(process.cwd(), '_blogs')
 
 function getPostSlugs() {
-  console.log('postsDirectory', postsDirectory)
   return fs.readdirSync(postsDirectory)
   
 }
@@ -55,6 +54,8 @@ function getAllPosts(fields: string[] = [], locale: string = 'en') {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts
 }
+
+
 
 
 const BlogService = {

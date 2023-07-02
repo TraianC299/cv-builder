@@ -3,7 +3,7 @@ title: '5 conseils pour rédiger un bon CV'
 excerpt: "Rédiger un bon CV n'est pas toujours facile, voici 5 conseils de base pour vous faciliter la tâche."
 coverImage: '/assets/blog/preview/5tips.jpg'
 date: '2020-03-16T05:35:07.322Z'
-slug: '5-conseils-pour-rediger-un-bon-cv'
+slug: '5-tips-for-cv'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

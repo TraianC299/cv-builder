@@ -3,7 +3,7 @@ title: 'Die Kunst des Verfassens eines effektiven Anschreibens'
 excerpt: 'Ein gut gestaltetes Anschreiben kann Ihr Ticket zum Traumjob sein. Hier sind einige Tipps, um den richtigen Eindruck zu hinterlassen.'
 coverImage: '/assets/blog/preview/tips-for-cover-letter.jpg'
 date: '2023-05-25T05:35:07.322Z'
-slug: 'die-kunst-des-verfassens-eines-effektiven-anschreibens'
+slug: 'tips-for-cover-letter'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

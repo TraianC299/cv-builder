@@ -3,7 +3,7 @@ title: 'Evitarea greșelilor comune în CV'
 excerpt: 'Greșelile din CV pot avea consecințe negative asupra șanselor de a obține un job. Descoperă câteva erori comune și cum să le eviți.'
 coverImage: '/assets/blog/preview/7-common-cv-mistakes.jpg'
 date: '2023-05-28T05:35:07.322Z'
-slug: 'evitarea-greselilor-comune-in-cv'
+slug: '7-common-cv-mistakes'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

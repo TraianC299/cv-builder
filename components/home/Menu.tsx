@@ -68,7 +68,7 @@ const Menu = () => {
     const [openMenu, setOpenMenu] = React.useState(false)
     const router = useRouter();
     const [stuck, setStuck] = React.useState(false)
-    const {t} = useTranslation()
+    const {t} = useTranslation("common")
 
 
     useEffect(() => {

@@ -3,7 +3,7 @@ title: 'Statistici Cruciale despre CV-uri pe care Ar trebui să le Cunoști'
 excerpt: 'Înțelegerea statisticilor despre CV-uri poate oferi indicii despre cum să-ți faci CV-ul mai eficient. Iată câteva cifre importante.'
 coverImage: '/assets/blog/preview/cv-facts-you-didnt-know.jpg'
 date: '2023-05-27T05:35:07.322Z'
-slug: 'statistici-cruciale-despre-cv-uri-pe-care-ar-trebui-sa-le-cunosti'
+slug: 'crucial-cv-statistics-you-should-know'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

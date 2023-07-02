@@ -3,7 +3,7 @@ title: 'Важные статистические данные о резюме, 
 excerpt: 'Понимание статистических данных о резюме может помочь сделать ваше резюме более эффективным. Вот несколько ключевых цифр.'
 coverImage: '/assets/blog/preview/cv-facts-you-didnt-know.jpg'
 date: '2023-05-27T05:35:07.322Z'
-slug: 'важные-статистические-данные-о-резюме-которые-вам-следует-знать'
+slug: 'crucial-cv-statistics-you-should-know'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

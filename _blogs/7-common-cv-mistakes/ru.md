@@ -3,7 +3,7 @@ title: 'Избегайте распространенных ошибок в ре
 excerpt: 'Ошибки в резюме могут стоить вам работу. Узнайте о некоторых распространенных ошибках и как их избежать.'
 coverImage: '/assets/blog/preview/7-common-cv-mistakes.jpg'
 date: '2023-05-28T05:35:07.322Z'
-slug: 'избегайте-распространенных-ошибок-в-резюме'
+slug: '7-common-cv-mistakes'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'
