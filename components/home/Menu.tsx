@@ -97,10 +97,6 @@ const Menu = () => {
 
 
 
-      useDidMountEffect(()=>{
-
-      },[])
-
 
     
   return (
@@ -119,7 +115,7 @@ const Menu = () => {
                 <DesktopMenuItem link="/services" submenu={
                     <>
                     {LANGUAGES.map(language=>(
-                    <Link key={language.locale} className={router.locale === language.locale ? "active" : ""} href="/" locale={language.locale}>{language.emoji}  {language.label}</Link>
+                    <Link key={language.locale} className={router.locale === language.locale ? "active" : ""} href={router.pathname} locale={language.locale}>{language.emoji}  {t(language.translationKey)}</Link>
                     ))}
                     </>
                 }>

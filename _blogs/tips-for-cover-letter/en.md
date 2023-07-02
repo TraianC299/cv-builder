@@ -3,6 +3,7 @@ title: 'The Art of Writing an Effective Cover Letter'
 excerpt: 'A well-crafted cover letter can be your ticket to landing that dream job. Here are some tips to help you make the right impression.'
 coverImage: '/assets/blog/preview/tips-for-cover-letter.jpg'
 date: '2023-05-25T05:35:07.322Z'
+slug: 'tips-for-cover-letter'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

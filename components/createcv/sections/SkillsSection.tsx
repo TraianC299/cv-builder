@@ -9,7 +9,7 @@ import { useTranslation } from 'next-i18next'
 
 const SkillsSection = () => {
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
-    const {t} = useTranslation("create-cv")
+    const {t} = useTranslation(["create-cv", "common"])
     const addNewSkillFunction = () => {
         const noEditSkills = cvObject.skills.map(el=>({
           id:el.id,

@@ -8,15 +8,14 @@ import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 
 const Container = styled(FontScaleWrapper)`
-height: 842px;
-width: 595px;
 display: grid;
-grid-template-columns: 306px 205px;
+grid-template-columns: 1fr 0.5fr;
+padding: 24px;
+padding-top: 0;
 justify-content: center;
-column-gap: 1rem;
+column-gap: 24px;
 background: white;
 position: relative;
-transform-origin:0 0;
 overflow: hidden;
 >div{
   display: flex;
@@ -24,23 +23,19 @@ overflow: hidden;
   row-gap:16px;
 }
 
-*{
-  white-space: pre-line;
-  word-wrap: break-word;
-  
-}
 
 `
 
 
-
+const Container2 = styled.div`
+padding-top: 24px;`
 
 const SkillsContainer = styled.div`
 display: flex;
 flex-direction: column;
 row-gap: 8px;`
 const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
   return (
     <Container id="cv-preview" 
     className={className}
@@ -64,7 +59,7 @@ const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:s
             </Section>}
             
         </div>
-        <div className='p-4 relative'>
+        <Container2 className='relative'>
         <Section title={t("personal-info")}>
           <p className='sp'>{t("location")}: {cvObject.city}, {cvObject.country}</p>
           <p className='sp'>{t("phone")}: {cvObject.phone}</p>
@@ -85,7 +80,7 @@ const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:s
         </Section>}
         
 
-        </div>
+        </Container2>
     </Container>
   )
 }

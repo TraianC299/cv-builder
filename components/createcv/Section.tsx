@@ -25,7 +25,7 @@ const Section = ({children, title, subtitle, onClick, objectKey, deletable}:{chi
   objectKey?:keyof CvObjectType, deletable?:boolean
 }) => {
   const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
-  const {t} = useTranslation("create-cv")
+  const {t} = useTranslation(["create-cv", "common"])
 
 
   const onChange = (value:boolean)=>{

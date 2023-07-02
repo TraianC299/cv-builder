@@ -9,19 +9,9 @@ import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 
 const Container = styled(FontScaleWrapper)`
-height: 842px;
-width: 595px;
 padding: 1rem;
 background: white;
 position: relative;
-transform-origin:0 0;
-*{
-  white-space: pre-line;
-  word-wrap: break-word;
-}
-
-
-
 `
 
 const InfoSection = styled.div`
@@ -50,7 +40,7 @@ div:last-child{
 
 
 const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?: string }) => {
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
 
   return (
       <Container id="cv-preview"
@@ -137,7 +127,7 @@ const ProfileSection = ({ name, surname, jobTitle, city, country, phone, email }
   phone: string,
   email: string
 }) => {
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
 
   return (
     <div className='flex row ac jsb'>
@@ -189,7 +179,7 @@ const SkillInstance = ({ title, grade }: {
 
 
 const EmploymentItem = ({ title, startDate, endDate, description, employer, city }: EmploymentType) => {
-  const { t } =useTranslation("create-cv")
+  const { t } =useTranslation(["create-cv", "common"])
 
   return (
   <div>
@@ -217,7 +207,7 @@ const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) =>
 
 
 const EducationItem = ({ school, degree, city, startDate, endDate }: EducationType) => {
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
 
   return (
     <div>

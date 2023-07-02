@@ -9,15 +9,10 @@ import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 
 const Container = styled(FontScaleWrapper)`
-height: 842px;
-width: 595px;
-
 display: grid;
-grid-template-columns: 222px 373px;
-
+grid-template-columns: 0.6fr 1fr;
 background: white;
 position: relative;
-transform-origin:0 0;
 >div{
   display: flex;
   flex-direction: column;
@@ -25,11 +20,7 @@ transform-origin:0 0;
   padding: 1.5rem;
 }
 
-*{
-  white-space: pre-line;
-  word-wrap: break-word;
-  
-}
+
 
 
 `
@@ -49,7 +40,7 @@ background: ${COLORS.DARKBLUE};
 `
 const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
 
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
   return (
     <Container id="cv-preview" 
     className={className}

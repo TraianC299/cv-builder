@@ -2,27 +2,32 @@ const LANGUAGES= [
     {
         locale: 'en',
         label: 'English',
-        emoji: '🇺🇸'
+        emoji: '🇺🇸',
+        translationKey: 'english'
     },
     {
         locale: 'ro',
         label: 'Română',
-        emoji: '🇷🇴'
+        emoji: '🇷🇴',
+        translationKey: 'romanian'
     },
     {
         locale: 'ru',
         label: 'Русский',
-        emoji: '🇷🇺'
+        emoji: '🇷🇺',
+        translationKey: 'russian'
     },
     {
         locale: 'fr',
         label: 'Français',
-        emoji: '🇫🇷'
+        emoji: '🇫🇷',
+        translationKey: 'french'
     },
     {
         locale: 'de',
         label: 'Deutsch',
-        emoji: '🇩🇪'
+        emoji: '🇩🇪',
+        translationKey: 'german'
     }
 ]
 

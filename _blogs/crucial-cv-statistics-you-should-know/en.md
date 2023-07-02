@@ -3,6 +3,7 @@ title: 'Crucial CV Statistics You Should Know'
 excerpt: 'Understanding CV statistics can provide insight into how to make your CV more effective. Here are some key numbers.'
 coverImage: '/assets/blog/preview/cv-facts-you-didnt-know.jpg'
 date: '2023-05-27T05:35:07.322Z'
+slug: 'crucial-cv-statistics-you-should-know'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

@@ -10,7 +10,6 @@ import { FiChevronUp } from 'react-icons/fi'
 
 
 const Container = styled.div`
-border: 1px solid ${COLORS.LIGHTGREY};
 border-radius: 5px;
 padding: 1rem;
 flex-grow: 1;
@@ -35,24 +34,9 @@ justify-content: space-between;
 
 const ListItem = styled.li`
 position: relative;
-.handle{
-  cursor: grab;
-  position: absolute;
-  left: -1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.delete{
-  cursor: pointer;
-  position: absolute;
-  right: -1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
->button{
-  opacity:0;
-  transition: opacity 0.2s ease-in-out;
-}
+border-bottom: 1px solid ${COLORS.LIGHTGREY};
+
+
 :hover{
   >button{
     opacity:1;

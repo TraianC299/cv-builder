@@ -30,7 +30,7 @@ position: relative;
 `
 const CompletionProgress = () => {
     const {progress} = useCV()
-    const { t } = useTranslation("create-cv")
+    const { t } = useTranslation(["create-cv", "common"])
     return (
         <Container>
             <div className='flex jsb ac'>

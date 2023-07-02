@@ -14,7 +14,7 @@ interface Props extends EmploymentType{
 
 
 const InternshipInput = ({title, employer,city, description, edit, startDate, endDate, id, onDelete}:Props) => {
-  const {t} = useTranslation("create-cv")
+  const {t} = useTranslation(["create-cv", "common"])
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
     const [open, setOpen] = useState(edit?true:false)
     const [titleState, setTitleState] = useState(title || "")

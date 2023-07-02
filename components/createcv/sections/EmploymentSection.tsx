@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next'
 import EmploymentInput from '../inputs/EmploymentInput'
 const EmploymentSection = () => {
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
-    const {t} = useTranslation("create-cv")
+    const {t} = useTranslation(["create-cv", "common"])
   const addNewEmployment = () => {
     const noEditLanguages = cvObject.employment.map(el=>({
       title: el.title,

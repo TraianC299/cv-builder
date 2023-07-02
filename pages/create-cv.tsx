@@ -68,7 +68,7 @@ export const getStaticProps = async ({ locale }: {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["create-cv"])),
+      ...(await serverSideTranslations(locale, ["create-cv", "common"])),
     },
   };
 };

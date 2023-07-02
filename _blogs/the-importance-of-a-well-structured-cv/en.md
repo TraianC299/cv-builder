@@ -3,6 +3,7 @@ title: 'The Importance of a Well-Structured CV'
 excerpt: 'A well-structured CV is key to make a good impression. Learn how to create a clear, concise, and impactful CV.'
 coverImage: '/assets/blog/preview/well-structured-cv.jpg'
 date: '2023-05-29T05:35:07.322Z'
+slug: 'the-importance-of-a-well-structured-cv'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

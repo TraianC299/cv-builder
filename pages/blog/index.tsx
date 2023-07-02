@@ -70,7 +70,7 @@ export const getStaticProps = async ({locale}:{
     'author',
     'coverImage',
     'excerpt',
-  ])
+  ], locale)
 
 
   return {

@@ -16,8 +16,8 @@ import { ImSpinner2 } from 'react-icons/im'
 import { FiEye } from 'react-icons/fi';
 import { IoClose } from 'react-icons/io5'
 import { useRouter } from 'next/router';
-import BASE_URL from '@/constants/BASE_URL';
 import API_URL from '@/constants/API_URL';
+import useLockBody from 'hooks/useLockBody';
 
 const EyeButton = styled.button`
 height: 3rem;
@@ -39,15 +39,14 @@ const CvPreviewStyles = styled.div`
 background-color: ${COLORS.GREY};
 position: relative;
 opacity: 1;
+
 @media ${MEDIAQUERIES.mobileSmallPortrait}{
   width: 100vw;
   height: 100vh;
   position: fixed;
-  opacity: 0;
-  pointer-events: none;
+  display: none;
   &.openMobileModal{
-    opacity: 1;
-    pointer-events: all;
+    display: flex;
     z-index: 100;
   }
 }`
@@ -71,9 +70,10 @@ overflow: hidden;
 
 
 async function getPDF(cvObject: CvObjectType) {
-  return await fetch(`${API_URL}/api/cv/`, {
+  return await fetch(`${API_URL}/cv`, {
     method: "POST",
     headers: {
+      'Content-Type': 'application/json',
       'Accept': 'application/pdf'
     },
     body: JSON.stringify(cvObject)
@@ -86,8 +86,8 @@ const CvPreview = () => {
   const { cvObject } = useCV()
   const [openModal, setOpenModal] = useState(false)
   const [loading, setLoading] = useState(false)
-  const { t } = useTranslation("create-cv")
-
+  const { t } = useTranslation(["create-cv", "common"])
+  useLockBody()
   const router = useRouter()
 
   const generatePDF = async () => {
@@ -101,7 +101,7 @@ const CvPreview = () => {
       const blob = new Blob([something], { type: 'application/pdf' })
       const link = document.createElement('a')
       link.href = window.URL.createObjectURL(blob)
-      link.download = `your-file-name.pdf`
+      link.download = `CV.pdf`
       link.click()
 
     } catch (e) {

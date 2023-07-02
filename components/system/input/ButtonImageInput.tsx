@@ -64,7 +64,7 @@ type ButtonInputImageProps = {
 }
 const ButtonInputImage = ({image, setImage, imageError, setImageError, label, postInputLabel, ...props}:ButtonInputImageProps) => {
     const [loading, setLoading] = React.useState(false)
-    const {t} = useTranslation("create-cv")
+    const {t} = useTranslation(["create-cv", "common"])
  
   return (
    <ImageInput resize={400} loading={loading} setLoading={setLoading} imageUrl={image} setImageUrl={setImage}  {...props}>

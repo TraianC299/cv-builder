@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next'
 
 const LanguagesSection = () => {
   const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
-  const {t}= useTranslation("create-cv")
+  const {t}= useTranslation(["create-cv", "common"])
   const addNewLanguage = () => {
     const noEditLanguages = cvObject.languages.map(el=>({
       id:el.id,

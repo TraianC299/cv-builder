@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next'
 
 const InfoSection = () => {
   const { cvObject, setCvObject }: { cvObject: CvObjectType, setCvObject: React.Dispatch<React.SetStateAction<any>> } = useCV()
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
 
   return (
     <Section title={t("personal-info")}>

@@ -3,6 +3,7 @@ title: 'How to Optimize Your CV for ATS (Applicant Tracking Systems)'
 excerpt: 'Applicant Tracking Systems (ATS) can make or break your job application. Here are some tips to optimize your CV for ATS.'
 coverImage: '/assets/blog/preview/cv-tips-for-ats.jpg'
 date: '2023-05-24T05:35:07.322Z'
+slug: 'cv-tips-for-ats'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

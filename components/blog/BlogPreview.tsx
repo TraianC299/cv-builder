@@ -47,7 +47,7 @@ const BlogPreview = ({  title,
       <DateFormatter dateString={date} />
     </div>
     <p className="h6" >{excerpt}</p>
-    <Avatar name={author.name} picture={author.picture} />
+    {/* <Avatar name={author.name} picture={author.picture} /> */}
   </Container>
   )
 }

@@ -11,7 +11,7 @@ margin:auto;
 
 `
 const Page = () => {
-  const { t } = useTranslation("about-us")
+  const { t } = useTranslation(["about-us", "common"])
   return (
     <>
     <PageSEO

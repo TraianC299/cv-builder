@@ -3,6 +3,13 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
+height: 842px;
+width: 595px;
+transform-origin:0 0;
+*{
+  white-space: pre-line;
+  word-wrap: break-word;
+}
 p{
     font-size: 0.7rem !important;
 }

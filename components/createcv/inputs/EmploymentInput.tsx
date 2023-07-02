@@ -22,7 +22,7 @@ const EmploymentInput = ({title, employer,city, description, edit, startDate, en
     const [startDateState, setStartDateState] = useState(startDate || "")
     const [endDateState, setEndDateState] = useState(endDate || "")
 
-    const {t} = useTranslation("create-cv")
+    const {t} = useTranslation(["create-cv", "common"])
 
 useDidMountEffect(()=>{
   setOpen(edit)

@@ -10,15 +10,17 @@ async function markdownToHtml(markdown: string) {
 }
 
 
-const postsDirectory = join(process.cwd(), '_blog_posts')
+const postsDirectory = join(process.cwd(), '_blogs')
 
 function getPostSlugs() {
+  console.log('postsDirectory', postsDirectory)
   return fs.readdirSync(postsDirectory)
+  
 }
 
-function getPostBySlug(slug: string, fields: string[] = []) {
+function getPostBySlug(slug: string, fields: string[] = [], locale: string = 'en') {
   const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(postsDirectory, `${realSlug}.md`)
+  const fullPath = join(`${postsDirectory}/${realSlug}`, `${locale}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
@@ -45,10 +47,10 @@ function getPostBySlug(slug: string, fields: string[] = []) {
   return items
 }
 
-function getAllPosts(fields: string[] = []) {
+function getAllPosts(fields: string[] = [], locale: string = 'en') {
   const slugs = getPostSlugs()
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
+    .map((slug) => getPostBySlug(slug, fields, locale))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts

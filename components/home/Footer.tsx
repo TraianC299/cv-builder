@@ -2,18 +2,10 @@ import React from 'react'
 import styled from 'styled-components';
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS';
+import Link from 'next/link';
+import LANGUAGES from '@/constants/LANGUAGES';
+import { useRouter } from 'next/router';
 
-const Badge = styled.div`
-width: 150px;
->img{
-  height: 50px;
-  width:auto;
-}`
-
-const Badges = styled.div`
-  max-width: 1000px;
-  margin:auto;
-`
 
 
  const Box = styled.footer`
@@ -59,7 +51,7 @@ const Badges = styled.div`
  const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 
-                         minmax(185px, 1fr));
+                         minmax(300px, 1fr));
   grid-gap: 20px;
    
   @media (max-width: 1000px) {
@@ -79,6 +71,7 @@ const Badges = styled.div`
  
 const Footer = () => {
 const {t} = useTranslation()
+const router = useRouter()
     return (
       <Box>
         {/* <h1 style={{ color: "green", 
@@ -98,6 +91,10 @@ const {t} = useTranslation()
               <Heading>{t("contact-us")}</Heading>
               <a href = "mailto: info@resumelio.com">traianciochina@gmail.com</a>
               <a href = "tel: +37369513786">Tel: +37369513786</a>
+            </Column>
+            <Column>
+              <Heading>{t("language")}</Heading>
+              {LANGUAGES.map(el=><Link href={router.pathname} locale={el.locale}>{el.emoji} {t(el.translationKey)}</Link>)}
             </Column>
             {/* <Column>
               <Heading>{"Blog"}</Heading>

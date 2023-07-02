@@ -8,7 +8,7 @@ import InternshipInput from '../inputs/InternshipInput'
 
 
 const InternshipsSection = () => {
-  const {t} = useTranslation("create-cv")
+  const {t} = useTranslation(["create-cv", "common"])
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
     const addInternship = () => {
       const noEditInternships = cvObject.internships.map(el=>({

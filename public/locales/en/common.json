@@ -32,5 +32,10 @@
     "try-it-now": "Try it now",
     "free": "It's free",
     "start-now": "Start Now",
-    "language": "Language"
+    "language": "Language",
+    "romanian": "Romanian",
+    "english": "English",
+    "german": "German",
+    "russian": "Russian",
+    "french": "French"
 }

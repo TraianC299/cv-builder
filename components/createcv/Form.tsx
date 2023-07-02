@@ -29,10 +29,11 @@ flex-direction: column;
 
 @media ${MEDIAQUERIES.laptopSmall}{
     padding: 2rem;
+    row-gap: 4rem;
 }
 `
 const Form = () => {
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
   const { cvObject, setCvObject }: { cvObject: CvObjectType, setCvObject: React.Dispatch<React.SetStateAction<any>> } = useCV()
 
   

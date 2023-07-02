@@ -8,22 +8,11 @@ import {GiFlowerStar} from 'react-icons/gi'
 import { IoSparklesSharp } from 'react-icons/io5'
 
 const Container = styled(FontScaleWrapper)`
-height: 842px;
-width: 595px;
 padding: 2rem;
 background: ${COLORS.DARKGREEN};
 position: relative;
-transform-origin:0 0;
 color: white;
 font-family: 'Noto Serif Display', serif !important;
-
-
-
-
-*{
-  white-space: pre-line;
-  word-wrap: break-word;
-}
 
 
 
@@ -60,7 +49,7 @@ row-gap: 1rem;
 
 
 const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?: string }) => {
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
 
   return (
       <Container id="cv-preview"
@@ -235,7 +224,7 @@ const SkillInstance = ({ title, grade }: {
 
 
 const EmploymentItem = ({ title, startDate, endDate, description, employer, city }: EmploymentType) => {
-  const { t } =useTranslation("create-cv")
+  const { t } =useTranslation(["create-cv", "common"])
 
   return (
     <div className='flex jfs afs gap-2'>
@@ -265,7 +254,7 @@ const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) =>
 
 
 const EducationItem = ({ school, degree, city, startDate, endDate }: EducationType) => {
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
 
   return (
     <div className='flex jfs afs gap-2'>

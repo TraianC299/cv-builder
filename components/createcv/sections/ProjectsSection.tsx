@@ -8,7 +8,7 @@ import ProjectInput from '../inputs/ProjectInput'
 
 const ProjectsSection = () => {
   const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
-  const {t}= useTranslation("create-cv")
+  const {t}= useTranslation(["create-cv", "common"])
   const addNewProject = ()=>{
      const noEditProjects = cvObject.projects.map(el=>({
         title: el.title,

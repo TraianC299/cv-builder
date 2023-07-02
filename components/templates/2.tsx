@@ -9,19 +9,10 @@ import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 
 const Container = styled(FontScaleWrapper)`
-height: 842px;
-width: 595px;
 padding: 24px;
 background: white;
 position: relative;
-transform-origin:0 0;
 column-gap: 24px;
-*{
-  white-space: pre-line;
-  word-wrap: break-word;
-  
-}
-
 `
 
 const Container2 = styled.div`
@@ -36,11 +27,7 @@ column-gap: 24px;
 `
 
 
-const SkillsContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-gap: 1rem;
-`
+
 
 
 
@@ -49,7 +36,7 @@ const ColoredSection = styled.div`
 overflow: hidden;
 `
 const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, className?: string }) => {
-  const { t } = useTranslation("create-cv")
+  const { t } = useTranslation(["create-cv", "common"])
 
   return (
     <Container id="cv-preview"
@@ -75,6 +62,11 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
               {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
             </div>
           </Section>}
+          {cvObject.skills && <Section title="Skills">
+          <div className='flex column gap-2'>
+              {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
+              </div>
+          </Section>}
 
         </ColoredSection>
         <div>
@@ -93,11 +85,7 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
           {cvObject.projects && <Section title={t("projects")}>
             {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
           </Section>}
-          {cvObject.skills && <Section title="Skills">
-            <SkillsContainer>
-              {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-            </SkillsContainer>
-          </Section>}
+         
           
 
         </div>
@@ -121,7 +109,9 @@ const SectionTitle = styled.p`
   margin-top: 4px;
   margin-bottom: 4px;
 
-}`
+}
+
+`
 const Section = ({ children, title }: {
   children: ReactNode,
   title: string
@@ -137,10 +127,11 @@ const Section = ({ children, title }: {
 
 
 const ProfileSectionContainer = styled(Container2)`
-margin-bottom: 8px;
+margin-bottom: 16px;
 margin-top:8px;
 z-index:999;
 justify-content: start;
+position: relative;
 >div{
   row-gap: 0rem;
 }
@@ -150,6 +141,18 @@ justify-content: start;
   border-radius: 50%;
   object-fit: cover;
   margin-left: auto;
+  margin-right: auto;
+}
+.yellow-ball{
+  height: 300px;
+  width: 100px;
+  background: ${COLORS.YELLOW};
+  position: absolute;
+  top: -200px;
+  left: 18px;
+  border-radius: 888px;
+  z-index: -1;
+
 }
 p{
     text-align:left;
@@ -165,6 +168,7 @@ const ProfileSection = ({ name, surname, jobTitle, image }: {
   return (
     <ProfileSectionContainer className='flex column ac jc'>
       <img src={image || "https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"}></img>
+      <div className='yellow-ball'></div>
       <div className='flex js column'>
         <p className='h4 font-semibold' >{name} {surname}</p>
         <p className='h6' >{jobTitle}</p>

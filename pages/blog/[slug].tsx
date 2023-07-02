@@ -9,6 +9,7 @@ import { BlogSEO } from '../../components/utilities/SEO'
 import BlogPostInterface from '../../interfaces/blog-post'
 import BlogService from '../../services/BlogService'
 import COLORS from '@/constants/COLORS'
+import LANGUAGES from '@/constants/LANGUAGES'
 
 
 const Wrapper = styled.main`
@@ -186,7 +187,7 @@ export default BlogPage
 
 
 
-export async function getStaticProps({ params }:any) {
+export async function getStaticProps({ params, locale }:any) {
   const post = BlogService.getPostBySlug(params.slug, [
     'title',
     'date',
@@ -195,7 +196,7 @@ export async function getStaticProps({ params }:any) {
     'content',
     'ogImage',
     'coverImage',
-  ])
+  ], locale)
   const content = await BlogService.markdownToHtml(post.content || '')
 
   return {
@@ -210,15 +211,20 @@ export async function getStaticProps({ params }:any) {
 
 export async function getStaticPaths() {
   const posts = BlogService.getAllPosts(['slug'])
-
-  return {
-    paths: posts.map((post) => {
-      return {
+  const paths:any[] = []
+  posts.forEach((post:any) => {
+    LANGUAGES.forEach(el=>{
+      paths.push({
         params: {
           slug: post.slug,
         },
-      }
-    }),
+        locale: el.locale
+      })
+    })
+  })
+    
+  return {
+    paths: paths,
     fallback: false,
   }
 }

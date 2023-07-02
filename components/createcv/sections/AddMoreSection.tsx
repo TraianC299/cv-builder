@@ -11,7 +11,7 @@ display: flex;
 flex-wrap: wrap;
 `
 const AddMoreSection = () => {
-    const { t } = useTranslation("create-cv")
+    const { t } = useTranslation(["create-cv", "common"])
     const { cvObject, setCvObject }: { cvObject: CvObjectType, setCvObject: React.Dispatch<React.SetStateAction<any>> } = useCV()
   
   

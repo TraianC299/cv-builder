@@ -3,6 +3,7 @@ title: 'The Power of Action Verbs in Your CV'
 excerpt: 'Action verbs can transform your CV from bland to compelling. Discover how to use them effectively.'
 coverImage: '/assets/blog/preview/action-verbs-in-cv.jpg'
 date: '2023-05-26T05:35:07.322Z'
+slug: 'action-verbs-in-cv'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'

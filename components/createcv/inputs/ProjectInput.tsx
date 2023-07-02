@@ -12,7 +12,7 @@ interface InputProps extends ProjectType{
     }
 
 const ProjectInput = ({title, description, edit, startDate, endDate, id, onDelete}:InputProps) => {
-        const {t} = useTranslation("create-cv")
+        const {t} = useTranslation(["create-cv", "common"])
           const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
           const [open, setOpen] = useState(edit?true:false)
           const [titleState, setTitleState] = useState(title || "")

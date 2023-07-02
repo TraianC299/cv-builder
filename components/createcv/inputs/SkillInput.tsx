@@ -25,7 +25,7 @@ interface SkillInputProps {
 }
 
 const SkillInput = ({title, metric, skills, setSkills, edit, id}:SkillInputProps) => {
-  const {t} = useTranslation("create-cv")
+  const {t} = useTranslation(["create-cv", "common"])
     const [open, setOpen] = useState(edit?true:false)
     const [titleState, setTitleState] = useState(title || "")
     const [metricState, setMetricState] = useState<SkillInputProps["metric"]>(metric || null)

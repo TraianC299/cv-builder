@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid'
 import { useTranslation } from 'next-i18next'
 import EducationInput from '../inputs/EducationInput'
 const EducationSection = () => {
-  const {t} = useTranslation("create-cv")
+  const {t} = useTranslation(["create-cv", "common"])
     const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
     const addNewEducation = () => {
         const noEditEducation = cvObject.education.map(el=>({
