@@ -22,7 +22,7 @@ const Template = ({localStorageCv}: {localStorageCv:CvObjectType}) => {
 
 
   return (
-<div  className='' >
+<div   >
             <TemplateZeroScaled
             scaleFactor={width ? width/595 : 1}
           
@@ -64,13 +64,13 @@ export const getServerSideProps:GetServerSideProps = async ({
     employment: [],
     education: []
   }
- const cookies = req.cookies;
+  const cookies = req.cookies;
   const localStorageCv = JSON.parse(cookies.cvobject || JSON.stringify(placeholderObject))
 
   // Pass data to the page via props
   return { props: { 
     localStorageCv: localStorageCv,  
-    ...(await serverSideTranslations(locale as string, [ "common", "create-cv"])),
+    ...await serverSideTranslations(locale as string, ['common', 'create-cv']),
   }}
 }
 
