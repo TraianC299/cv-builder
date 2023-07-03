@@ -43,7 +43,10 @@ Template.getLayout = function getLayout(page: React.ReactNode) {
 }
 
 
-export const getServerSideProps:GetServerSideProps = async (context) => {
+export const getServerSideProps:GetServerSideProps = async ({
+  locale,
+  req
+}) => {
   
   const placeholderObject = {
     summary:"",
@@ -61,13 +64,13 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
     employment: [],
     education: []
   }
- const cookies = context.req.cookies;
+ const cookies = req.cookies;
   const localStorageCv = JSON.parse(cookies.cvobject || JSON.stringify(placeholderObject))
 
   // Pass data to the page via props
   return { props: { 
-    ...(await serverSideTranslations(context.locale || "en", ["common","create-cv"])),
-    localStorageCv: localStorageCv  
+    localStorageCv: localStorageCv,  
+    ...(await serverSideTranslations(locale as string, [ "common", "create-cv"])),
   }}
 }
 
