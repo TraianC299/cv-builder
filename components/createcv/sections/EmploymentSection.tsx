@@ -6,54 +6,54 @@ import { nanoid } from 'nanoid'
 import { useTranslation } from 'next-i18next'
 import EmploymentInput from '../inputs/EmploymentInput'
 const EmploymentSection = () => {
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
-    const {t} = useTranslation(["create-cv", "common"])
+  const { cvObject, setCvObject } = useCV()
+  const { t } = useTranslation(["create-cv", "common"])
   const addNewEmployment = () => {
-    const noEditLanguages = cvObject.employment.map(el=>({
-      title: el.title,
-      employer: el.employer,
-      city: el.city, 
-      description: el.description,
-      id: el.id,
-      edit:false
+    const noEditLanguages = cvObject.employment.map(el => ({
+      ...el,
+      edit: false
     }))
-    setCvObject((prev:CvObjectType)=>({
+    setCvObject((prev) => ({
       ...prev,
-      employment:[
+      employment: [
         ...noEditLanguages, {
-          id:nanoid(),
+          id: nanoid(),
           title: "",
-      employer: "",
-      city: "", 
-      description: "",
-           edit:true}
+          employer: "",
+          city: "",
+          description: "",
+          edit: true,
+          startDate: "",
+          endDate: ""
+        }
       ]
     }))
   }
 
-const deleteEmployment = (id:string) => {
-    setCvObject((prev:CvObjectType)=>({
-        ...prev,
-        employment:prev.employment.filter(el=>el.id!==id)
+
+  const deleteEmployment = (id: string) => {
+    setCvObject((prev: CvObjectType) => ({
+      ...prev,
+      employment: prev.employment.filter(el => el.id !== id)
     }))
-}
+  }
 
   return (
     <Section deletable
-    objectKey="employment"
-    title={t("employment")}
-    onClick={addNewEmployment}>
+      objectKey="employment"
+      title={t("employment")}
+      onClick={addNewEmployment}>
       <ReactSortable
-      className='flex column gap-2'
-      list={cvObject.employment}
-      setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
-      handle=".handle"
-      >{cvObject?.employment?.map(el=><EmploymentSection.Input
-       key={el.id}  
-       {...el} 
-       edit={el.edit || false}
-       onDelete={deleteEmployment}
-       ></EmploymentSection.Input>)}</ReactSortable>
+        className='flex column gap-2'
+        list={cvObject.employment}
+        setList={(v) => { setCvObject((prev) => ({ ...prev, employment: v })) }}
+        handle=".handle"
+      >{cvObject?.employment?.map(el => <EmploymentSection.Input
+        key={el.id}
+        {...el}
+        edit={el.edit || false}
+        onDelete={deleteEmployment}
+      ></EmploymentSection.Input>)}</ReactSortable>
     </Section>
   )
 }

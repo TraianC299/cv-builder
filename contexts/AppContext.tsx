@@ -105,7 +105,13 @@ export type SkillType = {
     metric: 1 | 2 | 3 | 4 | 5 | null,
     title: string,
     id:string,
-    edit?:boolean
+    edit:boolean
+}
+export type LanguageType = {
+    metric: 1 | 2 | 3 | 4 | 5 | null,
+    title: string,
+    id:string,
+    edit:boolean
 }
 
 export type EmploymentType = {
@@ -116,8 +122,9 @@ export type EmploymentType = {
     id: string,
     edit:boolean,
     startDate: string,
-    endDate: string,
+    endDate: string
 }
+export type IntershipType = EmploymentType
 
 export type EducationType = {
     school: string,
@@ -151,12 +158,12 @@ export type CvObjectType = {
     jobTitle: string,
     city: string,
     profileImage:string,
-    skills: [SkillType] | [],
-    languages:[SkillType] | [],
-    employment: [EmploymentType] | [],
-    education: [EducationType] | [],
-    internships: [EmploymentType] | [],
-    projects: [ProjectType] | []
+    skills: SkillType[],
+    languages:LanguageType[],
+    employment: EmploymentType[],
+    education: EducationType[],
+    internships: IntershipType[],
+    projects: ProjectType[]
     template: number,
     language: string,
     color?: string
@@ -199,7 +206,7 @@ const CVcontext = React.createContext<{ cvObject: CvObjectType; setCvObject: Rea
         progress:0
     }
 )
-export const useCV=():{ cvObject: CvObjectType; setCvObject: Dispatch<CvObjectType>; progress: number; }=>{
+export const useCV=():{ cvObject: CvObjectType; setCvObject: React.Dispatch<React.SetStateAction<CvObjectType>>; progress: number; }=>{
         return useContext(CVcontext)
     }
 

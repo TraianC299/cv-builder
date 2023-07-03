@@ -15,7 +15,7 @@ import { useTranslation } from 'next-i18next'
   row-gap: 0.5em;
   .selected{
     border: 2px solid white;
-  outline: 2px solid ${COLORS.BLACKGREY};
+    outline: 2px solid ${COLORS.BLACK};
 }
   `
 const availableColors = ['#0d6efd', '#6f42c1', '#dc3545', '#fd7e14', COLORS.YELLOW, COLORS.DARKGREEN, COLORS.GREEN, '#0dcaf0', '#6c757d', '#000000']
@@ -33,6 +33,7 @@ const ColorSelector = () => {
               cvObject.color === el
           }></SingleColor>)}
           <InputColor 
+          color={(cvObject.color &&availableColors.includes(cvObject.color))?COLORS.LIGHTGREY:cvObject.color}
           value={cvObject.color}
           onChange={(e)=>setCvObject({...cvObject, color: e.target.value})}
           type='color'></InputColor>
@@ -44,6 +45,8 @@ const ColorSelector = () => {
 const Color = styled.div`
 width: 2rem;
 height: 2rem;
+border-radius: 999px;
+
 :hover{
     transform: scale(1.05);
 }
@@ -51,15 +54,19 @@ height: 2rem;
 `
 
 const InputColor = styled.input`
-width: 2rem;
-height: 2rem;
 position: relative;
 padding: 0;
 margin: 0;
 border: none;
 outline: none;
 cursor: pointer;
-
+background: none;
+appearance: none;
+-moz-appearance: none;
+-webkit-appearance: none;
+height: 0;
+width: 0;
+-webkit-tap-highlight-color: transparent;
 :after{
     content: '+';
     width: 2rem;
@@ -67,8 +74,8 @@ cursor: pointer;
     position: absolute;
     top:0;
     left:0;
-    background: ${COLORS.LIGHTGREY};
-    border-radius: 0.25rem;
+    background: ${props=>props.color||COLORS.LIGHTGREY};
+    border-radius: 999px;
     border: 2px solid white;
     display: flex;
     align-items: center;

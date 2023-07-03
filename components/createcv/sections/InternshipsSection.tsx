@@ -9,17 +9,13 @@ import InternshipInput from '../inputs/InternshipInput'
 
 const InternshipsSection = () => {
   const {t} = useTranslation(["create-cv", "common"])
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
+    const {cvObject, setCvObject} = useCV()
     const addInternship = () => {
       const noEditInternships = cvObject.internships.map(el=>({
-        title: el.title,
-        employer: el.employer,
-        city: el.city, 
-        description: el.description,
-        id: el.id,
+        ...el,
         edit:false
       }))
-      setCvObject((prev:CvObjectType)=>({
+      setCvObject((prev)=>({
         ...prev,
         internships:[
           ...noEditInternships, {
@@ -28,13 +24,16 @@ const InternshipsSection = () => {
         employer: "",
         city: "", 
         description: "",
-        edit:true}
+        edit:true,
+        startDate: "",
+        endDate: ""
+      }
         ]
       }))
     }
 
     const deleteInternship = (id:string) => {
-      setCvObject((prev:CvObjectType)=>({
+      setCvObject((prev)=>({
         ...prev,
         internships:prev.internships.filter(el=>el.id!==id)
       }))
@@ -48,7 +47,7 @@ const InternshipsSection = () => {
     <ReactSortable
     className='flex column gap-2'
     list={cvObject.internships}
-    setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
+    setList={(v)=>{setCvObject((prev)=>({...prev, internships:v}))}}
     handle=".handle"
     >{cvObject?.internships?.map(el=><InternshipsSection.Input 
       onDelete={()=>deleteInternship(el.id)}

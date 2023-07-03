@@ -13,7 +13,7 @@ interface Props extends EmploymentType{
   onDelete?:Function
 }
 const EmploymentInput = ({title, employer,city, description, edit, startDate, endDate, id, onDelete}:Props) => {
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
+    const {cvObject, setCvObject} = useCV()
     const [open, setOpen] = useState(edit?true:false)
     const [titleState, setTitleState] = useState(title || "")
     const [employerState, setEmployerState] = useState(employer || "")
@@ -42,7 +42,7 @@ useDidMountEffect(()=>{
     startDate: startDateState,
     endDate: endDateState
   }
-  setCvObject((prev:CvObjectType)=>({
+  setCvObject((prev)=>({
     ...prev, employment:skillsPlaceholder
   }))
 },[titleState, descriptionState, cityState, startDateState, endDateState, employerState])

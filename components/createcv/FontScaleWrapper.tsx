@@ -1,4 +1,3 @@
-import COLORS from '@/constants/COLORS'
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
@@ -39,8 +38,8 @@ font-size: 30px !important;
   font-size: 1rem !important;
 }
 *{
-  white-space: pre-line;
-  word-wrap: break-word;
+  white-space: pre-line !important;
+  word-wrap: break-word !important;
 }
 
 `

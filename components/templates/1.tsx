@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType, useCV } from '../../contexts/AppContext'
+import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from '../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import FontScaleWrapper from '../createcv/FontScaleWrapper'
@@ -10,7 +10,7 @@ import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 const Container = styled(FontScaleWrapper)`
 display: grid;
-grid-template-columns: 0.6fr 1fr;
+grid-template-columns: 225px 340px;
 background: white;
 position: relative;
 >div{
@@ -37,6 +37,14 @@ background: ${props=>props.theme.color || COLORS.DARKBLUE};
 *{
   color: white;
 }
+`
+
+const Container2 = styled.div`
+width: 100%;
+max-width: 100%;
+display: flex;
+flex-direction: column;
+
 `
 const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
 
@@ -70,7 +78,7 @@ const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:st
         
 
         </ColoredSection>
-        <div>
+        <Container2>
             <Section title={t("professional-summary")}>
               <p className='sp preline'>{cvObject.summary}</p>
             </Section>
@@ -87,7 +95,7 @@ const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:st
             {cvObject.projects.map((el:ProjectType)=><ProjectItem {...el} key={el.id}></ProjectItem>)}
             </Section>}
             
-        </div>
+        </Container2>
         
     </Container>
   )

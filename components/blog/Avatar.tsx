@@ -3,7 +3,8 @@ import React from 'react'
 import styled from 'styled-components'
 type Props = {
     name: string
-    picture: string
+    picture: string,
+    [x:string]:any
   }
   
 
@@ -13,9 +14,9 @@ type Props = {
   border-radius: 50%;
   margin-right: 0.5rem;
   `
-  const Avatar = ({ name, picture }: Props) => {
+  const Avatar = ({ name, picture, ...props }: Props) => {
     return (
-      <div className="flex ac">
+      <div className="flex ac" {...props}>
         <Image style={{objectFit:"cover"}} src={picture} className="rounded-full mr-4" alt={name} />
         <div className="p font-light" style={{color:COLORS.BLACKGREY}}>{name}</div>
       </div>

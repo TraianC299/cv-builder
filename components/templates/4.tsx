@@ -15,18 +15,18 @@ color: white;
 font-family: 'Noto Serif Display', serif !important;
 height: 100%;
 
-
 `
 
 const InfoSection = styled.div`
 width: 100%;
 justify-content: space-between;
 display: grid;
-grid-template-columns: 167px 1fr;
+grid-template-columns: 167px 364px;
 margin-top: 24px;
 >div{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 `
 
@@ -142,7 +142,7 @@ const Section = ({ children, title, style }: {
 const ProfileSectionContainer = styled.div`
 width: 100%;
 display: grid;
-grid-template-columns: 167px 1fr;
+grid-template-columns: 167px 364px;
 position: relative;
 padding-bottom: 2rem;
 >img{

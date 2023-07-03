@@ -104,7 +104,7 @@ const TemplateSelector = () => {
                     <FiChevronLeft color="black" className="h5 shadow-md transform rotate-180"/>
                 </ArrowLeft>}
                 {images.map((image, index)=>(
-                <Template  key={index} className={`pointer rounded-sm ${cvObject.template === index && "selected"}`} onClick={() => setCvObject((prev: CvObjectType) => ({ ...prev, template: index }))}>
+                <Template  key={index} className={`pointer rounded-sm ${cvObject.template === index && "selected"}`} onClick={() => setCvObject((prev) => ({ ...prev, template: index }))}>
                     <Image width={120} height={169.7} src={image} alt={`template ${index}`}></Image>
                     <div className='overlay flex ac jc'>
                         <BiCheckCircle color="white" className="h5 shadow-md"/>

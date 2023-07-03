@@ -7,10 +7,10 @@
     "save-progess-title": "Opțiunea de a salva progresul și a reveni mai târziu",
     "download-pdf-title": "Descărcați CV-ul finalizat ca PDF",
     "no-fees-title": "Nicio taxă sau abonament necesar",
-    "easy-to-use-subtitle": "Serviciul constă în reconstruirea / recrearea designului și aspectului original al documentului (în cazul în care documentul sursă este needitabil). Specialiștii noștri DTP sunt instruiți să lucreze cu următoarele software-uri: Adobe InDesign, Illustrator, Photoshop și așa mai departe.",
-    "save-progress-subtitle": "Transcrierea sună simplu, dar este mai mult decât a pune cuvinte pe 'hârtie'. Cu toate acestea, când vine vorba de recunoașterea vocală, este necesară o transcriere mai detaliată și complexă. Suntem aici pentru a vă ajuta cu proiectul de învățare automată, furnizându-vă numeroase resurse vocale diferite, precum și formatarea și etichetarea corespunzătoare a acestora pentru a îmbunătăți baza de date AI și a o face mai precisă în recunoașterea cuvintelor și frazelor.",
-    "download-pdf-subtitle": "Videoclipuri YouTube, filme, seriale TV, prezentări și interviuri, acestea sunt doar câteva dintre exemplele pentru care profesioniștii noștri vă pot ajuta să creați subtitrări. Tot ce trebuie să faceți este să ne trimiteți videoclipurile, iar noi vom trece prin procesul nostru de subtitrare, transcriind, traducând în orice limbă și creând subtitrări.",
-    "no-fees-subtitle": "Având o bază de date largă cu artiști VO talentați, suntem întotdeauna aici pentru a vă ajuta să alegeți cel mai bun candidat / artist pentru proiectele dumneavoastră specifice, oferindu-vă opțiuni pentru a alege genul în combinație cu diferite tonuri de voce.",
+    "easy-to-use-subtitle": "Editorul nostru ușor de utilizat vă permite să personalizați cu ușurință conținutul, formatarea și aspectul CV-ului pentru a evidenția realizările și pentru a se potrivi stilului personal. Creați un CV profesional cu ușurință.",
+    "save-progress-subtitle": "Înțelegem importanța timpului și a gândirii în crearea unui CV. De aceea, platforma noastră oferă o funcție de salvare convenabilă care vă permite să stocați progresul și să reveniți la el oricând, asigurându-vă flexibilitatea de a face modificări și îmbunătățiri în propriul ritm.",
+    "download-pdf-subtitle": "Descărcați CV-ul finalizat ca fișier PDF de înaltă calitate cu ușurință. Păstrați formatarea și aspectul profesional pe diferite dispozitive. Partajați-l cu angajatori, trimiteți-l prin e-mail sau imprimați-l pentru distribuire fizică.",
+    "no-fees-subtitle": "Platforma noastră oferă acces gratuit la instrumente profesionale de creare a CV-ului. Nu există taxe ascunse, abonamente sau autentificare necesară. Creați, editați și descărcați CV-ul fără constrângeri financiare, evidențiindu-vă abilitățile și experiențele în mod eficient.",
     "read-more": "Citiți mai mult",
     "templates-section-title": "Șabloane și opțiuni de design",
     "templates-section-subtitle": "Oferim o varietate de șabloane și opțiuni de design de unde puteți alege, asigurându-vă că puteți crea un CV care reflectă stilul și brandul personal. Fie că sunteți un profesionist creativ care caută un layout unic sau un căutător de job mai tradițional care caută un design clasic, avem un șablon care se va potrivi nevoilor dumneavoastră. Aruncați o privire la selecția noastră:",
@@ -39,5 +39,4 @@
     "german": "Germană",
     "russian": "Rusă",
     "french": "Franceză"
-
 }

@@ -2,7 +2,7 @@ import React, {  useState } from 'react'
 import Input from '../../system/input/Input'
 import CollapseItem from '../CollapseItem'
 import useDidMountEffect from '../../../hooks/useDidMountEffect'
-import { CvObjectType, EmploymentType, useCV } from '../../../contexts/AppContext'
+import {  EmploymentType, useCV } from '../../../contexts/AppContext'
 import AutosizeInput from '../../system/input/AutosizeInput'
 import MonthYearSelector from '../../system/input/MonthYearSelector'
 import { useTranslation } from 'next-i18next'
@@ -15,14 +15,14 @@ interface Props extends EmploymentType{
 
 const InternshipInput = ({title, employer,city, description, edit, startDate, endDate, id, onDelete}:Props) => {
   const {t} = useTranslation(["create-cv", "common"])
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
-    const [open, setOpen] = useState(edit?true:false)
-    const [titleState, setTitleState] = useState(title || "")
-    const [employerState, setEmployerState] = useState(employer || "")
-    const [descriptionState, setDescriptionState] = useState(description || "")
-    const [cityState, setCityState] = useState(city || "")
-    const [startDateState, setStartDateState] = useState(startDate || "")
-    const [endDateState, setEndDateState] = useState(endDate || "")
+    const {cvObject, setCvObject} = useCV()
+    const [open, setOpen] = useState<boolean>(edit?true:false)
+    const [titleState, setTitleState] = useState<string>(title || "")
+    const [employerState, setEmployerState] = useState<string>(employer || "")
+    const [descriptionState, setDescriptionState] = useState<string>(description || "")
+    const [cityState, setCityState] = useState<string>(city || "")
+    const [startDateState, setStartDateState] = useState<string>(startDate || "")
+    const [endDateState, setEndDateState] = useState<string>(endDate || "")
 
 
 useDidMountEffect(()=>{
@@ -42,9 +42,10 @@ useDidMountEffect(()=>{
     startDate: startDateState,
     endDate: endDateState
   }
-  setCvObject((prev:CvObjectType)=>({
-    ...prev, internships:internshipsPlaceholder
-  }))
+  setCvObject((prev)=>({
+    ...prev,
+    internships:internshipsPlaceholder,
+    }))
 },[titleState, descriptionState, cityState, startDateState, endDateState, employerState])
 
 

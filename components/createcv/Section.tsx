@@ -24,7 +24,7 @@ const TitleContainer = styled.div`
 const Section = ({children, title, subtitle, onClick, objectKey, deletable}:{children:ReactNode, title?:string | DefaultTFuncReturn, subtitle?: string |DefaultTFuncReturn, onClick?:Function, 
   objectKey?:keyof CvObjectType, deletable?:boolean
 }) => {
-  const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
+  const {cvObject, setCvObject} = useCV()
   const {t} = useTranslation(["create-cv", "common"])
 
 

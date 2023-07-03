@@ -5,24 +5,29 @@ import { CvObjectType, useCV } from '../../../contexts/AppContext'
 import { nanoid } from 'nanoid'
 import SkillInput from '../inputs/SkillInput'
 import { useTranslation } from 'next-i18next'
+import LanguageInput from '../inputs/LanguageInput'
 
 const LanguagesSection = () => {
-  const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
+  const {cvObject, setCvObject} = useCV()
   const {t}= useTranslation(["create-cv", "common"])
   const addNewLanguage = () => {
     const noEditLanguages = cvObject.languages.map(el=>({
-      id:el.id,
-      title:el.title, 
-      metric: el.metric,
+      ...el,
       edit:false
     }))
-    setCvObject((prev:CvObjectType)=>({
+    setCvObject((prev)=>({
       ...prev,
       languages:[
-        ...noEditLanguages, {id:nanoid(), title:"", metric:0, edit:true}
+        ...noEditLanguages, {
+          id:nanoid(), 
+          title:"", 
+          metric:null, 
+          edit:true
+        }
       ]
     }))
   }
+
   return (
     <Section 
     deletable
@@ -32,12 +37,10 @@ const LanguagesSection = () => {
         <ReactSortable
         className='flex column gap-2'
         list={cvObject.languages}
-        setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}}
+        setList={(v)=>{setCvObject((prev)=>({...prev, languages:v}))}}
         handle=".handle"
         >
           {cvObject.languages && cvObject.languages.map(el=><LanguagesSection.Input 
-          skills={cvObject.languages} 
-          setSkills={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, languages:v}))}} 
           id={el.id} 
           edit={el.edit || false} 
           title={el.title} 
@@ -53,4 +56,4 @@ const LanguagesSection = () => {
 export default LanguagesSection
 
 
-LanguagesSection.Input = SkillInput
+LanguagesSection.Input = LanguageInput

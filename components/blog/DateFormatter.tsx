@@ -6,7 +6,7 @@ type Props = {
 }
 const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
-const DateFormatter = ({ dateString, props}: Props) => {
+const DateFormatter = ({ dateString, ...props}: Props) => {
   return <time {...props} style={{textTransform:"capitalize", color:COLORS.GREY}} dateTime={dateString}>{new Date(dateString).toLocaleDateString("en", options)}</time>
 }
 

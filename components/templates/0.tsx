@@ -9,7 +9,7 @@ import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 const Container = styled(FontScaleWrapper)`
 display: grid;
-grid-template-columns: 1fr 0.5fr;
+grid-template-columns: 330px 193px;
 padding: 24px;
 padding-top: 0;
 justify-content: center;
@@ -152,7 +152,7 @@ width:100%;
 row-gap: 4px;
 >div{
   width:100%;
-  background: ${COLORS.WHITE};
+  background: ${COLORS.LIGHTGREY};
   height: 5px;
   border-radius: 444px;
   overflow: hidden;

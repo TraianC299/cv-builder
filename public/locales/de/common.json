@@ -2,15 +2,15 @@
     "hero-title": "Landen Sie Ihren Traumjob mit einem herausragenden Lebenslauf",
     "hero-subtitle": "Erstellen Sie in wenigen Minuten einen professionellen, maßgeschneiderten Lebenslauf mit unserem benutzerfreundlichen Builder. Keine Designkenntnisse erforderlich!",
     "why-us-title": "Warum sollten Sie uns wählen?",
-    "why-us-subtitle":"Entfesseln Sie Ihr Potenzial mit unserer Auswahl an einzigartigen Funktionen, die sorgfältig entwickelt wurden, um den Erstellungsprozess Ihres Lebenslaufs zu vereinfachen und zu verbessern.",
+    "why-us-subtitle": "Entfesseln Sie Ihr Potenzial mit unserer Auswahl an einzigartigen Funktionen, die sorgfältig entwickelt wurden, um den Erstellungsprozess Ihres Lebenslaufs zu vereinfachen und zu verbessern.",
     "easy-to-use-title": "Einfach zu bedienender Editor zur Anpassung Ihres Lebenslaufs",
     "save-progess-title": "Option zum Speichern Ihres Fortschritts und späteren Wiederaufnehmen",
     "download-pdf-title": "Laden Sie Ihren fertigen Lebenslauf als PDF herunter",
     "no-fees-title": "Keine Gebühren oder Abonnements erforderlich",
-    "easy-to-use-subtitle": "Der Service besteht darin, das ursprüngliche Layout und Design des Dokuments neu zu erstellen (falls das Quelldokument nicht bearbeitbar ist). Unsere DTP-Spezialisten sind geschult im Umgang mit folgender Software: Adobe InDesign, Illustrator, Photoshop und so weiter.",
-    "save-progress-subtitle": "So einfach es auch klingen mag, der Transkriptionsservice besteht darin, Worte auf 'Papier' zu bringen. Bei der Spracherkennung ist jedoch eine detailliertere und komplexere Transkription erforderlich. Wir stehen Ihnen zur Seite, um Ihnen bei Ihrem Machine-Learning-Projekt zu helfen, indem wir Ihnen viele verschiedene Sprachressourcen zur Verfügung stellen und diese ordnungsgemäß formatieren und markieren, um Ihre KI-Datenbank zu verbessern und sie genauer bei der Erkennung von Wörtern und Phrasen zu machen.",
-    "download-pdf-subtitle": "YouTube-Videos, Filme, TV-Shows, Präsentationen und Interviews - dies sind nur einige Beispiele, für die unsere Fachleute Untertitel erstellen können. Senden Sie uns einfach die Videos, und wir führen sie durch unseren Untertitelungsprozess, indem wir sie transkribieren, in jede gewünschte Sprache übersetzen und Untertitel erstellen.",
-    "no-fees-subtitle": "Mit einer großen Datenbank talentierter Synchronsprecher stehen wir Ihnen immer zur Verfügung, um Ihnen bei der Auswahl des besten Kandidaten/Synchronsprechers für Ihre spezifischen Projekte zu helfen, indem wir Ihnen Optionen bieten, um das Geschlecht in Kombination mit verschiedenen Stimmfarben auszuwählen.",
+    "easy-to-use-subtitle": "Unser benutzerfreundlicher Lebenslauf-Editor ermöglicht es Ihnen mühelos, Inhalte, Formatierung und Layout anzupassen, um Erfolge hervorzuheben und Ihren persönlichen Stil widerzuspiegeln. Erstellen Sie einen professionellen Lebenslauf ganz einfach.",
+    "save-progress-subtitle": "Unsere Plattform versteht die Bedeutung von Zeit und Überlegung bei der Erstellung eines Lebenslaufs. Mit unserer praktischen Speicherfunktion können Sie Ihren Fortschritt speichern und jederzeit wieder aufnehmen, um Änderungen und Verbesserungen in Ihrem eigenen Tempo vorzunehmen.",
+    "download-pdf-subtitle": "Laden Sie Ihren fertigen Lebenslauf mühelos als hochwertiges PDF herunter. Behalten Sie eine professionelle Formatierung und Darstellung auf verschiedenen Geräten bei. Teilen Sie ihn mit Arbeitgebern, per E-Mail oder drucken Sie ihn für die Verteilung aus.",
+    "no-fees-subtitle": "Unsere Plattform bietet kostenlosen Zugang zu professionellen Lebenslauf-Tools. Keine versteckten Gebühren, Abonnements oder Authentifizierung erforderlich. Erstellen, bearbeiten und laden Sie Ihren Lebenslauf ohne finanzielle Einschränkungen herunter und präsentieren Sie Ihre Fähigkeiten und Erfahrungen effektiv.",
     "read-more": "Mehr erfahren",
     "templates-section-title": "Vorlagen und Designoptionen",
     "templates-section-subtitle": "Wir bieten eine Vielzahl von Vorlagen und Designoptionen zur Auswahl, um sicherzustellen, dass Sie einen Lebenslauf erstellen können, der Ihren persönlichen Stil und Ihre Marke widerspiegelt. Ob Sie ein kreativer Profi sind, der eine einzigartige Gestaltung sucht, oder ein traditioneller Jobsuchender, der ein klassisches Design wünscht, wir haben eine Vorlage, die Ihren Anforderungen entspricht. Werfen Sie einen Blick auf unsere Auswahl:",
@@ -38,5 +38,4 @@
     "german": "Deutsch",
     "russian": "Russisch",
     "french": "Französisch"
-
-    }
+}

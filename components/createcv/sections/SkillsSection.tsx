@@ -8,19 +8,22 @@ import { useTranslation } from 'next-i18next'
 
 
 const SkillsSection = () => {
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
+    const {cvObject, setCvObject} = useCV()
     const {t} = useTranslation(["create-cv", "common"])
     const addNewSkillFunction = () => {
         const noEditSkills = cvObject.skills.map(el=>({
-          id:el.id,
-          title:el.title, 
-          metric: el.metric,
+          ...el,
           edit:false
         }))
-        setCvObject((prev:CvObjectType)=>({
+        setCvObject((prev)=>({
           ...prev,
           skills:[
-            ...noEditSkills, {id:nanoid(), title:"", metric:0, edit:true}
+            ...noEditSkills, {
+              id:nanoid(), 
+              title:"", 
+              metric:null, 
+              edit:true
+            }
           ]
         }))
       }
@@ -35,7 +38,12 @@ const SkillsSection = () => {
         list={cvObject.skills}
         setList={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, skills:v}))}}
         handle=".handle"
-        >{cvObject?.skills?.map(el=><SkillsSection.Input skills={cvObject.skills} setSkills={(v)=>{setCvObject((prev:CvObjectType)=>({...prev, skills:v}))}} key={el.id} id={el.id} edit={el.edit || false} title={el.title} metric={el.metric}></SkillsSection.Input>)}</ReactSortable>
+        >{cvObject?.skills?.map(el=><SkillsSection.Input 
+        key={el.id}
+        id={el.id}
+        edit={el.edit || false}
+        title={el.title}
+        metric={el.metric}></SkillsSection.Input>)}</ReactSortable>
       </Section>
   )
 }

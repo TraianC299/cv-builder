@@ -2,7 +2,7 @@ import React, {  useState } from 'react'
 import Input from '../../system/input/Input'
 import CollapseItem from '../CollapseItem'
 import useDidMountEffect from '../../../hooks/useDidMountEffect'
-import {  SkillType } from '../../../contexts/AppContext'
+import {   SkillType, useCV } from '../../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import LevelSelector from '@/components/system/input/LevelSelector'
 import LEVELS from '@/constants/LEVELS'
@@ -15,43 +15,42 @@ flex-direction: column;
 }`
 
 
-interface SkillInputProps {
-    title: string,
-    metric: SkillType["metric"],
-    id: string,
-    skills: [SkillType] | [],
-    setSkills: React.Dispatch<React.SetStateAction<SkillType[]>>,
-    edit: boolean
-}
-
-const SkillInput = ({title, metric, skills, setSkills, edit, id}:SkillInputProps) => {
+const SkillInput = ({title, metric, edit, id}:SkillType) => {
   const {t} = useTranslation(["create-cv", "common"])
     const [open, setOpen] = useState(edit?true:false)
     const [titleState, setTitleState] = useState(title || "")
-    const [metricState, setMetricState] = useState<SkillInputProps["metric"]>(metric || null)
-
+    const [metricState, setMetricState] = useState<SkillType["metric"]>(metric || null)
+    const {cvObject,setCvObject} = useCV()
 
 useDidMountEffect(()=>{
   setOpen(edit)
 },[edit])
 
 useDidMountEffect(()=>{
-  const index = skills.findIndex(el=>el.id===id)
-  const skillsPlaceholder = [...skills]
+  const index = cvObject.skills.findIndex(el=>el.id===id)
+  const skillsPlaceholder = [...cvObject.skills]
   skillsPlaceholder[index] = {
     id:id,
     title:titleState,
     metric:metricState,
     edit: edit
   }
-  setSkills(skillsPlaceholder)
+  setCvObject((prev)=>({
+    ...prev, skills:skillsPlaceholder
+  }))
 },[titleState, metricState])
+
+const onDelete = ()=>{
+  setCvObject((prev)=>({
+    ...prev, skills:prev.skills.filter(el=>el.id!==id)
+  }))
+}
 
 
 
   return (
     <CollapseItem 
-    onDelete={()=>setSkills(skills.filter(el=>el.id!==id))} 
+    onDelete={onDelete} 
       title={titleState || t("not-specified")} 
       subtitle={metricState?LEVELS[metricState]:t("not-specified")}
       open={open} 

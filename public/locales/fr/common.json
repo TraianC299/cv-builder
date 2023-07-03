@@ -2,15 +2,15 @@
     "hero-title": "Décrochez votre emploi de rêve avec un CV remarquable",
     "hero-subtitle": "Créez un CV professionnel sur mesure en quelques minutes grâce à notre outil convivial. Aucune compétence en design requise !",
     "why-us-title": "Pourquoi nous choisir ?",
-    "why-us-subtitle":"Libérez votre potentiel avec notre ensemble de fonctionnalités uniques, spécialement conçues pour simplifier et améliorer le processus de création de votre CV.",
+    "why-us-subtitle": "Libérez votre potentiel avec notre ensemble de fonctionnalités uniques, spécialement conçues pour simplifier et améliorer le processus de création de votre CV.",
     "easy-to-use-title": "Éditeur facile à utiliser pour personnaliser votre CV",
     "save-progess-title": "Option pour sauvegarder votre progression et y revenir ultérieurement",
     "download-pdf-title": "Téléchargez votre CV finalisé au format PDF",
     "no-fees-title": "Aucun frais ni abonnement requis",
-    "easy-to-use-subtitle": "Le service consiste à reconstruire/reproduire la mise en page et le design d'origine du document (dans le cas où le document source est non modifiable). Nos spécialistes de la PAO sont formés pour travailler avec les logiciels suivants : Adobe InDesign, Illustrator, Photoshop, etc.",
-    "save-progress-subtitle": "Aussi simple que cela puisse paraître, le service de transcription se résume à mettre des mots sur du 'papier'. Cependant, en ce qui concerne la reconnaissance vocale, une transcription plus détaillée et complexe est requise. Nous sommes là pour vous aider dans votre projet d'apprentissage automatique en vous fournissant de nombreuses ressources vocales différentes, ainsi qu'en les formatant et les balisant correctement pour améliorer votre base de données d'IA et la rendre plus précise dans la reconnaissance des mots et des phrases.",
-    "download-pdf-subtitle": "Vidéos YouTube, films, émissions de télévision, présentations et interviews, ce ne sont là que quelques exemples pour lesquels nos professionnels peuvent vous aider à créer des sous-titres. Il vous suffit de nous envoyer les vidéos et nous les soumettrons à notre processus de sous-titrage en les transcrivant, en les traduisant dans n'importe quelle langue et en créant des sous-titres.",
-    "no-fees-subtitle": "Avec une vaste base de données d'artistes VO talentueux, nous sommes toujours là pour vous aider à choisir le meilleur candidat/artiste pour vos projets spécifiques en vous offrant des options pour choisir le sexe en combinaison avec différents tons de voix.",
+    "easy-to-use-subtitle": "Notre éditeur convivial vous permet de personnaliser facilement le contenu, la mise en forme et la présentation de votre CV pour mettre en valeur vos réalisations et correspondre à votre style personnel. Créez un CV professionnel en toute simplicité.",
+    "save-progress-subtitle": "Nous comprenons l'importance du temps et de la réflexion dans la création d'un CV. C'est pourquoi notre plateforme offre une fonction de sauvegarde pratique qui vous permet de stocker votre progression et de reprendre ultérieurement, vous offrant ainsi la flexibilité nécessaire pour apporter des modifications et des améliorations à votre propre rythme.",
+    "download-pdf-subtitle": "Téléchargez facilement votre CV finalisé au format PDF de haute qualité. Conservez une mise en forme et une apparence professionnelles sur différents appareils. Partagez-le avec des employeurs, envoyez-le par e-mail ou imprimez-le pour une distribution physique.",
+    "no-fees-subtitle": "Notre plateforme offre un accès gratuit à des outils professionnels de création de CV. Aucuns frais cachés, abonnements ou authentification requis. Créez, modifiez et téléchargez votre CV sans contraintes financières, mettant en valeur vos compétences et expériences de manière efficace.",
     "read-more": "Lire la suite",
     "templates-section-title": "Modèles et options de design",
     "templates-section-subtitle": "Nous proposons une variété de modèles et d'options de design parmi lesquels choisir, garantissant ainsi que vous pouvez créer un CV qui reflète votre style personnel et votre marque. Que vous soyez un professionnel créatif à la recherche d'une mise en page unique ou un chercheur d'emploi plus traditionnel recherchant un design classique, nous avons un modèle qui répondra à vos besoins. Jetez un coup d'œil à notre sélection :",
@@ -38,4 +38,4 @@
     "german": "Allemand",
     "russian": "Russe",
     "french": "Français"
-    }
+}

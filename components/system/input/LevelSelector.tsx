@@ -66,7 +66,7 @@ transition: transform 0.3s ease-in-out;
 `
 interface LevelSelectorProps {
     value: 1 | 2 | 3 | 4 | 5 | null,
-    onChange: Function,
+    onChange: (value: 1 | 2 | 3 | 4 | 5 | null) => void,
     label: string,
 }
 const LevelSelector = ({value, onChange, label}:LevelSelectorProps) => {
@@ -77,7 +77,7 @@ const LevelSelector = ({value, onChange, label}:LevelSelectorProps) => {
     <Input.Label >{label}: {values[value || 1]?.name || "..."}</Input.Label>
         <OptionsContainer className='flex rounded-sm'>
             {Object.keys(values).map((key, index) => {
-                return <Option key={index} type='button'  onClick={() => onChange(key)} ></Option>
+                return <Option key={index} type='button'  onClick={() => onChange(Number(key) as LevelSelectorProps["value"])} ></Option>
             })}
         {new Array(4).fill(0).map((_, index) => {
             return <Line key={index} style={{left: `${(index + 1) * 20}%`}}></Line>

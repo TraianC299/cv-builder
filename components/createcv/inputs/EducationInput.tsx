@@ -23,7 +23,7 @@ const EducationInput = ({
     onDelete
 }:Props) => {
   const {t} = useTranslation(["create-cv", "common"])
-    const {cvObject, setCvObject}:{cvObject:CvObjectType, setCvObject:React.Dispatch<React.SetStateAction<any>>} = useCV()
+    const {cvObject, setCvObject} = useCV()
     const [open, setOpen] = useState(edit?true:false)
     const [schoolState, setSchoolState] = useState(school || "")
     const [degreeState, setDegreeState] = useState(degree || "")

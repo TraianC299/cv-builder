@@ -13,6 +13,7 @@ display: flex;
 flex-direction: column;
 background: ${COLORS.WHITE};
 row-gap:0.5rem;
+
 `
 
 type Props = {
@@ -36,7 +37,7 @@ const BlogPreview = ({  title,
       <CoverImage slug={slug} title={title} src={coverImage} />
     </div>
     <div  >
-      <DateFormatter dateString={date} />
+      <DateFormatter className="sp" dateString={date} />
     </div>
     <h3 className="h5 font-semibold">
       <Link
@@ -48,7 +49,10 @@ const BlogPreview = ({  title,
       </Link>
     </h3>
     <p className="p">{excerpt}</p>
-    <Avatar name={author.name} picture={author.picture} />
+    <Avatar 
+    style={{margin: 'auto', marginBottom: '0rem', marginLeft: '0rem'}}
+    name={author.name} 
+    picture={author.picture} />
   </Container>
   )
 }
