@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, GetStaticProps } from 'next'
 import React from 'react'
 import {  CvObjectType } from '../../contexts/AppContext'
 import useWindowSize from '../../hooks/useWindowSize'
@@ -43,9 +43,8 @@ Template.getLayout = function getLayout(page: React.ReactNode) {
 }
 
 
-export const getStaticProps:GetServerSideProps = async ({
+export const getStaticProps:GetStaticProps = async ({
   locale,
-  req
 }) => {
   
   const placeholderObject = {
@@ -64,8 +63,7 @@ export const getStaticProps:GetServerSideProps = async ({
     employment: [],
     education: []
   }
-  const cookies = req.cookies;
-  const localStorageCv = JSON.parse(cookies.cvobject || JSON.stringify(placeholderObject))
+  const localStorageCv = placeholderObject
 
   // Pass data to the page via props
   return { props: { 
