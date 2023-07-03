@@ -7,6 +7,7 @@ import { PageSEO } from '../components/utilities/SEO'
 import Form from '../components/createcv/Form'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+import { useTranslation } from 'next-i18next'
 
 
 
@@ -24,11 +25,12 @@ grid-template-columns: 600px 1fr;
 `
 
 const Main = () => {
+  const { t } = useTranslation()
   return (
     <>
       <PageSEO
-        title="Create your CV"
-        description="Create your CV with our easy to use CV creator. Choose from multiple templates and create your CV in minutes."
+        title={t("meta_title")}
+        description={t("meta_description")}
       />
       <MainContainer className='flex'>
         <Form />

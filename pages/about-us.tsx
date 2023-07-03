@@ -15,10 +15,10 @@ const Page = () => {
   return (
     <>
     <PageSEO
-    title='About Us | Free Online CV Builder - Empowering Job Seekers'
-    description="Learn more about us at Free Online CV Builder. We're dedicated to helping job seekers create professional CVs that stand out. Discover our mission, vision, and values today."
+    title={t("about_us_meta_title")}
+    description={t("about_us_meta_description")}
     ></PageSEO>
-    <Container className='sectionPadding'>
+    <Container >
       <h1 className='h2'>{t("title")}</h1>
       <p>{t("content")}</p>
       </Container>

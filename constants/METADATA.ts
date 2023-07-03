@@ -2,8 +2,8 @@ const METADATA = {
     title: `Free CV Builder | Create a Professional CV Online`,
     description: "Design a compelling CV with our free, easy-to-use online CV builder. No sign-up required. Start crafting your professional resume and land your dream job today!",
     siteUrl: "https://resumelio.com",
-    image: "/assets/images/image.png",
-    socialBanner: "/assets/images/image.png", 
+    image: "/assets/images/image.jpg",
+    socialBanner: "/assets/images/image.jpg", 
     siteLogo: "/assets/images/logo.png",
     author: {
         name: "Resumelio",

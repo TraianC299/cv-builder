@@ -8,6 +8,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import ThreeCVsection from '../components/home/ThreeCVsection'
 import styled from 'styled-components'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+import { useTranslation } from 'next-i18next'
 
 
 const Container = styled.div`
@@ -20,11 +21,12 @@ margin:auto;
 
 `
 export default function Home() {
+  const { t } = useTranslation()
   return (
     <Container className={styles.container}>
       <PageSEO
-         title= {`Free CV Builder | Create a Professional CV Online`}
-         description= "Design a compelling CV with our free, easy-to-use online CV builder. No sign-up required. Start crafting your professional resume and land your dream job today!"
+         title= {t("meta_title")}
+         description= {t("meta_description")}
         ></PageSEO>
 
         <Hero></Hero>

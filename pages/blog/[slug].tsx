@@ -162,7 +162,7 @@ const BlogPage = ({post}:Props) => {
           name: post.author.name,
           avatar: post.author.picture,
         }]} 
-        url={`/blog/${post.slug}`}
+        url={`https://resumelio.com/${router.locale}/blog/${post.slug}`}
       />
 
     <Wrapper >

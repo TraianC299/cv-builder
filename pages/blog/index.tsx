@@ -32,8 +32,8 @@ const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
   return (
   <>
   <PageSEO
-  title='Explore Expert CV Writing Tips & Advice | Free Online CV Builder Blog'
-  description='Discover our extensive collection of CV writing advice, tips, and guidance in our blog. Learn how to craft the perfect CV and land your dream job with our free online CV builder.'
+  title={t("blog_meta_title")}
+  description={t("blog_meta_description")}
   ></PageSEO>
     <Container className='sectionPadding'>
       <h2 className='h4 md-h3 font-semibold'>{t("blogs")}:</h2>
