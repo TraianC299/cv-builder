@@ -8,16 +8,16 @@ type Props = {
   
 
   const Image = styled.img`
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   margin-right: 0.5rem;
   `
   const Avatar = ({ name, picture }: Props) => {
     return (
       <div className="flex ac">
-        <Image style={{objectFit:"cover"}} src={picture} className="w-12 h-12 rounded-full mr-4" alt={name} />
-        <div className="h6 font-semibold" style={{color:COLORS.BLACKGREY}}>{name}</div>
+        <Image style={{objectFit:"cover"}} src={picture} className="rounded-full mr-4" alt={name} />
+        <div className="p font-light" style={{color:COLORS.BLACKGREY}}>{name}</div>
       </div>
     )
   }

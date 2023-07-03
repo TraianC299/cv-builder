@@ -63,10 +63,8 @@ import { useRouter } from 'next/router';
 
    
  const Heading = styled.p`
-  font-size: 24px;
   color: ${COLORS.BLACKGREY};
-  margin-bottom: 25px;
-  font-weight: bold;
+  margin-bottom: 1.5rem;
 `;
  
 const Footer = () => {
@@ -88,13 +86,13 @@ const router = useRouter()
               <Link href={`/privacy-policy`}>{"Privacy Policy"}</Link>
             </Column> */}
             <Column>
-              <Heading>{t("contact-us")}</Heading>
-              <a href = "mailto: info@resumelio.com">traianciochina@gmail.com</a>
-              <a href = "tel: +37369513786">Tel: +37369513786</a>
+              <Heading className='h6 font-semibold'>{t("contact-us")}</Heading>
+              <a className='p' href = "mailto: info@resumelio.com">traianciochina@gmail.com</a>
+              <a className='p' href = "tel: +37369513786">Tel: +37369513786</a>
             </Column>
             <Column>
-              <Heading>{t("language")}</Heading>
-              {LANGUAGES.map(el=><Link href={router.pathname} locale={el.locale}>{el.emoji} {t(el.translationKey)}</Link>)}
+              <Heading className='h6 font-semibold'>{t("language")}</Heading>
+              {LANGUAGES.map(el=><Link className='p' href={router.pathname} locale={el.locale}>{el.emoji} {t(el.translationKey)}</Link>)}
             </Column>
             {/* <Column>
               <Heading>{"Blog"}</Heading>

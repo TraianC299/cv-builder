@@ -22,7 +22,7 @@
     "skillful": "Versiert",
     "experienced": "Erfahren",
     "expert": "Experte",
-    "add-new": "Neue hinzufügen",
+    "add-new": "neue",
     "title": "Titel",
     "experience-level": "Erfahrungslevel",
     "employment": "Berufserfahrung",
@@ -40,5 +40,7 @@
     "languages": "Sprachen",
     "language": "Sprache",
     "template": "Vorlage",
-    "not-specified": "Nicht angegeben"
+    "not-specified": "Nicht angegeben",
+    "color": "Farbe",
+    "profile-completion": "Profilvollständigkeit"
     }

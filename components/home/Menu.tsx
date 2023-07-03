@@ -159,7 +159,7 @@ const DesktopMenuItem:React.FC<DesktopMenuItemProps> = ({children,link,  submenu
     
     return(
      
-        <MenuItem  className={!submenu && router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} >
+        <MenuItem  className={`desktop-link p font-medium ${!submenu && router.pathname.includes(link) ? 'active': ''}`} >
             <Link className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} href={submenu?"":link}>{children}</Link>
         {submenu && <SubMenuContainer className='shadow-md'>
             {submenu}
@@ -285,6 +285,7 @@ interface MobileMenuModalProps {
 const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
     const [openServices, setOpenServices] = React.useState(false)
     const {t} = useTranslation()
+    const router = useRouter();
 
     
     return(
@@ -308,9 +309,15 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
             <div className='main-title'>{t("language")}{openServices?<BiChevronUp/>:<BiChevronDown/>}</div>
             <Collapse on={openServices}>
             <MobileSubMenuContainerStyle>
-                <Link href="/" locale="ro">{("Romanian")}</Link>
-                <Link href="/" locale="en">{("English")}</Link>
-                <Link href="/" locale="ru">{("Russian")}</Link>
+                {LANGUAGES.map((el)=>{
+                    return(
+                        <Link href={router.pathname} locale={el.locale} key={el.locale}>
+                            {t(el.translationKey)}
+                        </Link>
+                    )
+
+                })
+                }
             </MobileSubMenuContainerStyle>
 
             </Collapse>

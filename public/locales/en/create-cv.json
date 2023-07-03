@@ -40,5 +40,7 @@
     "languages": "Languages",
     "language": "Language",
     "template": "Template",
-    "not-specified": "Not specified"
+    "not-specified": "Not specified",
+    "color": "Color",
+    "profile-completion": "Profile completion"
 }

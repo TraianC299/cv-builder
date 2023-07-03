@@ -109,8 +109,8 @@ const TemplatesSection = () => {
   return (
     <Container>
         <TextContentStyles>
-            <h2 className='h2'>{t("templates-section-title")}</h2>
-            <p className='p'>{t("templates-section-subtitle")}</p>
+            <h2 className='h3 md-h2 font-semibold'>{t("templates-section-title")}</h2>
+            <p className='p md-h6'>{t("templates-section-subtitle")}</p>
         </TextContentStyles>
                 <Wrapper>
                     <PointsContainer id="testimonials-slider-controller-desktop">

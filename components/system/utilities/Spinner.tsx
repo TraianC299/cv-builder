@@ -6,7 +6,6 @@ import COLORS from '@/constants/COLORS';
 
 
 const Rotation = styled(SpinnerSvg)`
-animation: rotation 1s infinite;
 height: 1.25rem;
 width: 1.25rem;
 *{
@@ -19,7 +18,7 @@ const Spinner = ({ className, ...props}:{
 }) => {
   return (
     
-      <Rotation {...props} className={className}></Rotation>
+      <Rotation {...props} className={`${className} animate-spin`}></Rotation>
    
   )
 }

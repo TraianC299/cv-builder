@@ -67,7 +67,7 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
                 {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
               </div>
             </Section>}
-            {cvObject.skills && <Section title="Skills">
+            {cvObject.skills && <Section title={t("skills")}>
               <div className='flex column gap-2'>
                 {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
               </div>

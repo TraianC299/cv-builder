@@ -17,7 +17,7 @@ max-width: 800px;
 
 
 const QuestionStyle = styled.div`
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid ${COLORS.LIGHTGREY};
     text-align: left;
     padding: 1rem 0;
 
@@ -27,11 +27,12 @@ const Question = ({question, answer}:{question:string, answer:string}) => {
     const [open, setOpen] = useState(false)
     return (
         <QuestionStyle>
-            <div className='flex w-full jsb'><p className='h5 mb-2'>{question}</p> 
-                <div className='pointer transition h6' style={{color:COLORS.MAINCOLOR}} onClick={()=>setOpen(prev=>!prev)}>{open?<BiChevronUp className='h5'/>:<BiChevronDown className='h5'/>}</div>
+            <div className='flex w-full jsb'>
+                <p className='h6 mb-2 md-h5'>{question}</p> 
+                <div className='pointer transition' style={{color:COLORS.MAINCOLOR}} onClick={()=>setOpen(prev=>!prev)}>{open?<BiChevronUp className='h5'/>:<BiChevronDown className='h5'/>}</div>
             </div>
         <Collapse on={open}>
-            <p className='p' style={{color: COLORS.GREY, paddingTop:"1rem"}}>{answer}</p>
+            <p className='sp md-p' style={{ paddingTop:"1rem"}}>{answer}</p>
         </Collapse>
         </QuestionStyle>
     )

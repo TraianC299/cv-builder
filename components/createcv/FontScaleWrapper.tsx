@@ -7,9 +7,12 @@ const Container = styled.div`
 height: 842px;
 width: 595px;
 transform-origin:0 0;
-*{
-  white-space: pre-line;
-  word-wrap: break-word;
+
+.ssp{
+  font-size: 0.5rem !important;
+}
+.sp{
+  font-size: 0.6rem !important;
 }
 p{
     font-size: 0.7rem !important;
@@ -35,16 +38,11 @@ font-size: 30px !important;
 .h6 {
   font-size: 1rem !important;
 }
-.p {
-  font-size: 0.7rem !important;
-}
-.sp{
-  font-size: 0.6rem !important;
+*{
+  white-space: pre-line;
+  word-wrap: break-word;
 }
 
-.ssp{
-  font-size: 0.5rem !important;
-}
 `
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {

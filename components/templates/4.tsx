@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import styled, { useTheme } from 'styled-components'
+import styled from 'styled-components'
 import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from '../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
@@ -9,7 +9,7 @@ import { IoSparklesSharp } from 'react-icons/io5'
 
 const Container = styled.div`
 padding: 2rem;
-background: ${props => props.theme.color};
+background: ${props => props.theme.color || COLORS.DARKGREEN};
 position: relative;
 color: white;
 font-family: 'Noto Serif Display', serif !important;
@@ -96,7 +96,7 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
               {cvObject.projects &&<Section title={t("projects")}>
                 {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
               </Section>}
-              {cvObject.skills && <Section title="Skills">
+              {cvObject.skills && <Section title={t("skills")}>
                 <SkillsContainer >
                   {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
                 </SkillsContainer>

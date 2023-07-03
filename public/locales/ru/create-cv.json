@@ -40,5 +40,7 @@
     "languages": "Языки",
     "language": "Язык",
     "template": "Шаблон",
-    "not-specified": "Не указано"
+    "not-specified": "Не указано",
+    "color": "Цвет",
+    "profile-completion": "Заполнение профиля"
     }

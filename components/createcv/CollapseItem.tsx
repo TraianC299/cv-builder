@@ -22,26 +22,17 @@ const MainContent = styled.div`
 display: flex;
 justify-content: space-between;
 
-:hover{
-  >div:first-child{
-
-  }
-  p{
-    color: ${COLORS.MAINCOLOR};
-  }
-}
 `
 
 const ListItem = styled.li`
 position: relative;
 border-bottom: 1px solid ${COLORS.LIGHTGREY};
-
-
 :hover{
-  >button{
-    opacity:1;
+  .title{
+    color: ${COLORS.MAINCOLOR};
   }
-}`
+}
+`
 
 
 const CollapseItem = ({children, title, subtitle, open, setOpen, onDelete}:{
@@ -59,8 +50,8 @@ const CollapseItem = ({children, title, subtitle, open, setOpen, onDelete}:{
       <Container>
           <MainContent onClick={()=>setOpen((p:boolean)=>!p)} className="flex ac pointer">
             <div>
-              <p className='p font-medium'>{title}</p>
-              <p className='sp'>{subtitle}</p>
+              <p className='p font-medium title'>{title}</p>
+              {/* <p className='sp'>{subtitle}</p> */}
             </div>
             <p >{open?<FiChevronUp/>:<FiChevronDown/>}</p>
           </MainContent>

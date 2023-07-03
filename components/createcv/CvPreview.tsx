@@ -120,12 +120,15 @@ const CvPreview = () => {
     <TemplateFour cvObject={cvObject}></TemplateFour>
   ]
 
+  const desktopScaleFactor = height ? height / 842 - 0.2 : 1
+  const mobileScaleFactor = width ? width / (595+32) : 1
+
   return (
     <>
       <EyeButton className='rounded-sm flex ac jc shadow-md' onClick={() => setOpenModal(prev => !prev)}>{openModal ? <IoClose className='h6' color="white" /> : <FiEye className='h6' color="white" />}</EyeButton>
       <CvPreviewStyles className={`flex column ac jc ${openModal ? "openMobileModal" : ""}`} >
         <div className=' flex column gap-4 transition'>
-          <Container scaleFactor={height ? height / 842 - 0.2 : 1} mobileScaleFactor={width ? width / (595+32) : 1}>
+          <Container scaleFactor={desktopScaleFactor} mobileScaleFactor={mobileScaleFactor}>
             {templatesArray[cvObject.template]}
           </Container>
           <div className='flex jsb'>

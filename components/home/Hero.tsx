@@ -106,36 +106,35 @@ border-radius: 0.5rem;
     -webkit-animation-delay: -.5s;
     animation-delay: -.5s;
 }
-            .card{
-                opacity:0.6;
-                position: absolute;
-                top: -210px;
-                left: 50%;
-                translate: translateX(-50%);
-                z-index: 0;
-                height: 100%;
-                width: 100%;
-                background: url("/assets/images/hero-card.png");
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                perspective: 500px;
-                animation: slide 16s linear infinite;
-                height: 210px;
-                width: 140px;
-                border-radius: 0.5rem;
-                overflow: hidden;
-               
-                }
+.card{
+    opacity:0.6;
+    position: absolute;
+    top: -210px;
+    left: 50%;
+    translate: translateX(-50%);
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background: url("/assets/images/hero-card.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    perspective: 500px;
+    animation: slide 16s linear infinite;
+    height: 210px;
+    width: 140px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
                             `
 const Hero = () => {
     const {t} = useTranslation()
   return (
     <Container>
         <div className='w-full h-full flex column ac jc text gap-4'>
-            <h1 className='h1'>{t("hero-title")}</h1>
-            <p className='h6'>{t("hero-subtitle")}</p>
-            <Link href="create-cv"><Button className='big flex ac jc gap-2'>{t("try-it-now")}<p className='sp t300'>{t("free")}</p></Button></Link>
+            <h1 className='h4 md-h1'>{t("hero-title")}</h1>
+            <p className='p md-h6'>{t("hero-subtitle")}</p>
+            <Link href="create-cv"><Button className='big '><p className='p'>{t("try-it-now")}</p></Button></Link>
         </div>
         {Array.from({length: 15}).map((_, i) => <div key={i} className='card' ></div>)}
     </Container>

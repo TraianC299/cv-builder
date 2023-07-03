@@ -57,7 +57,7 @@ const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:st
         <Section title={t("hobbies")}>
           <p className='sp'>{cvObject.hobbies}</p>
         </Section>
-        {cvObject.skills &&<Section title="Skills">
+        {cvObject.skills &&<Section title={t("skills")}>
           <SkillsContainer>
             {cvObject.skills.map((el:SkillType)=><SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
           </SkillsContainer>

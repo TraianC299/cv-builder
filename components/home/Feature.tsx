@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
-import useMediaQuery from '../../hooks/useMediaQuery'
 import { Button } from '../../styles/global'
-import {useTranslation} from 'next-i18next'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
 
@@ -39,7 +36,6 @@ height: 100%;
 }
 >p{
     color: ${COLORS.BLACKGREY};
-    font-weight: 300;
     display: -webkit-box;
 -webkit-line-clamp: 5;
 -webkit-box-orient: vertical;
@@ -95,18 +91,16 @@ type FeatureProps = {
     link: string
 }
 const Feature:React.FC<FeatureProps> = ({title, description, svg, link}) => {
-    const isMobile = useMediaQuery(MEDIAQUERIES.mobileSmallPortrait)
-    const {t} = useTranslation()
     return (
         <FeatureContainerStyles className='transition'>
             <div>{svg}</div>
-            <h4 className={isMobile?'h5':"p"}>{title}</h4>
-            <p className='sp'>{description}</p>
-            <Link href={link}>
+            <h4 className={"h6 font-semibold"}>{title}</h4>
+            <p className='sp font-light'>{description}</p>
+            {/* <Link href={link}>
                 <ReadMoreButton  className='text transition'>
                 {t("read-more")}
                 </ReadMoreButton>
-            </Link>
+            </Link> */}
         </FeatureContainerStyles>
     )
 }

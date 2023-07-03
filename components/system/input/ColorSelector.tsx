@@ -3,6 +3,7 @@ import { useCV } from 'contexts/AppContext'
 import React from 'react'
 import styled from 'styled-components'
 import Input from './Input'
+import { useTranslation } from 'next-i18next'
 
 
 
@@ -19,10 +20,11 @@ import Input from './Input'
   `
 const availableColors = ['#0d6efd', '#6f42c1', '#dc3545', '#fd7e14', COLORS.YELLOW, COLORS.DARKGREEN, COLORS.GREEN, '#0dcaf0', '#6c757d', '#000000']
 const ColorSelector = () => {
+  const {t} = useTranslation("create-cv")
     const {cvObject,setCvObject} = useCV()
   return (
     <Input.Wrapper>
-      <Input.Label>Color</Input.Label>
+      <Input.Label>{t("color")}</Input.Label>
       <ColorsContainer>
       <None onClick={() => setCvObject({...cvObject, color: ''})} className={`rounded-sm pointer ${cvObject.color === '' ? 'selected' : ''}`} >None</None>
           {availableColors.map((el, i) => <SingleColor key={i} color={el} onClick={() => {

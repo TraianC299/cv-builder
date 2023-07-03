@@ -5,13 +5,14 @@ import CoverImage from './CoverImage'
 import BlogAuthorInterface from '../../interfaces/blog-author'
 import DateFormatter from './DateFormatter'
 import Avatar from './Avatar'
+import COLORS from '@/constants/COLORS'
 
 const Container = styled.article`
 width:100%;
 display: flex;
 flex-direction: column;
-background: white;
-row-gap:1rem;
+background: ${COLORS.WHITE};
+row-gap:0.5rem;
 `
 
 type Props = {
@@ -34,7 +35,10 @@ const BlogPreview = ({  title,
     <div  >
       <CoverImage slug={slug} title={title} src={coverImage} />
     </div>
-    <h3 className="h3">
+    <div  >
+      <DateFormatter dateString={date} />
+    </div>
+    <h3 className="h5 font-semibold">
       <Link
         as={`/blog/${slug}`}
         href="/blog/[slug]"
@@ -43,11 +47,8 @@ const BlogPreview = ({  title,
         {title}
       </Link>
     </h3>
-    <div  >
-      <DateFormatter dateString={date} />
-    </div>
-    <p className="h6" >{excerpt}</p>
-    {/* <Avatar name={author.name} picture={author.picture} /> */}
+    <p className="p">{excerpt}</p>
+    <Avatar name={author.name} picture={author.picture} />
   </Container>
   )
 }

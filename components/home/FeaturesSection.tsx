@@ -24,9 +24,7 @@ display: grid;
 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 /* grid-gap: 1rem; */
 gap:1rem;
->div{
-    border-bottom: 1px solid ${COLORS.LIGHTGREY};
-}
+
 @media ${MEDIAQUERIES.laptopSmall}{
     gap:2px;
     background-color: ${COLORS.LIGHTGREY};
@@ -62,11 +60,10 @@ const FeaturesSection = () => {
   return (
     <FeaturesContainerStyles className='sectionPadding'>
         <TextContentStyles>
-            <h2 className='h2'>{t("why-us-title")}</h2>
-            <p className='h6'>{t("why-us-subtitle")}</p>
+            <h2 className='h3 md-h2 font-semibold'>{t("why-us-title")}</h2>
+            <p className='p md-h6'>{t("why-us-subtitle")}</p>
         </TextContentStyles>
         <ServicesContainerStyles>
-            {/* <Feature link="/services/translation-editing-and-proofreading" svg={<TemplatesSvg/>} title="Wide selection of templates and design options" description="To ensure the highest quality we always make sure the deliverables are double checked by the second linguist and by our Project Management team. We apply this mothod to all our Translation / Localization services."></Feature> */}
             <Feature link="/services/dtp-and-plr" svg={<Editor/>} title={t("easy-to-use-title")} description={t("easy-to-use-subtitle")}></Feature>
             <Feature link="/services/transcription-and-machine-learning" svg={<SaveSvg/>} title={t("save-progess-title")} description={t("save-progress-subtitle")}></Feature>
              <Feature link="/services/subtitling-and-captioning" svg={<PdfSvg/>} title={t("download-pdf-title")} description={t("download-pdf-subtitle")}></Feature>
