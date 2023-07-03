@@ -1,14 +1,14 @@
 ---
 title: 'Importanța unui CV bine structurat'
 excerpt: 'Un CV bine structurat este esențial pentru a face o impresie bună. Aflați cum să creați un CV clar, concis și impactant.'
-coverImage: '/assets/blog/preview/well-structured-cv.jpg'
+coverImage: '/assets/blog/preview/the-importance-of-a-well-structured-cv.jpg'
 date: '2023-05-29T05:35:07.322Z'
-slug: 'the-importance-of-a-well-structured-cv'
+slug: 'the-importance-of-a-the-importance-of-a-well-structured-cv'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'
 ogImage:
-  url: '/assets/blog/preview/well-structured-cv.jpg'
+  url: '/assets/blog/preview/the-importance-of-a-well-structured-cv.jpg'
 ---
 
 Un CV bine structurat poate crește semnificativ șansele de a obține un interviu. Acesta permite recrutorilor să navigheze ușor în profilul dvs. profesional și să înțeleagă calificările dvs. Iată cum puteți crea un CV bine structurat:

@@ -14,10 +14,11 @@ export const InputStyle = styled.input`
   background: ${COLORS.LIGHTGREY};
   border:none;
   position: relative;
-  line-height: 1rem;
   outline: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   border-radius: 0.25rem;
+  min-width: 3rem;
+ 
   ::placeholder{
     color: #9CA9B4;
   }
@@ -32,7 +33,7 @@ color: white;
 border: none;
 border-radius: 0.25rem;
 font-size: 1rem;
-font-weight: 600;
+font-weight: bold;
 min-height: 42px;
 cursor: pointer;
 transition:   all 0.1s ease-in-out;

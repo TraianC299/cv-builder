@@ -11,7 +11,6 @@ import COLORS from '@/constants/COLORS'
 
 const FeaturesContainerStyles = styled.div`
 color: ${COLORS.BLACKGREY};
-
 @media ${MEDIAQUERIES.laptopSmall}{
     display: flex;
     justify-content: space-around;
@@ -24,11 +23,11 @@ const ServicesContainerStyles = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 /* grid-gap: 1rem; */
-gap:1rem;
+gap:2rem;
 
 @media ${MEDIAQUERIES.laptopSmall}{
-    gap:2px;
-    background-color: ${COLORS.LIGHTGREY};
+    gap:1px;
+    background-color: ${COLORS.BLACKGREY};
     
     width: 50%;
     grid-template-columns: 1fr 1fr;

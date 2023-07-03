@@ -1,14 +1,14 @@
 ---
 title: '5 tips for writing a good CV'
 excerpt: 'Writing a good CV may not always be an easy task, here are 5 basic tips to make it easier.'
-coverImage: '/assets/blog/preview/5tips.jpg'
+coverImage: '/assets/blog/preview/5-tips-for-cv.jpg'
 date: '2020-03-16T05:35:07.322Z'
 slug: '5-tips-for-cv'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'
 ogImage:
-  url: '/assets/blog/preview/5tips.jpg'
+  url: '/assets/blog/preview/5-tips-for-cv.jpg'
 ---
 
 Writing a good CV may not always be an easy task, here are 5 basic tips to make it easier:

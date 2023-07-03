@@ -132,9 +132,9 @@ const Hero = () => {
   return (
     <Container>
         <div className='w-full h-full flex column ac jc text gap-4'>
-            <h1 className='h4 md-h1'>{t("hero-title")}</h1>
-            <p className='p md-h6'>{t("hero-subtitle")}</p>
-            <Link href="create-cv"><Button className='big '><p className='p'>{t("try-it-now")}</p></Button></Link>
+            <h1 className='h4 md-h2'>{t("hero-title")}</h1>
+            <p className='p'>{t("hero-subtitle")}</p>
+            <Link href="create-cv"><Button ><p className='p'>{t("try-it-now")}</p></Button></Link>
         </div>
         {Array.from({length: 15}).map((_, i) => <div key={i} className='card' ></div>)}
     </Container>

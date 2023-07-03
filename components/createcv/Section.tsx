@@ -29,7 +29,6 @@ const Section = ({children, title, subtitle, onClick, objectKey, deletable}:{chi
 
 
   const onChange = (value:boolean)=>{
-    console.log(value)
     if(value){
       setCvObject((prev:CvObjectType)=>{
         return {...prev, [objectKey as keyof CvObjectType]: []}

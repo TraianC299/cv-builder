@@ -73,11 +73,12 @@ const Input= ({value, setValue, label, error, setError, disabled, rows, rowsMax,
     
 
 
-    Input.Wrapper = ({children}:{
-      children: React.ReactNode
+    Input.Wrapper = ({children, ...props}:{
+      children: React.ReactNode,
+      [x:string]:any
     }) => {
       return(
-        <Container>{children}</Container>
+        <Container {...props}>{children}</Container>
       )
     }
 

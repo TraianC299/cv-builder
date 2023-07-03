@@ -13,6 +13,7 @@ import COLORS from '@/constants/COLORS'
 import {BiChevronDown, BiChevronUp} from 'react-icons/bi'
 import Collapse from '../system/utilities/Collapse'
 import LANGUAGES from '@/constants/LANGUAGES'
+import OptionSelector from '../system/input/OptionSelector'
 
 
 
@@ -56,11 +57,10 @@ const DesktopMenuLinksContainerStyles = styled.div`
 display: none;
 @media ${MEDIAQUERIES.laptopSmall}{
 margin: auto;
-margin-left:1rem;
+margin-left:3rem;
 display: flex;
 align-items: center;
 justify-content: flex-start;
-column-gap: 1rem;
 width: 100%;
 }`
 
@@ -111,30 +111,18 @@ const Menu = () => {
                        <LogoSvg style={{cursor:"pointer"}} ></LogoSvg>
                </LogoContainer>
                <DesktopMenuLinksContainerStyles>
-                <DesktopMenuItem  link="/about-us">{t("about-us")}</DesktopMenuItem>
-                <DesktopMenuItem link="/blog">{t("blog")}</DesktopMenuItem>
-                <DesktopMenuItem link="/services" submenu={
-                    <>
-                    {LANGUAGES.map(language=>(
-                    <Link key={language.locale} className={router.locale === language.locale ? "active" : ""} href={router.pathname} locale={language.locale}>{language.emoji}  {t(language.translationKey)}</Link>
-                    ))}
-                    </>
-                }>
-                   {t("language")}
-                </DesktopMenuItem>
+                <div className='flex ac jc gap-8'>
+                    <DesktopMenuItem  link="/about-us">{t("about-us")}</DesktopMenuItem>
+                    <DesktopMenuItem link="/blog">{t("blog")}</DesktopMenuItem>
+                </div>
+               
             
                 <div className='flex-1'></div>
-                {/* <div style={{
-                    maxWidth: "200px",
-                }}>
-                    <OptionSelector
-                  value={"ro"}
-                    options={LANGUAGES.map(el=>({
-                        value: el.locale,
-                        label: `${el.emoji} ${el.label}`
-                    }))}></OptionSelector>
-                </div> */}
-                <Link href={"/create-cv"}><Button >{t("start-now")}</Button></Link>
+               
+                <div className='flex ac jc gap-8'>
+                        <DesktopLanguageSelector/>
+                                        <Link href={"/create-cv"}><Button >{t("start-now")}</Button></Link>
+                    </div>
         
                </DesktopMenuLinksContainerStyles>
                 <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex center'><MenuSvg/>Menu</MobileMenuButton>
@@ -153,6 +141,27 @@ type DesktopMenuItemProps = {
     link: string,
     submenu?: React.ReactNode
 }
+
+const DesktopLanguageSelector = () => {
+    const router = useRouter();
+    const {t} = useTranslation("common")
+    const onChange = (v: string) => {
+        router.push(router.pathname, router.pathname, { locale: v })
+    }
+    return(
+        <div style={{
+            width: "180px",
+        }}>
+          <OptionSelector 
+          className='small'
+      onChange={onChange} 
+      value={router.locale} label=''
+      options={LANGUAGES.map(el=>({value:el.locale, label:`${el.emoji} ${t(el.translationKey)}`}))}/>
+        </div>
+    )
+}
+
+
 
 const DesktopMenuItem:React.FC<DesktopMenuItemProps> = ({children,link,  submenu}) => {
     const router = useRouter();
@@ -213,10 +222,8 @@ const MenuItem = styled.div`
     align-items: center;
     justify-content: center;
     height:2.5rem;
-    padding: 0 1rem;
     cursor: pointer;
     position: relative;
-    border-radius: 0.25rem;
 
     ::after{
         content: "";
@@ -227,8 +234,7 @@ const MenuItem = styled.div`
         height:2rem;
     }
     :hover{
-        background: ${COLORS.MAINCOLOR}10;
-        color: ${COLORS.MAINCOLOR};
+     
 
         >div{
             opacity:1;
@@ -240,19 +246,13 @@ const MenuItem = styled.div`
 
         }
     }
-    a{
-        border-radius: 0.25rem;
-        color: ${COLORS.BLACKGREY};
-    }
-    &.active, .active{
+    
+    &.active{
+        color: ${COLORS.MAINCOLOR};
         position: relative;
-        background: ${COLORS.MAINCOLOR};
-        color: ${COLORS.WHITE} !important;
+        border-bottom: 2px solid ${COLORS.MAINCOLOR};
         overflow: hidden;
-        :hover{
-            background: ${COLORS.MAINCOLOR};
-            color: ${COLORS.WHITE};
-        }
+        
 
     }
 `

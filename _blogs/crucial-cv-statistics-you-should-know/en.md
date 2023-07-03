@@ -1,14 +1,14 @@
 ---
 title: 'Crucial CV Statistics You Should Know'
 excerpt: 'Understanding CV statistics can provide insight into how to make your CV more effective. Here are some key numbers.'
-coverImage: '/assets/blog/preview/cv-facts-you-didnt-know.jpg'
+coverImage: '/assets/blog/preview/crucial-cv-statistics-you-should-know.jpg'
 date: '2023-05-27T05:35:07.322Z'
 slug: 'crucial-cv-statistics-you-should-know'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'
 ogImage:
-  url: '/assets/blog/preview/cv-facts-you-didnt-know.jpg'
+  url: '/assets/blog/preview/crucial-cv-statistics-you-should-know.jpg'
 ---
 
 Having a well-written CV is crucial in today's competitive job market. To make your CV as effective as possible, it can be helpful to understand some of the key statistics related to CVs and job applications. Here are a few to consider:

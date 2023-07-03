@@ -13,6 +13,18 @@ display: flex;
 flex-direction: column;
 background: ${COLORS.WHITE};
 row-gap:0.5rem;
+:hover{
+
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+>div:first-child{
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+
+}
+
 
 `
 
@@ -32,27 +44,29 @@ const BlogPreview = ({  title,
     author,
     slug}:Props) => {
   return (
-    <Container>
+    <Container className='transition rounded-sm'>
     <div  >
       <CoverImage slug={slug} title={title} src={coverImage} />
     </div>
-    <div  >
-      <DateFormatter className="sp" dateString={date} />
+    <div className='flex column gap-2 p-4'>
+      <div  >
+        <DateFormatter className="sp" dateString={date} />
+      </div>
+      <h3 className="h5 font-semibold">
+        <Link
+          as={`/blog/${slug}`}
+          href="/blog/[slug]"
+          className="hover:underline"
+        >
+          {title}
+        </Link>
+      </h3>
+      <p className="p text-grey font-light">{excerpt}</p>
+      <Avatar
+      style={{margin: 'auto', marginBottom: '0rem', marginLeft: '0rem'}}
+      name={author.name}
+      picture={author.picture} />
     </div>
-    <h3 className="h5 font-semibold">
-      <Link
-        as={`/blog/${slug}`}
-        href="/blog/[slug]"
-        className="hover:underline"
-      >
-        {title}
-      </Link>
-    </h3>
-    <p className="p">{excerpt}</p>
-    <Avatar 
-    style={{margin: 'auto', marginBottom: '0rem', marginLeft: '0rem'}}
-    name={author.name} 
-    picture={author.picture} />
   </Container>
   )
 }

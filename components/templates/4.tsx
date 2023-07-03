@@ -116,7 +116,6 @@ export default Template
 
 const SectionContainer = styled.div`
 background: ${props => {
-  console.log(props)
   return props.theme.color
   }};
 >p{

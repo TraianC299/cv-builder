@@ -94,23 +94,12 @@ const router = useRouter()
               <Heading className='h6 font-semibold'>{t("language")}</Heading>
               {LANGUAGES.map(el=><Link className='p' href={router.pathname} locale={el.locale}>{el.emoji} {t(el.translationKey)}</Link>)}
             </Column>
-            {/* <Column>
-              <Heading>{"Blog"}</Heading>
-              <Link href={`/creeazaBoxulDorit`}>{"Success Stories"}</Link>
-              <Link href={`/blogs`}>{"Interpreting Analytics"}</Link>
-              <Link href={`/catering`}>{"Being Nice"}</Link>
-            </Column> */}
-            {/* <Column>
-              <Heading>{"Take Action"}</Heading>
-              <Link href="/" locale="ro">Romana</Link>
-              <Link href="/" locale="en">Engleza</Link>
-              <Link href="/" locale="ru">Rusa</Link>
-            </Column> */}
-            {/* <Column>
-              <Heading>{"Take Action"}</Heading>
-              <Link href="/create"><Button>Create Store</Button></Link>
-              <Link href="/logIn"><Button className='text'>Log In</Button></Link>
-            </Column> */}
+            <Column>
+            <Heading className='h6 font-semibold'>{t("important")}</Heading>
+              <Link className='p' href={`/terms-and-conditions`}>{t("terms-and-conditions")}</Link>
+              <Link className='p' href={`/privacy-policy`}>{t("privacy-policy")}</Link>
+              
+            </Column>
           
           </Row>
         </Container>

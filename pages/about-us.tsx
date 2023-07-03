@@ -18,7 +18,7 @@ const Page = () => {
     title={t("about_us_meta_title")}
     description={t("about_us_meta_description")}
     ></PageSEO>
-    <Container >
+    <Container className='flex column gap-8'>
       <h1 className='h2'>{t("title")}</h1>
       <p>{t("content")}</p>
       </Container>

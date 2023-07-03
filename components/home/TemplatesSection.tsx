@@ -122,7 +122,7 @@ const TemplatesSection = () => {
                     ))}
                     </PointsContainer>
                     <TestimonialsContainerStyles ref={ref}>
-                        {templateImages.map((image, index)=><Testimonial key={index} scaleFactor={1 - Math.abs(number - index)*0.1} src={image}></Testimonial>)}
+                        {templateImages.map((image, index)=><Testimonial key={index} src={image}></Testimonial>)}
                         </TestimonialsContainerStyles>
                 </Wrapper>
     </Container>
@@ -162,7 +162,7 @@ export default TemplatesSection
 
 
 
-const TextimonialContainerStyle = styled.div<{scaleFactor:number}>`
+const TextimonialContainerStyle = styled.div`
 height: 427px;
 width: 293px;
 position: relative;
@@ -195,14 +195,13 @@ position: relative;
 
 interface TestimonialProps {
     src: StaticImageData;
-    scaleFactor: number;
 }
 
-const Testimonial:React.FC<TestimonialProps> = ({ src, scaleFactor }) => {
+const Testimonial:React.FC<TestimonialProps> = ({ src }) => {
     const {t} = useTranslation()
     
     return(
-        <TextimonialContainerStyle scaleFactor={scaleFactor}  className={"transition"}>
+        <TextimonialContainerStyle  className={"transition"}>
             <Image alt='' fill src={src}></Image>
             <div className='flex ac jc transition' >
                 <Link href="create-cv"><Button className='small'>{t("try-it-now")}</Button></Link>

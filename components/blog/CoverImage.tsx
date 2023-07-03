@@ -19,7 +19,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
     />
   )
   return (
-    <div style={{margin:0, borderRadius:"0.5rem", overflow:"hidden"}} className="sm:mx-0">
+    <div className='rounded-sm' style={{margin:0, overflow:"hidden"}} >
       {slug ? (
         <Link as={`/blog/${slug}`} href="/blog/[slug]" aria-label={title}>
           {image}
