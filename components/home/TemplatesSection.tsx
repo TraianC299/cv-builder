@@ -1,4 +1,4 @@
-import React, {  useRef } from 'react'
+import React, {  useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import useDidMountEffect from '../../hooks/useDidMountEffect'
 import image1 from '../../assets/images/cv-images/0.jpg'
@@ -10,6 +10,7 @@ import { Button } from '../../styles/global'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+import Link from 'next/link'
 
 
 const Container = styled.div`
@@ -106,11 +107,13 @@ const TemplatesSection = () => {
     },[number])
 
 
+    
+
   return (
     <Container>
         <TextContentStyles>
             <h2 className='h3 md-h2 font-semibold'>{t("templates-section-title")}</h2>
-            <p className='p md-h6'>{t("templates-section-subtitle")}</p>
+            <p className='p md-h6 text-grey'>{t("templates-section-subtitle")}</p>
         </TextContentStyles>
                 <Wrapper>
                     <PointsContainer id="testimonials-slider-controller-desktop">
@@ -178,8 +181,6 @@ position: relative;
 :hover{
     >div{
         opacity:1;
-
-
     }
 }
 &.selected{
@@ -198,11 +199,13 @@ interface TestimonialProps {
 }
 
 const Testimonial:React.FC<TestimonialProps> = ({ src, scaleFactor }) => {
+    const {t} = useTranslation()
+    
     return(
         <TextimonialContainerStyle scaleFactor={scaleFactor}  className={"transition"}>
             <Image alt='' fill src={src}></Image>
             <div className='flex ac jc transition' >
-                <Button className='small'>Try it now</Button>
+                <Link href="create-cv"><Button className='small'>{t("try-it-now")}</Button></Link>
             </div>
         </TextimonialContainerStyle>
     )

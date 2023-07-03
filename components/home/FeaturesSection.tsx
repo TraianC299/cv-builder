@@ -14,6 +14,7 @@ color: ${COLORS.BLACKGREY};
 
 @media ${MEDIAQUERIES.laptopSmall}{
     display: flex;
+    justify-content: space-around;
     align-items: center;
     gap: 5rem;
 
@@ -48,7 +49,7 @@ margin-bottom: 2rem;
 
 
 @media ${MEDIAQUERIES.laptopSmall}{
-    max-width: 500px;
+    max-width: 400px;
     width: 55%;
 
 }
@@ -60,8 +61,8 @@ const FeaturesSection = () => {
   return (
     <FeaturesContainerStyles className='sectionPadding'>
         <TextContentStyles>
-            <h2 className='h3 md-h2 font-semibold'>{t("why-us-title")}</h2>
-            <p className='p md-h6'>{t("why-us-subtitle")}</p>
+            <h2 className='h3 md-h4 font-semibold'>{t("why-us-title")}</h2>
+            <p className='p md-h6 text-grey'>{t("why-us-subtitle")}</p>
         </TextContentStyles>
         <ServicesContainerStyles>
             <Feature link="/services/dtp-and-plr" svg={<Editor/>} title={t("easy-to-use-title")} description={t("easy-to-use-subtitle")}></Feature>

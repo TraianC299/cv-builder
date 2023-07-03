@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { FC } from 'react';
 import METADATA from '@/constants/METADATA';
-import { useTranslation } from 'react-i18next';
 
 
 interface CommonSEOProps {

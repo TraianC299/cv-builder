@@ -100,6 +100,9 @@ line-height: 1.2;
 }
 
 
+.text-grey{
+  color: #636363;
+}
 
 .uppercase{
   text-transform: uppercase;

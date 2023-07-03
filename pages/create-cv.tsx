@@ -17,7 +17,7 @@ const MainContainer = styled.main`
 display: grid;
 height: 100vh;
 overflow: hidden;
-grid-template-columns: 600px 1fr;
+grid-template-columns: minmax(650px,20vw) 1fr;
 @media ${MEDIAQUERIES.mobileSmallPortrait}{
   grid-template-columns: 1fr;
 

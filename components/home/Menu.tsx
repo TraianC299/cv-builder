@@ -12,8 +12,6 @@ import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
 import {BiChevronDown, BiChevronUp} from 'react-icons/bi'
 import Collapse from '../system/utilities/Collapse'
-import OptionSelector from '../system/input/OptionSelector'
-import useDidMountEffect from 'hooks/useDidMountEffect'
 import LANGUAGES from '@/constants/LANGUAGES'
 
 
@@ -45,6 +43,9 @@ line-height: 1;
 
 
 const LogoContainer = styled(Link)`
+display: flex;
+align-items: center;
+justify-content: center;
 >svg{
     height: 2rem;
     width: auto;
@@ -55,11 +56,11 @@ const DesktopMenuLinksContainerStyles = styled.div`
 display: none;
 @media ${MEDIAQUERIES.laptopSmall}{
 margin: auto;
-margin-left:3rem;
+margin-left:1rem;
 display: flex;
 align-items: center;
 justify-content: flex-start;
-column-gap: 2rem;
+column-gap: 1rem;
 width: 100%;
 }`
 
@@ -159,7 +160,7 @@ const DesktopMenuItem:React.FC<DesktopMenuItemProps> = ({children,link,  submenu
     
     return(
      
-        <MenuItem  className={`desktop-link p font-medium ${!submenu && router.pathname.includes(link) ? 'active': ''}`} >
+        <MenuItem  className={`desktop-link p font-regular ${!submenu && router.pathname.includes(link) ? 'active': ''}`} >
             <Link className={router.pathname.includes(link) ? 'active desktop-link': "desktop-link"} href={submenu?"":link}>{children}</Link>
         {submenu && <SubMenuContainer className='shadow-md'>
             {submenu}
@@ -295,16 +296,16 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
                <MenuLogo />
            </LogoContainer>
        <Button onClick={()=>setOpen(previous=>!previous)} className='flex center' style={{columnGap:"10px", background:"white", color:COLORS.BLACKGREY}}>
-        {("Close")}<GrFormClose className='h6'/>
+        {t("close")}<GrFormClose className='h6'/>
         </Button>
     </MobileMenuModalHeaderStyles>
     <MobileLinkContainerStyles>
         <MobileLinkStyles>
             <Link href="about-us" className='main-title'>
-                {("About us")}
+                {t("about-us")}
             </Link>
         </MobileLinkStyles>
-        <MobileLinkStyles><Link href="/blog" className='main-title'>{("Blog")}</Link></MobileLinkStyles>
+        <MobileLinkStyles><Link href="/blog" className='main-title'>{t("blog")}</Link></MobileLinkStyles>
         <MobileLinkStyles onClick={()=>setOpenServices(previous=>!previous)}>
             <div className='main-title'>{t("language")}{openServices?<BiChevronUp/>:<BiChevronDown/>}</div>
             <Collapse on={openServices}>

@@ -7,11 +7,11 @@ const BLACKGREY = "#323C46"
 const LIGHTGREY  = "#f5f5f5"
 const GREYWHITE = "#F5F5F5"
 const RED  = "#FF5252"
-const MAINCOLOR = "#FF9800"
+const MAINCOLOR = "#323C46"
 const GREEN = "#15CF74"
 const DARKGREEN = "#177256"
 const DARKBLUE = "#082a4d"
-const ORANGE = "#FF9800"
+const ORANGE = "#323C46"
 const PURPLE = "#9C27B0"
 
 

@@ -31,13 +31,7 @@ const EmploymentSection = () => {
   }
 
 
-  const deleteEmployment = (id: string) => {
-    setCvObject((prev: CvObjectType) => ({
-      ...prev,
-      employment: prev.employment.filter(el => el.id !== id)
-    }))
-  }
-
+ 
   return (
     <Section deletable
       objectKey="employment"
@@ -51,8 +45,7 @@ const EmploymentSection = () => {
       >{cvObject?.employment?.map(el => <EmploymentSection.Input
         key={el.id}
         {...el}
-        edit={el.edit || false}
-        onDelete={deleteEmployment}
+        edit={el.edit }
       ></EmploymentSection.Input>)}</ReactSortable>
     </Section>
   )

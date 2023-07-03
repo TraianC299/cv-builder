@@ -30,12 +30,7 @@ const EducationSection = () => {
   }
 
 
-  const deleteEducation = (id: string) => {
-    setCvObject((prev: CvObjectType) => ({
-      ...prev,
-      education: prev.education.filter(el => el.id !== id)
-    }))
-  }
+
   return (
     <Section
       deletable
@@ -48,8 +43,9 @@ const EducationSection = () => {
         setList={(v) => { setCvObject((prev) => ({...prev, education: v })) }}
         handle=".handle">
         {cvObject?.education?.map(el => <EducationSection.Input
-          key={el.id}  {...el}
-          onDelete={deleteEducation}></EducationSection.Input>)}
+          key={el.id}  
+          {...el}
+          ></EducationSection.Input>)}
       </ReactSortable>
 
     </Section>

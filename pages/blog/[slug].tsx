@@ -59,7 +59,7 @@ flex-direction: column;
 margin: 0 auto;
 position: relative;
 box-sizing: border-box;
-
+padding: 0 1rem;
 
 
    
@@ -82,7 +82,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-min-height: 20rem;
+min-height: 15rem;
 text-align: center;
 margin: auto;
 row-gap: 1rem;
@@ -169,7 +169,7 @@ const BlogPage = ({post}:Props) => {
       <progress  className='blog-progress-indicator' value={percentageRead} max={100} ></progress>
       <Container >
         <Title className='sectionPadding'>
-          <h1 className='h1'>{post.title}</h1>
+          <h1 className='h4 mf-h1 font-semibold'>{post.title}</h1>
           <p>Read it in <b>5 minutes</b></p>
           <h2 className='h6 t300'>{post.excerpt}</h2>
         </Title>

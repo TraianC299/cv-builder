@@ -28,11 +28,11 @@ const Question = ({question, answer}:{question:string, answer:string}) => {
     return (
         <QuestionStyle>
             <div className='flex w-full jsb'>
-                <p className='h6 mb-2 md-h5'>{question}</p> 
+                <p className='h6 mb-1 md-h5'>{question}</p> 
                 <div className='pointer transition' style={{color:COLORS.MAINCOLOR}} onClick={()=>setOpen(prev=>!prev)}>{open?<BiChevronUp className='h5'/>:<BiChevronDown className='h5'/>}</div>
             </div>
         <Collapse on={open}>
-            <p className='sp md-p' style={{ paddingTop:"1rem"}}>{answer}</p>
+            <p className='sp md-p text-grey' style={{ paddingTop:"1rem"}}>{answer}</p>
         </Collapse>
         </QuestionStyle>
     )

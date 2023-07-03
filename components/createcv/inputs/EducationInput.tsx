@@ -9,9 +9,6 @@ import { useTranslation } from 'next-i18next'
 
 
 
-interface Props extends EducationType{
-  onDelete?:Function
-}
 const EducationInput = ({
     school,
     degree,
@@ -20,8 +17,7 @@ const EducationInput = ({
     edit,
     startDate,
     endDate,
-    onDelete
-}:Props) => {
+}:EducationType) => {
   const {t} = useTranslation(["create-cv", "common"])
     const {cvObject, setCvObject} = useCV()
     const [open, setOpen] = useState(edit?true:false)
@@ -55,9 +51,15 @@ useDidMountEffect(()=>{
 
 
 
+const deleteEducation = () => {
+  setCvObject((prev) => ({
+    ...prev,
+    education: prev.education.filter(el => el.id !== id)
+  }))
+}
   return (
     <CollapseItem 
-    onDelete={onDelete}
+    onDelete={deleteEducation}
       title={schoolState?`${schoolState} - ${degreeState}` : t("not-specified")} 
       subtitle={startDateState?`${startDateState} - ${endDateState}` : t("not-specified")} 
       open={open} 

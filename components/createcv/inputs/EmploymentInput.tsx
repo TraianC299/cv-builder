@@ -9,10 +9,8 @@ import { useTranslation } from 'next-i18next'
 
 
 
-interface Props extends EmploymentType{
-  onDelete?:Function
-}
-const EmploymentInput = ({title, employer,city, description, edit, startDate, endDate, id, onDelete}:Props) => {
+
+const EmploymentInput = ({title, employer,city, description, edit, startDate, endDate, id}:EmploymentType) => {
     const {cvObject, setCvObject} = useCV()
     const [open, setOpen] = useState(edit?true:false)
     const [titleState, setTitleState] = useState(title || "")
@@ -47,11 +45,16 @@ useDidMountEffect(()=>{
   }))
 },[titleState, descriptionState, cityState, startDateState, endDateState, employerState])
 
-
+const deleteEmployment = () => {
+  setCvObject((prev: CvObjectType) => ({
+    ...prev,
+    employment: prev.employment.filter(el => el.id !== id)
+  }))
+}
 
   return (
     <CollapseItem 
-    onDelete={onDelete}
+      onDelete={deleteEmployment}
       title={titleState || t("not-specified")} 
       subtitle={employerState || t("not-specified")} 
       open={open} 
