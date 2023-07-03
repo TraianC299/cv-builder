@@ -49,7 +49,7 @@ row-gap: 1rem;
 
 
 const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?: string }) => {
-  const { t } = useTranslation(["create-cv", "common"])
+  const { t } = useTranslation("create-cv")
 
   return (
       <FontScaleWrapper color={cvObject.color}>
@@ -230,7 +230,7 @@ const SkillInstance = ({ title, grade }: {
 
 
 const EmploymentItem = ({ title, startDate, endDate, description, employer, city }: EmploymentType) => {
-  const { t } =useTranslation(["create-cv", "common"])
+  const { t } = useTranslation("create-cv")
 
   return (
     <div className='flex jfs afs gap-2'>
@@ -260,7 +260,7 @@ const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) =>
 
 
 const EducationItem = ({ school, degree, city, startDate, endDate }: EducationType) => {
-  const { t } = useTranslation(["create-cv", "common"])
+  const { t } = useTranslation("create-cv")
 
   return (
     <div className='flex jfs afs gap-2'>

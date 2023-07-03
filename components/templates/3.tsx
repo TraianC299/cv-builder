@@ -40,7 +40,7 @@ div:last-child{
 
 
 const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?: string }) => {
-  const { t } = useTranslation(["create-cv", "common"])
+  const { t } = useTranslation("create-cv")
 
   return (
       <Container 
@@ -129,7 +129,7 @@ const ProfileSection = ({ name, surname, jobTitle, city, country, phone, email }
   phone: string,
   email: string
 }) => {
-  const { t } = useTranslation(["create-cv", "common"])
+  const { t } = useTranslation("create-cv")
 
   return (
     <div className='flex row ac jsb'>
@@ -181,7 +181,7 @@ const SkillInstance = ({ title, grade }: {
 
 
 const EmploymentItem = ({ title, startDate, endDate, description, employer, city }: EmploymentType) => {
-  const { t } =useTranslation(["create-cv", "common"])
+  const { t } = useTranslation("create-cv")
 
   return (
   <div>
@@ -209,7 +209,7 @@ const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) =>
 
 
 const EducationItem = ({ school, degree, city, startDate, endDate }: EducationType) => {
-  const { t } = useTranslation(["create-cv", "common"])
+  const { t } = useTranslation("create-cv")
 
   return (
     <div>

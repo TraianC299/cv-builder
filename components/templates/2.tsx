@@ -36,7 +36,7 @@ const ColoredSection = styled.div`
 overflow: hidden;
 `
 const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, className?: string }) => {
-  const { t } = useTranslation(["create-cv", "common"])
+  const { t } = useTranslation("create-cv")
 
   return (
     <Container 
@@ -216,7 +216,7 @@ const EmploymentItemContainer = styled.div``
 
 
 const EmploymentItem = ({ title, startDate, endDate, description, employer, city }: EmploymentType) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation("create-cv")
 
   return (<EmploymentItemContainer>
     <div>
@@ -243,7 +243,7 @@ const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) =>
 
 
 const EducationItem = ({ school, degree, city, startDate, endDate }: EducationType) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation("create-cv")
 
   return (
     <EmploymentItemContainer>

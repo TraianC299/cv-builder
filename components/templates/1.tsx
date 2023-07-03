@@ -48,7 +48,7 @@ flex-direction: column;
 `
 const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
 
-  const { t } = useTranslation(["create-cv", "common"])
+  const { t } = useTranslation("create-cv")
   return (
     <Container id="cv-preview" 
     className={className}
@@ -70,7 +70,7 @@ const TemplateOne = ({cvObject, className}:{cvObject:CvObjectType, className?:st
             {cvObject.skills.map((el:SkillType)=><SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
           </SkillsContainer>
         </Section>}
-        {cvObject.languages && <Section title="Languages">
+        {cvObject.languages && <Section title={t("languages")}>
           <SkillsContainer>
             {cvObject.languages.map((el:SkillType)=><SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
           </SkillsContainer>
@@ -111,7 +111,6 @@ const Section = ({children, title}:{
   children:ReactNode,
   title: string
 })=> {
-  const {t} = useTranslation()
 
   return(
     <div>
@@ -177,7 +176,6 @@ const SkillInstance = ({title, grade}:{
   title:string, 
   grade: SkillType["metric"] 
 }) => {
-  const {t} = useTranslation()
 
   return(
     <SkillInstanceContainer className='flex column'>
@@ -194,7 +192,7 @@ const SkillInstance = ({title, grade}:{
 
 
 const EmploymentItem = ({title, startDate, endDate,description, employer, city}:EmploymentType) => {
-  const {t} = useTranslation()
+  const { t } = useTranslation("create-cv")
 
   return(<div>
       <div>
@@ -221,7 +219,7 @@ const ProjectItem = ({title, startDate, endDate,description}:ProjectType) => {
 
 
 const EducationItem = ({school, degree, city, startDate, endDate}:EducationType) => {
-  const {t} = useTranslation()
+  const { t } = useTranslation("create-cv")
 
   return(
     <div>
