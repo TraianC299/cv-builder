@@ -43,7 +43,7 @@ Template.getLayout = function getLayout(page: React.ReactNode) {
 }
 
 
-export const getServerSideProps:GetServerSideProps = async ({
+export const getStaticProps:GetServerSideProps = async ({
   locale,
   req
 }) => {
