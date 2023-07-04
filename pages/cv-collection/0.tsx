@@ -70,7 +70,7 @@ export const getServerSideProps:GetServerSideProps = async ({
   // Pass data to the page via props
   return { props: { 
     localStorageCv: localStorageCv,
-    ...(await serverSideTranslations(locale as string, ["common","create-cv"])),
+    ...(await serverSideTranslations(locale as string || "ro", ["create-cv"])),
   }}
 }
 
