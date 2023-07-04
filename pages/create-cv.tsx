@@ -64,7 +64,7 @@ ContextMain.getLayout = function getLayout(page: NextPage) {
 
 
 //getServeSideProps wors too
-export const getServerSideProps = async ({ locale }: {
+export const getStaticProps = async ({ locale }: {
   locale: string;
 }) => {
 

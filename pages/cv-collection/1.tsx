@@ -29,13 +29,6 @@ const Template = ({localStorageCv}: {localStorageCv:CvObjectType}) => {
 export default Template
 
 
-Template.getLayout = function getLayout(page: React.ReactNode) {
-  return (
-    <>
-      {page}
-    </>
-  )
-}
 
 
 export const getServerSideProps:GetServerSideProps = async (context) => {
@@ -56,9 +49,9 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
     employment: [],
     education: []
   }
-//  const cookies = context.req.cookies;
-//   const localStorageCv = JSON.parse(cookies.cvobject || JSON.stringify(placeholderObject))
-  const localStorageCv = placeholderObject
+ const cookies = context.req.cookies;
+  const localStorageCv = JSON.parse(cookies.cvobject || JSON.stringify(placeholderObject))
+
   // Pass data to the page via props
   return { props: { 
     localStorageCv: localStorageCv,
