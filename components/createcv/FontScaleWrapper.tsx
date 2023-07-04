@@ -55,10 +55,10 @@ const FontScaleWrapper = ({children,className, color}:Props) => {
   };
   
   return (
-    // <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
 
       <Container className={className}>{children}</Container>
-    // </ThemeProvider>
+    </ThemeProvider>
   )
 }
 
