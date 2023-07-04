@@ -13,7 +13,7 @@ const GeneralSection = () => {
     const { pathname, asPath, query, locale } = router
 
   return (
-    <Section title="General">
+    <Section title={t("general")}>
     <div className='flex column gap-4'>
       <ColorSelector></ColorSelector>
       <OptionSelector 

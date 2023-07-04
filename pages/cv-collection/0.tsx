@@ -66,11 +66,12 @@ export const getServerSideProps:GetServerSideProps = async ({
   }
  const cookies = req.cookies;
   const localStorageCv = JSON.parse(cookies.cvobject || JSON.stringify(placeholderObject))
-
+  const translations = await serverSideTranslations(locale as string || "ro", ["create-cv"])
+  console.log(translations)
   // Pass data to the page via props
   return { props: { 
     localStorageCv: localStorageCv,
-    ...(await serverSideTranslations(locale as string || "ro", ["create-cv"])),
+    ...translations
   }}
 }
 

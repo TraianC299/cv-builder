@@ -1,7 +1,6 @@
-import { MouseEventHandler, ReactNode } from 'react'
+import {  ReactNode } from 'react'
 import styled from 'styled-components'
 import { Button } from '../../styles/global'
-import {FaRegTrashAlt} from 'react-icons/fa'
 import { CvObjectType, useCV } from '../../contexts/AppContext'
 import { DefaultTFuncReturn } from 'i18next'
 import { useTranslation } from 'next-i18next'

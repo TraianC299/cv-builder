@@ -35,7 +35,7 @@ display: flex;
 flex-direction: column;
 row-gap: 8px;`
 const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation("create-cv")
   return (
     <Container 
     id="cv-preview" 
@@ -181,7 +181,7 @@ const SkillInstance = ({title, grade}:{
 
 
 const EmploymentItem = ({title, startDate, endDate,description, employer, city}:EmploymentType) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation("create-cv")
 
   return(<div>
       <div>
@@ -207,7 +207,7 @@ const ProjectItem = ({title, startDate, endDate,description}:ProjectType) => {
 
 
 const EducationItem = ({school, degree, city, startDate, endDate}:EducationType) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation("create-cv")
 
   return(
     <div>
