@@ -29,6 +29,13 @@ const Template = ({localStorageCv}: {localStorageCv:CvObjectType}) => {
 export default Template
 
 
+Template.getLayout = function getLayout(page: React.ReactNode) {
+  return (
+    <>
+      {page}
+    </>
+  )
+}
 
 
 export const getServerSideProps:GetServerSideProps = async (context) => {
@@ -55,7 +62,7 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
   // Pass data to the page via props
   return { props: { 
     localStorageCv: localStorageCv,
-    ...(await serverSideTranslations(context.locale || "en", ["create-cv", "common"])),
+    ...(await serverSideTranslations(context.locale || "en", ["create-cv"])),
 
     }}
 }
