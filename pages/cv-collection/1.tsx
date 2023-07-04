@@ -56,9 +56,9 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
     employment: [],
     education: []
   }
- const cookies = context.req.cookies;
-  const localStorageCv = JSON.parse(cookies.cvobject || JSON.stringify(placeholderObject))
-
+//  const cookies = context.req.cookies;
+//   const localStorageCv = JSON.parse(cookies.cvobject || JSON.stringify(placeholderObject))
+  const localStorageCv = placeholderObject
   // Pass data to the page via props
   return { props: { 
     localStorageCv: localStorageCv,
