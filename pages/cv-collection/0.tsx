@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import React from 'react'
 import {  CvObjectType } from '../../contexts/AppContext'
 import useWindowSize from '../../hooks/useWindowSize'
@@ -22,7 +22,7 @@ const Template = ({localStorageCv}: {localStorageCv:CvObjectType}) => {
 
 
   return (
-<div   >
+<div  className='' >
             <TemplateZeroScaled
             scaleFactor={width ? width/595 : 1}
           
@@ -43,8 +43,9 @@ Template.getLayout = function getLayout(page: React.ReactNode) {
 }
 
 
-export const getStaticProps:GetStaticProps = async ({
+export const getServerSideProps:GetServerSideProps = async ({
   locale,
+  req
 }) => {
   
   const placeholderObject = {
@@ -63,12 +64,13 @@ export const getStaticProps:GetStaticProps = async ({
     employment: [],
     education: []
   }
-  const localStorageCv = placeholderObject
+ const cookies = req.cookies;
+  const localStorageCv = JSON.parse(cookies.cvobject || JSON.stringify(placeholderObject))
 
   // Pass data to the page via props
   return { props: { 
-    localStorageCv: localStorageCv,  
-    ...await serverSideTranslations(locale as string, ['common', 'create-cv']),
+    localStorageCv: localStorageCv,
+    ...(await serverSideTranslations(locale as string, ["common","create-cv"])),
   }}
 }
 
