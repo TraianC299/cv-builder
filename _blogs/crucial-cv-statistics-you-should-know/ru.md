@@ -1,14 +1,15 @@
 ---
 title: 'Важные статистические данные о резюме, которые вам следует знать'
 excerpt: 'Понимание статистических данных о резюме может помочь сделать ваше резюме более эффективным. Вот несколько ключевых цифр.'
-coverImage: '/assets/blog/preview/crucial-cv-statistics-you-should-know.jpg'
+coverImage: '/assets/blog/preview/4.jpg'
 date: '2023-05-27T05:35:07.322Z'
-slug: 'crucial-cv-statistics-you-should-know'
+id: 4
+slug: 'важные-статистические-данные-о-резюме-которые-вам-следует-знать'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'
 ogImage:
-  url: '/assets/blog/preview/crucial-cv-statistics-you-should-know.jpg'
+  url: '/assets/blog/preview/4.jpg'
 ---
 
 Написание хорошо структурированного резюме имеет важное значение на сегодняшнем конкурентном рынке труда. Чтобы сделать ваше резюме наиболее эффективным, полезно знать некоторые ключевые статистические данные, связанные с резюме и процессом трудоустройства. Вот несколько из них:

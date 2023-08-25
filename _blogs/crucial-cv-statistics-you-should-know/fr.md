@@ -1,14 +1,15 @@
 ---
 title: 'Les statistiques cruciales des CV que vous devriez connaître'
 excerpt: 'Comprendre les statistiques des CV peut vous aider à optimiser votre CV. Voici quelques chiffres clés.'
-coverImage: '/assets/blog/preview/crucial-cv-statistics-you-should-know.jpg'
+coverImage: '/assets/blog/preview/4.pg'
 date: '2023-05-27T05:35:07.322Z'
-slug: 'crucial-cv-statistics-you-should-know'
+id: 4
+slug: 'les-statistiques-cruciales-des-cv-que-vous-devriez-connaitre'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'
 ogImage:
-  url: '/assets/blog/preview/crucial-cv-statistics-you-should-know.jpg'
+  url: '/assets/blog/preview/4.pg'
 ---
 
 Avoir un CV bien rédigé est crucial dans le marché du travail compétitif d'aujourd'hui. Pour rendre votre CV aussi efficace que possible, il est utile de comprendre certaines des statistiques clés liées aux CV et aux candidatures. Voici quelques éléments à prendre en compte :

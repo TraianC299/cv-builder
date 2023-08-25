@@ -6,6 +6,7 @@ import BlogAuthorInterface from '../../interfaces/blog-author'
 import DateFormatter from './DateFormatter'
 import Avatar from './Avatar'
 import COLORS from '@/constants/COLORS'
+import useRewrites from 'hooks/useRewrites'
 
 const Container = styled.article`
 width:100%;
@@ -43,10 +44,11 @@ const BlogPreview = ({  title,
     excerpt,
     author,
     slug}:Props) => {
+      const {rewrite} = useRewrites()
   return (
     <Container className='transition rounded-sm'>
     <div  >
-      <CoverImage slug={slug} title={title} src={coverImage} />
+      <CoverImage  title={title} src={coverImage} />
     </div>
     <div className='flex column gap-2 p-4'>
       <div  >
@@ -54,9 +56,11 @@ const BlogPreview = ({  title,
       </div>
       <h3 className="h5 font-semibold">
         <Link
-          as={`/blog/${slug}`}
-          href="/blog/[slug]"
-          className="hover:underline"
+          //locale 
+          as={`/${rewrite("blog")}/${slug}`}
+          href={`/${rewrite("blog")}/[slug]`}
+          
+          
         >
           {title}
         </Link>

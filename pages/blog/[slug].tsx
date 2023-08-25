@@ -11,6 +11,8 @@ import BlogService from '../../services/BlogService'
 import COLORS from '@/constants/COLORS'
 import LANGUAGES from '@/constants/LANGUAGES'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import useRewrites from 'hooks/useRewrites'
+import { useTranslation } from 'next-i18next'
 
 
 const Wrapper = styled.main`
@@ -139,7 +141,7 @@ const BlogPage = ({post}:Props) => {
 
   const scrollPosition = useScrollPosition()
   const [percentageRead, setPercentageRead] = React.useState(0)
-
+  const { t } = useTranslation('blog')
 
   useEffect(()=>{
     const scrollPercentage = Math.round((scrollPosition / (document.body.clientHeight - window.innerHeight)) * 100)
@@ -149,6 +151,7 @@ const BlogPage = ({post}:Props) => {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }  
+  const {rewrite} = useRewrites()
 
 
   return (
@@ -175,8 +178,8 @@ const BlogPage = ({post}:Props) => {
         </Title>
         <BlogContent  className='blog sectionPadding' dangerouslySetInnerHTML={{__html: post.content}}></BlogContent>
         <CallToAction className='sectionPadding'>
-          <p style={{textAlign:"center"}} className="p font-semibold">After reading this you might want to try out CV-builder, it's free so just give it a try</p>
-          <Link href="/create-cv"><Button>{"Create your own cv"}</Button></Link>
+          <p style={{textAlign:"center"}} className="p font-semibold">{t("end-of-blog-call-to-action")}</p>
+          <Link href={rewrite("/create-cv")}><Button>{t("create-your-cv")}</Button></Link>
         </CallToAction>
       </Container>
     </Wrapper>
@@ -221,7 +224,7 @@ export async function getStaticPaths() {
         params: {
           slug: slug,
         },
-        locale: el.locale
+        locale: el.locale,
       })
     })
   })

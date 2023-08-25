@@ -1,14 +1,15 @@
 ---
 title: 'The Importance of a Well-Structured CV'
 excerpt: 'A well-structured CV is key to make a good impression. Learn how to create a clear, concise, and impactful CV.'
-coverImage: '/assets/blog/preview/the-importance-of-a-well-structured-cv.jpg'
+coverImage: '/assets/blog/preview/7.jpg'
 date: '2023-05-29T05:35:07.322Z'
-slug: 'the-importance-of-a-the-importance-of-a-well-structured-cv'
+slug: 'the-importance-of-a-well-structured-cv'
+id: 7
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'
 ogImage:
-  url: '/assets/blog/preview/the-importance-of-a-well-structured-cv.jpg'
+  url: '/assets/blog/preview/7.jpg'
 ---
 
 A well-structured CV can greatly increase your chances of landing an interview. It allows recruiters to easily navigate your professional profile and understand your qualifications. Here's how you can create a well-structured CV:

@@ -27,7 +27,6 @@ gap:2rem;
 
 @media ${MEDIAQUERIES.laptopSmall}{
     gap:1px;
-    background-color: ${COLORS.BLACKGREY};
     
     width: 50%;
     grid-template-columns: 1fr 1fr;

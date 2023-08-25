@@ -42,5 +42,6 @@
     "template": "Template",
     "not-specified": "Not specified",
     "color": "Color",
-    "profile-completion": "Profile completion"
+    "profile-completion": "Profile completion",
+    "general": "General"
 }

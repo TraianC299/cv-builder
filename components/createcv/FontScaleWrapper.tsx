@@ -1,3 +1,4 @@
+import { useCV } from 'contexts/AppContext'
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
@@ -48,16 +49,30 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode
     className?: string,
     color?: string
+    [x: string]: any
 } 
-const FontScaleWrapper = ({children,className, color}:Props) => {
+const FontScaleWrapper = ({children,className, color, ...rest}:Props) => {
+  const {cvObject, setCvObject} = useCV()
+  const ref = React.useRef<HTMLDivElement>(null)
   const theme = {
     color: color
   };
+  const [isOverflowing, setIsOverflowing] = React.useState(false)
+
+  React.useEffect(() => {
+    if (ref.current) {
+      setIsOverflowing(ref.current.scrollHeight > ref.current.clientHeight)
+    }
+  }, [cvObject])
+
+  
+
+    
   
   return (
     <ThemeProvider theme={theme}>
 
-      <Container className={className}>{children}</Container>
+      <Container ref={ref} {...rest} className={className}>{children}</Container>
     </ThemeProvider>
   )
 }

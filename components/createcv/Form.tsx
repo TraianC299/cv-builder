@@ -29,7 +29,6 @@ flex-direction: column;
 
 @media ${MEDIAQUERIES.laptopSmall}{
     padding: 2rem;
-    row-gap: 4rem;
 }
 `
 const Form = () => {

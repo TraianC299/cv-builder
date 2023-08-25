@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const { i18n } = require("./next-i18next.config");
-
+const rewrites = require("./rewrites.config.json");
 const nextConfig = {
   i18n,
   // reactStrictMode: true,
@@ -13,6 +13,9 @@ const nextConfig = {
       use: ["@svgr/webpack"]
     });
     return config;
+  },
+  async rewrites() {
+    return [...rewrites]
   },
   async headers() {
     return [

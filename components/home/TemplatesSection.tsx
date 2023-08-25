@@ -11,6 +11,9 @@ import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import Link from 'next/link'
+import useMousePosition from 'hooks/useMousePosition'
+import ScrollByDragContainer from '../utilities/ScrollByDragContainer'
+import useCustomCursor from 'hooks/useCustomCursor'
 
 
 const Container = styled.div`
@@ -18,6 +21,7 @@ background-color: ${COLORS.LIGHTGREY};
 min-height: 40rem;
 flex: 1;
 border-radius: 0.5rem;
+overflow: hidden;
 @media ${MEDIAQUERIES.laptopSmall}{
     display: flex;
     flex-direction: row;
@@ -27,13 +31,12 @@ border-radius: 0.5rem;
 
 }
 `
-
 const Wrapper = styled.div`
- height: 100%;
- width: 100%;
-  position: relative;
-  overflow-x: clip;
-`
+ flex:1;
+ overflow: hidden;
+ `
+
+
 
 const TextContentStyles = styled.div`
 width: 100%;
@@ -46,6 +49,8 @@ row-gap:1rem;
 padding: 1rem;
 padding-bottom:0;
 max-width: 500px;
+min-width: 500px;
+z-index: 2;
 @media ${MEDIAQUERIES.laptopSmall}{
     width: 55%;
 }
@@ -62,6 +67,7 @@ scroll-snap-stop: always;
 column-gap: 1rem;
 position: relative;
 scroll-behavior: smooth;
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -76,7 +82,8 @@ scroll-behavior: smooth;
   scrollbar-width: none;  /* Firefox */
 
 @media ${MEDIAQUERIES.laptopSmall}{
-    grid-template-columns: 18rem 18rem 18rem 18rem 18rem 18rem 18rem 18rem 18rem;
+    overflow-y: visible;
+    grid-template-columns: 18rem 18rem 18rem 18rem;
     >div{
         scroll-snap-align: none;
     }
@@ -97,63 +104,30 @@ const templateImages = [
  
 
 const TemplatesSection = () => {
-    const ref = useRef<HTMLDivElement | null>(null)
-    const [number, setNumber] = React.useState(0)
+    // const [number, setNumber] = React.useState(0)
     const {t} = useTranslation()
-    useDidMountEffect(()=>{
-        if(ref.current){
-            ref.current.scrollTo({left: 304 * number, behavior: 'smooth'})
-        }
-    },[number])
-
-
     
-
-  return (
+    
+    return (
     <Container>
         <TextContentStyles>
             <h2 className='h3 md-h2 font-semibold'>{t("templates-section-title")}</h2>
             <p className='p md-h6 text-grey'>{t("templates-section-subtitle")}</p>
         </TextContentStyles>
                 <Wrapper>
-                    <PointsContainer id="testimonials-slider-controller-desktop">
-                    {[...Array(templateImages.length)].map((i, index)=>(
-                        <button key={index} onClick={()=>setNumber(index)} className={number === index ? "active":""}/>
-                    ))}
-                    </PointsContainer>
-                    <TestimonialsContainerStyles ref={ref}>
-                        {templateImages.map((image, index)=><Testimonial key={index} src={image}></Testimonial>)}
-                        </TestimonialsContainerStyles>
+                
+                    <ScrollByDragContainer>
+                        <TestimonialsContainerStyles >
+                            {templateImages.map((image, index)=><Testimonial key={index} src={image}></Testimonial>)}
+                            </TestimonialsContainerStyles>
+                    </ScrollByDragContainer>
                 </Wrapper>
     </Container>
   )
 }
 
 
-const PointsContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-column-gap: 1rem;
-position: absolute;
-bottom: -1rem;
-left:8rem;
->button{
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    border: 1px solid black;
-    background-color: transparent;
-    cursor: pointer;
-    &.active{
-        background-color: ${COLORS.BLACKGREY};
-    }
 
-}
-
-@media ${MEDIAQUERIES.mobileSmallPortrait}{
-    display: none;
-}`
 
 export default TemplatesSection
 
@@ -170,7 +144,6 @@ position: relative;
     position: absolute;
     top:0;
     left:0;
-    content: ${`""`};
     height: 100%;
     width: 100%;
     opacity:0;

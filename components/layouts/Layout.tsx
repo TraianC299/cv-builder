@@ -1,12 +1,13 @@
 // components/layout.js
 
 import Footer from '../home/Footer'
-import Menu from '../home/Menu'
+import DektopNav from './DesktopNav'
+import PhoneNav from './PhoneNav'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Menu />
+      <DektopNav /><PhoneNav />
       <main>{children}</main>
       <Footer />
     </>

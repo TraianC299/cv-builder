@@ -59,31 +59,14 @@ font-size: 0.9rem;
     min-height: 3.5rem;
    }
     :hover{
-    transform: scale(1);
+        transform: scale(1.05);
+    
 }
 
 }`
 
 
-const ReadMoreButton = styled(Button)`
-display: flex;
-align-items: center;
-justify-content: flex-start;
-column-gap: 8px;
-::after{
-    content: "›";
-    font-size: 1.3rem;
-    top:0%;
-    height:fit-content;
-    transition: all 0.3s ease-in-out;
-}
 
-:hover{
-    ::after{
-
-    }
-}
-`
 type FeatureProps = {
     title: string,
     description:string,
@@ -92,8 +75,10 @@ type FeatureProps = {
 }
 const Feature:React.FC<FeatureProps> = ({title, description, svg, link}) => {
     return (
-        <FeatureContainerStyles className='transition'>
-            <div>{svg}</div>
+        <FeatureContainerStyles
+
+         className='transition'>
+            <div >{svg}</div>
             <h4 className={"h6 font-semibold"}>{title}</h4>
             <p className='sp font-light'>{description}</p>
             {/* <Link href={link}>

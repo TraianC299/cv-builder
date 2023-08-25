@@ -42,5 +42,6 @@
     "template": "Шаблон",
     "not-specified": "Не указано",
     "color": "Цвет",
-    "profile-completion": "Заполнение профиля"
+    "profile-completion": "Заполнение профиля",
+    "general": "Общее"
     }

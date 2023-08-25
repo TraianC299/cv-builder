@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next'
 import ColorSelector from '@/components/system/input/ColorSelector'
 
 const GeneralSection = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation(["create-cv", "common"])
     const router = useRouter()
     const { pathname, asPath, query, locale } = router
 
@@ -18,7 +18,7 @@ const GeneralSection = () => {
       <ColorSelector></ColorSelector>
       <OptionSelector 
       onChange={v=>router.push({ pathname, query }, asPath, { locale: v })} 
-      value={locale} label={t("language")} 
+      value={locale} label={t("language")}
       options={LANGUAGES.map(el=>({value:el.locale, label:`${el.emoji} ${t(el.translationKey)}`}))}/>
       <TemplateSelector></TemplateSelector>
     </div>

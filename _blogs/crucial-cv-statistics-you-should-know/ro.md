@@ -1,14 +1,15 @@
 ---
 title: 'Statistici Cruciale despre CV-uri pe care Ar trebui să le Cunoști'
 excerpt: 'Înțelegerea statisticilor despre CV-uri poate oferi indicii despre cum să-ți faci CV-ul mai eficient. Iată câteva cifre importante.'
-coverImage: '/assets/blog/preview/crucial-cv-statistics-you-should-know.jpg'
+coverImage: '/assets/blog/preview/4.jpg'
 date: '2023-05-27T05:35:07.322Z'
-slug: 'crucial-cv-statistics-you-should-know'
+id: 4
+slug: 'statistici-cruciale-despre-cv-uri-pe-care-ar-trebui-sa-le-cunosti'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'
 ogImage:
-  url: '/assets/blog/preview/crucial-cv-statistics-you-should-know.jpg'
+  url: '/assets/blog/preview/4.jpg'
 ---
 
 A avea un CV bine scris este crucial în piața actuală a muncii, unde concurența este acerbă. Pentru a-ți face CV-ul cât mai eficient posibil, este util să înțelegi câteva dintre statisticile-cheie legate de CV-uri și aplicații de angajare. Iată câteva dintre ele:

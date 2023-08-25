@@ -5,6 +5,7 @@ import COLORS from '@/constants/COLORS';
 import Link from 'next/link';
 import LANGUAGES from '@/constants/LANGUAGES';
 import { useRouter } from 'next/router';
+import useRewrites from 'hooks/useRewrites';
 
 
 
@@ -70,6 +71,9 @@ import { useRouter } from 'next/router';
 const Footer = () => {
 const {t} = useTranslation()
 const router = useRouter()
+const {rewrite, rewriteQuery} = useRewrites()
+console.log(router)
+
     return (
       <Box>
         {/* <h1 style={{ color: "green", 
@@ -80,11 +84,7 @@ const router = useRouter()
         <Container id="footer">
           <Row>
             
-            {/* <Column>
-              <Heading>{"Legal Agreements"}</Heading>
-              <Link href={`/termeni`}>{"Terms and Conditions"}</Link>
-              <Link href={`/privacy-policy`}>{"Privacy Policy"}</Link>
-            </Column> */}
+         
             <Column>
               <Heading className='h6 font-semibold'>{t("contact-us")}</Heading>
               <a className='p' href = "mailto: info@resumelio.com">traianciochina@gmail.com</a>
@@ -92,12 +92,15 @@ const router = useRouter()
             </Column>
             <Column>
               <Heading className='h6 font-semibold'>{t("language")}</Heading>
-              {LANGUAGES.map(el=><Link className='p' href={router.pathname} locale={el.locale}>{el.emoji} {t(el.translationKey)}</Link>)}
+              {LANGUAGES.map(el=><Link className='p' href={{
+                pathname: rewrite(router.pathname, el.locale),
+                query: rewriteQuery(router.query, el.locale)
+              }} locale={el.locale}>{el.emoji} {t(el.translationKey)}</Link>)}
             </Column>
             <Column>
             <Heading className='h6 font-semibold'>{t("important")}</Heading>
-              <Link className='p' href={`/terms-and-conditions`}>{t("terms-and-conditions")}</Link>
-              <Link className='p' href={`/privacy-policy`}>{t("privacy-policy")}</Link>
+              <Link className='p' href={rewrite(`/terms-and-conditions`)}>{t("terms-and-conditions")}</Link>
+              <Link className='p' href={rewrite(`/privacy-policy`)}>{t("privacy-policy")}</Link>
               
             </Column>
           

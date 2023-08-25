@@ -22,7 +22,7 @@ justify-content: space-between;
 
 
 
-const StyledAutocompleteContainer = styled.div`
+const StyledAutocompleteContainer = styled.ul`
 background: ${COLORS.WHITE};
 z-index: 3;
 width: 100%;
@@ -35,10 +35,12 @@ background-color: transparent;
 border-radius: 0.5rem;
 background: ${COLORS.WHITE};
 padding: 0.5rem;
+min-width: max-content;
+
 
 
 `
-const TagContainer = styled.div`
+const TagContainer = styled.li`
 text-align: left;
 width: 100%;
 display: flex;
@@ -47,6 +49,7 @@ padding-left: 1rem;
 height: 3rem;
 cursor: pointer;
 position: relative;
+min-width: max-content;
 
 :hover{
     background-color: ${COLORS.MAINCOLOR}20;
@@ -145,12 +148,15 @@ const Tag = ({label, selected, image, onClick}:{
     label: string,
     selected:boolean, 
     image?: string,
-    onClick: MouseEventHandler<HTMLDivElement>
+    onClick: MouseEventHandler<HTMLLIElement>
 }) => {
     
 
     return (
-        <TagContainer className={`rounded-sm tag ${selected?"selected":""}`} onClick={onClick}>{image?<img src={image}></img>:null}<p>{label}</p></TagContainer>
+        <TagContainer 
+        className={`rounded-sm tag ${selected?"selected":""}`} 
+        onClick={onClick}
+        >{image?<img src={image}></img>:null}<p>{label}</p></TagContainer>
     )
 }
 

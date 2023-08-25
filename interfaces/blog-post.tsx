@@ -7,6 +7,7 @@ interface BlogPostInterface {
   coverImage: string
   author: Author
   excerpt: string
+  id: string
   ogImage: {
     url: string
   }

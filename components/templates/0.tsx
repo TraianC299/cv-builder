@@ -36,6 +36,9 @@ flex-direction: column;
 row-gap: 8px;`
 const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:string}) => {
   const { t } = useTranslation("create-cv")
+
+
+
   return (
     <Container 
     id="cv-preview" 
@@ -86,6 +89,7 @@ const TemplateZero = ({cvObject, className}:{cvObject:CvObjectType, className?:s
     </Container>
   )
 }
+
 
 export default TemplateZero
 
