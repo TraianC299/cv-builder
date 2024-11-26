@@ -1,5 +1,5 @@
 import Input from '@/components/ui/input/Input'
-import { CvObjectType, useCV } from 'contexts/AppContext'
+import { useCV } from 'contexts/AppContext'
 import React from 'react'
 import imageZero from "@/assets/images/cv-images/0.jpg"
 import imageOne from "@/assets/images/cv-images/1.jpg"

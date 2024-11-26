@@ -1,15 +1,25 @@
-import React, {  useState } from 'react'
-import Input from '../../ui/input/Input'
-import CollapseItem from '../CollapseItem'
-import useDidMountEffect from '../../../hooks/useDidMountEffect'
-import {  EmploymentType, useCV } from '../../../contexts/AppContext'
-import AutosizeInput from '../../ui/input/AutosizeInput'
-import MonthYearSelector from '../../ui/input/MonthYearSelector'
+import { EmploymentType } from 'interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
+import { useState } from 'react'
+import { useCV } from '../../../contexts/AppContext'
+import useDidMountEffect from '../../../hooks/useDidMountEffect'
+import AutosizeInput from '../../ui/input/AutosizeInput'
+import Input from '../../ui/input/Input'
+import MonthYearSelector from '../../ui/input/MonthYearSelector'
+import CollapseItem from '../CollapseItem'
 
 
 interface Props extends EmploymentType{
-  onDelete?:Function
+  onDelete?:Function,
+  edit:boolean,
+  id:string,
+  title:string,
+  employer:string,
+  city:string,
+  description:string,
+  startDate:string,
+  endDate:string
+
 }
 
 

@@ -1,4 +1,11 @@
-const LANGUAGES= [
+import { LanguageType } from "interfaces/lang.types";
+
+const LANGUAGES:{
+    locale: LanguageType;
+    label: string;
+    emoji: string;
+    translationKey: string;
+}[] = [
     {
         locale: 'en',
         label: 'English',

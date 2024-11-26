@@ -1,13 +1,14 @@
-import React, {  useState } from 'react'
-import Input from '../../ui/input/Input'
-import CollapseItem from '../CollapseItem'
-import useDidMountEffect from '../../../hooks/useDidMountEffect'
-import {  CvObjectType, LanguageType, useCV } from '../../../contexts/AppContext'
-import { useTranslation } from 'next-i18next'
 import LevelSelector from '@/components/ui/input/LevelSelector'
 import LEVELS from '@/constants/LEVELS'
-import styled from 'styled-components'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+import { LanguageType } from 'interfaces/cv.types'
+import { useTranslation } from 'next-i18next'
+import { useState } from 'react'
+import styled from 'styled-components'
+import { useCV } from '../../../contexts/AppContext'
+import useDidMountEffect from '../../../hooks/useDidMountEffect'
+import Input from '../../ui/input/Input'
+import CollapseItem from '../CollapseItem'
 const Container = styled.div`
 flex-direction: column;
 @media ${MEDIAQUERIES.laptopSmall}{

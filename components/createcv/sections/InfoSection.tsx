@@ -2,8 +2,9 @@ import React from 'react'
 import Section from '../Section'
 import Input from '../../ui/input/Input'
 import ButtonInputImage from '../../ui/input/ButtonImageInput'
-import { CvObjectType, useCV } from '../../../contexts/AppContext'
+import { useCV } from '../../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
+import { CvObjectType } from 'interfaces/cv.types'
 
 const InfoSection = () => {
   const { cvObject, setCvObject }: { cvObject: CvObjectType, setCvObject: React.Dispatch<React.SetStateAction<any>> } = useCV()

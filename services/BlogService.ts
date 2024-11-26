@@ -49,7 +49,6 @@ function getPostBySlug(slug: string, fields: string[] = [], locale: string = 'en
 
 function getAllPosts(fields: string[] = [], locale: string = 'en') {
   const slugs = getPostSlugs().filter((slug) => slug !== '.DS_Store')
-  console.log('slugs', slugs)
 
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields, locale))

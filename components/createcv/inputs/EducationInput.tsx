@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import Input from '../../ui/input/Input'
-import CollapseItem from '../CollapseItem'
-import useDidMountEffect from '../../../hooks/useDidMountEffect'
-import { CvObjectType, EducationType, useCV } from '../../../contexts/AppContext'
-import AutosizeInput from '../../ui/input/AutosizeInput'
-import MonthYearSelector from '../../ui/input/MonthYearSelector'
+import { CvObjectType, EducationType } from 'interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
+import { useState } from 'react'
+import { useCV } from '../../../contexts/AppContext'
+import useDidMountEffect from '../../../hooks/useDidMountEffect'
+import Input from '../../ui/input/Input'
+import MonthYearSelector from '../../ui/input/MonthYearSelector'
+import CollapseItem from '../CollapseItem'
 
 
 

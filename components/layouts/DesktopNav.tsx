@@ -104,8 +104,8 @@ const DesktopLanguageSelector = () => {
     const { t } = useTranslation("common")
     const { rewrite } = useRewrites();
     const onChange = (v: LanguageType) => {
-        console.log(rewrite(router.query.slug || router.pathname, v))
-        router.push(rewrite(router.query.slug || router.pathname, v), rewrite(router.query.slug || router.pathname, v), {
+        console.log(rewrite(router.query.slug as LanguageType, v))
+        router.push(rewrite(router.query.slug as LanguageType, v), rewrite(router.query.slug as LanguageType, v), {
             locale: v,
         })
     }
