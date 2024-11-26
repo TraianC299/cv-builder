@@ -4,7 +4,7 @@ excerpt: 'Das Verfassen eines guten Lebenslaufs ist nicht immer einfach. Hier si
 coverImage: '/assets/blog/preview/1.jpg'
 date: '2020-03-16T05:35:07.322Z'
 id: 1
-slug: '5-tipps-für-lebenslauf'
+slug: '5-tipps-fur-das-schreiben-eines-guten-lebenslaufs'
 author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'

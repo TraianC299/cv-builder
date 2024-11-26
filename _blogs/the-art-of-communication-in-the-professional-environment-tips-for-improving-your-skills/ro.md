@@ -5,8 +5,8 @@ coverImage: '/assets/blog/preview/professional-communication.jpg'
 date: '2024-05-06T08:00:00.000Z'
 slug: 'arta-comunicarii-in-mediul-profesional-sfaturi-pentru-imbunatatirea-abilitatilor'
 author:
-  name: Traian Pop
-  picture: '/assets/blog/authors/your-avatar.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/professional-communication.jpg'
 ---

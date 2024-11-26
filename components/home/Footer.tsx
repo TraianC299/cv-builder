@@ -72,7 +72,6 @@ const Footer = () => {
 const {t} = useTranslation()
 const router = useRouter()
 const {rewrite, rewriteQuery} = useRewrites()
-console.log(router)
 
     return (
       <Box>

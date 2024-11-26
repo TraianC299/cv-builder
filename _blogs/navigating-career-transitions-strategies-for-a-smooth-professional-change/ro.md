@@ -3,7 +3,7 @@ title: 'Navigarea prin Tranzițiile de Carieră: Strategii pentru o Schimbare Pr
 excerpt: 'Vă gândiți să faceți o schimbare în carieră sau să treceți la o nouă industrie? Descoperiți strategii eficiente pentru navigarea prin tranzițiile de carieră și pentru a face o schimbare profesională lină în parcursul dvs.'
 coverImage: '/assets/blog/preview/career-transition.jpg'
 date: '2024-05-06T08:00:00.000Z'
-slug: 'navigând-tranzițiile-carieră-strategii-pentru-o-tranziție-profesională-lină'
+slug: 'navigarea-prin-tranzitii-de-cariera-strategii-pentru-o-schimbare-profesionala-lina'
 author:
   name: Traian Ciochina
   picture: '/assets/blog/authors/simon.jpg'

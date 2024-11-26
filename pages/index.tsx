@@ -10,7 +10,6 @@ import styled from 'styled-components'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import { useTranslation } from 'next-i18next'
 import useCustomCursor from 'hooks/useCustomCursor'
-import RewritesService from 'services/rewrites.service'
 
 
 const Container = styled.div`
@@ -24,8 +23,6 @@ margin:auto;
 `
 export default function Home() {
   const { t } = useTranslation()
-
-  console.log(RewritesService.getRewrites())
 
   return (
     <Container className={styles.container}>

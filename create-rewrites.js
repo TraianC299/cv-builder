@@ -16,7 +16,7 @@ const REWRITES = {
         "blog/the-importance-of-a-well-structured-cv": "blog/importanta-unui-cv-bine-structurat",
         "blog/the-art-of-writing-an-effective-cover-letter": "blog/arta-redactarii-unei-scrisori-de-intentie-eficiente",
         "blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills": "blog/arta-comunicarii-in-mediul-profesional-sfaturi-pentru-imbunatatirea-abilitatilor",
-        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/navigând-tranzițiile-carieră-strategii-pentru-o-tranziție-profesională-lină",    
+        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/navigarea-prin-tranzitii-de-cariera-strategii-pentru-o-schimbare-profesionala-lina",    
     },
     ru: {
         "about-us": "о-нас",
@@ -57,7 +57,7 @@ const REWRITES = {
         "blog/the-importance-of-a-well-structured-cv": "blog/l-importance-d-un-cv-bien-structure",
         "blog/the-art-of-writing-an-effective-cover-letter": "blog/l-art-d-ecrire-une-lettre-de-motivation-efficace",
         "blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills": "blog/l-art-de-la-communication-dans-le-milieu-professionnel-conseils-pour-ameliorer-vos-competences",
-        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/naviguer-les-transitions-de-carrière-stratégies-pour-un-changement-professionnel-en-douceur",    
+        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/naviguer-a-travers-les-transitions-de-carriere-strategies-pour-une-transition-professionnelle-en-douceur",    
     },
     de: {
         "about-us": 'uber-uns',
@@ -65,16 +65,16 @@ const REWRITES = {
         "terms-and-conditions": 'allgemeine-geschaftsbedingungen',
         "privacy-policy": 'datenschutz-bestimmungen',
         "blog": 'blog',
-        "blog/5-tips-for-writing-a-good-cv": "blog/5-tipps-für-lebenslauf",
+        "blog/5-tips-for-writing-a-good-cv": "blog/5-tipps-fur-das-schreiben-eines-guten-lebenslaufs",
         "blog/avoiding-common-cv-mistakes": "blog/vermeidung-häufiger-fehler-im-lebenslauf",
         "blog/the-power-of-action-verbs-in-your-cv": "blog/die-kraft-der-handlungsverben-in-ihrem-lebenslauf",
         "blog/crucial-cv-statistics-you-should-know": "blog/wichtige-cv-statistiken-die-du-kennen-solltest",
-        "blog/how-to-optimize-your-cv-for-ats": "blog/wie-sie-ihren-lebenslauf-für-ats-optimieren",
-        "blog/the-power-of-networking-in-your-career": "blog/die-kraft-des-netzwerkens-für-deine-karriere",
+        "blog/how-to-optimize-your-cv-for-ats": "blog/wie-sie-ihren-lebenslauf-fur-ats-optimieren",
+        "blog/the-power-of-networking-in-your-career": "blog/die-kraft-des-netzwerkens-fur-deine-karriere",
         "blog/the-importance-of-a-well-structured-cv": "blog/die-bedeutung-eines-gut-strukturierten-lebenslaufs",
         "blog/the-art-of-writing-an-effective-cover-letter": "blog/die-kunst-des-verfassens-eines-effektiven-anschreibens",
         "blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills": "blog/die-kunst-der-kommunikation-im-beruflichen-umfeld-tipps-zur-verbesserung-ihrer-fahigkeiten",
-        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/karriereübergänge-navigieren-strategien-für-einen-reibungslosen-berufswechsel",    
+        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/die-navigation-durch-karrieretransitionen-strategien-fuer-einen-reibungslosen-beruflichen-wandel",    
     
     },
 }
@@ -84,8 +84,8 @@ function createRewrites() {
     Object.keys(REWRITES).forEach((locale) => {
         for (const [destination, source] of Object.entries(REWRITES[locale])) {
             rewrites.push({
-                source: `/${locale}/${source}`,
-                destination: `/${locale}/${destination}`,
+                source: `/${locale}/${encodeURI(source)}`,
+                destination: `/${locale}/${encodeURI(destination)}`,
                 locale: false,
             })
         }

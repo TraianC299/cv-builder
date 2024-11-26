@@ -13,7 +13,7 @@ async function markdownToHtml(markdown: string) {
 const postsDirectory = join(process.cwd(), '_blogs')
 
 function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
+  return fs.readdirSync(postsDirectory).filter((slug) => slug !== '.DS_Store')
   
 }
 
@@ -48,8 +48,8 @@ function getPostBySlug(slug: string, fields: string[] = [], locale: string = 'en
 }
 
 function getAllPosts(fields: string[] = [], locale: string = 'en') {
-  const slugs = getPostSlugs().filter((slug) => slug !== '.DS_Store')
-
+  const slugs = getPostSlugs()
+  console.log('slugs', slugs) 
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields, locale))
     // sort posts by date in descending order

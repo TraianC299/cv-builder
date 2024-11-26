@@ -3,7 +3,7 @@ title: 'Naviguer à travers les Transitions de Carrière: Stratégies pour une T
 excerpt: 'Envisagez-vous de changer de carrière ou de passer à une nouvelle industrie? Découvrez des stratégies efficaces pour naviguer à travers les transitions de carrière et réaliser une transition professionnelle en douceur dans votre parcours.'
 coverImage: '/assets/blog/preview/career-transition.jpg'
 date: '2024-05-06T08:00:00.000Z'
-slug: 'naviguer-les-transitions-de-carrière-stratégies-pour-un-changement-professionnel-en-douceur'
+slug: 'naviguer-a-travers-les-transitions-de-carriere-strategies-pour-une-transition-professionnelle-en-douceur'
 author:
   name: Votre Nom
   picture: '/assets/blog/authors/simon.jpg'

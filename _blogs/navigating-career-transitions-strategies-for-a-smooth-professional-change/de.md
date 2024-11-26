@@ -3,7 +3,7 @@ title: 'Die Navigation durch Karrieretransitionen: Strategien für einen reibung
 excerpt: 'Denken Sie darüber nach, eine Karriereänderung vorzunehmen oder in eine neue Branche zu wechseln? Entdecken Sie effektive Strategien, um Karrieretransitionen zu navigieren und einen reibungslosen Übergang in Ihrem beruflichen Werdegang zu erreichen.'
 coverImage: '/assets/blog/preview/career-transition.jpg'
 date: '2024-05-06T08:00:00.000Z'
-slug: 'karriereübergänge-navigieren-strategien-für-einen-reibungslosen-berufswechsel'
+slug: 'die-navigation-durch-karrieretransitionen-strategien-fuer-einen-reibungslosen-beruflichen-wandel'
 author:
   name: Ihr Name
   picture: '/assets/blog/authors/simon.jpg'

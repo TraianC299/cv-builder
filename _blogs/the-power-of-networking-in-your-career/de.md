@@ -3,7 +3,7 @@ title: 'Die Kraft des Netzwerkens für deine Karriere'
 excerpt: 'Networking spielt eine entscheidende Rolle bei der Karriereentwicklung. Erfahre, wie du die Kraft des Netzwerkens nutzen kannst, um neue Möglichkeiten zu schaffen.'
 coverImage: '/assets/blog/preview/6.jpg'
 date: '2023-07-01T10:00:00.000Z'
-slug: 'die-kraft-des-netzwerkens-für-deine-karriere'
+slug: 'die-kraft-des-netzwerkens-fur-deine-karriere'
 id: 6
 author:
     name: William Rodriguez

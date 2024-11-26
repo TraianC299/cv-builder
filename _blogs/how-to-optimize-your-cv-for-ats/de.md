@@ -4,7 +4,7 @@ excerpt: 'Bewerber-Tracking-Systeme (ATS) können über Erfolg oder Misserfolg I
 coverImage: '/assets/blog/preview/5.jpg'
 date: '2023-05-24T05:35:07.322Z'
 id: 5
-slug: 'wie-sie-ihren-lebenslauf-für-ats-optimieren'
+slug: 'wie-sie-ihren-lebenslauf-fur-ats-optimieren'
 author:
   name: Simon Krasowski
   picture: '/assets/blog/authors/simon.jpg'
