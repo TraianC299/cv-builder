@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from '../../contexts/AppContext'
+import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from 'interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import FontScaleWrapper from '../createcv/FontScaleWrapper'
-import {MdStarRate} from 'react-icons/md'
+import { MdStarRate } from 'react-icons/md'
 
 
 const Container = styled(FontScaleWrapper)`
@@ -49,56 +49,56 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
   const { t } = useTranslation(["create-cv", "common"])
 
   return (
-      <Container id="cv-preview"
-        className={className}
-      >
+    <Container id="cv-preview"
+      className={className}
+    >
 
-        <ProfileSection
+      <ProfileSection
         name={cvObject.name}
         surname={cvObject.surname}
         jobTitle={cvObject.jobTitle}
         summary={cvObject.summary}
         image={cvObject.profileImage}></ProfileSection>
-        <InfoSection>
-          <div >
-            <Section title={t("personal-info")}>
-                <div className='flex column gap-2'>
-                    <div className='sp' >{t("location")}: {cvObject.city} {cvObject.country}</div>
-                    <div className='sp' >{t("phone")}: {cvObject.phone}</div>
-                    <div className='sp' >{t("email")}: {cvObject.email}</div>
-                </div>
-            </Section>
-            <Section  title={t("hobbies")}>
-              <p className='sp'>{cvObject.hobbies}</p>
-            </Section>
-            {cvObject.languages && <Section title={t("languages")}>
-              <div className='flex column gap-2'>
-                {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-              </div>
-            </Section>}
-            {cvObject.skills && <Section title={t("skills")}>
-              <div className='flex column gap-2'>
-                {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-              </div>
-            </Section>}
-          </div>
-          <SecondContainer >
-          
-            {cvObject.employment &&<Section title={t("employment")}>
-              {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-            </Section>}
-            {cvObject.internships && <Section title={t("internships")}>
-              {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-            </Section>}
-           {cvObject.education && <Section title={t("education")}>
-              {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
-            </Section>}
-            {cvObject.projects &&<Section title={t("projects")}>
-              {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
-            </Section>}
-          </SecondContainer>
-        </InfoSection>
-      </Container>
+      <InfoSection>
+        <div >
+          <Section title={t("personal-info")}>
+            <div className='flex column gap-2'>
+              <div className='sp' >{t("location")}: {cvObject.city} {cvObject.country}</div>
+              <div className='sp' >{t("phone")}: {cvObject.phone}</div>
+              <div className='sp' >{t("email")}: {cvObject.email}</div>
+            </div>
+          </Section>
+          <Section title={t("hobbies")}>
+            <p className='sp'>{cvObject.hobbies}</p>
+          </Section>
+          {cvObject.languages?.length > 0 && <Section title={t("languages")}>
+            <div className='flex column gap-2'>
+              {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
+            </div>
+          </Section>}
+          {cvObject.skills?.length > 0 && <Section title={t("skills")}>
+            <div className='flex column gap-2'>
+              {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
+            </div>
+          </Section>}
+        </div>
+        <SecondContainer >
+
+          {cvObject.employment && <Section title={t("employment")}>
+            {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+          </Section>}
+          {cvObject.internships?.length > 0 && <Section title={t("internships")}>
+            {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+          </Section>}
+          {cvObject.education?.length > 0 && <Section title={t("education")}>
+            {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
+          </Section>}
+          {cvObject.projects?.length > 0 && <Section title={t("projects")}>
+            {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
+          </Section>}
+        </SecondContainer>
+      </InfoSection>
+    </Container>
   )
 }
 
@@ -178,11 +178,11 @@ const ProfileSection = ({ name, surname, jobTitle, summary, image }: {
       </div>
       <div className='aesthetics flex ac jsb'>
         <MdStarRate size={24} color={COLORS.YELLOW} />
-          <div className='line'></div>
-          <MdStarRate size={24} color={COLORS.YELLOW} />
+        <div className='line'></div>
+        <MdStarRate size={24} color={COLORS.YELLOW} />
 
       </div>
-      
+
     </ProfileSectionContainer>
   )
 }
@@ -204,13 +204,13 @@ row-gap: 4px;
 }`
 const SkillInstance = ({ title, grade }: {
   title: string,
-  grade: SkillType["metric"] 
+  grade: SkillType["metric"]
 }) => {
   return (
     <SkillInstanceContainer className='flex column rounded-sm'>
       <p className='sp'>{title}</p>
       <div>
-        <div style={{ width: `${grade?grade * 20:0}%` }}></div>
+        <div style={{ width: `${grade ? grade * 20 : 0}%` }}></div>
       </div>
     </SkillInstanceContainer>
   )
@@ -219,17 +219,17 @@ const SkillInstance = ({ title, grade }: {
 
 
 const EmploymentItem = ({ title, startDate, endDate, description, employer, city }: EmploymentType) => {
-  const { t } =useTranslation(["create-cv", "common"])
+  const { t } = useTranslation(["create-cv", "common"])
 
   return (
     <div className='flex jfs afs gap-2'>
-    <MdStarRate className='sp w-max' color={COLORS.YELLOW}/>
-    <div>
-      <p className='ssp'>{startDate} - {endDate}</p>
-      <p className='sp font-semibold'>{title} {t("at")} {employer} ({city})</p>
+      <MdStarRate className='sp w-max' color={COLORS.YELLOW} />
+      <div>
+        <p className='ssp'>{startDate} - {endDate}</p>
+        <p className='sp font-semibold'>{title} {t("at")} {employer} ({city})</p>
         <p className='ssp font-light'>{description}</p>
-    </div>
-  </div>)
+      </div>
+    </div>)
 }
 
 
@@ -238,13 +238,13 @@ const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) =>
 
   return (
     <div className='flex jfs afs gap-2'>
-    <MdStarRate className='sp' color={COLORS.YELLOW}/>
-    <div>
+      <MdStarRate className='sp' color={COLORS.YELLOW} />
+      <div>
         <p className='ssp'>{startDate} - {endDate}</p>
         <p className='sp font-semibold'>{title}</p>
         <p className='ssp font-light'>{description}</p>
-    </div>
-  </div>)
+      </div>
+    </div>)
 }
 
 
@@ -253,7 +253,7 @@ const EducationItem = ({ school, degree, city, startDate, endDate }: EducationTy
 
   return (
     <div className='flex jfs afs gap-2'>
-        <MdStarRate className='sp' color={COLORS.YELLOW}/>
+      <MdStarRate className='sp' color={COLORS.YELLOW} />
       <div>
         <p className='ssp'>{startDate} - {endDate}</p>
         <p className='sp font-semibold'>{degree} {t("at")} {school} ({city})</p>

@@ -1,10 +1,11 @@
 import REWRITES from "@/constants/REWRITES";
+import { LanguageType } from "interfaces/lang.types";
 import { useRouter } from "next/router";
 
 const useRewrites = () => {
     const router = useRouter();
-    const locale = router.locale as 'ro' | 'en' | 'ru' | 'de' | 'fr';
-    const rewrite = (path:string, rewriteLocale?:'ro' | 'en' | 'ru' | 'de' | 'fr') => {
+    const locale = router.locale as LanguageType
+    const rewrite = (path:string, rewriteLocale?:LanguageType) => {
         if(locale || rewriteLocale){
 
             let slugs = path.split("/").map((slug:string, index:number) => {
@@ -19,7 +20,7 @@ const useRewrites = () => {
         
     }
 
-    const rewriteQuery = (query:any, rewriteLocale?:'ro' | 'en' | 'ru' | 'de' | 'fr') => {
+    const rewriteQuery = (query:any, rewriteLocale?:LanguageType) => {
         if(locale || rewriteLocale){
             let newQuery = {...query}
             Object.keys(newQuery).forEach((key) => {
@@ -34,7 +35,7 @@ const useRewrites = () => {
     }
 
 
-    const rewriteSlug = (slug:string, rewriteLocale?:'ro' | 'en' | 'ru' | 'de' | 'fr') => {
+    const rewriteSlug = (slug:string, rewriteLocale?:LanguageType) => {
         if(locale || rewriteLocale){
             return REWRITES[rewriteLocale || locale][slug] || slug;
         }else{

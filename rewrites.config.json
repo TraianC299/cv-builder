@@ -65,68 +65,88 @@
         "locale": false
     },
     {
-        "source": "/ru/%D0%BE-%D0%BD%D0%B0%D1%81",
+        "source": "/ro/blog/arta-comunicarii-in-mediul-profesional-sfaturi-pentru-imbunatatirea-abilitatilor",
+        "destination": "/ro/blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills",
+        "locale": false
+    },
+    {
+        "source": "/ro/blog/navigând-tranzițiile-carieră-strategii-pentru-o-tranziție-profesională-lină",
+        "destination": "/ro/blog/navigating-career-transitions-strategies-for-a-smooth-professional-change",
+        "locale": false
+    },
+    {
+        "source": "/ru/о-нас",
         "destination": "/ru/about-us",
         "locale": false
     },
     {
-        "source": "/ru/%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5",
+        "source": "/ru/создать-резюме",
         "destination": "/ru/create-cv",
         "locale": false
     },
     {
-        "source": "/ru/%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%B8-%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F",
+        "source": "/ru/условия-и-положения",
         "destination": "/ru/terms-and-conditions",
         "locale": false
     },
     {
-        "source": "/ru/%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8",
+        "source": "/ru/политика-конфиденциальности",
         "destination": "/ru/privacy-policy",
         "locale": false
     },
     {
-        "source": "/ru/%D0%B1%D0%BB%D0%BE%D0%B3",
+        "source": "/ru/блог",
         "destination": "/ru/blog",
         "locale": false
     },
     {
-        "source": "/ru/%D0%B1%D0%BB%D0%BE%D0%B3/%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B-%D0%BF%D0%BE-%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E-%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5",
+        "source": "/ru/блог/советы-по-составлению-резюме",
         "destination": "/ru/blog/5-tips-for-writing-a-good-cv",
         "locale": false
     },
     {
-        "source": "/ru/%D0%B1%D0%BB%D0%BE%D0%B3/%D0%B8%D0%B7%D0%B1%D0%B5%D0%B3%D0%B0%D0%B9%D1%82%D0%B5-%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%BE%D1%88%D0%B8%D0%B1%D0%BE%D0%BA-%D0%B2-%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5",
+        "source": "/ru/блог/избегайте-распространенных-ошибок-в-резюме",
         "destination": "/ru/blog/avoiding-common-cv-mistakes",
         "locale": false
     },
     {
-        "source": "/ru/%D0%B1%D0%BB%D0%BE%D0%B3/%D1%81%D0%B8%D0%BB%D0%B0-%D0%B3%D0%BB%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2-%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F-%D0%B2-%D0%B2%D0%B0%D1%88%D0%B5%D0%BC-%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5",
+        "source": "/ru/блог/сила-глаголов-действия-в-вашем-резюме",
         "destination": "/ru/blog/the-power-of-action-verbs-in-your-cv",
         "locale": false
     },
     {
-        "source": "/ru/%D0%B1%D0%BB%D0%BE%D0%B3/%D0%B2%D0%B0%D0%B6%D0%BD%D1%8B%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE-%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B2%D0%B0%D0%BC-%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D0%B5%D1%82-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C",
+        "source": "/ru/блог/важные-статистические-данные-о-резюме-которые-вам-следует-знать",
         "destination": "/ru/blog/crucial-cv-statistics-you-should-know",
         "locale": false
     },
     {
-        "source": "/ru/%D0%B1%D0%BB%D0%BE%D0%B3/%D0%BA%D0%B0%D0%BA-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2%D0%B0%D1%88%D0%B5-%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5-%D0%B4%D0%BB%D1%8F-ats-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%BE%D1%82%D1%81%D0%BB%D0%B5%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%BE%D0%B8%D1%81%D0%BA%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9",
+        "source": "/ru/блог/как-оптимизировать-ваше-резюме-для-ats-системы-отслеживания-соискателей",
         "destination": "/ru/blog/how-to-optimize-your-cv-for-ats",
         "locale": false
     },
     {
-        "source": "/ru/%D0%B1%D0%BB%D0%BE%D0%B3/%D1%81%D0%B8%D0%BB%D0%B0-%D0%BD%D0%B5%D1%82%D0%B2%D0%BE%D1%80%D0%BA%D0%B8%D0%BD%D0%B3%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%B2%D0%B0%D1%88%D0%B5%D0%B9-%D0%BA%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D1%8B",
+        "source": "/ru/блог/сила-нетворкинга-для-вашей-карьеры",
         "destination": "/ru/blog/the-power-of-networking-in-your-career",
         "locale": false
     },
     {
-        "source": "/ru/%D0%B1%D0%BB%D0%BE%D0%B3/%D0%B2%D0%B0%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5",
+        "source": "/ru/блог/важность-хорошо-структурированного-резюме",
         "destination": "/ru/blog/the-importance-of-a-well-structured-cv",
         "locale": false
     },
     {
-        "source": "/ru/%D0%B1%D0%BB%D0%BE%D0%B3/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE-%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F-%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE-%D1%81%D0%BE%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%B0",
+        "source": "/ru/блог/искусство-написания-эффективного-сопроводительного-письма",
         "destination": "/ru/blog/the-art-of-writing-an-effective-cover-letter",
+        "locale": false
+    },
+    {
+        "source": "/ru/blog/искусство-коммуникации-в-профессиональной-среде-советы-по-улучшению-ваших-навыков",
+        "destination": "/ru/blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills",
+        "locale": false
+    },
+    {
+        "source": "/ru/blog/навигация-по-карьерным-переходам-стратегии-для-плавного-профессионального-изменения",
+        "destination": "/ru/blog/navigating-career-transitions-strategies-for-a-smooth-professional-change",
         "locale": false
     },
     {
@@ -180,7 +200,7 @@
         "locale": false
     },
     {
-        "source": "/fr/blog/5-conseils-pour-r%C3%A9diger-un-bon-cv",
+        "source": "/fr/blog/5-conseils-pour-rédiger-un-bon-cv",
         "destination": "/fr/blog/5-tips-for-writing-a-good-cv",
         "locale": false
     },
@@ -220,6 +240,16 @@
         "locale": false
     },
     {
+        "source": "/fr/blog/l-art-de-la-communication-dans-le-milieu-professionnel-conseils-pour-ameliorer-vos-competences",
+        "destination": "/fr/blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills",
+        "locale": false
+    },
+    {
+        "source": "/fr/blog/naviguer-les-transitions-de-carrière-stratégies-pour-un-changement-professionnel-en-douceur",
+        "destination": "/fr/blog/navigating-career-transitions-strategies-for-a-smooth-professional-change",
+        "locale": false
+    },
+    {
         "source": "/de/uber-uns",
         "destination": "/de/about-us",
         "locale": false
@@ -245,12 +275,12 @@
         "locale": false
     },
     {
-        "source": "/de/blog/5-tipps-f%C3%BCr-lebenslauf",
+        "source": "/de/blog/5-tipps-für-lebenslauf",
         "destination": "/de/blog/5-tips-for-writing-a-good-cv",
         "locale": false
     },
     {
-        "source": "/de/blog/vermeidung-h%C3%A4ufiger-fehler-im-lebenslauf",
+        "source": "/de/blog/vermeidung-häufiger-fehler-im-lebenslauf",
         "destination": "/de/blog/avoiding-common-cv-mistakes",
         "locale": false
     },
@@ -265,12 +295,12 @@
         "locale": false
     },
     {
-        "source": "/de/blog/wie-sie-ihren-lebenslauf-f%C3%BCr-ats-optimieren",
+        "source": "/de/blog/wie-sie-ihren-lebenslauf-für-ats-optimieren",
         "destination": "/de/blog/how-to-optimize-your-cv-for-ats",
         "locale": false
     },
     {
-        "source": "/de/blog/die-kraft-des-netzwerkens-f%C3%BCr-deine-karriere",
+        "source": "/de/blog/die-kraft-des-netzwerkens-für-deine-karriere",
         "destination": "/de/blog/the-power-of-networking-in-your-career",
         "locale": false
     },
@@ -282,6 +312,16 @@
     {
         "source": "/de/blog/die-kunst-des-verfassens-eines-effektiven-anschreibens",
         "destination": "/de/blog/the-art-of-writing-an-effective-cover-letter",
+        "locale": false
+    },
+    {
+        "source": "/de/blog/die-kunst-der-kommunikation-im-beruflichen-umfeld-tipps-zur-verbesserung-ihrer-fahigkeiten",
+        "destination": "/de/blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills",
+        "locale": false
+    },
+    {
+        "source": "/de/blog/karriereübergänge-navigieren-strategien-für-einen-reibungslosen-berufswechsel",
+        "destination": "/de/blog/navigating-career-transitions-strategies-for-a-smooth-professional-change",
         "locale": false
     }
 ]

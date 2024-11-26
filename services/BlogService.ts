@@ -19,6 +19,7 @@ function getPostSlugs() {
 
 function getPostBySlug(slug: string, fields: string[] = [], locale: string = 'en') {
   const realSlug = slug.replace(/\.md$/, '')
+  // console.log('realSlug', realSlug)
   const fullPath = join(`${postsDirectory}/${realSlug}`, `${locale}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
@@ -47,7 +48,9 @@ function getPostBySlug(slug: string, fields: string[] = [], locale: string = 'en
 }
 
 function getAllPosts(fields: string[] = [], locale: string = 'en') {
-  const slugs = getPostSlugs()
+  const slugs = getPostSlugs().filter((slug) => slug !== '.DS_Store')
+  console.log('slugs', slugs)
+
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields, locale))
     // sort posts by date in descending order

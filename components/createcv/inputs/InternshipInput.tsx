@@ -1,10 +1,10 @@
 import React, {  useState } from 'react'
-import Input from '../../system/input/Input'
+import Input from '../../ui/input/Input'
 import CollapseItem from '../CollapseItem'
 import useDidMountEffect from '../../../hooks/useDidMountEffect'
 import {  EmploymentType, useCV } from '../../../contexts/AppContext'
-import AutosizeInput from '../../system/input/AutosizeInput'
-import MonthYearSelector from '../../system/input/MonthYearSelector'
+import AutosizeInput from '../../ui/input/AutosizeInput'
+import MonthYearSelector from '../../ui/input/MonthYearSelector'
 import { useTranslation } from 'next-i18next'
 
 

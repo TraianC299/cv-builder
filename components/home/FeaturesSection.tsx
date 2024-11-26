@@ -10,7 +10,7 @@ import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
 
 const FeaturesContainerStyles = styled.div`
-color: ${COLORS.BLACKGREY};
+color: ${COLORS.BLACK};
 @media ${MEDIAQUERIES.laptopSmall}{
     display: flex;
     justify-content: space-around;

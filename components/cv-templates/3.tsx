@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from '../../contexts/AppContext'
+import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from 'interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import FontScaleWrapper from '../createcv/FontScaleWrapper'
@@ -62,12 +62,12 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
             <Section style={{ borderTop: "2px solid black" }} title={t("hobbies")}>
               <p className='sp'>{cvObject.hobbies}</p>
             </Section>
-            {cvObject.languages && <Section title={t("languages")}>
+            {cvObject.languages?.length > 0 && <Section title={t("languages")}>
               <div className='flex column gap-2'>
                 {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
               </div>
             </Section>}
-            {cvObject.skills && <Section title={t("skills")}>
+            {cvObject.skills?.length > 0 && <Section title={t("skills")}>
               <div className='flex column gap-2'>
                 {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
               </div>
@@ -80,13 +80,13 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
             {cvObject.employment &&<Section title={t("employment")}>
               {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
             </Section>}
-            {cvObject.internships && <Section title={t("internships")}>
+            {cvObject.internships?.length > 0 && <Section title={t("internships")}>
               {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
             </Section>}
-           {cvObject.education && <Section title={t("education")}>
+           {cvObject.education?.length > 0 && <Section title={t("education")}>
               {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
             </Section>}
-            {cvObject.projects &&<Section title={t("projects")}>
+            {cvObject.projects?.length > 0 &&<Section title={t("projects")}>
               {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
             </Section>}
           </SecondContainer>

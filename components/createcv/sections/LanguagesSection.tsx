@@ -1,38 +1,19 @@
 import React from 'react'
 import Section from '../Section'
 import { ReactSortable } from 'react-sortablejs'
-import { CvObjectType, useCV } from '../../../contexts/AppContext'
-import { nanoid } from 'nanoid'
-import SkillInput from '../inputs/SkillInput'
+import { useCV } from '../../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import LanguageInput from '../inputs/LanguageInput'
 
 const LanguagesSection = () => {
-  const {cvObject, setCvObject} = useCV()
+  const {cvObject, setCvObject, addNew} = useCV()
   const {t}= useTranslation(["create-cv", "common"])
-  const addNewLanguage = () => {
-    const noEditLanguages = cvObject.languages.map(el=>({
-      ...el,
-      edit:false
-    }))
-    setCvObject((prev)=>({
-      ...prev,
-      languages:[
-        ...noEditLanguages, {
-          id:nanoid(), 
-          title:"", 
-          metric:null, 
-          edit:true
-        }
-      ]
-    }))
-  }
 
   return (
     <Section 
     deletable
     objectKey="languages"
-    title={t("languages")} onClick={addNewLanguage}>
+    title={t("languages")} onClick={()=>addNew('languages')}>
       
         <ReactSortable
         className='flex column gap-2'

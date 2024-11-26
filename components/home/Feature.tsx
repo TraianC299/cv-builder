@@ -20,7 +20,7 @@ height: 100%;
 >div{
     padding: 0.75rem;
     width: fit-content;
-    background-color: ${COLORS.MAINCOLOR}20;
+    background-color: ${COLORS.MAINCOLOR};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,9 +28,9 @@ height: 100%;
     svg{
         height: 1.5rem;
         width: auto;
-        /* fill: ${COLORS.MAINCOLOR};  */
-        /* *{
-            fill: ${COLORS.MAINCOLOR};
+        fill: ${COLORS.WHITE}; 
+        /* path{
+            fill: ${COLORS.WHITE};
         } */
     }
 }

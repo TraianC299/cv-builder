@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from '../Section'
-import Input from '../../system/input/Input'
-import ButtonInputImage from '../../system/input/ButtonImageInput'
+import Input from '../../ui/input/Input'
+import ButtonInputImage from '../../ui/input/ButtonImageInput'
 import { CvObjectType, useCV } from '../../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 

@@ -21,6 +21,6 @@
       "@/assets/*": ["assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/image/upload.js", "components/system/input/ImageInput.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/image/upload.js", "components/ui/input/ImageInput.js", "create-rewrites.js"],
   "exclude": ["node_modules"]
 }

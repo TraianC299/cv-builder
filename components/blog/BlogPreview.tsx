@@ -59,8 +59,6 @@ const BlogPreview = ({  title,
           //locale 
           as={`/${rewrite("blog")}/${slug}`}
           href={`/${rewrite("blog")}/[slug]`}
-          
-          
         >
           {title}
         </Link>

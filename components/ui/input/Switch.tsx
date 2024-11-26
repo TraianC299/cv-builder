@@ -4,8 +4,8 @@ import styled from "styled-components"
 const SwitchContaier = styled.label`
   position: relative;
   display: inline-block;
-  width: 48px;
-  height: 28px;
+  width: 32px;
+  height: 20px;
 
 
 input { 
@@ -29,8 +29,8 @@ input {
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px;
-  width: 20px;
+  height: 12px;
+  width: 12px;
   left: 4px;
   bottom: 4px;
   background-color: ${COLORS.WHITE};
@@ -46,9 +46,9 @@ input:checked + .slider {
 
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
 }
 
 /* Rounded sliders */
@@ -63,20 +63,20 @@ input:checked + .slider:before {
 
 
 type Props = {
-    value: boolean,
-    onChange: (value:boolean) => void,
-    label?: string,
-    className?: string,
+  value: boolean,
+  onChange: (value: boolean) => void,
+  label?: string,
+  className?: string,
 }
 
-const Switch = ({value, onChange, label, className}:Props) => {
-    return (
-        <SwitchContaier className="switch">
-        <input type="checkbox" 
-        checked={value} onChange={(e)=>onChange(e.target.checked)}/>
-        <span className="slider round"></span>
-      </SwitchContaier>
-    )
+const Switch = ({ value, onChange, label, className }: Props) => {
+  return (
+    <SwitchContaier className="switch">
+      <input type="checkbox"
+        checked={value} onChange={(e) => onChange(e.target.checked)} />
+      <span className="slider round"></span>
+    </SwitchContaier>
+  )
 }
 
 export default Switch

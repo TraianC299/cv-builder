@@ -44,7 +44,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
-color: ${COLORS.BLACKGREY};
+color: ${COLORS.BLACK};
 row-gap:1rem;
 padding: 1rem;
 padding-bottom:0;

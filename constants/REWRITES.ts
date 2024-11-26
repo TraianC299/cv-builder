@@ -12,7 +12,9 @@ const REWRITES = {
         "blog/how-to-optimize-your-cv-for-ats": "blog/cum-sa-optimizati-cv-ul-pentru-ats",
         "blog/the-power-of-networking-in-your-career": "blog/puterea-networking-ului-in-cariera-ta",
         "blog/the-importance-of-a-well-structured-cv": "blog/importanta-unui-cv-bine-structurat",
-        "blog/the-art-of-writing-an-effective-cover-letter": "blog/arta-redactarii-unei-scrisori-de-intentie-eficiente"
+        "blog/the-art-of-writing-an-effective-cover-letter": "blog/arta-redactarii-unei-scrisori-de-intentie-eficiente",
+        "blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills": "blog/arta-comunicarii-in-mediul-profesional-sfaturi-pentru-imbunatatirea-abilitatilor",
+        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/navigând-tranzițiile-carieră-strategii-pentru-o-tranziție-profesională-lină",    
     },
     ru: {
         "about-us": "о-нас",
@@ -27,7 +29,9 @@ const REWRITES = {
         "blog/how-to-optimize-your-cv-for-ats": "блог/как-оптимизировать-ваше-резюме-для-ats-системы-отслеживания-соискателей",
         "blog/the-power-of-networking-in-your-career": "блог/сила-нетворкинга-для-вашей-карьеры",
         "blog/the-importance-of-a-well-structured-cv": "блог/важность-хорошо-структурированного-резюме",
-        "blog/the-art-of-writing-an-effective-cover-letter": "блог/искусство-написания-эффективного-сопроводительного-письма"
+        "blog/the-art-of-writing-an-effective-cover-letter": "блог/искусство-написания-эффективного-сопроводительного-письма",
+        "blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills": "blog/искусство-коммуникации-в-профессиональной-среде-советы-по-улучшению-ваших-навыков",
+        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/навигация-по-карьерным-переходам-стратегии-для-плавного-профессионального-изменения",    
     },
     en: {
         "about-us": 'about-us',
@@ -49,7 +53,9 @@ const REWRITES = {
         "blog/how-to-optimize-your-cv-for-ats": "blog/comment-optimiser-votre-cv-pour-les-ats",
         "blog/the-power-of-networking-in-your-career": "blog/la-puissance-du-networking-pour-votre-carriere",
         "blog/the-importance-of-a-well-structured-cv": "blog/l-importance-d-un-cv-bien-structure",
-        "blog/the-art-of-writing-an-effective-cover-letter": "blog/l-art-d-ecrire-une-lettre-de-motivation-efficace"
+        "blog/the-art-of-writing-an-effective-cover-letter": "blog/l-art-d-ecrire-une-lettre-de-motivation-efficace",
+        "blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills": "blog/l-art-de-la-communication-dans-le-milieu-professionnel-conseils-pour-ameliorer-vos-competences",
+        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/naviguer-les-transitions-de-carrière-stratégies-pour-un-changement-professionnel-en-douceur",    
     },
     de: {
         "about-us": 'uber-uns',
@@ -64,9 +70,10 @@ const REWRITES = {
         "blog/how-to-optimize-your-cv-for-ats": "blog/wie-sie-ihren-lebenslauf-für-ats-optimieren",
         "blog/the-power-of-networking-in-your-career": "blog/die-kraft-des-netzwerkens-für-deine-karriere",
         "blog/the-importance-of-a-well-structured-cv": "blog/die-bedeutung-eines-gut-strukturierten-lebenslaufs",
-        "blog/the-art-of-writing-an-effective-cover-letter": "blog/die-kunst-des-verfassens-eines-effektiven-anschreibens"
-    }
+        "blog/the-art-of-writing-an-effective-cover-letter": "blog/die-kunst-des-verfassens-eines-effektiven-anschreibens",
+        "blog/the-art-of-communication-in-the-professional-environment-tips-for-improving-your-skills": "blog/die-kunst-der-kommunikation-im-beruflichen-umfeld-tipps-zur-verbesserung-ihrer-fahigkeiten",
+        "blog/navigating-career-transitions-strategies-for-a-smooth-professional-change": "blog/karriereübergänge-navigieren-strategien-für-einen-reibungslosen-berufswechsel",
+    },
 }
 
 export default REWRITES;
-

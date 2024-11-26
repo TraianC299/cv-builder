@@ -1,11 +1,11 @@
 import { GetServerSideProps } from 'next'
 import React from 'react'
-import {  CvObjectType } from '../../contexts/AppContext'
 import useWindowSize from '../../hooks/useWindowSize'
-import TemplateZero from '../../components/templates/0'
+import TemplateZero from '../../components/cv-templates/0'
 import styled from 'styled-components'
 import { TemplateContainerStyleProps } from '../../types'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { CvObjectType } from 'interfaces/cv.types'
 
 
 

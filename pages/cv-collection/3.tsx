@@ -1,11 +1,11 @@
 import { GetServerSideProps } from 'next'
 import React from 'react'
-import {  CvObjectType } from '../../contexts/AppContext'
 import useWindowSize from '../../hooks/useWindowSize'
 import styled from 'styled-components'
-import TemplateThree from '../../components/templates/3'
+import TemplateThree from '../../components/cv-templates/3'
 import { TemplateContainerStyleProps } from '../../types'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { CvObjectType } from 'interfaces/cv.types'
 
 const TemplateThreeScaled = styled(TemplateThree)<TemplateContainerStyleProps>`
 transform: scale(${props=>props.scaleFactor});

@@ -1,37 +1,18 @@
 import React from 'react'
 import Section from '../Section'
 import { ReactSortable } from 'react-sortablejs'
-import { CvObjectType, useCV } from '../../../contexts/AppContext'
-import { nanoid } from 'nanoid'
+import { useCV } from '../../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import ProjectInput from '../inputs/ProjectInput'
 
 const ProjectsSection = () => {
-  const { cvObject, setCvObject } = useCV()
+  const { cvObject, setCvObject, addNew } = useCV()
   const { t } = useTranslation(["create-cv", "common"])
-  const addNewProject = () => {
-    const noEditProjects = cvObject.projects.map(el => ({
-      ...el,
-      edit: false
-    }))
-    setCvObject((prev: CvObjectType) => ({
-      ...prev,
-      projects: [
-        ...noEditProjects, {
-          id: nanoid(),
-          title: "",
-          description: "",
-          startDate: "",
-          endDate: "",
-          edit: true
-        }
-      ]
-    }))
-  }
+
 
 
   const deletePtoject = (id: string) => {
-    setCvObject((prev: CvObjectType) => ({
+    setCvObject((prev) => ({
       ...prev,
       projects: prev.projects.filter(el => el.id !== id)
     }))
@@ -42,12 +23,12 @@ const ProjectsSection = () => {
     <Section
       deletable
       objectKey="projects"
-      title={t("projects")} onClick={addNewProject}>
+      title={t("projects")} onClick={() => addNew('projects')}>
 
       <ReactSortable
         className='flex column gap-2'
         list={cvObject.projects}
-        setList={(v) => { setCvObject((prev: CvObjectType) => ({ ...prev, projects: v })) }}
+        setList={(v) => { setCvObject((prev) => ({ ...prev, projects: v })) }}
         handle=".handle"
       >
         {cvObject.projects && cvObject.projects.map(el => <ProjectsSection.Input

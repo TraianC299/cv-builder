@@ -9,19 +9,18 @@ type Props = {
 }
 
 const CoverImage = ({ title, src, link }: Props) => {
-  const {rewrite} = useRewrites()
+  const { rewrite } = useRewrites()
   const image = (
     <Image
       src={src}
       alt={`Cover Image for ${title}`}
-      width={1300}
-      height={630}
-      style={{width:"100%", height:"100%", objectFit:"cover"}}
-
+      width={500}
+      height={200}
+      style={{ width: "100%", height: "100%", objectFit: "cover" }}
     />
   )
   return (
-    <div className='rounded-sm' style={{margin:0, overflow:"hidden"}} >
+    <div className='rounded-sm' style={{ margin: 0, overflow: "hidden" }} >
       {link ? (
         <Link as={link} href={`/${rewrite("blog")}/[slug]`} aria-label={title}>
           {image}

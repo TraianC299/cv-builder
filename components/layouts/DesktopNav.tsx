@@ -8,8 +8,9 @@ import { useTranslation } from 'next-i18next'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
 import LANGUAGES from '@/constants/LANGUAGES'
-import OptionSelector from '../system/input/OptionSelector'
+import OptionSelector from '../ui/input/OptionSelector'
 import useRewrites from 'hooks/useRewrites';
+import { LanguageType } from 'interfaces/lang.types';
 
 
 
@@ -56,7 +57,7 @@ const DektopNav = () => {
     const [openMenu, setOpenMenu] = React.useState(false)
     const router = useRouter();
     const { t } = useTranslation("common")
-    const {rewrite} = useRewrites();
+    const { rewrite } = useRewrites();
 
 
     useEffect(() => {
@@ -70,9 +71,7 @@ const DektopNav = () => {
 
 
     return (
-        <Header
-            id="header"
-        >
+        <Header id="header">
             <LogoContainer href="/" id="logo">
                 <LogoSvg style={{ cursor: "pointer" }} ></LogoSvg>
             </LogoContainer>
@@ -81,15 +80,11 @@ const DektopNav = () => {
                     <DesktopMenuItem link={"/about-us"}>{t("about-us")}</DesktopMenuItem>
                     <DesktopMenuItem link="/blog">{t("blog")}</DesktopMenuItem>
                 </div>
-
-
                 <div className='flex-1'></div>
-
                 <div className='flex ac jc gap-4'>
                     <DesktopLanguageSelector />
                     <Link href={rewrite("/create-cv")}><Button >{t("start-now")}</Button></Link>
                 </div>
-
             </DesktopMenuLinksContainerStyles>
         </Header>
     )
@@ -107,9 +102,10 @@ type DesktopMenuItemProps = {
 const DesktopLanguageSelector = () => {
     const router = useRouter();
     const { t } = useTranslation("common")
-    const {rewrite} = useRewrites();
-    const onChange = (v: string) => {
-        router.push(rewrite(router.pathname, v), rewrite(router.pathname, v), {
+    const { rewrite } = useRewrites();
+    const onChange = (v: LanguageType) => {
+        console.log(rewrite(router.query.slug || router.pathname, v))
+        router.push(rewrite(router.query.slug || router.pathname, v), rewrite(router.query.slug || router.pathname, v), {
             locale: v,
         })
     }
@@ -130,7 +126,7 @@ const DesktopLanguageSelector = () => {
 
 const DesktopMenuItem: React.FC<DesktopMenuItemProps> = ({ children, link, submenu }) => {
     const router = useRouter();
-    const {rewrite} = useRewrites();
+    const { rewrite } = useRewrites();
 
 
     return (
@@ -218,16 +214,9 @@ const MenuItem = styled.div`
         position: relative;
         border-bottom: 2px solid ${COLORS.MAINCOLOR};
         overflow: hidden;
-        
-
+    
     }
 `
-
-
-
-
-
-
 
 
 export default DektopNav

@@ -11,9 +11,8 @@ import {GrFormClose} from 'react-icons/gr'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
 import {BiChevronDown, BiChevronUp} from 'react-icons/bi'
-import Collapse from '../system/utilities/Collapse'
+import Collapse from '../ui/utilities/Collapse'
 import LANGUAGES from '@/constants/LANGUAGES'
-import OptionSelector from '../system/input/OptionSelector'
 import useRewrites from 'hooks/useRewrites'
 
 

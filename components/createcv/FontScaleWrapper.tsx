@@ -46,13 +46,13 @@ font-size: 30px !important;
 `
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-    children: React.ReactNode
-    className?: string,
-    color?: string
-    [x: string]: any
-} 
-const FontScaleWrapper = ({children,className, color, ...rest}:Props) => {
-  const {cvObject, setCvObject} = useCV()
+  children: React.ReactNode
+  className?: string,
+  color?: string
+  [x: string]: any
+}
+const FontScaleWrapper = ({ children, className, color, ...rest }: Props) => {
+  const { cvObject, setCvObject } = useCV()
   const ref = React.useRef<HTMLDivElement>(null)
   const theme = {
     color: color
@@ -65,10 +65,10 @@ const FontScaleWrapper = ({children,className, color, ...rest}:Props) => {
     }
   }, [cvObject])
 
-  
 
-    
-  
+
+
+
   return (
     <ThemeProvider theme={theme}>
 

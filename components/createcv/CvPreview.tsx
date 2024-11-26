@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { CvObjectType, useCV } from '../../contexts/AppContext';
+import { useCV } from '../../contexts/AppContext';
 import useWindowSize from '../../hooks/useWindowSize';
 import { Button } from '../../styles/global';
-import TemplateZero from '../templates/0';
-import TemplateOne from '../templates/1';
-import TemplateTwo from '../templates/2';
-import TemplateThree from '../templates/3';
-import TemplateFour from '../templates/4';
+import TemplateZero from '../cv-templates/0';
+import TemplateOne from '../cv-templates/1';
+import TemplateTwo from '../cv-templates/2';
+import TemplateThree from '../cv-templates/3';
+import TemplateFour from '../cv-templates/4';
 import { TemplateContainerStyleProps } from '../../types';
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES';
 import COLORS from '@/constants/COLORS';
@@ -18,6 +18,7 @@ import { IoClose } from 'react-icons/io5'
 import { useRouter } from 'next/router';
 import API_URL from '@/constants/API_URL';
 import useLockBody from 'hooks/useLockBody';
+import { CvObjectType } from 'interfaces/cv.types';
 
 const EyeButton = styled.button`
 height: 3rem;
@@ -36,7 +37,7 @@ z-index: 101;
 
 
 const CvPreviewStyles = styled.div`
-background-color: ${COLORS.GREY};
+background-color: ${COLORS.GREYWHITE};
 position: relative;
 opacity: 1;
 

@@ -14,7 +14,7 @@ ogImage:
 
 Un CV bine structurat poate crește semnificativ șansele de a obține un interviu. Acesta permite recrutorilor să navigheze ușor în profilul dvs. profesional și să înțeleagă calificările dvs. Iată cum puteți crea un CV bine structurat:
 
-1. **Începeți cu informațiile de contact:** Numele dvs., titlul profesional și informațiile de contact ar trebui să fie în partea de sus. Asigurați-vă că adresa de e-mail și numărul de telefon sunt actualizate.
+1. **Începeți cu informațiile de contact:** Traian Ciochina, titlul profesional și informațiile de contact ar trebui să fie în partea de sus. Asigurați-vă că adresa de e-mail și numărul de telefon sunt actualizate.
 
 2. **Scrieți o declarație personală convingătoare:** Această scurtă prezentare la începutul CV-ului oferă o imagine de ansamblu despre cine sunteți, ce aveți de oferit și care sunt obiectivele dvs. de carieră.
 

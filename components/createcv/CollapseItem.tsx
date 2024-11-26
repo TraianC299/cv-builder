@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import COLORS from '@/constants/COLORS'
-import Collapse from '../system/utilities/Collapse'
+import Collapse from '../ui/utilities/Collapse'
 import { MdOutlineDragIndicator } from 'react-icons/md'
 import {FaRegTrashAlt} from 'react-icons/fa'
 import { FiChevronDown } from 'react-icons/fi'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Collapse from '../system/utilities/Collapse'
+import Collapse from '../ui/utilities/Collapse'
 import { useTranslation } from 'next-i18next'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'

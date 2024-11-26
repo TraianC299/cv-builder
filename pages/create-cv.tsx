@@ -10,14 +10,11 @@ import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import { useTranslation } from 'next-i18next'
 
 
-
-
-
 const MainContainer = styled.main`
 display: grid;
 height: 100vh;
 overflow: hidden;
-grid-template-columns: minmax(650px,20vw) 1fr;
+grid-template-columns: minmax(600px,20vw) 1fr;
 @media ${MEDIAQUERIES.mobileSmallPortrait}{
   grid-template-columns: 1fr;
 
@@ -25,12 +22,12 @@ grid-template-columns: minmax(650px,20vw) 1fr;
 `
 
 const Main = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('create-cv')
   return (
     <>
       <PageSEO
-        title={t("meta_title")}
-        description={t("meta_description")}
+        title={t("meta-title")}
+        description={t("meta-description")}
       />
       <MainContainer className='flex'>
         <Form />
