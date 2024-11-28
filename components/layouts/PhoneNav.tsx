@@ -159,7 +159,6 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
         <MobileMenuModalStyles className={open? "open transition" : 'transition'} style={{opacity: open? 1 : 0, transform: `translateY(${open?0:"-2rem"})`}}>
             <MobileMenuModalHeaderStyles style={{position: "static"}} className='flex'>
            <LogoContainer aria-label={"Home"} href="/" id="logo">
-               <MenuLogo />
            </LogoContainer>
        <Button onClick={()=>setOpen(previous=>!previous)} className='flex center' style={{columnGap:"10px", background:"white", color:COLORS.BLACKGREY}}>
         {t("close")}<GrFormClose className='h6'/>

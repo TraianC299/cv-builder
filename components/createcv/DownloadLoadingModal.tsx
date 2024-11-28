@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Modal from '../ui/dataDisplay/Modal'
 import Loading from '../ui/utilities/Loading'
 import styled from 'styled-components'
+import { useTranslation } from 'next-i18next'
 
 
 const Container = styled.div`
@@ -23,10 +24,16 @@ const Container = styled.div`
         text-align: center;
     }
     `
-
-const allTexts = ["Downloading your CV", "This may take a while", "Almost there", "Just a few more seconds", "Making sure everything is perfect", "Generating your CV", "Hold on tight", "Your CV is almost ready", "Just a few more seconds", "Downloading your CV", "This may take a while", "Almost there", "Just a few more seconds", "Making sure everything is perfect", "Generating your CV", "Hold on tight", "Your CV is almost ready", "Just a few more seconds"]
+  const allTexts =   ["this-may-take-a-while",
+    "almost-there",
+    "just-a-few-more-seconds",
+    "making-sure-everything-is-perfect",
+    "generating-your-cv",
+    "hold-on-tight",
+    "your-cv-is-almost-ready",]
 const DownloadLoadingModal = ({ open }: { open: boolean }) => {
     const [text, setText] = React.useState("Downloading your CV")
+    const { t } = useTranslation(["create-cv", "common"])
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -40,7 +47,7 @@ const DownloadLoadingModal = ({ open }: { open: boolean }) => {
         <Modal open={open}>
             <Container>
                 <Loading />
-                <p>{text}</p>
+                <p>{t(text)}</p>
             </Container>
 
         </Modal>
