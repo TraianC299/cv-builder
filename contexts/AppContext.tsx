@@ -60,10 +60,6 @@ export const CVprovider = ({ children }: {
         ...initialCvObject,
     })
 
-
-
-
-
     const calculateProgress = () => {
         let progress = 0
         if (cvObject.name && cvObject.surname && cvObject.jobTitle && cvObject.city && cvObject.country && cvObject.email && cvObject.phone && cvObject.profileImage) {
@@ -107,7 +103,7 @@ export const CVprovider = ({ children }: {
         setCvObject((prev) => ({
             ...prev,
             [key]: [
-                ...noEdit, initials[key]
+                ...noEdit, { ...initials[key], id: nanoid() }
             ]
         }))
     }

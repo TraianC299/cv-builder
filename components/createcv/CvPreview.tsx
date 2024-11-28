@@ -19,6 +19,8 @@ import { useRouter } from 'next/router';
 import API_URL from '@/constants/API_URL';
 import useLockBody from 'hooks/useLockBody';
 import { CvObjectType } from 'interfaces/cv.types';
+import Modal from '../ui/dataDisplay/Modal';
+import DownloadLoadingModal from './DownloadLoadingModal';
 
 const EyeButton = styled.button`
 height: 3rem;
@@ -134,9 +136,10 @@ const CvPreview = () => {
           </Container>
           <div className='flex jsb'>
             <div></div>
-            <Button disabled={loading} className='small' onClick={(e) => { e.preventDefault(); generatePDF() }}>{loading ? <ImSpinner2 className='h6 animate-spin	' color={COLORS.WHITE} /> : t("download-pdf")}</Button>
+            <Button disabled={loading} onClick={(e) => { e.preventDefault(); generatePDF() }}>{loading ? <ImSpinner2 className='h6 animate-spin	' color={COLORS.WHITE} /> : t("download-pdf")}</Button>
           </div>
         </div>
+        <DownloadLoadingModal open={loading} />
       </CvPreviewStyles>
     </>
   )

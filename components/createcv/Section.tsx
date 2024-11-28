@@ -38,8 +38,9 @@ const Section = ({ children, title, subtitle, onClick, objectKey, deletable }: {
           <TitleContainer className='flex ac jfs gap-4 transition'>
             {deletable && <Button
               type='button'
+              className='small ghost'
               onClick={() => setCvObject((prev) => { const newCvObject = { ...prev }; newCvObject[objectKey as CvListKey] = []; return newCvObject })}
-            >delete</Button>
+            >-</Button>
             }
             <h3 className='h5 font-normal'>{title}</h3>
           </TitleContainer>

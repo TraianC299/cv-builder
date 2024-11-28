@@ -34,13 +34,12 @@ border: none;
 border-radius: 0.25rem;
 font-size: 1rem;
 font-weight: bold;
-min-height: 42px;
 cursor: pointer;
 transition:   all 0.1s ease-in-out;
 min-width: 3rem;
 
 &.small{
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   font-size: 0.75rem;
 }
 

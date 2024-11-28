@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import COLORS from '@/constants/COLORS'
 import Collapse from '../ui/utilities/Collapse'
 import { MdOutlineDragIndicator } from 'react-icons/md'
-import {FaRegTrashAlt} from 'react-icons/fa'
-import { FiChevronDown } from 'react-icons/fi'
+import { FaRegTrashAlt } from 'react-icons/fa'
+import { FiChevronDown, FiTrash2 } from 'react-icons/fi'
 import { FiChevronUp } from 'react-icons/fi'
 
 
@@ -34,32 +34,39 @@ border-bottom: 1px solid ${COLORS.LIGHTGREY};
 }
 `
 
+const DeleteButton = styled.button`
+border: none;
+background: none;
+cursor: pointer;
+height: 100%;
+`
 
-const CollapseItem = ({children, title, subtitle, open, setOpen, onDelete}:{
+
+const CollapseItem = ({ children, title, subtitle, open, setOpen, onDelete }: {
   children: ReactNode,
-  title: string, 
+  title: string,
   subtitle: string,
-  open:boolean, 
+  open: boolean,
   setOpen: Function,
   onDelete?: Function
 }) => {
 
   return (
     <ListItem className='flex gap-4 ac w-full'>
-             <button type='button' className='handle' style={{border:"none"}} ><MdOutlineDragIndicator/></button>
+      <button type='button' className='handle'  ><MdOutlineDragIndicator /></button>
       <Container>
-          <MainContent onClick={()=>setOpen((p:boolean)=>!p)} className="flex ac pointer">
-            <div>
-              <p className='p font-medium title'>{title}</p>
-              {/* <p className='sp'>{subtitle}</p> */}
-            </div>
-            <p >{open?<FiChevronUp/>:<FiChevronDown/>}</p>
-          </MainContent>
-          <Collapse on={open}>
-            {children}
-          </Collapse>
+        <MainContent onClick={() => setOpen((p: boolean) => !p)} className="flex ac pointer">
+          <div>
+            <p className='p font-medium title'>{title}</p>
+            {/* <p className='sp'>{subtitle}</p> */}
+          </div>
+          <p >{open ? <FiChevronUp /> : <FiChevronDown />}</p>
+        </MainContent>
+        <Collapse on={open}>
+          {children}
+        </Collapse>
       </Container>
-      {onDelete && <button className='delete' type="button" style={{border:"none"}} onClick={()=>onDelete()}><FaRegTrashAlt color={COLORS.RED}/></button>}
+      {onDelete && <DeleteButton className='delete' type="button" onClick={() => onDelete()}><FiTrash2 className='p' color={COLORS.RED} /></DeleteButton>}
     </ListItem>
   )
 }

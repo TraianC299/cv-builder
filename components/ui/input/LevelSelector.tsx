@@ -30,7 +30,7 @@ const values = {
 
 const Option = styled.button`
     width: 100%;
-    height: 3rem;
+    height: 2.75rem;
     border:none;
     background: ${COLORS.LIGHTGREY};
     :hover{
@@ -69,24 +69,24 @@ interface LevelSelectorProps {
     onChange: (value: 1 | 2 | 3 | 4 | 5 | null) => void,
     label: string,
 }
-const LevelSelector = ({value, onChange, label}:LevelSelectorProps) => {
+const LevelSelector = ({ value, onChange, label }: LevelSelectorProps) => {
 
-    
-  return (
-    <Input.Wrapper>
-    <Input.Label >{label}: {values[value || 1]?.name || "..."}</Input.Label>
-        <OptionsContainer className='flex rounded-sm'>
-            {Object.keys(values).map((key, index) => {
-                return <Option key={index} type='button'  onClick={() => onChange(Number(key) as LevelSelectorProps["value"])} ></Option>
-            })}
-        {new Array(4).fill(0).map((_, index) => {
-            return <Line key={index} style={{left: `${(index + 1) * 20}%`}}></Line>
-        })
-        }
-        {value &&<LevelIndicator style={{width: `${value * 20}%`, background: `${values[value]?.color ||""}30`}} ></LevelIndicator>}
-        </OptionsContainer>
-    </Input.Wrapper>
-  )
+
+    return (
+        <Input.Wrapper>
+            <Input.Label >{label}: {values[value || 1]?.name || "..."}</Input.Label>
+            <OptionsContainer className='flex rounded-sm'>
+                {Object.keys(values).map((key, index) => {
+                    return <Option key={index} type='button' onClick={() => onChange(Number(key) as LevelSelectorProps["value"])} ></Option>
+                })}
+                {new Array(4).fill(0).map((_, index) => {
+                    return <Line key={index} style={{ left: `${(index + 1) * 20}%` }}></Line>
+                })
+                }
+                {value && <LevelIndicator style={{ width: `${value * 20}%`, background: `${values[value]?.color || ""}30` }} ></LevelIndicator>}
+            </OptionsContainer>
+        </Input.Wrapper>
+    )
 }
 
 export default LevelSelector
