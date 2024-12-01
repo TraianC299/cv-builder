@@ -6,6 +6,7 @@ import { DefaultTFuncReturn } from 'i18next'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import { CvListKey } from 'interfaces/cv.types'
+import { FiTrash2 } from 'react-icons/fi'
 
 
 const TitleContainer = styled.div`
@@ -37,10 +38,11 @@ const Section = ({ children, title, subtitle, onClick, objectKey, deletable }: {
         <div>
           <TitleContainer className='flex ac jfs gap-4 transition'>
             {deletable && <Button
+            background={COLORS.RED}
               type='button'
-              className='small ghost'
+              className='small icon'
               onClick={() => setCvObject((prev) => { const newCvObject = { ...prev }; newCvObject[objectKey as CvListKey] = []; return newCvObject })}
-            >-</Button>
+            ><FiTrash2 color={COLORS.WHITE}/></Button>
             }
             <h3 className='h5 font-normal'>{title}</h3>
           </TitleContainer>

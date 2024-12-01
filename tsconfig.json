@@ -21,6 +21,6 @@
       "@/assets/*": ["assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/image/upload.js", "components/ui/input/ImageInput.js", "create-rewrites.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/image/upload.js", "components/ui/input/ImageInput.js", "create-rewrites.js", "sitemap-generator.js"],
   "exclude": ["node_modules"]
 }

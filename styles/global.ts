@@ -26,9 +26,9 @@ export const InputStyle = styled.input`
 
 
 
-export const Button = styled.button`
+export const Button = styled.button<{background?: string}>`
 padding: 0.5rem 1rem;
-background-color: ${COLORS.MAINCOLOR};
+background-color: ${props=>props.background ? props.background  : COLORS.MAINCOLOR};
 color: white;
 border: none;
 border-radius: 0.25rem;
@@ -36,8 +36,7 @@ font-size: 1rem;
 font-weight: bold;
 cursor: pointer;
 transition:   all 0.1s ease-in-out;
-min-width: 3rem;
-
+min-height: 2rem;
 &.small{
   padding: 0.5rem 0.5rem;
   font-size: 0.75rem;
@@ -60,6 +59,15 @@ min-width: 3rem;
   box-shadow: none;
   padding-left:0;
 }
+&.icon{
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 :disabled{
   background-color: ${COLORS.MAINCOLOR}50;
