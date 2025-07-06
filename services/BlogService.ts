@@ -1,6 +1,7 @@
+import LANGUAGES from '@/constants/LANGUAGES'
 import fs from 'fs'
-import { join } from 'path'
 import matter from 'gray-matter'
+import { join } from 'path'
 import { remark } from 'remark'
 import html from 'remark-html'
 
@@ -14,12 +15,11 @@ const postsDirectory = join(process.cwd(), '_blogs')
 
 function getPostSlugs() {
   return fs.readdirSync(postsDirectory).filter((slug) => slug !== '.DS_Store')
-  
+
 }
 
 function getPostBySlug(slug: string, fields: string[] = [], locale: string = 'en') {
   const realSlug = slug.replace(/\.md$/, '')
-  // console.log('realSlug', realSlug)
   const fullPath = join(`${postsDirectory}/${realSlug}`, `${locale}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
@@ -49,7 +49,6 @@ function getPostBySlug(slug: string, fields: string[] = [], locale: string = 'en
 
 function getAllPosts(fields: string[] = [], locale: string = 'en') {
   const slugs = getPostSlugs()
-  console.log('slugs', slugs) 
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields, locale))
     // sort posts by date in descending order
@@ -57,14 +56,33 @@ function getAllPosts(fields: string[] = [], locale: string = 'en') {
   return posts
 }
 
+function getLocalizedRewrites() {
+  const rewrites: any[] = []
+  const postSlugs = getPostSlugs()
+  LANGUAGES.forEach((lang) => {
+    postSlugs.forEach((slug) => {
+      const localizedPost = getPostBySlug(slug, ['slug'], lang.locale)
+      if (localizedPost.slug) {
+        rewrites.push({
+          source: `/${lang.locale}/blog/${localizedPost.slug}`,
+          destination: `/${lang.locale}/blog/${slug}`,
+          locale: false,
+        })
+      }
+    })
+  })
+  return rewrites
+}
+
 
 
 
 const BlogService = {
-    getPostSlugs,
-    getPostBySlug,
-    getAllPosts,
-    markdownToHtml
+  getPostSlugs,
+  getPostBySlug,
+  getAllPosts,
+  markdownToHtml,
+  getLocalizedRewrites
 }
 
 export default BlogService

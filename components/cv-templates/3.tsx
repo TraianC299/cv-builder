@@ -6,8 +6,6 @@ import COLORS from '@/constants/COLORS'
 import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 
-
-
 const Container = styled(FontScaleWrapper)`
 padding: 1rem;
 background: white;
@@ -28,15 +26,6 @@ margin-top: 24px;
 }
 `
 
-
-
-
-
-const SecondContainer = styled.div`
-div:last-child{
-    border: none !important;
-}
-`
 
 
 const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?: string }) => {
@@ -73,7 +62,7 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
               </div>
             </Section>}
           </div>
-          <SecondContainer style={{ borderLeft: "2px solid black" }}>
+          <div style={{ borderLeft: "2px solid black" }}>
             <Section style={{ borderTop: "2px solid black" }} title={t("professional-summary")}>
               <p className='sp'>{cvObject.summary}</p>
             </Section>
@@ -89,7 +78,7 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
             {cvObject.projects?.length > 0 &&<Section title={t("projects")}>
               {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
             </Section>}
-          </SecondContainer>
+          </div>
         </InfoSection>
       </Container>
   )
@@ -109,7 +98,7 @@ const Section = ({ children, title, style }: {
   style?: Object
 }) => {
   return (
-    <div className='p-3' style={{ borderBottom: "2px solid black", ...style }}>
+    <div className='p-3' style={{ borderTop: "2px solid black", ...style }}>
       <p className='sp font-semibold uppercase pb-4'>{title}</p>
       {children}
     </div>
@@ -133,7 +122,6 @@ const ProfileSection = ({ name, surname, jobTitle, city, country, phone, email }
 
   return (
     <div className='flex row ac jsb'>
-      {/* <img src={image || "https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"}></img> */}
       <div className='flex js column name-position' style={{ maxWidth: "50%" }}>
         <p className='h4 font-semibold uppercase' >{name} {surname}</p>
         <p className='sp uppercase' >{jobTitle}</p>

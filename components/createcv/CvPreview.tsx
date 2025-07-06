@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components';
 import { useCV } from '../../contexts/AppContext';
 import useWindowSize from '../../hooks/useWindowSize';
@@ -21,6 +21,8 @@ import useLockBody from 'hooks/useLockBody';
 import { CvObjectType } from 'interfaces/cv.types';
 import Modal from '../ui/dataDisplay/Modal';
 import DownloadLoadingModal from './DownloadLoadingModal';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 const EyeButton = styled.button`
 height: 3rem;
@@ -72,17 +74,6 @@ overflow: hidden;
 
 
 
-async function getPDF(cvObject: CvObjectType) {
-  return await fetch(`${API_URL}/cv`, {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/pdf'
-    },
-    body: JSON.stringify(cvObject)
-  })
-
-}
 
 const CvPreview = () => {
   const { height, width } = useWindowSize()
@@ -92,20 +83,37 @@ const CvPreview = () => {
   const { t } = useTranslation(["create-cv", "common"])
   useLockBody()
   const router = useRouter()
+  const cvRef = useRef<HTMLDivElement>(null);
 
   const generatePDF = async () => {
     setLoading(true)
     try {
-      const response = await getPDF({
-        ...cvObject,
-        language: router.locale || 'en'
-      })
-      const something = await response.arrayBuffer()
-      const blob = new Blob([something], { type: 'application/pdf' })
-      const link = document.createElement('a')
-      link.href = window.URL.createObjectURL(blob)
-      link.download = `CV.pdf`
-      link.click()
+      // const response = await getPDF({
+      //   ...cvObject,
+      //   language: router.locale || 'en'
+      // })
+      // const something = await response.arrayBuffer()
+      // const blob = new Blob([something], { type: 'application/pdf' })
+      // const link = document.createElement('a')
+      // link.href = window.URL.createObjectURL(blob)
+      // link.download = `CV.pdf`
+      // link.click()
+      if (!cvRef.current) return;
+
+      const canvas = await html2canvas(cvRef.current, {
+        scale: 2, // increase for better quality
+        useCORS: true, // needed if you load images with CORS issues
+      });
+
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'px',
+        format: [canvas.width, canvas.height],
+      });
+
+      pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+      pdf.save('cv.pdf');
 
     } catch (e) {
       console.log(e)
@@ -124,14 +132,14 @@ const CvPreview = () => {
   ]
 
   const desktopScaleFactor = height ? height / 842 - 0.2 : 1
-  const mobileScaleFactor = width ? width / (595+32) : 1
+  const mobileScaleFactor = width ? width / (595 + 32) : 1
 
   return (
     <>
       <EyeButton className='rounded-sm flex ac jc shadow-md' onClick={() => setOpenModal(prev => !prev)}>{openModal ? <IoClose className='h6' color="white" /> : <FiEye className='h6' color="white" />}</EyeButton>
       <CvPreviewStyles className={`flex column ac jc ${openModal ? "openMobileModal" : ""}`} >
         <div className=' flex column gap-4 transition'>
-          <Container scaleFactor={desktopScaleFactor} mobileScaleFactor={mobileScaleFactor}>
+          <Container ref={cvRef} scaleFactor={desktopScaleFactor} mobileScaleFactor={mobileScaleFactor}>
             {templatesArray[cvObject.template]}
           </Container>
           <div className='flex jsb'>

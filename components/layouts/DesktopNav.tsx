@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import LogoSvg from "../../assets/svg/logo.svg"
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { Button } from '../../styles/global'
@@ -23,7 +22,6 @@ margin:auto;
 display: flex;
 align-items: center;
 justify-content: space-between;
-
 @media ${MEDIAQUERIES.mobileSmallPortrait}{
     display: none;
 }
@@ -35,6 +33,13 @@ const LogoContainer = styled(Link)`
 display: flex;
 align-items: center;
 justify-content: center;
+min-width: 6rem;
+font-weight: 600;
+font-size: 1.2rem;
+p{
+
+    font-style: monospace !important;
+}
 >svg{
     height: 2rem;
     width: auto;
@@ -73,7 +78,8 @@ const DektopNav = () => {
     return (
         <Header id="header">
             <LogoContainer href="/" id="logo">
-                <LogoSvg style={{ cursor: "pointer" }} ></LogoSvg>
+                {/* <LogoSvg style={{ cursor: "pointer" }} ></LogoSvg> */}
+                <p className='w-full'>CV Builder</p>
             </LogoContainer>
             <DesktopMenuLinksContainerStyles>
                 <div className='flex ac jc gap-8'>
@@ -83,7 +89,7 @@ const DektopNav = () => {
                 <div className='flex-1'></div>
                 <div className='flex ac jc gap-4'>
                     <DesktopLanguageSelector />
-                    <Link href={rewrite("/create-cv")}><Button >{t("start-now")}</Button></Link>
+                    <Link href={rewrite("/create-cv")}><Button>{t("start-now")}</Button></Link>
                 </div>
             </DesktopMenuLinksContainerStyles>
         </Header>
@@ -127,9 +133,7 @@ const DesktopMenuItem: React.FC<DesktopMenuItemProps> = ({ children, link, subme
     const router = useRouter();
     const { rewrite } = useRewrites();
 
-
     return (
-
         <MenuItem className={`desktop-link p font-regular ${!submenu && router.pathname.includes(link) ? 'active' : ''}`} >
             <Link className={router.pathname.includes(link) ? 'active desktop-link' : "desktop-link"} href={submenu ? "" : rewrite(link)}>{children}</Link>
             {submenu && <SubMenuContainer className='shadow-md'>

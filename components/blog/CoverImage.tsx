@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import Image from 'next/image'
-import useRewrites from 'hooks/useRewrites'
+import Link from 'next/link'
 
 type Props = {
   title: string
@@ -9,7 +8,6 @@ type Props = {
 }
 
 const CoverImage = ({ title, src, link }: Props) => {
-  const { rewrite } = useRewrites()
   const image = (
     <Image
       src={src}
@@ -22,7 +20,9 @@ const CoverImage = ({ title, src, link }: Props) => {
   return (
     <div className='rounded-sm' style={{ margin: 0, overflow: "hidden" }} >
       {link ? (
-        <Link as={link} href={`/${rewrite("blog")}/[slug]`} aria-label={title}>
+        <Link
+          href={link}
+          aria-label={title}>
           {image}
         </Link>
       ) : (

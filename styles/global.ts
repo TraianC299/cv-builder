@@ -42,10 +42,6 @@ min-height: 2rem;
   font-size: 0.75rem;
 }
 
-&.big{
-  padding: 1.2rem 2rem;
-}
-
 &.ghost{
   border: 1px solid ${COLORS.MAINCOLOR};
   background-color: transparent;
@@ -80,11 +76,6 @@ min-height: 2rem;
 }
 @media ${MEDIAQUERIES.laptopSmall}{
     padding: 0.75rem 1.25rem;
-    .big{
-      padding: 1rem 2rem;
-    }
-
-
 }
 
 

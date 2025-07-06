@@ -6,12 +6,16 @@ export type SkillType = {
     id: string,
     edit: boolean
 }
+
+
 export type LanguageType = {
     metric: 1 | 2 | 3 | 4 | 5 | null,
     title: string,
     id: string,
     edit: boolean
 }
+
+
 
 export type EmploymentType = {
     title: string,

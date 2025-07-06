@@ -19,12 +19,6 @@ const LANGUAGES:{
         translationKey: 'romanian'
     },
     {
-        locale: 'ru',
-        label: 'Русский',
-        emoji: '🇷🇺',
-        translationKey: 'russian'
-    },
-    {
         locale: 'fr',
         label: 'Français',
         emoji: '🇫🇷',

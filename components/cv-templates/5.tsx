@@ -170,7 +170,7 @@ const ProfileSection = ({ name, surname, jobTitle, summary, image }: {
 
   return (
     <ProfileSectionContainer >
-      <img className='p3' width={167} src={image || "https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"}></img>
+      <img className='p3' width={167} src={image || "/user-image.png"}></img>
       <div className='flex js column name-position p-3' >
         <p className='h1 font-semibold uppercase text-left' >{name} {surname}</p>
         <p className='sp uppercase' >{jobTitle}</p>

@@ -44,11 +44,11 @@ const BlogPreview = ({  title,
     excerpt,
     author,
     slug}:Props) => {
-      const {rewrite} = useRewrites()
+      // const {rewrite} = useRewrites()
   return (
     <Container className='transition rounded-sm'>
     <div  >
-      <CoverImage  title={title} src={coverImage} />
+      <CoverImage  title={title} src={coverImage} link={`/blog/${slug}`}/>
     </div>
     <div className='flex column gap-2 p-4'>
       <div  >
@@ -56,9 +56,11 @@ const BlogPreview = ({  title,
       </div>
       <h3 className="h5 font-semibold">
         <Link
+        href={`/blog/${slug}`}
           //locale 
-          as={`/${rewrite("blog")}/${slug}`}
-          href={`/${rewrite("blog")}/[slug]`}
+          // as={`/${rewrite("blog")}/${slug}`}
+          // href={`/${rewrite("blog")}/[slug]`}
+          
         >
           {title}
         </Link>

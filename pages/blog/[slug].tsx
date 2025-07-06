@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react'
-import styled from 'styled-components'
-import Link from 'next/link'
-import { Button } from '../../styles/global'
-import useScrollPosition from '../../hooks/useScrollPosition'
-import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
-import { BlogSEO } from '../../components/utilities/SEO'
-import BlogPostInterface from '../../interfaces/blog-post'
-import BlogService from '../../services/BlogService'
 import COLORS from '@/constants/COLORS'
 import LANGUAGES from '@/constants/LANGUAGES'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import useRewrites from 'hooks/useRewrites'
 import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import ErrorPage from 'next/error'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
+import { BlogSEO } from '../../components/utilities/SEO'
+import useScrollPosition from '../../hooks/useScrollPosition'
+import BlogPostInterface from '../../interfaces/blog-post'
+import BlogService from '../../services/BlogService'
+import { Button } from '../../styles/global'
 
 
 const Wrapper = styled.main`
 width: 100%;
 position:relative;
-
+border-top: 1px solid ${COLORS.LIGHTGREY};
 progress{
   /* Reset the default appearance */
   -webkit-appearance: none;
@@ -43,17 +43,7 @@ progress[value]::-webkit-progress-value {
   background: ${COLORS.MAINCOLOR};
     background-size: 35px 20px, 100% 100%, 100% 100%;
 }
-:after{
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 100%;
-            max-height: 30rem;
-            background: linear-gradient(to bottom, ${COLORS.MAINCOLOR}20 0%, rgba(255, 255, 255, 0) 100%);
-            right: 0;
-            top: 0;
-            pointer-events: none;
-        }`
+`
 const Container = styled.div`
 max-width: 800px;
 display: flex;
@@ -136,27 +126,27 @@ type Props = {
   post: BlogPostInterface
 }
 
-const BlogPage = ({post}:Props) => {
+const BlogPage = ({ post }: Props) => {
   const router = useRouter()
 
   const scrollPosition = useScrollPosition()
   const [percentageRead, setPercentageRead] = React.useState(0)
   const { t } = useTranslation('blog')
 
-  useEffect(()=>{
+  useEffect(() => {
     const scrollPercentage = Math.round((scrollPosition / (document.body.clientHeight - window.innerHeight)) * 100)
     setPercentageRead(scrollPercentage)
-  },[scrollPosition])
+  }, [scrollPosition])
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
-  }  
-  const {rewrite} = useRewrites()
+  }
+  const { rewrite } = useRewrites()
 
 
   return (
- <article>
- <BlogSEO
+    <article>
+      <BlogSEO
         title={post.title}
         summary={post.excerpt}
         images={post.coverImage}
@@ -164,25 +154,25 @@ const BlogPage = ({post}:Props) => {
         authorDetails={[{
           name: post.author.name,
           avatar: post.author.picture,
-        }]} 
+        }]}
         url={`https://resumelio.com/${router.locale}/blog/${post.slug}`}
       />
 
-    <Wrapper >
-      <progress  className='blog-progress-indicator' value={percentageRead} max={100} ></progress>
-      <Container >
-        <Title className='sectionPadding'>
-          <h1 className='h4 mf-h1 font-semibold'>{post.title}</h1>
-          <p>Read it in <b>5 minutes</b></p>
-          <h2 className='h6 t300'>{post.excerpt}</h2>
-        </Title>
-        <BlogContent  className='blog sectionPadding' dangerouslySetInnerHTML={{__html: post.content}}></BlogContent>
-        <CallToAction className='sectionPadding'>
-          <p style={{textAlign:"center"}} className="p font-semibold">{t("end-of-blog-call-to-action")}</p>
-          <Link href={rewrite("/create-cv")}><Button>{t("create-your-cv")}</Button></Link>
-        </CallToAction>
-      </Container>
-    </Wrapper>
+      <Wrapper >
+        <progress className='blog-progress-indicator' value={percentageRead} max={100} ></progress>
+        <Container >
+          <Title className='sectionPadding'>
+            <h1 className='h4 mf-h1 font-semibold'>{post.title}</h1>
+            <p>Read it in <b>5 minutes</b></p>
+            <h2 className='h6 t300'>{post.excerpt}</h2>
+          </Title>
+          <BlogContent className='blog sectionPadding' dangerouslySetInnerHTML={{ __html: post.content }}></BlogContent>
+          <CallToAction className='sectionPadding'>
+            <p style={{ textAlign: "center" }} className="p font-semibold">{t("end-of-blog-call-to-action")}</p>
+            <Link href={rewrite("/create-cv")}><Button>{t("create-your-cv")}</Button></Link>
+          </CallToAction>
+        </Container>
+      </Wrapper>
     </article>
   )
 }
@@ -191,7 +181,8 @@ export default BlogPage
 
 
 
-export async function getStaticProps({ params, locale }:any) {
+export async function getStaticProps({ params, locale }: any) {
+  console.log("getStaticProps for blog post", params, locale)
   const post = BlogService.getPostBySlug(params.slug, [
     'title',
     'date',
@@ -208,7 +199,7 @@ export async function getStaticProps({ params, locale }:any) {
       post: {
         ...post,
         content,
-        
+
       },
       ...(await serverSideTranslations(locale, ["blog", "common"])),
     },
@@ -217,9 +208,9 @@ export async function getStaticProps({ params, locale }:any) {
 
 export async function getStaticPaths() {
   const slugs = BlogService.getPostSlugs()
-  const paths:any[] = []
-  slugs.forEach((slug:any) => {
-    LANGUAGES.forEach(el=>{
+  const paths: any[] = []
+  slugs.forEach((slug: any) => {
+    LANGUAGES.forEach(el => {
       paths.push({
         params: {
           slug: slug,
@@ -228,7 +219,7 @@ export async function getStaticPaths() {
       })
     })
   })
-    
+
   return {
     paths: paths,
     fallback: false,

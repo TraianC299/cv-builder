@@ -39,7 +39,7 @@ const DownloadLoadingModal = ({ open }: { open: boolean }) => {
         const interval = setInterval(() => {
             const randomIndex = Math.floor(Math.random() * allTexts.length)
             setText(allTexts[randomIndex])
-        }, 2000);
+        }, 3000);
         return () => clearInterval(interval)
     }
         , [])
@@ -53,5 +53,6 @@ const DownloadLoadingModal = ({ open }: { open: boolean }) => {
         </Modal>
     )
 }
+
 
 export default DownloadLoadingModal

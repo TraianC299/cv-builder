@@ -150,7 +150,7 @@ position: relative;
   background:${props=>props.theme.color || COLORS.YELLOW};
   position: absolute;
   top: -200px;
-  left: 18px;
+  left: 19px;
   border-radius: 888px;
   z-index: -1;
 
@@ -168,7 +168,7 @@ const ProfileSection = ({ name, surname, jobTitle, image }: {
 }) => {
   return (
     <ProfileSectionContainer className='flex column ac jc'>
-      <img src={image || "https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"}></img>
+      <img src={image || "/user-image.png"}></img>
       <div className='yellow-ball'></div>
       <div className='flex js column'>
         <p className='h4 font-semibold' >{name} {surname}</p>
