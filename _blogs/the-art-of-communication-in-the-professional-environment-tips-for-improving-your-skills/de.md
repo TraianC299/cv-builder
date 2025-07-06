@@ -6,7 +6,7 @@ date: '2024-05-06T08:00:00.000Z'
 slug: 'die-kunst-der-kommunikation-im-beruflichen-umfeld-tipps-zur-verbesserung-ihrer-fahigkeiten'
 author:
   name: Traian Ciochina
-  picture: '/assets/blog/authors/your-avatar.jpg'
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/professional-communication.jpg'
 ---

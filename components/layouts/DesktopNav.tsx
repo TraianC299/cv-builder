@@ -89,7 +89,7 @@ const DektopNav = () => {
                 <div className='flex-1'></div>
                 <div className='flex ac jc gap-4'>
                     <DesktopLanguageSelector />
-                    <Link href={rewrite("/create-cv")}><Button>{t("start-now")}</Button></Link>
+                    <Link href={rewrite("/creeaza-cv")}><Button>{t("start-now")}</Button></Link>
                 </div>
             </DesktopMenuLinksContainerStyles>
         </Header>

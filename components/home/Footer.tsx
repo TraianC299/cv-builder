@@ -98,8 +98,8 @@ const {rewrite, rewriteQuery} = useRewrites()
             </Column>
             <Column>
             <Heading className='h6 font-semibold'>{t("important")}</Heading>
-              <Link className='p' href={rewrite(`/terms-and-conditions`)}>{t("terms-and-conditions")}</Link>
-              <Link className='p' href={rewrite(`/privacy-policy`)}>{t("privacy-policy")}</Link>
+              <Link className='p' href={rewrite(`/termeni-si-conditii`)}>{t("terms-and-conditions")}</Link>
+              <Link className='p' href={rewrite(`/politica-de-confidentialitate`)}>{t("privacy-policy")}</Link>
               
             </Column>
           

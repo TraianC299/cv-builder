@@ -169,7 +169,7 @@ const BlogPage = ({ post }: Props) => {
           <BlogContent className='blog sectionPadding' dangerouslySetInnerHTML={{ __html: post.content }}></BlogContent>
           <CallToAction className='sectionPadding'>
             <p style={{ textAlign: "center" }} className="p font-semibold">{t("end-of-blog-call-to-action")}</p>
-            <Link href={rewrite("/create-cv")}><Button>{t("create-your-cv")}</Button></Link>
+            <Link href={rewrite("/creeaza-cv")}><Button>{t("create-your-cv")}</Button></Link>
           </CallToAction>
         </Container>
       </Wrapper>
