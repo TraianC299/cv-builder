@@ -52,18 +52,18 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   [x: string]: any
 }
 const FontScaleWrapper = ({ children, className, color, ...rest }: Props) => {
-  const { cvObject, setCvObject } = useCV()
+  // const { cvObject, setCvObject } = useCV()
   const ref = React.useRef<HTMLDivElement>(null)
   const theme = {
-    color: color
+    color: color as string || '#000',
   };
-  const [isOverflowing, setIsOverflowing] = React.useState(false)
+  // const [isOverflowing, setIsOverflowing] = React.useState(false)
 
-  React.useEffect(() => {
-    if (ref.current) {
-      setIsOverflowing(ref.current.scrollHeight > ref.current.clientHeight)
-    }
-  }, [cvObject])
+  // React.useEffect(() => {
+  //   if (ref.current) {
+  //     setIsOverflowing(ref.current.scrollHeight > ref.current.clientHeight)
+  //   }
+  // }, [cvObject])
 
 
 
