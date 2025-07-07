@@ -46,5 +46,5 @@ function createRewrites() {
     fs.writeFileSync('public/rewrites.json', JSON.stringify(rewrites))
 }
 createRewrites()
-// export {}
+export {}
 
