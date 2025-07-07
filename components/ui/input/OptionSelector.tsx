@@ -35,7 +35,8 @@ border-radius: 0.5rem;
 background: ${COLORS.WHITE};
 padding: 0.5rem;
 min-width: max-content;
-
+overflow-y: auto;
+overflow-x: hidden;
 
 
 `

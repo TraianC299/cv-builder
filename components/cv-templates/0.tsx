@@ -123,12 +123,22 @@ display: flex;
 align-items: center;
 justify-content: flex-start;
 word-break: break-word;
->img{
-  height: 50px;
+.image-container{
+    height: 50px;
   width: 50px;
   border-radius: 50%;
-  object-fit: cover;
+  overflow: hidden;
+    margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  >img{
+    height: 100%;
+    width: fit-content;
+  }
 }
+
 
 `
 const ProfileSection = ({name, surname, jobTitle, image}:{
@@ -140,7 +150,7 @@ const ProfileSection = ({name, surname, jobTitle, image}:{
 
   return(
     <ProfileSectionContainer className='flex'>
-      <img src={image || "/user-image.png"}></img>
+      <div className='image-container'><img src={image || "/user-image.png"}></img></div>
       <div className='flex js column'>
         <p className='h5 font-semibold' style={{color:COLORS.WHITE}}>{name} {surname}</p>
         <p className='sp' style={{color:COLORS.WHITE}}>{jobTitle}</p>

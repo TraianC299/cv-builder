@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react'
-import styled from 'styled-components'
+import COLORS from '@/constants/COLORS'
 import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from 'interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
-import COLORS from '@/constants/COLORS'
-import FontScaleWrapper from '../createcv/FontScaleWrapper'
-import {GiFlowerStar} from 'react-icons/gi'
+import { ReactNode } from 'react'
+import { GiFlowerStar } from 'react-icons/gi'
 import { IoSparklesSharp } from 'react-icons/io5'
+import styled from 'styled-components'
+import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 const Container = styled.div`
 padding: 2rem;
@@ -31,9 +31,6 @@ margin-top: 24px;
 `
 
 
-
-
-
 const SecondContainer = styled.div`
 div:last-child{
     border: none !important;
@@ -52,59 +49,59 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
   const { t } = useTranslation("create-cv")
 
   return (
-      <FontScaleWrapper color={cvObject.color}>
-        <Container
+    <FontScaleWrapper color={cvObject.color}>
+      <Container
         id="cv-preview"
-          className={className}
-        >
-          <ProfileSection
+        className={className}
+      >
+        <ProfileSection
           name={cvObject.name}
           surname={cvObject.surname}
           jobTitle={cvObject.jobTitle}
           summary={cvObject.summary}
           image={cvObject.profileImage}></ProfileSection>
-          <InfoSection>
-            <div >
-              <Section title={t("personal-info")}>
-                  <div className='flex column gap-2'>
-                      <div className='sp' >{t("location")}: {cvObject.city} {cvObject.country}</div>
-                      <div className='sp' >{t("phone")}: {cvObject.phone}</div>
-                      <div className='sp' >{t("email")}: {cvObject.email}</div>
-                  </div>
-              </Section>
-              <Section  title={t("hobbies")}>
-                <p className='sp'>{cvObject.hobbies}</p>
-              </Section>
-              {cvObject.languages?.length > 0  && <Section title={t("languages")}>
-                <div className='flex column gap-2'>
-                  {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-                </div>
-              </Section>}
-        
-            </div>
-            <SecondContainer >
-        
-              {cvObject.employment?.length > 0 && <Section title={t("employment")}>
-                {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-              </Section>}
-              {cvObject.internships?.length > 0  && <Section title={t("internships")}>
-                {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
-              </Section>}
-             {cvObject.education?.length > 0  && <Section title={t("education")}>
-                {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
-              </Section>}
-              {cvObject.projects &&<Section title={t("projects")}>
-                {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
-              </Section>}
-              {cvObject.skills?.length > 0  && <Section title={t("skills")}>
-                <SkillsContainer >
-                  {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-                </SkillsContainer>
-              </Section>}
-            </SecondContainer>
-          </InfoSection>
-        </Container>
-      </FontScaleWrapper>
+        <InfoSection>
+          <div >
+            <Section title={t("personal-info")}>
+              <div className='flex column gap-2'>
+                <div className='sp' >{t("location")}: {cvObject.city} {cvObject.country}</div>
+                <div className='sp' >{t("phone")}: {cvObject.phone}</div>
+                <div className='sp' >{t("email")}: {cvObject.email}</div>
+              </div>
+            </Section>
+            <Section title={t("hobbies")}>
+              <p className='sp'>{cvObject.hobbies}</p>
+            </Section>
+            {cvObject.languages?.length > 0 && <Section title={t("languages")}>
+              <div className='flex column gap-2'>
+                {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
+              </div>
+            </Section>}
+
+          </div>
+          <SecondContainer >
+
+            {cvObject.employment?.length > 0 && <Section title={t("employment")}>
+              {cvObject.employment.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+            </Section>}
+            {cvObject.internships?.length > 0 && <Section title={t("internships")}>
+              {cvObject.internships && cvObject.internships.map((el: EmploymentType) => <EmploymentItem {...el} key={el.id}></EmploymentItem>)}
+            </Section>}
+            {cvObject.education?.length > 0 && <Section title={t("education")}>
+              {cvObject.education.map((el: EducationType) => <EducationItem {...el} key={el.id}></EducationItem>)}
+            </Section>}
+            {cvObject.projects && <Section title={t("projects")}>
+              {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
+            </Section>}
+            {cvObject.skills?.length > 0 && <Section title={t("skills")}>
+              <SkillsContainer >
+                {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
+              </SkillsContainer>
+            </Section>}
+          </SecondContainer>
+        </InfoSection>
+      </Container>
+    </FontScaleWrapper>
   )
 }
 
@@ -116,7 +113,7 @@ export default Template
 
 const SectionContainer = styled.div`
 background: ${props => {
-  return props.theme.color
+    return props.theme.color
   }};
 >p{
     padding-bottom: 0.5rem;
@@ -144,11 +141,20 @@ display: grid;
 grid-template-columns: 167px 364px;
 position: relative;
 padding-bottom: 2rem;
->img{
-    min-height: 207px;
-    object-fit: cover;
-    border-radius: 50px;
-    padding: 0.5rem;
+
+
+.image-container{
+  height: 207px;
+  width: 167px;
+  border-radius: 50px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  >img{
+    height: 100%;
+    width: fit-content;
+  }
 }
 >img, div{
     width: 100%;
@@ -180,19 +186,19 @@ const ProfileSection = ({ name, surname, jobTitle, summary, image }: {
 
   return (
     <ProfileSectionContainer >
-      <img  className='p3' width={167} src={image || "/user-image.png"}></img>
+      <div className='image-container'><img src={image || "/user-image.png"}></img></div>
       <div className='flex js column name-position p-3 gap-2' >
         <p className='h1 font-semibold uppercase text-left' >{name} {surname}</p>
-        <p style={{color:COLORS.YELLOW}} className='sp uppercase' >{jobTitle}</p>
+        <p style={{ color: COLORS.YELLOW }} className='sp uppercase' >{jobTitle}</p>
         <p className='sp font-light preline'>{summary}</p>
       </div>
       <div className='aesthetics flex ac jsb'>
         <IoSparklesSharp size={24} color={COLORS.YELLOW} />
-          <div className='line'></div>
-          <IoSparklesSharp size={24} color={COLORS.YELLOW} />
+        <div className='line'></div>
+        <IoSparklesSharp size={24} color={COLORS.YELLOW} />
 
       </div>
-      
+
     </ProfileSectionContainer>
   )
 }
@@ -215,13 +221,13 @@ row-gap: 4px;
 }`
 const SkillInstance = ({ title, grade }: {
   title: string,
-  grade: SkillType["metric"] 
+  grade: SkillType["metric"]
 }) => {
   return (
     <SkillInstanceContainer className='flex column rounded-sm'>
       <p className='sp'>{title}</p>
       <div>
-        <div style={{ width: `${grade?grade * 20:0}%` }}></div>
+        <div style={{ width: `${grade ? grade * 20 : 0}%` }}></div>
       </div>
     </SkillInstanceContainer>
   )
@@ -234,13 +240,13 @@ const EmploymentItem = ({ title, startDate, endDate, description, employer, city
 
   return (
     <div className='flex jfs afs gap-2'>
-    <GiFlowerStar className='sp w-max' color={COLORS.YELLOW}/>
-    <div>
-      <p className='ssp'>{startDate} - {endDate}</p>
-      <p className='sp font-semibold'>{title} {t("at")} {employer} ({city})</p>
+      <GiFlowerStar className='sp w-max' color={COLORS.YELLOW} />
+      <div>
+        <p className='ssp'>{startDate} - {endDate}</p>
+        <p className='sp font-semibold'>{title} {t("at")} {employer} ({city})</p>
         <p className='ssp font-light'>{description}</p>
-    </div>
-  </div>)
+      </div>
+    </div>)
 }
 
 
@@ -249,13 +255,13 @@ const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) =>
 
   return (
     <div className='flex jfs afs gap-2'>
-    <GiFlowerStar className='sp' color={COLORS.YELLOW}/>
-    <div>
+      <GiFlowerStar className='sp' color={COLORS.YELLOW} />
+      <div>
         <p className='ssp'>{startDate} - {endDate}</p>
         <p className='sp font-semibold'>{title}</p>
         <p className='ssp font-light'>{description}</p>
-    </div>
-  </div>)
+      </div>
+    </div>)
 }
 
 
@@ -264,7 +270,7 @@ const EducationItem = ({ school, degree, city, startDate, endDate }: EducationTy
 
   return (
     <div className='flex jfs afs gap-2'>
-        <GiFlowerStar className='sp' color={COLORS.YELLOW}/>
+      <GiFlowerStar className='sp' color={COLORS.YELLOW} />
       <div>
         <p className='ssp'>{startDate} - {endDate}</p>
         <p className='sp font-semibold'>{degree} {t("at")} {school} ({city})</p>

@@ -1,8 +1,8 @@
-import React, { ReactNode, useContext } from 'react'
-import styled, { ThemeContext } from 'styled-components'
+import COLORS from '@/constants/COLORS'
 import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from 'interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
-import COLORS from '@/constants/COLORS'
+import { ReactNode, useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components'
 import FontScaleWrapper from '../createcv/FontScaleWrapper'
 
 
@@ -39,9 +39,9 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
   const { t } = useTranslation("create-cv")
 
   return (
-    <Container 
-    color={cvObject.color}
-    id="cv-preview"
+    <Container
+      color={cvObject.color}
+      id="cv-preview"
       className={className}
     >
       <ProfileSection name={cvObject.name} surname={cvObject.surname} jobTitle={cvObject.jobTitle} image={cvObject.profileImage}></ProfileSection>
@@ -64,9 +64,9 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
             </div>
           </Section>}
           {cvObject.skills?.length > 0 && <Section title={t("skills")}>
-          <div className='flex column gap-2'>
+            <div className='flex column gap-2'>
               {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
-              </div>
+            </div>
           </Section>}
 
         </ColoredSection>
@@ -86,8 +86,8 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
           {cvObject.projects?.length > 0 && <Section title={t("projects")}>
             {cvObject.projects.map((el: ProjectType) => <ProjectItem {...el} key={el.id}></ProjectItem>)}
           </Section>}
-         
-          
+
+
 
         </div>
       </Container2>
@@ -106,7 +106,7 @@ const SectionTitle = styled.p`
   display: block;
   width: 30px;
   height: 2px;
-  background: ${props=>props.theme.color || COLORS.YELLOW};
+  background: ${props => props.theme.color || COLORS.YELLOW};
   margin-top: 4px;
   margin-bottom: 4px;
 
@@ -133,21 +133,36 @@ margin-top:8px;
 z-index:999;
 justify-content: start;
 position: relative;
+.image-container{
+    height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+    margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  >img{
+    height: 100%;
+    width: fit-content;
+  }
+}
 >div{
   row-gap: 0rem;
 }
->img{
+/* >img{
   height: 100px;
   width: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 .yellow-ball{
   height: 300px;
   width: 100px;
-  background:${props=>props.theme.color || COLORS.YELLOW};
+  background:${props => props.theme.color || COLORS.YELLOW};
   position: absolute;
   top: -200px;
   left: 19px;
@@ -168,7 +183,7 @@ const ProfileSection = ({ name, surname, jobTitle, image }: {
 }) => {
   return (
     <ProfileSectionContainer className='flex column ac jc'>
-      <img  src={image || "/user-image.png"}></img>
+      <div className='image-container'><img src={image || "/user-image.png"}></img></div>
       <div className='yellow-ball'></div>
       <div className='flex js column'>
         <p className='h4 font-semibold' >{name} {surname}</p>
@@ -195,14 +210,14 @@ justify-content: space-between;
 }`
 const SkillInstance = ({ title, grade }: {
   title: string,
-  grade: SkillType["metric"] 
+  grade: SkillType["metric"]
 }) => {
   const theme = useContext(ThemeContext)
   return (
     <SkillInstanceContainer className='flex ac jsb'>
       <p className='sp'>{title}</p>
       <div className='flex'>
-        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < (grade ||0) ? (theme?.color || COLORS.YELLOW) : COLORS.LIGHTGREY }}></div>)}
+        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < (grade || 0) ? (theme?.color || COLORS.YELLOW) : COLORS.LIGHTGREY }}></div>)}
 
       </div>
     </SkillInstanceContainer>

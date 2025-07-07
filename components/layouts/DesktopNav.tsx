@@ -10,7 +10,7 @@ import LANGUAGES from '@/constants/LANGUAGES'
 import OptionSelector from '../ui/input/OptionSelector'
 import useRewrites from 'hooks/useRewrites';
 import { LanguageType } from 'interfaces/lang.types';
-
+import  LogoSvg from '@/assets/svg/logo.svg';
 
 
 const Header = styled.header`
@@ -78,8 +78,7 @@ const DektopNav = () => {
     return (
         <Header id="header">
             <LogoContainer href="/" id="logo">
-                {/* <LogoSvg style={{ cursor: "pointer" }} ></LogoSvg> */}
-                <p className='w-full'>CV Builder</p>
+                <LogoSvg style={{ cursor: "pointer" }} ></LogoSvg>
             </LogoContainer>
             <DesktopMenuLinksContainerStyles>
                 <div className='flex ac jc gap-8'>
