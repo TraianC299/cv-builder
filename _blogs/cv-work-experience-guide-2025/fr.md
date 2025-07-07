@@ -1,7 +1,7 @@
 ---
 title: "Comment décrire son expérience professionnelle dans un CV : Guide complet 2025 avec conseils et exemples"
 excerpt: "L’expérience professionnelle est le cœur de votre CV. Découvrez comment la présenter efficacement, structurer vos missions et mettre en valeur vos réalisations."
-coverImage: "/assets/blog/preview/10.jpg"
+coverImage: "/assets/blog/preview/cv-work-experience-guide-2025.jpg"
 date: "2025-07-06T23:00:00.000Z"
 id: 10
 slug: "experience-professionnelle-cv-2025"
@@ -9,7 +9,7 @@ author:
   name: William Rodriguez
   picture: "/assets/blog/authors/joe.jpg"
 ogImage:
-  url: "/assets/blog/preview/10.jpg"
+  url: "/assets/blog/preview/cv-work-experience-guide-2025.jpg"
 ---
 
 L’expérience professionnelle est la **section la plus déterminante d’un CV**.

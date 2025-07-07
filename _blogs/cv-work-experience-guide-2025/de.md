@@ -1,7 +1,7 @@
 ---
 title: "Berufserfahrung im Lebenslauf richtig darstellen: Der vollständige Leitfaden 2025 mit Tipps & Beispielen"
 excerpt: "Die Berufserfahrung ist der wichtigste Teil eines Lebenslaufs. Erfahre, wie du deine Tätigkeiten präzise und überzeugend formulierst – mit Beispielen und typischen Fehlern, die du vermeiden solltest."
-coverImage: "/assets/blog/preview/10.jpg"
+coverImage: "/assets/blog/preview/cv-work-experience-guide-2025.jpg"
 date: "2025-07-06T23:00:00.000Z"
 id: 10
 slug: "berufserfahrung-lebenslauf-2025"
@@ -9,7 +9,7 @@ author:
   name: William Rodriguez
   picture: "/assets/blog/authors/joe.jpg"
 ogImage:
-  url: "/assets/blog/preview/10.jpg"
+  url: "/assets/blog/preview/cv-work-experience-guide-2025.jpg"
 ---
 
 Wenn Personalverantwortliche einen Lebenslauf durchsehen, bleiben sie fast immer bei einem Abschnitt hängen: **der Berufserfahrung**.

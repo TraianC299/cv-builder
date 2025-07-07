@@ -1,7 +1,7 @@
 ---
 title: 'Cum să scrii experiența profesională în CV: Ghid complet 2025 cu sfaturi și exemple'
 excerpt: 'Experiența profesională este partea centrală a oricărui CV. Află cum să o structurezi corect, ce să evidențiezi și cum să formulezi puncte de impact care conving.'
-coverImage: '/assets/blog/preview/10.jpg'
+coverImage: '/assets/blog/preview/cv-work-experience-guide-2025.jpg'
 date: '2025-07-06T23:00:00.000Z'
 id: 10
 slug: 'cv-experienta-profesionala-2025'
@@ -9,7 +9,7 @@ author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'
 ogImage:
-  url: '/assets/blog/preview/10.jpg'
+  url: '/assets/blog/preview/cv-work-experience-guide-2025.jpg'
 ---
 
 Atunci când recrutorii analizează un CV, de cele mai multe ori se opresc cel mai mult asupra secțiunii **Experiență profesională**.

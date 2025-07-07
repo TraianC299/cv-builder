@@ -1,7 +1,7 @@
 ---
 title: "Cum să aplici la joburi în era AI: Cum scrii un CV modern în 2025"
 excerpt: "Inteligența artificială schimbă profund modul în care companiile recrutează. Află cum să redactezi un CV care să treacă de filtrele automate și să ajungă în fața recrutorilor."
-coverImage: "/assets/blog/preview/13.jpg"
+coverImage: "/assets/blog/preview/applying-for-jobs-in-the-age-of-ai.jpg"
 date: "2025-07-07T20:30:00.000Z"
 id: 13
 slug: "aplicare-joburi-era-ai-2025"
@@ -9,7 +9,7 @@ author:
   name: William Rodriguez
   picture: "/assets/blog/authors/joe.jpg"
 ogImage:
-  url: "/assets/blog/preview/13.jpg"
+  url: "/assets/blog/preview/applying-for-jobs-in-the-age-of-ai.jpg"
 ---
 
 Recrutarea se schimbă rapid — iar **inteligența artificială (AI)** nu mai este doar un concept futurist, ci o realitate în HR. De la trierea automată a CV-urilor până la interviuri video asistate de AI, fiecare etapă a procesului de angajare este influențată de tehnologie.

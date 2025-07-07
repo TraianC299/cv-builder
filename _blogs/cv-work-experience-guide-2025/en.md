@@ -1,7 +1,7 @@
 ---
 title: 'How to Write Work Experience in a CV: A Complete 2025 Guide with Tips and Examples'
 excerpt: 'Work experience is the core of any CV. Learn how to describe your job history in a way that highlights your value — with real examples, formatting tips, and common mistakes to avoid.'
-coverImage: '/assets/blog/preview/10.jpg'
+coverImage: '/assets/blog/preview/cv-work-experience-guide-2025.jpg'
 date: '2025-07-06T23:00:00.000Z'
 id: 10
 slug: 'cv-work-experience-guide-2025'
@@ -9,7 +9,7 @@ author:
   name: William Rodriguez
   picture: '/assets/blog/authors/joe.jpg'
 ogImage:
-  url: '/assets/blog/preview/10.jpg'
+  url: '/assets/blog/preview/cv-work-experience-guide-2025.jpg'
 ---
 
 When recruiters scan your CV, the **Work Experience** section is often where they pause the longest.

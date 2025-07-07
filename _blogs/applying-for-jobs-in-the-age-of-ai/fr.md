@@ -1,7 +1,7 @@
 ---
 title: "Postuler à un emploi à l’ère de l’IA : Comment rédiger un CV moderne en 2025"
 excerpt: "L’intelligence artificielle transforme le recrutement. Découvrez comment rédiger un CV qui passe les filtres automatisés et attire l’attention des recruteurs humains."
-coverImage: "/assets/blog/preview/13.jpg"
+coverImage: "/assets/blog/preview/applying-for-jobs-in-the-age-of-ai.jpg"
 date: "2025-07-07T20:30:00.000Z"
 id: 13
 slug: "postuler-emploi-ere-ia"
@@ -9,7 +9,7 @@ author:
   name: William Rodriguez
   picture: "/assets/blog/authors/joe.jpg"
 ogImage:
-  url: "/assets/blog/preview/13.jpg"
+  url: "/assets/blog/preview/applying-for-jobs-in-the-age-of-ai.jpg"
 ---
 
 Le monde du recrutement évolue rapidement — et **l’intelligence artificielle (IA)** en est l’un des moteurs principaux. Du tri automatique des CV aux entretiens vidéo automatisés, chaque étape du processus d’embauche est désormais influencée par la technologie.

@@ -1,7 +1,7 @@
 ---
 title: "Bewerbung in Zeiten der KI: So schreibst du einen modernen Lebenslauf im Jahr 2025"
 excerpt: "Künstliche Intelligenz verändert die Personalsuche grundlegend. Erfahre, wie du einen Lebenslauf verfasst, der automatisierte Systeme überwindet und Personaler überzeugt."
-coverImage: "/assets/blog/preview/13.jpg"
+coverImage: "/assets/blog/preview/applying-for-jobs-in-the-age-of-ai.jpg"
 date: "2025-07-07T20:30:00.000Z"
 id: 13
 slug: "bewerbung-ki-lebenslauf-2025"
@@ -9,7 +9,7 @@ author:
   name: William Rodriguez
   picture: "/assets/blog/authors/joe.jpg"
 ogImage:
-  url: "/assets/blog/preview/13.jpg"
+  url: "/assets/blog/preview/applying-for-jobs-in-the-age-of-ai.jpg"
 ---
 
 Die Arbeitswelt verändert sich rasant – und **Künstliche Intelligenz (KI)** ist längst ein fester Bestandteil des modernen Recruitings. Von der automatischen Vorauswahl bis hin zu Video-Interviews mit KI-Analyse: Der gesamte Bewerbungsprozess ist zunehmend digitalisiert.

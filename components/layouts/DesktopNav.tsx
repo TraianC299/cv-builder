@@ -33,16 +33,15 @@ const LogoContainer = styled(Link)`
 display: flex;
 align-items: center;
 justify-content: center;
-min-width: 6rem;
+width: 10rem;
 font-weight: 600;
 font-size: 1.2rem;
 p{
-
     font-style: monospace !important;
 }
 >svg{
-    height: 2rem;
-    width: auto;
+    height: auto;
+    width: 100%;
 }
 `
 
@@ -78,7 +77,7 @@ const DektopNav = () => {
     return (
         <Header id="header">
             <LogoContainer href="/" id="logo">
-                <LogoSvg style={{ cursor: "pointer" }} ></LogoSvg>
+                <LogoSvg style={{ cursor: "pointer"}} ></LogoSvg>
             </LogoContainer>
             <DesktopMenuLinksContainerStyles>
                 <div className='flex ac jc gap-8'>

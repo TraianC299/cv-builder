@@ -1,15 +1,15 @@
 ---
 title: "Applying for Jobs in the Age of AI: How to Write a Modern CV in 2025"
 excerpt: "Artificial Intelligence is reshaping how companies hire. Learn how to write a CV that stands out in an AI-driven recruitment process — and what to avoid in 2025."
-coverImage: "/assets/blog/preview/13.jpg"
+coverImage: "/assets/blog/preview/applying-for-jobs-in-the-age-of-ai.jpg"
 date: "2025-07-07T20:30:00.000Z"
 id: 13
-slug: "applying-for-jobs-in-the-age-of-ai"
+slug: "applying-for-jobs-in-the-age-of-ai.jpg"
 author:
   name: William Rodriguez
   picture: "/assets/blog/authors/joe.jpg"
 ogImage:
-  url: "/assets/blog/preview/13.jpg"
+  url: "/assets/blog/preview/applying-for-jobs-in-the-age-of-ai.jpg"
 ---
 
 Recruitment is changing fast — and **Artificial Intelligence (AI)** is no longer just a buzzword in HR. From resume screening to video interviews, AI is involved in almost every step of the hiring process.
