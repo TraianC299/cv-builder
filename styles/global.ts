@@ -1,6 +1,5 @@
-import styled from "styled-components";
 import COLORS from "@/constants/COLORS";
-import MEDIAQUERIES from "@/constants/MEDIAQUERIES";
+import styled from "styled-components";
 
 
 export const InputStyle = styled.input`
@@ -10,12 +9,11 @@ export const InputStyle = styled.input`
   justify-content: flex-start;
   /* border-radius: 0.25rem; */
   font-size: 1rem;
-  padding: 0.75rem ;
+padding: 0.75rem 1rem;
   background: ${COLORS.LIGHTGREY};
   border:none;
   position: relative;
   outline: none;
-  font-family: 'Outfit', sans-serif;
   border-radius: 0.25rem;
   min-width: 3rem;
  
@@ -26,17 +24,16 @@ export const InputStyle = styled.input`
 
 
 
-export const Button = styled.button<{background?: string}>`
-padding: 0.5rem 1rem;
-background-color: ${props=>props.background ? props.background  : COLORS.MAINCOLOR};
+export const Button = styled.button<{ background?: string }>`
+padding: 0.75rem 1rem;
+background-color: ${props => props.background ? props.background : COLORS.MAINCOLOR};
 color: white;
 border: none;
 border-radius: 0.25rem;
 font-size: 1rem;
-font-weight: bold;
+font-weight: 500;
 cursor: pointer;
 transition:   all 0.1s ease-in-out;
-min-height: 2rem;
 &.small{
   padding: 0.5rem 0.5rem;
   font-size: 0.75rem;
@@ -46,13 +43,11 @@ min-height: 2rem;
   border: 1px solid ${COLORS.MAINCOLOR};
   background-color: transparent;
   color: ${COLORS.MAINCOLOR};
-  box-shadow: none;
 }
 &.text{
   border: none;
   background-color: transparent;
   color: ${COLORS.MAINCOLOR};
-  box-shadow: none;
   padding-left:0;
 }
 &.icon{
@@ -68,10 +63,5 @@ min-height: 2rem;
 :disabled{
   background-color: ${COLORS.MAINCOLOR}50;
   cursor: not-allowed;
-  box-shadow: none;
-  
 }
-
-
-
 `

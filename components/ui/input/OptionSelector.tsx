@@ -14,11 +14,8 @@ justify-content: space-between;
 align-items: center;
 gap: 0.25rem;
 &.small{
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    +*>.tag{
-        height: 2rem !important;
-    }
+  padding: 0.5rem 0.5rem;
+  font-size: 0.75rem;
   }
 `
 
@@ -47,8 +44,7 @@ text-align: left;
 width: 100%;
 display: flex;
 align-items: center;
-padding-left: 0.5rem;
-height: 3rem;
+padding: 0.5rem 0.5rem;
 cursor: pointer;
 position: relative;
 min-width: max-content;

@@ -5,7 +5,7 @@ import imageZero from "@/assets/images/cv-images/0.jpg"
 import imageOne from "@/assets/images/cv-images/1.jpg"
 import imageTwo from "@/assets/images/cv-images/2.jpg"
 import imageThree from "@/assets/images/cv-images/3.jpg"
-import imageFour from "@/assets/images/cv-images/4.png"
+import imageFour from "@/assets/images/cv-images/4.jpg"
 import styled from 'styled-components'
 import COLORS from '@/constants/COLORS'
 import Image from 'next/image'

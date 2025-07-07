@@ -1,22 +1,20 @@
-import React from 'react'
-import Section from '../createcv/Section'
-import AutosizeInput from '../ui/input/AutosizeInput'
-import { PageSEO } from '../utilities/SEO'
-import LanguagesSection from '../createcv/sections/LanguagesSection'
-import EmploymentSection from '../createcv/sections/EmploymentSection'
-import EducationSection from '../createcv/sections/EducationSection'
-import InternshipsSection from '../createcv/sections/InternshipsSection'
-import CompletionProgress from '../createcv/CompletionProgress'
-import SkillsSection from '../createcv/sections/SkillsSection'
-import InfoSection from '../createcv/sections/InfoSection'
-import { useCV } from '../../contexts/AppContext'
-import styled from 'styled-components'
-import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
-import ProjectsSection from './sections/ProjectsSection'
-import GeneralSection from './sections/GeneralSection'
+import { useTranslation } from 'next-i18next'
+import styled from 'styled-components'
+import { useCV } from '../../contexts/AppContext'
+import CompletionProgress from '../createcv/CompletionProgress'
+import Section from '../createcv/Section'
+import EducationSection from '../createcv/sections/EducationSection'
+import EmploymentSection from '../createcv/sections/EmploymentSection'
+import InfoSection from '../createcv/sections/InfoSection'
+import InternshipsSection from '../createcv/sections/InternshipsSection'
+import LanguagesSection from '../createcv/sections/LanguagesSection'
+import SkillsSection from '../createcv/sections/SkillsSection'
+import AutosizeInput from '../ui/input/AutosizeInput'
 import AddMoreSection from './sections/AddMoreSection'
+import GeneralSection from './sections/GeneralSection'
+import ProjectsSection from './sections/ProjectsSection'
 
 
 const ModalContainer = styled.form`
@@ -39,21 +37,21 @@ const Form = () => {
   return (
     <>
       <ModalContainer>
-        <CompletionProgress/>
-        <GeneralSection/>
-        <InfoSection/>
+        <CompletionProgress />
+        <GeneralSection />
+        <InfoSection />
         <Section title={t("professional-summary")} subtitle={t("professional-summary-subtitle")}>
           <AutosizeInput value={cvObject.summary} setValue={(v) => { setCvObject((prev) => ({ ...prev, summary: v })) }} label={t("summary")}></AutosizeInput>
         </Section>
         <Section title={t("hobbies")}>
           <AutosizeInput value={cvObject.hobbies} label={t("what-do-you-like")} setValue={(v) => { setCvObject((prev) => ({ ...prev, hobbies: v })) }}></AutosizeInput>
         </Section>
-        {cvObject?.skills?.length ? <SkillsSection/> :null}
-        {cvObject?.languages?.length ? <LanguagesSection/> :null}
-        {cvObject?.employment?.length ? <EmploymentSection/> :null}
-        {cvObject?.education?.length ? <EducationSection/> :null}
-        {cvObject?.internships?.length ? <InternshipsSection/> :null}
-        {cvObject?.projects?.length ? <ProjectsSection/> :null}
+        {cvObject?.skills?.length ? <SkillsSection /> : null}
+        {cvObject?.languages?.length ? <LanguagesSection /> : null}
+        {cvObject?.employment?.length ? <EmploymentSection /> : null}
+        {cvObject?.education?.length ? <EducationSection /> : null}
+        {cvObject?.internships?.length ? <InternshipsSection /> : null}
+        {cvObject?.projects?.length ? <ProjectsSection /> : null}
         <AddMoreSection></AddMoreSection>
       </ModalContainer>
     </>

@@ -119,7 +119,6 @@ const DesktopLanguageSelector = () => {
             width: "fit-content",
         }}>
             <OptionSelector
-                className='small'
                 onChange={onChange}
                 value={router.locale} label=''
                 options={LANGUAGES.map(el => ({ value: el.locale, label: `${el.emoji} ${t(el.translationKey)}` }))} />

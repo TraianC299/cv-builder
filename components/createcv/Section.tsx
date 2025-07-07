@@ -48,7 +48,7 @@ const Section = ({ children, title, subtitle, onClick, objectKey, deletable }: {
           </TitleContainer>
           <p style={{ color: COLORS.GREY }} className='sp'>{subtitle}</p>
         </div>
-        {onClick && <Button className='small' disabled={!isPresent(objectKey as CvListKey)} onClick={e => { e.preventDefault(); onClick() }}>+ {t("add-new")}</Button>}
+        {onClick && <Button className='small icon' disabled={!isPresent(objectKey as CvListKey)} onClick={e => { e.preventDefault(); onClick() }}>+</Button>}
       </div>
       {children}
     </section>

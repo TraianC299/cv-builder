@@ -1,28 +1,25 @@
-import React, { useRef, useState } from 'react'
+import COLORS from '@/constants/COLORS';
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES';
+import useLockBody from 'hooks/useLockBody';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
+import { useRef, useState } from 'react';
+import { FiEye } from 'react-icons/fi';
+import { ImSpinner2 } from 'react-icons/im';
+import { IoClose } from 'react-icons/io5';
 import styled from 'styled-components';
 import { useCV } from '../../contexts/AppContext';
 import useWindowSize from '../../hooks/useWindowSize';
 import { Button } from '../../styles/global';
+import { TemplateContainerStyleProps } from '../../types';
 import TemplateZero from '../cv-templates/0';
 import TemplateOne from '../cv-templates/1';
 import TemplateTwo from '../cv-templates/2';
 import TemplateThree from '../cv-templates/3';
 import TemplateFour from '../cv-templates/4';
-import { TemplateContainerStyleProps } from '../../types';
-import MEDIAQUERIES from '@/constants/MEDIAQUERIES';
-import COLORS from '@/constants/COLORS';
-import { useTranslation } from 'next-i18next';
-import { ImSpinner2 } from 'react-icons/im'
-import { FiEye } from 'react-icons/fi';
-import { IoClose } from 'react-icons/io5'
-import { useRouter } from 'next/router';
-import API_URL from '@/constants/API_URL';
-import useLockBody from 'hooks/useLockBody';
-import { CvObjectType } from 'interfaces/cv.types';
-import Modal from '../ui/dataDisplay/Modal';
 import DownloadLoadingModal from './DownloadLoadingModal';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
 
 const EyeButton = styled.button`
 height: 3rem;
@@ -100,8 +97,21 @@ const CvPreview = () => {
       // link.click()
       if (!cvRef.current) return;
 
+      // Wait for all images to load
+      await Promise.all(
+        Array.from(cvRef.current.querySelectorAll('img')).map((img) => {
+          if (!img.complete) {
+            return new Promise((resolve) => {
+              img.onload = img.onerror = resolve;
+            });
+          }
+          return Promise.resolve();
+        })
+      );
+
+      // Use html2canvas to take a screenshot of the cvRef element
       const canvas = await html2canvas(cvRef.current, {
-        scale: 2, // increase for better quality
+        scale: 4, // increase for better quality
         useCORS: true, // needed if you load images with CORS issues
       });
 

@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const Container = styled.section`
 padding: 0 1rem;
 max-width: 1400px;
-
+min-height: 100vh;
 margin:auto;
 
 `

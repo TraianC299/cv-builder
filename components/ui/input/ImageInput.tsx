@@ -91,34 +91,47 @@ const ImageInput = ({children, loading, setLoading, setImageUrl, resize}:{imageU
   };
 
 
+  // const handleBackendUploadChange = async (e) => {
+  //   if (e.target.files.length > 0) {
+  //     setLoading(true)
+  //     const file = e.target.files[0];
+  //     try{
+        
+  //       const dataUri = await fileToDataUri(e.target.files[0])
+  //       // @ts-ignore
+  //       const resizedImage = await resizedataURL(dataUri, resize) 
+  //       // @ts-ignore
+  //       const resizedFile =  dataURLtoFile(resizedImage, file.name) 
+  //       const formData = new FormData();
+  //       formData.append('file', resizedFile);
+    
+  //       await fetch(`/api/image/upload`, {
+  //         method: 'POST',
+  //         body: formData,
+  //       })
+  //       .then((res) => res.json())
+  //       .then((jsonRes) => {
+  //           setLoading(false)
+  //           setImageUrl(jsonRes.data.url)
+  //         })
+  //     }catch(e){
+  //       console.log(e)
+  //     }
 
+  //   }
+  // };
  
   // Call a function (passed as a prop from the parent component)
   // to handle the user-selected file 
       // @ts-ignore
   const handleChange = async (e) => {
     if (e.target.files.length > 0) {
-      setLoading(true)
-      const file = e.target.files[0];
       try{
-        
         const dataUri = await fileToDataUri(e.target.files[0])
         // @ts-ignore
         const resizedImage = await resizedataURL(dataUri, resize) 
-        // @ts-ignore
-        const resizedFile =  dataURLtoFile(resizedImage, file.name) 
-        const formData = new FormData();
-        formData.append('file', resizedFile);
-    
-        await fetch(`/api/image/upload`, {
-          method: 'POST',
-          body: formData,
-        })
-        .then((res) => res.json())
-        .then((jsonRes) => {
-            setLoading(false)
-            setImageUrl(jsonRes.data.url)
-          })
+        setImageUrl(resizedImage)
+
       }catch(e){
         console.log(e)
       }
