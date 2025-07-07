@@ -71,12 +71,7 @@ min-height: 2rem;
   box-shadow: none;
   
 }
-@media ${MEDIAQUERIES.tabletSmallPortrait}{
-  padding: 1.2rem 2rem;
-}
-@media ${MEDIAQUERIES.laptopSmall}{
-    padding: 0.75rem 1.25rem;
-}
+
 
 
 `

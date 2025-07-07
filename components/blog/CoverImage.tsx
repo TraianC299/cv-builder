@@ -18,7 +18,7 @@ const CoverImage = ({ title, src, link }: Props) => {
     />
   )
   return (
-    <div className='rounded-sm' style={{ margin: 0, overflow: "hidden" }} >
+    <div style={{ margin: 0, overflow: "hidden" }} >
       {link ? (
         <Link
           href={link}

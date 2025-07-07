@@ -15,6 +15,16 @@
         "locale": false
     },
     {
+        "source": "/en/blog/cv-professional-profile-examples",
+        "destination": "/en/blog/cv-professional-profile-examples",
+        "locale": false
+    },
+    {
+        "source": "/en/blog/europass-vs-custom-cv-2025",
+        "destination": "/en/blog/europass-vs-custom-cv-2025",
+        "locale": false
+    },
+    {
         "source": "/en/blog/how-to-optimize-your-cv-for-ats",
         "destination": "/en/blog/how-to-optimize-your-cv-for-ats",
         "locale": false
@@ -27,6 +37,11 @@
     {
         "source": "/en/blog/how-to-write-a-cv-with-no-work-experience",
         "destination": "/en/blog/how-to-write-a-cv-with-no-work-experience",
+        "locale": false
+    },
+    {
+        "source": "/en/blog/how-to-write-achievements-in-cv",
+        "destination": "/en/blog/how-to-write-achievements-in-cv",
         "locale": false
     },
     {
@@ -85,6 +100,16 @@
         "locale": false
     },
     {
+        "source": "/ro/blog/profil-profesional-cv-exemple",
+        "destination": "/ro/blog/cv-professional-profile-examples",
+        "locale": false
+    },
+    {
+        "source": "/ro/blog/cv-europass-vs-cv-personalizat-2025",
+        "destination": "/ro/blog/europass-vs-custom-cv-2025",
+        "locale": false
+    },
+    {
         "source": "/ro/blog/cum-sa-optimizati-cv-ul-pentru-ats",
         "destination": "/ro/blog/how-to-optimize-your-cv-for-ats",
         "locale": false
@@ -97,6 +122,11 @@
     {
         "source": "/ro/blog/cum-sa-scrii-un-cv-fara-experienta-de-munca",
         "destination": "/ro/blog/how-to-write-a-cv-with-no-work-experience",
+        "locale": false
+    },
+    {
+        "source": "/ro/blog/cum-sa-scrii-realizari-in-cv",
+        "destination": "/ro/blog/how-to-write-achievements-in-cv",
         "locale": false
     },
     {
@@ -155,6 +185,16 @@
         "locale": false
     },
     {
+        "source": "/fr/blog/profil-professionnel-cv-exemples",
+        "destination": "/fr/blog/cv-professional-profile-examples",
+        "locale": false
+    },
+    {
+        "source": "/fr/blog/cv-europass-vs-cv-personnalise-2025",
+        "destination": "/fr/blog/europass-vs-custom-cv-2025",
+        "locale": false
+    },
+    {
         "source": "/fr/blog/comment-optimiser-votre-cv-pour-les-ats",
         "destination": "/fr/blog/how-to-optimize-your-cv-for-ats",
         "locale": false
@@ -167,6 +207,11 @@
     {
         "source": "/fr/blog/comment-rediger-un-cv-sans-experience-professionnelle",
         "destination": "/fr/blog/how-to-write-a-cv-with-no-work-experience",
+        "locale": false
+    },
+    {
+        "source": "/fr/blog/comment-ecrire-realisations-cv",
+        "destination": "/fr/blog/how-to-write-achievements-in-cv",
         "locale": false
     },
     {
@@ -225,6 +270,16 @@
         "locale": false
     },
     {
+        "source": "/de/blog/berufliches-profil-lebenslauf-beispiele",
+        "destination": "/de/blog/cv-professional-profile-examples",
+        "locale": false
+    },
+    {
+        "source": "/de/blog/europass-vs-individuelles-cv-2025",
+        "destination": "/de/blog/europass-vs-custom-cv-2025",
+        "locale": false
+    },
+    {
         "source": "/de/blog/wie-sie-ihren-lebenslauf-fur-ats-optimieren",
         "destination": "/de/blog/how-to-optimize-your-cv-for-ats",
         "locale": false
@@ -237,6 +292,11 @@
     {
         "source": "/de/blog/lebenslauf-ohne-berufserfahrung-schreiben",
         "destination": "/de/blog/how-to-write-a-cv-with-no-work-experience",
+        "locale": false
+    },
+    {
+        "source": "/de/blog/erfolge-lebenslauf-formulieren",
+        "destination": "/de/blog/how-to-write-achievements-in-cv",
         "locale": false
     },
     {
@@ -281,82 +341,102 @@
     },
     {
         "source": "/ro/despre-noi",
-        "destination": "/ro/about-us"
+        "destination": "/ro/despre-noi",
+        "locale": false
     },
     {
         "source": "/ro/creeaza-cv",
-        "destination": "/ro/create-cv"
+        "destination": "/ro/creeaza-cv",
+        "locale": false
     },
     {
         "source": "/ro/termeni-si-conditii",
-        "destination": "/ro/terms-and-conditions"
+        "destination": "/ro/termeni-si-conditii",
+        "locale": false
     },
     {
         "source": "/ro/politica-de-confidentialitate",
-        "destination": "/ro/privacy-policy"
+        "destination": "/ro/politica-de-confidentialitate",
+        "locale": false
     },
     {
         "source": "/ro/blog",
-        "destination": "/ro/blog"
+        "destination": "/ro/blog",
+        "locale": false
     },
     {
         "source": "/en/about-us",
-        "destination": "/en/about-us"
+        "destination": "/en/despre-noi",
+        "locale": false
     },
     {
         "source": "/en/create-cv",
-        "destination": "/en/create-cv"
+        "destination": "/en/creeaza-cv",
+        "locale": false
     },
     {
         "source": "/en/terms-and-conditions",
-        "destination": "/en/terms-and-conditions"
+        "destination": "/en/termeni-si-conditii",
+        "locale": false
     },
     {
         "source": "/en/privacy-policy",
-        "destination": "/en/privacy-policy"
+        "destination": "/en/politica-de-confidentialitate",
+        "locale": false
     },
     {
         "source": "/en/blog",
-        "destination": "/en/blog"
+        "destination": "/en/blog",
+        "locale": false
     },
     {
         "source": "/fr/a-propos-de-nous",
-        "destination": "/fr/about-us"
+        "destination": "/fr/despre-noi",
+        "locale": false
     },
     {
         "source": "/fr/creez-votre-cv",
-        "destination": "/fr/create-cv"
+        "destination": "/fr/creeaza-cv",
+        "locale": false
     },
     {
         "source": "/fr/termes-et-conditions",
-        "destination": "/fr/terms-and-conditions"
+        "destination": "/fr/termeni-si-conditii",
+        "locale": false
     },
     {
         "source": "/fr/politique-de-confidentialite",
-        "destination": "/fr/privacy-policy"
+        "destination": "/fr/politica-de-confidentialitate",
+        "locale": false
     },
     {
         "source": "/fr/blog",
-        "destination": "/fr/blog"
+        "destination": "/fr/blog",
+        "locale": false
     },
     {
         "source": "/de/uber-uns",
-        "destination": "/de/about-us"
+        "destination": "/de/despre-noi",
+        "locale": false
     },
     {
         "source": "/de/lebenslauf-erstellen",
-        "destination": "/de/create-cv"
+        "destination": "/de/creeaza-cv",
+        "locale": false
     },
     {
         "source": "/de/allgemeine-geschaftsbedingungen",
-        "destination": "/de/terms-and-conditions"
+        "destination": "/de/termeni-si-conditii",
+        "locale": false
     },
     {
         "source": "/de/datenschutz-bestimmungen",
-        "destination": "/de/privacy-policy"
+        "destination": "/de/politica-de-confidentialitate",
+        "locale": false
     },
     {
         "source": "/de/blog",
-        "destination": "/de/blog"
+        "destination": "/de/blog",
+        "locale": false
     }
 ]

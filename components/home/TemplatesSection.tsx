@@ -5,6 +5,7 @@ import image1 from '../../assets/images/cv-images/0.jpg'
 import image2 from '../../assets/images/cv-images/1.jpg'
 import image3 from '../../assets/images/cv-images/2.jpg'
 import image4 from '../../assets/images/cv-images/3.jpg'
+import image5 from '../../assets/images/cv-images/4.png'
 import Image, { StaticImageData } from 'next/image'
 import { Button } from '../../styles/global'
 import { useTranslation } from 'next-i18next'
@@ -59,7 +60,7 @@ z-index: 2;
 
 const TestimonialsContainerStyles = styled.div`
 display: grid;
-grid-template-columns: 100% 100% 100% 100%;
+grid-template-columns: 100% 100% 100% 100% 100%;
 padding: 1rem;
 overflow-y: hidden;
 scroll-snap-type: x mandatory;
@@ -83,14 +84,14 @@ scroll-behavior: smooth;
 
 @media ${MEDIAQUERIES.laptopSmall}{
     overflow-y: visible;
-    grid-template-columns: 18rem 18rem 18rem 18rem;
+    grid-template-columns: 18rem 18rem 18rem 18rem 18rem;
     >div{
         scroll-snap-align: none;
     }
 }
 
 @media ${MEDIAQUERIES.tabletSmallPortrait}{
-    grid-template-columns: 15rem 15rem 15rem 15rem;
+    grid-template-columns: 15rem 15rem 15rem 15rem 15rem;
 }
 `
 
@@ -99,6 +100,7 @@ const templateImages = [
     image2,
     image3,
     image1,
+    image5,
 ]
 
  

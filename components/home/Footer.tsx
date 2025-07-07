@@ -91,7 +91,9 @@ const {rewrite, rewriteQuery} = useRewrites()
             </Column>
             <Column>
               <Heading className='h6 font-semibold'>{t("language")}</Heading>
-              {LANGUAGES.map(el=><Link className='p' href={{
+              {LANGUAGES.map(el=><Link className='p' 
+              key={el.locale}
+              href={{
                 pathname: rewrite(router.pathname, el.locale),
                 query: rewriteQuery(router.query, el.locale)
               }} locale={el.locale}>{el.emoji} {t(el.translationKey)}</Link>)}

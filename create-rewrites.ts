@@ -2,28 +2,28 @@ const fs = require('fs');
 const { default: BlogService } = require('./services/BlogService');
 const REWRITES = {
     ro: {
-        "about-us": 'despre-noi',
+        "despre-noi": 'despre-noi',
         "creeaza-cv": 'creeaza-cv',
         "termeni-si-conditii": 'termeni-si-conditii',
         "politica-de-confidentialitate": 'politica-de-confidentialitate',
         "blog": 'blog',
     },
     en: {
-        "about-us": 'about-us',
+        "despre-noi": 'about-us',
         "creeaza-cv": 'create-cv',
         "termeni-si-conditii": 'terms-and-conditions',
         "politica-de-confidentialitate": 'privacy-policy',
         "blog": 'blog',
     },
     fr: {
-        "about-us": 'a-propos-de-nous',
+        "despre-noi": 'a-propos-de-nous',
         "creeaza-cv": 'creez-votre-cv',
         "termeni-si-conditii": 'termes-et-conditions',
         "politica-de-confidentialitate": 'politique-de-confidentialite',
         "blog": 'blog',
     },
     de: {
-        "about-us": 'uber-uns',
+        "despre-noi": 'uber-uns',
         "creeaza-cv": 'lebenslauf-erstellen',
         "termeni-si-conditii": 'allgemeine-geschaftsbedingungen',
         "politica-de-confidentialitate": 'datenschutz-bestimmungen',
@@ -36,9 +36,9 @@ function createRewrites() {
     Object.keys(REWRITES).forEach((locale) => {
         for (const [destination, source] of Object.entries(REWRITES[locale as keyof typeof REWRITES])) {
             rewrites.push({
-                source: `/${locale}/${encodeURI(source)}`,
-                destination: `/${locale}/${encodeURI(destination)}`,
-                // locale: false,
+                source: `/${locale}/${source}`,
+                destination: `/${locale}/${destination}`,
+                locale: false,
             })
         }
     })
@@ -46,5 +46,5 @@ function createRewrites() {
     fs.writeFileSync('public/rewrites.json', JSON.stringify(rewrites))
 }
 createRewrites()
-export {}
+// export {}
 
