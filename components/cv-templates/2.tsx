@@ -48,7 +48,7 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
       <Container2>
         <ColoredSection>
           <Section title={t("personal-info")}>
-            <div className='flex column gap-2'>
+            <div className='flex flex-col gap-2'>
               <p className='sp'>{t("location")}: {cvObject.city}, {cvObject.country}</p>
               <p className='sp'>{t("phone")}: {cvObject.phone}</p>
               <p className='sp'>{t("email")}:: {cvObject.email}</p>
@@ -59,12 +59,12 @@ const TemplateTwo = ({ cvObject, className }: { cvObject: CvObjectType, classNam
           </Section>
 
           {cvObject.languages?.length > 0 && <Section title={t("languages")}>
-            <div className='flex column gap-2'>
+            <div className='flex flex-col gap-2'>
               {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
             </div>
           </Section>}
           {cvObject.skills?.length > 0 && <Section title={t("skills")}>
-            <div className='flex column gap-2'>
+            <div className='flex flex-col gap-2'>
               {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
             </div>
           </Section>}
@@ -160,8 +160,8 @@ position: relative;
   margin-right: auto;
 } */
 .yellow-ball{
-  height: 300px;
-  width: 100px;
+  height: 299px;
+  width: 99px;
   background:${props => props.theme.color || COLORS.YELLOW};
   position: absolute;
   top: -200px;
@@ -182,11 +182,11 @@ const ProfileSection = ({ name, surname, jobTitle, image }: {
   image: string
 }) => {
   return (
-    <ProfileSectionContainer className='flex column ac jc'>
+    <ProfileSectionContainer className='flex flex-col items-center justify-center'>
       <div className='image-container'><img src={image || "/user-image.png"}></img></div>
       <div className='yellow-ball'></div>
-      <div className='flex js column'>
-        <p className='h4 font-semibold' >{name} {surname}</p>
+      <div className='flex justify-start flex-col'>
+        <p className='h3 font-semibold' >{name} {surname}</p>
         <p className='h6' >{jobTitle}</p>
       </div>
     </ProfileSectionContainer>
@@ -214,7 +214,7 @@ const SkillInstance = ({ title, grade }: {
 }) => {
   const theme = useContext(ThemeContext)
   return (
-    <SkillInstanceContainer className='flex ac jsb'>
+    <SkillInstanceContainer className='flex items-center justify-between '>
       <p className='sp'>{title}</p>
       <div className='flex'>
         {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < (grade || 0) ? (theme?.color || COLORS.YELLOW) : COLORS.LIGHTGREY }}></div>)}

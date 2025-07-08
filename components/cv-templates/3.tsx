@@ -52,12 +52,12 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
               <p className='sp'>{cvObject.hobbies}</p>
             </Section>
             {cvObject.languages?.length > 0 && <Section title={t("languages")}>
-              <div className='flex column gap-2'>
+              <div className='flex flex-col gap-2'>
                 {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
               </div>
             </Section>}
             {cvObject.skills?.length > 0 && <Section title={t("skills")}>
-              <div className='flex column gap-2'>
+              <div className='flex flex-col gap-2'>
                 {cvObject.skills.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
               </div>
             </Section>}
@@ -121,8 +121,8 @@ const ProfileSection = ({ name, surname, jobTitle, city, country, phone, email }
   const { t } = useTranslation("create-cv")
 
   return (
-    <div className='flex row ac jsb'>
-      <div className='flex js column name-position' style={{ maxWidth: "50%" }}>
+    <div className='flex items-center justify-between '>
+      <div className='flex justify-start flex-col name-position max-w-[50%]'>
         <p className='h4 font-semibold uppercase' >{name} {surname}</p>
         <p className='sp uppercase' >{jobTitle}</p>
       </div>

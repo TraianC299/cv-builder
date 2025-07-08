@@ -146,15 +146,15 @@ const CvPreview = () => {
 
   return (
     <>
-      <EyeButton className='rounded-sm flex ac jc shadow-md' onClick={() => setOpenModal(prev => !prev)}>{openModal ? <IoClose className='h6' color="white" /> : <FiEye className='h6' color="white" />}</EyeButton>
-      <CvPreviewStyles className={`flex column ac jc ${openModal ? "openMobileModal" : ""}`} >
-        <div className=' flex column gap-4 transition'>
+      <EyeButton className='rounded-sm flex items-center justify-center shadow-md' onClick={() => setOpenModal(prev => !prev)}>{openModal ? <IoClose className='text-lg' color="white" /> : <FiEye className='text-lg' color="white" />}</EyeButton>
+      <CvPreviewStyles className={`flex flex-col items-center justify-center ${openModal ? "openMobileModal" : ""}`} >
+        <div className=' flex flex-col gap-4 transition'>
           <Container ref={cvRef} scaleFactor={desktopScaleFactor} mobileScaleFactor={mobileScaleFactor}>
             {templatesArray[cvObject.template]}
           </Container>
-          <div className='flex jsb'>
+          <div className='flex justify-between '>
             <div></div>
-            <Button disabled={loading} onClick={(e) => { e.preventDefault(); generatePDF() }}>{loading ? <ImSpinner2 className='h6 animate-spin	' color={COLORS.WHITE} /> : t("download-pdf")}</Button>
+            <Button disabled={loading} onClick={(e) => { e.preventDefault(); generatePDF() }}>{loading ? <ImSpinner2 className='text-lg animate-spin' color={COLORS.WHITE} /> : t("download-pdf")}</Button>
           </div>
         </div>
         <DownloadLoadingModal open={loading} />

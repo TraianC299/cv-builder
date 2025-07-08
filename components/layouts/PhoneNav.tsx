@@ -96,7 +96,7 @@ const PhoneNav = () => {
 
     
   return (
-    <header className='w-full sticky flex ac jc' style={{background:"white", position: 'sticky', top:0, zIndex:999}}>
+    <header className='w-full sticky flex items-center justify-center' style={{background:"white", position: 'sticky', top:0, zIndex:999}}>
         <Header
         id="header"
         className={stuck?"stuck transition sectionPadding":"not-stuck transition sectionPadding"}
@@ -105,7 +105,7 @@ const PhoneNav = () => {
                <LogoContainer href="/" id="logo">
                        <LogoSvg style={{cursor:"pointer"}} ></LogoSvg>
                </LogoContainer>
-                <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex center'><MenuSvg/>Menu</MobileMenuButton>
+                <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex justify-center  items-center'><MenuSvg/>Menu</MobileMenuButton>
                 <MobileMenuModal open={openMenu} setOpen={setOpenMenu}></MobileMenuModal>
             </Container>
         </Header>
@@ -160,8 +160,8 @@ const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
             <MobileMenuModalHeaderStyles style={{position: "static"}} className='flex'>
            <LogoContainer aria-label={"Home"} href="/" id="logo">
            </LogoContainer>
-       <Button onClick={()=>setOpen(previous=>!previous)} className='flex center' style={{columnGap:"10px", background:"white", color:COLORS.BLACKGREY}}>
-        {t("close")}<GrFormClose className='h6'/>
+       <Button onClick={()=>setOpen(previous=>!previous)} className='flex justify-center  items-center' style={{columnGap:"10px", background:"white", color:COLORS.BLACKGREY}}>
+        {t("close")}<GrFormClose className='text-lg'/>
         </Button>
     </MobileMenuModalHeaderStyles>
     <MobileLinkContainerStyles>

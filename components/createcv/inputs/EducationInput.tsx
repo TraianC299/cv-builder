@@ -64,7 +64,7 @@ const deleteEducation = () => {
       subtitle={startDateState?`${startDateState} - ${endDateState}` : t("not-specified")} 
       open={open} 
       setOpen={setOpen}>
-      <div className='flex column gap-4'>
+      <div className='flex flex-col gap-4'>
         <div className='flex gap-4'>
           <Input label="School" value={schoolState} setValue={setSchoolState}></Input>
           <Input label="Degree" value={degreeState} setValue={setDegreeState} ></Input>

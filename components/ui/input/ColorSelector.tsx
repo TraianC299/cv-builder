@@ -10,7 +10,6 @@ import { useTranslation } from 'next-i18next'
   const ColorsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-
   column-gap: 0.5rem;
   row-gap: 0.5em;
   .selected{
@@ -26,7 +25,7 @@ const ColorSelector = () => {
     <Input.Wrapper>
       <Input.Label>{t("color")}</Input.Label>
       <ColorsContainer>
-      <None onClick={() => setCvObject({...cvObject, color: ''})} className={`rounded-sm pointer ${cvObject.color === '' ? 'selected' : ''}`} >None</None>
+      <None onClick={() => setCvObject({...cvObject, color: ''})} className={`rounded-sm cursor-pointer ${cvObject.color === '' ? 'selected' : ''}`} >None</None>
           {availableColors.map((el, i) => <SingleColor key={i} color={el} onClick={() => {
               setCvObject({...cvObject, color: el})
            }} selected={
@@ -110,7 +109,7 @@ padding: 0.5rem;
 
 const SingleColor = ({color, onClick, selected}:any) => {
     return (
-        <Color onClick={onClick} className={`w-8 h-8 rounded-sm pointer ${selected ? 'selected' : ''}`} style={{backgroundColor: color}}></Color>
+        <Color onClick={onClick} className={`w-8 h-8 rounded-sm cursor-pointer ${selected ? 'selected' : ''}`} style={{backgroundColor: color}}></Color>
     )
     }
 

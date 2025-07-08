@@ -16,7 +16,7 @@ const EmploymentSection = () => {
       title={t("employment")}
       onClick={() => addNew('employment')}>
       <ReactSortable
-        className='flex column gap-2'
+        className='flex flex-col gap-2'
         list={cvObject.employment}
         setList={(v) => { setCvObject((prev) => ({ ...prev, employment: v })) }}
         handle=".handle"

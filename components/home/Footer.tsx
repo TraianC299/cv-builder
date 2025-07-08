@@ -13,7 +13,6 @@ import useRewrites from 'hooks/useRewrites';
   padding: 80px 30px;
   background: ${COLORS.LIGHTGREY};
   width: 100%;
-  margin-top: 5rem;
 
    
   @media (max-width: 1000px) {
@@ -85,12 +84,12 @@ const {rewrite, rewriteQuery} = useRewrites()
             
          
             <Column>
-              <Heading className='h6 font-semibold'>{t("contact-us")}</Heading>
+              <Heading className='text-xl font-semibold'>{t("contact-us")}</Heading>
               <a className='p' href = "mailto: info@resumelio.com">traianciochina@gmail.com</a>
               <a className='p' href = "tel: +37369513786">Tel: +37369513786</a>
             </Column>
             <Column>
-              <Heading className='h6 font-semibold'>{t("language")}</Heading>
+              <Heading className='text-xl font-semibold'>{t("language")}</Heading>
               {LANGUAGES.map(el=><Link className='p' 
               key={el.locale}
               href={{
@@ -99,13 +98,22 @@ const {rewrite, rewriteQuery} = useRewrites()
               }} locale={el.locale}>{el.emoji} {t(el.translationKey)}</Link>)}
             </Column>
             <Column>
-            <Heading className='h6 font-semibold'>{t("important")}</Heading>
+            <Heading className='text-xl font-semibold'>{t("important")}</Heading>
               <Link className='p' href={rewrite(`/termeni-si-conditii`)}>{t("terms-and-conditions")}</Link>
               <Link className='p' href={rewrite(`/politica-de-confidentialitate`)}>{t("privacy-policy")}</Link>
               
             </Column>
+            {/* // other */}
+            <Column>
+              <Heading className='text-xl font-semibold'>{t("other")}</Heading>
+              <Link className='p' href={rewrite(`/blog`)}>{t("blog")}</Link>
+              <Link className='p' href={rewrite(`/despre-noi`)}>{t("about-us")}</Link>
+              <Link className='p' href={rewrite(`/contact`)}>{t("contact")}</Link>
+            </Column>
+              
           
           </Row>
+
         </Container>
         {/* <Badges >
           <Badge>

@@ -80,12 +80,12 @@ const DektopNav = () => {
                 <LogoSvg style={{ cursor: "pointer"}} ></LogoSvg>
             </LogoContainer>
             <DesktopMenuLinksContainerStyles>
-                <div className='flex ac jc gap-8'>
+                <div className='flex items-center justify-center gap-8'>
                     <DesktopMenuItem link={"/despre-noi"}>{t("about-us")}</DesktopMenuItem>
                     <DesktopMenuItem link="/blog">{t("blog")}</DesktopMenuItem>
                 </div>
                 <div className='flex-1'></div>
-                <div className='flex ac jc gap-4'>
+                <div className='flex items-center justify-center gap-4'>
                     <DesktopLanguageSelector />
                     <Link href={rewrite("/creeaza-cv")}><Button>{t("start-now")}</Button></Link>
                 </div>

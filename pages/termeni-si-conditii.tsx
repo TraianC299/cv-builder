@@ -31,7 +31,7 @@ const TermsPage = () => {
   return (
     <Container>
 <div>
-    <h1 className='h3'>{t('terms-and-conditions')}</h1>
+    <h1 className='text-4xl'>{t('terms-and-conditions')}</h1>
     <p className='p'>{t('terms-and-conditions-content')}</p>
 </div>
 

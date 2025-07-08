@@ -14,7 +14,7 @@ const GeneralSection = () => {
 
   return (
     <Section title={t("general")}>
-      <div className='flex column gap-4'>
+      <div className='flex flex-col gap-4'>
         <ColorSelector></ColorSelector>
         <OptionSelector
           onChange={v => router.push({ pathname, query }, asPath, { locale: v })}

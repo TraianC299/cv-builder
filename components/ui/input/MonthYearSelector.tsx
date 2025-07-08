@@ -89,12 +89,12 @@ const MonthYearSelector = ({value, setValue, label}:{
         <Input value={value} onFocus={(e: { preventDefault: () => void })=>{e.preventDefault();setOpen(prev=>!prev)}} label={label} setValue={()=>{}}></Input>
         {open?<Modal className='shadow-md'>
             <YearContainer>
-                <BiChevronLeft className="h6 pointer" onClick={(e)=>{e.preventDefault();setYear(prev=>--prev)}}></BiChevronLeft>
-                <div className='flex jc ac p rounded-sm'>{year}</div>
-                <BiChevronRight className="h6 pointer" onClick={(e)=>{e.preventDefault();setYear(prev=>++prev)}}></BiChevronRight>
+                <BiChevronLeft className="text-lg pointer" onClick={(e)=>{e.preventDefault();setYear(prev=>--prev)}}></BiChevronLeft>
+                <div className='flex justify-center items-center text-base rounded-sm'>{year}</div>
+                <BiChevronRight className="text-lg pointer" onClick={(e)=>{e.preventDefault();setYear(prev=>++prev)}}></BiChevronRight>
             </YearContainer>
             <MonthGrid>
-                {months.map((el:string)=><div key={el} className={`sp rounded-sm p-2 pointer ${month===el?"selected":""}`} onClick={(e)=>{e.preventDefault();setMonth(el)}}>{el}</div>)}
+                {months.map((el:string)=><div key={el} className={`sp rounded-sm p-2 cursor- cursor-pointer ${month===el?"selected":""}`} onClick={(e)=>{e.preventDefault();setMonth(el)}}>{el}</div>)}
             </MonthGrid>
         </Modal>:null}
     </Container>

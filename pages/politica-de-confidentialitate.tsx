@@ -39,32 +39,32 @@ const PrivacyPolicyPage = () => {
 <Container>
 
 <div>
-    <h1 className="h3">{t("privacy-policy-title")}</h1>
+    <h1 className="text-4xl font-bold">{t("privacy-policy-title")}</h1>
     <p className="p">{t("privacy-policy-content")}</p>
 </div>
 
 <div>
-    <h2 className="h4">{t("privacy-policy-information-collection")}</h2>
+    <h2 className="text-lg font-semibold">{t("privacy-policy-information-collection")}</h2>
     <p className="p">{t("privacy-policy-information-collection-content")}</p>
 </div>
 
 <div>
-    <h2 className="h4">{t("privacy-policy-data-security")}</h2>
+    <h2 className="text-lg font-semibold">{t("privacy-policy-data-security")}</h2>
     <p className="p">{t("privacy-policy-data-security-content")}</p>
 </div>
 
 <div>
-    <h2 className="h4">{t("privacy-policy-third-party-services")}</h2>
+    <h2 className="text-lg font-semibold">{t("privacy-policy-third-party-services")}</h2>
     <p className="p">{t("privacy-policy-third-party-services-content")}</p>
 </div>
 
 <div>
-    <h2 className="h4">{t("privacy-policy-changes-to-this-policy")}</h2>
+    <h2 className="text-lg font-semibold">{t("privacy-policy-changes-to-this-policy")}</h2>
     <p className="p">{t("privacy-policy-changes-to-this-policy-content")}</p>
 </div>
 
 <div>
-    <h2 className="h4">{t("privacy-policy-contact-us")}</h2>
+    <h2 className="text-lg font-semibold">{t("privacy-policy-contact-us")}</h2>
     <p className="p">{t("privacy-policy-contact-us-content")}</p>
 </div>
 

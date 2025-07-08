@@ -133,10 +133,10 @@ const Hero = () => {
     const {rewrite} = useRewrites()
   return (
     <Container>
-        <div className='w-full h-full flex column ac jc text gap-4'>
-            <h1 className='h4 md-h2'>{t("hero-title")}</h1>
-            <p className='p md-h6 text-grey'>{t("hero-subtitle")}</p>
-            <Link href={rewrite("creeaza-cv")}><Button >{t("try-it-now")}</Button></Link>
+        <div className='w-full h-full flex flex-col items-center justify-center text gap-4'>
+            <h1 className='text-5xl font-semibold'>{t("hero-title")}</h1>
+            <p className='text-base font-normal max-w-xl'>{t("hero-subtitle")}</p>
+            <Link href={rewrite("creeaza-cv")}><Button>{t("try-it-now")}</Button></Link>
         </div>
         {Array.from({length: 15}).map((_, i) => <div key={i} className='card' ></div>)}
     </Container>

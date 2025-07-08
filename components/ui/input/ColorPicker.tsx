@@ -69,7 +69,7 @@ const ColorPicker = ({color, setColor, label}:ColorPickerProps) => {
                 id="color" 
                 name="head"
                 value={color}/>
-                <ColorInput  as="label" htmlFor="color" className='p font-normal dashedBorder'>{label}<Color color={color}></Color></ColorInput>
+                <ColorInput  as="label" htmlFor="color" className='text-base font-normal'>{label}<Color color={color}></Color></ColorInput>
         </Container> 
     )
 }

@@ -2,13 +2,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import styled from 'styled-components'
 import { PageSEO } from '../components/utilities/SEO'
-const Container = styled.section`
-padding: 0 1rem;
-max-width: 1400px;
-min-height: 100vh;
-margin:auto;
 
-`
 const Page = () => {
   const { t } = useTranslation("despre-noi");
 
@@ -20,7 +14,7 @@ const Page = () => {
         title={t("about_us_meta_title")}
         description={t("about_us_meta_description")}
       ></PageSEO>
-      <section className="max-w-3xl bg-amber-800 mx-auto bg-amber-400 p-4 py-12 text-gray-800">
+      <section className="mx-auto p-4 text-gray-800 mb-16 max-w-[1400px]">
         <h1 className="text-4xl font-bold mb-6">{t("title")}</h1>
         <p className="mb-4">{t("intro")}</p>
         <p className="mb-4">{t("mission")}</p>

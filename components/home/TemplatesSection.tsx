@@ -110,8 +110,8 @@ const TemplatesSection = () => {
     return (
         <Container>
             <TextContentStyles>
-                <h2 className='h3 md-h2 font-semibold'>{t("templates-section-title")}</h2>
-                <p className='p md-h6 text-grey'>{t("templates-section-subtitle")}</p>
+                <h2 className='text-4xl font-semibold'>{t("templates-section-title")}</h2>
+                <p className='text-base font-normal'>{t("templates-section-subtitle")}</p>
             </TextContentStyles>
             <Wrapper>
 
@@ -175,7 +175,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ src }) => {
     return (
         <TextimonialContainerStyle className={"transition"}>
             <Image alt='' fill src={src}></Image>
-            <div className='flex ac jc transition' >
+            <div className='flex items-center justify-center transition' >
                 <Link href="create-cv"><Button className='small'>{t("try-it-now")}</Button></Link>
             </div>
         </TextimonialContainerStyle>

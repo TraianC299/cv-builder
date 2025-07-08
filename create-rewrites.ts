@@ -7,6 +7,7 @@ const REWRITES = {
         "termeni-si-conditii": 'termeni-si-conditii',
         "politica-de-confidentialitate": 'politica-de-confidentialitate',
         "blog": 'blog',
+        "contact": 'contact',
     },
     en: {
         "despre-noi": 'about-us',
@@ -14,6 +15,7 @@ const REWRITES = {
         "termeni-si-conditii": 'terms-and-conditions',
         "politica-de-confidentialitate": 'privacy-policy',
         "blog": 'blog',
+        "contact": 'contact',
     },
     fr: {
         "despre-noi": 'a-propos-de-nous',
@@ -21,6 +23,7 @@ const REWRITES = {
         "termeni-si-conditii": 'termes-et-conditions',
         "politica-de-confidentialitate": 'politique-de-confidentialite',
         "blog": 'blog',
+        "contact": 'contact',
     },
     de: {
         "despre-noi": 'uber-uns',
@@ -28,6 +31,7 @@ const REWRITES = {
         "termeni-si-conditii": 'allgemeine-geschaftsbedingungen',
         "politica-de-confidentialitate": 'datenschutz-bestimmungen',
         "blog": 'blog',
+        "contact": 'kontakt',
     },
 }
 
@@ -43,7 +47,7 @@ function createRewrites() {
         }
     })
     
-    fs.writeFileSync('public/rewrites.json', JSON.stringify(rewrites))
+    fs.writeFileSync('./rewrites.config.json', JSON.stringify(rewrites))
 }
 createRewrites()
 export {}

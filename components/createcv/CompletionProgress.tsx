@@ -33,7 +33,7 @@ const CompletionProgress = () => {
     const { t } = useTranslation(["create-cv", "common"])
     return (
         <Container>
-            <div className='flex jsb ac'>
+            <div className='flex justify-between items-center'>
                 <ScoreContainer>{progress}%</ScoreContainer>
                 <p>{t("profile-completion")}</p>
             </div>

@@ -67,7 +67,7 @@ useDidMountEffect(()=>{
       subtitle={employerState || t("not-specified")} 
       open={open} 
       setOpen={setOpen}>
-      <div className='flex column gap-4'>
+      <div className='flex flex-col gap-4'>
         <div className='flex gap-4'>
           <Input label={t("job-title")} value={titleState} setValue={setTitleState}></Input>
           <Input label={t("employer")} value={employerState} setValue={setEmployerState} ></Input>

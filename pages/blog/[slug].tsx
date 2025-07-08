@@ -162,9 +162,9 @@ const BlogPage = ({ post }: Props) => {
         <progress className='blog-progress-indicator' value={percentageRead} max={100} ></progress>
         <Container >
           <Title className='sectionPadding'>
-            <h1 className='h4 mf-h1 font-semibold'>{post.title}</h1>
+            <h1 className='text-4xl mf-h1 font-semibold'>{post.title}</h1>
             <p>Read it in <b>5 minutes</b></p>
-            <h2 className='h6 t300'>{post.excerpt}</h2>
+            <h2 className='text-xl t300'>{post.excerpt}</h2>
           </Title>
           <BlogContent className='blog sectionPadding' dangerouslySetInnerHTML={{ __html: post.content }}></BlogContent>
           <CallToAction className='sectionPadding'>

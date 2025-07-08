@@ -154,11 +154,11 @@ const ProfileSection = ({ name, surname, jobTitle, image }: {
 }) => {
 
   return (
-    <ProfileSectionContainer className='flex column ac jc'>
+    <ProfileSectionContainer className='flex flex-col items-center justify-center'>
       <div className='image-container'><img src={image || "/user-image.png"}></img></div>
-      <div className='flex js column'>
+      <div className='flex justify-start flex-col'>
         <p className='h6 font-semibold' >{name} {surname}</p>
-        <p className='sp' >{jobTitle}</p>
+        <p className='text-sm' >{jobTitle}</p>
       </div>
     </ProfileSectionContainer>
   )

@@ -1,4 +1,3 @@
-import { useCV } from 'contexts/AppContext'
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 

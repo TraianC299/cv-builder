@@ -34,9 +34,9 @@ const Section = ({ children, title, subtitle, onClick, objectKey, deletable }: {
 
   return (
     <section>
-      <div className='flex jsb ac mb-4'>
+      <div className='flex justify-between items-center mb-4'>
         <div>
-          <TitleContainer className='flex ac jfs gap-4 transition'>
+          <TitleContainer className='flex items-center justify-start gap-4 transition'>
             {deletable && <Button
             background={COLORS.RED}
               type='button'
@@ -44,9 +44,9 @@ const Section = ({ children, title, subtitle, onClick, objectKey, deletable }: {
               onClick={() => setCvObject((prev) => { const newCvObject = { ...prev }; newCvObject[objectKey as CvListKey] = []; return newCvObject })}
             ><FiTrash2 color={COLORS.WHITE}/></Button>
             }
-            <h3 className='h5 font-normal'>{title}</h3>
+            <h3 className='text-2xl font-normal'>{title}</h3>
           </TitleContainer>
-          <p style={{ color: COLORS.GREY }} className='sp'>{subtitle}</p>
+          <p style={{ color: COLORS.GREY }} className='text-sm'>{subtitle}</p>
         </div>
         {onClick && <Button className='small icon' disabled={!isPresent(objectKey as CvListKey)} onClick={e => { e.preventDefault(); onClick() }}>+</Button>}
       </div>

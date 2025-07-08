@@ -51,7 +51,7 @@ const ProjectInput = ({ title, description, edit, startDate, endDate, id, onDele
       title={titleState || t("not-specified")}
       open={open}
       setOpen={setOpen}>
-      <div className='flex column gap-4'>
+      <div className='flex flex-col gap-4'>
         <div className='flex gap-4'>
           <Input label={t("job-title")} value={titleState} setValue={setTitleState}></Input>
         </div>

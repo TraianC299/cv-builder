@@ -24,6 +24,7 @@ const Container = styled.section`
 padding: 0 1rem;
 max-width: 1400px;
 margin:auto;
+margin-bottom: 4rem;
 
 `
 const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
@@ -36,7 +37,7 @@ const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
   description={t("blog_meta_description")}
   ></PageSEO>
     <Container className='sectionPadding'>
-      <h2 className='h4 md-h3 font-semibold'>{t("blogs")}:</h2>
+      <h1 className='text-4xl font-semibold'>{t("blogs")}:</h1>
       <BlogsContainer>
         { allPosts.length > 0 && allPosts.map((post) => {
           return <BlogPreview

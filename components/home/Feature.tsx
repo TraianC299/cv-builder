@@ -58,7 +58,7 @@ font-size: 0.9rem;
    >h4{
     min-height: 3.5rem;
    }
-    :hover{
+    &:hover{
         transform: scale(1.05);
     
 }
@@ -79,7 +79,7 @@ const Feature:React.FC<FeatureProps> = ({title, description, svg, link}) => {
 
          className='transition'>
             <div >{svg}</div>
-            <h4 className={"h6 font-semibold"}>{title}</h4>
+            <h4 className={"text-xl font-semibold"}>{title}</h4>
             <p className='sp font-light'>{description}</p>
             {/* <Link href={link}>
                 <ReadMoreButton  className='text transition'>

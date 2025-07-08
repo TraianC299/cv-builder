@@ -1,18 +1,17 @@
-import Input from '@/components/ui/input/Input'
-import { useCV } from 'contexts/AppContext'
-import React from 'react'
 import imageZero from "@/assets/images/cv-images/0.jpg"
 import imageOne from "@/assets/images/cv-images/1.jpg"
 import imageTwo from "@/assets/images/cv-images/2.jpg"
 import imageThree from "@/assets/images/cv-images/3.jpg"
 import imageFour from "@/assets/images/cv-images/4.jpg"
-import styled from 'styled-components'
+import Input from '@/components/ui/input/Input'
 import COLORS from '@/constants/COLORS'
-import Image from 'next/image'
-import { BiCheckCircle } from 'react-icons/bi'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-import { RefObject, useCallback, useEffect, useState } from "react"
+import { useCV } from 'contexts/AppContext'
+import Image from 'next/image'
+import React, { RefObject, useCallback, useEffect, useState } from 'react'
+import { BiCheckCircle } from 'react-icons/bi'
+import { FiChevronRight } from 'react-icons/fi'
+import styled from 'styled-components'
 
 
 const TemplatesContainer = styled.div`
@@ -93,26 +92,26 @@ const images = [imageZero, imageOne, imageTwo, imageThree, imageFour]
 const TemplateSelector = () => {
     const { cvObject, setCvObject } = useCV()
     const ref = React.useRef<HTMLDivElement>(null)
-    const {scrollTo, step, maxStepNumber} = useScrollWithButtons(ref)
+    const { scrollTo, step, maxStepNumber } = useScrollWithButtons(ref)
 
 
     return (
         <Input.Wrapper>
-        <Input.Label>Template</Input.Label>
+            <Input.Label>Template</Input.Label>
             <TemplatesContainer ref={ref} className='flex gap-2 rounded-sm'>
-                {step!==0 && <ArrowLeft onClick={()=>scrollTo("left")}>
-                    <FiChevronLeft color="black" className="h5 shadow-md transform rotate-180"/>
+                {step !== 0 && <ArrowLeft onClick={() => scrollTo("left")}>
+                    <FiChevronRight color="black" className="h5 shadow-md transform rotate-180" />
                 </ArrowLeft>}
-                {images.map((image, index)=>(
-                <Template  key={index} className={`pointer rounded-sm ${cvObject.template === index && "selected"}`} onClick={() => setCvObject((prev) => ({ ...prev, template: index }))}>
-                    <Image width={120} height={169.7} src={image} alt={`template ${index}`}></Image>
-                    <div className='overlay flex ac jc'>
-                        <BiCheckCircle color="white" className="h5 shadow-md"/>
-                    </div>
-                </Template>
+                {images.map((image, index) => (
+                    <Template key={index} className={` cursor-pointer rounded-sm ${cvObject.template === index && "selected"}`} onClick={() => setCvObject((prev) => ({ ...prev, template: index }))}>
+                        <Image width={120} height={169.7} src={image} alt={`template ${index}`}></Image>
+                        <div className='overlay flex items-center justify-center'>
+                            <BiCheckCircle color="white" className="h5 shadow-md" />
+                        </div>
+                    </Template>
                 ))}
-                {step!==maxStepNumber && <ArrowRight onClick={()=>scrollTo("right")} className='arrow-right'>
-                    <FiChevronRight color="black" className="h5"/>
+                {step !== maxStepNumber && <ArrowRight onClick={() => scrollTo("right")} className='arrow-right'>
+                    <FiChevronRight color="black" className="h5" />
                 </ArrowRight>}
             </TemplatesContainer>
         </Input.Wrapper>
@@ -129,33 +128,33 @@ const useScrollWithButtons = (ref: RefObject<HTMLElement>) => {
     const [step, setStep] = useState<number>(0)
     const [maxStepNumber, setMaxStepNumber] = useState<number>(0)
 
-    const scrollTo = useCallback((direction:"right"|"left") => {
-      setStep(previous=>previous+(direction=="right"?1:-1))
-      },[])
-  
-  
-      useEffect(()=>{
-  
-        if(ref.current){
-          const categoriesContainerWidth = ref.current.offsetWidth
-          const categoriesWidth = ref.current.scrollWidth
-          const slideNumber = Math.floor(categoriesWidth/categoriesContainerWidth)
-          setMaxStepNumber(slideNumber)
+    const scrollTo = useCallback((direction: "right" | "left") => {
+        setStep(previous => previous + (direction == "right" ? 1 : -1))
+    }, [])
+
+
+    useEffect(() => {
+
+        if (ref.current) {
+            const categoriesContainerWidth = ref.current.offsetWidth
+            const categoriesWidth = ref.current.scrollWidth
+            const slideNumber = Math.floor(categoriesWidth / categoriesContainerWidth)
+            setMaxStepNumber(slideNumber)
         }
-      },[])
-  
-  
-      useEffect(()=>{
-          if(ref.current){
-            ref.current.scrollLeft=ref.current.offsetWidth*step
-          }
-        },[step])
-    
-        return {
-          scrollTo,
-            step,
-            maxStepNumber
+    }, [])
+
+
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.scrollLeft = ref.current.offsetWidth * step
         }
+    }, [step])
+
+    return {
+        scrollTo,
+        step,
+        maxStepNumber
+    }
 
 
 }

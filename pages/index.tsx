@@ -16,6 +16,7 @@ display: flex;
 flex-direction: column;
 gap: 2rem;
 margin:auto;
+margin-bottom: 4rem;
 
 `
 export default function Home() {

@@ -72,8 +72,8 @@ const ButtonInputImage = ({image, setImage, imageError, setImageError, label, po
       <img style={{display: "none"}} onError={()=>setImage("")} src={image}></img>
       <label className='sp'>{t("your-photo")}</label>
       <SelectImageLabel as="label"  style={{borderColor: imageError?COLORS.RED:loading?COLORS.GREY:COLORS.BLACK}}   className={`${image?"selected":""}`}>
-      {loading &&<ImSpinner2 className='h6 animate-spin' />}
-      {image && <BiCheck className='h6' color='white'/>}
+      {loading &&<ImSpinner2 className='text-lg animate-spin' />}
+      {image && <BiCheck className='text-lg' color='white'/>}
       {!loading && !image && <p style={{color: imageError?COLORS.RED:COLORS.BLACK}}>{imageError ? "..." : label }</p>}
       </SelectImageLabel>
     </Container>

@@ -63,7 +63,7 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
         <InfoSection>
           <div >
             <Section title={t("personal-info")}>
-              <div className='flex column gap-2'>
+              <div className='flex flex-col gap-2'>
                 <div className='sp' >{t("location")}: {cvObject.city} {cvObject.country}</div>
                 <div className='sp' >{t("phone")}: {cvObject.phone}</div>
                 <div className='sp' >{t("email")}: {cvObject.email}</div>
@@ -73,7 +73,7 @@ const Template = ({ cvObject, className }: { cvObject: CvObjectType, className?:
               <p className='sp'>{cvObject.hobbies}</p>
             </Section>
             {cvObject.languages?.length > 0 && <Section title={t("languages")}>
-              <div className='flex column gap-2'>
+              <div className='flex flex-col gap-2'>
                 {cvObject.languages.map((el: SkillType) => <SkillInstance key={el.id} title={el.title} grade={el.metric}></SkillInstance>)}
               </div>
             </Section>}
@@ -187,18 +187,16 @@ const ProfileSection = ({ name, surname, jobTitle, summary, image }: {
   return (
     <ProfileSectionContainer >
       <div className='image-container'><img src={image || "/user-image.png"}></img></div>
-      <div className='flex js column name-position p-3 gap-2' >
+      <div className='flex justify-center items-start flex-col name-position p-3 gap-2' >
         <p className='h1 font-semibold uppercase text-left' >{name} {surname}</p>
         <p style={{ color: COLORS.YELLOW }} className='sp uppercase' >{jobTitle}</p>
         <p className='sp font-light preline'>{summary}</p>
       </div>
-      <div className='aesthetics flex ac jsb'>
+      <div className='aesthetics flex items-center justify-between '>
         <IoSparklesSharp size={24} color={COLORS.YELLOW} />
         <div className='line'></div>
         <IoSparklesSharp size={24} color={COLORS.YELLOW} />
-
       </div>
-
     </ProfileSectionContainer>
   )
 }
@@ -224,7 +222,7 @@ const SkillInstance = ({ title, grade }: {
   grade: SkillType["metric"]
 }) => {
   return (
-    <SkillInstanceContainer className='flex column rounded-sm'>
+    <SkillInstanceContainer className='flex flex-col rounded-sm'>
       <p className='sp'>{title}</p>
       <div>
         <div style={{ width: `${grade ? grade * 20 : 0}%` }}></div>
@@ -239,7 +237,7 @@ const EmploymentItem = ({ title, startDate, endDate, description, employer, city
   const { t } = useTranslation("create-cv")
 
   return (
-    <div className='flex jfs afs gap-2'>
+    <div className='flex jfs  items-start gap-2'>
       <GiFlowerStar className='sp w-max' color={COLORS.YELLOW} />
       <div>
         <p className='ssp'>{startDate} - {endDate}</p>
@@ -254,7 +252,7 @@ const EmploymentItem = ({ title, startDate, endDate, description, employer, city
 const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) => {
 
   return (
-    <div className='flex jfs afs gap-2'>
+    <div className='flex jfs  items-start gap-2'>
       <GiFlowerStar className='sp' color={COLORS.YELLOW} />
       <div>
         <p className='ssp'>{startDate} - {endDate}</p>
@@ -269,7 +267,7 @@ const EducationItem = ({ school, degree, city, startDate, endDate }: EducationTy
   const { t } = useTranslation("create-cv")
 
   return (
-    <div className='flex jfs afs gap-2'>
+    <div className='flex jfs  items-start gap-2'>
       <GiFlowerStar className='sp' color={COLORS.YELLOW} />
       <div>
         <p className='ssp'>{startDate} - {endDate}</p>

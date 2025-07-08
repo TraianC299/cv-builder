@@ -16,9 +16,9 @@ type Props = {
   `
   const Avatar = ({ name, picture, ...props }: Props) => {
     return (
-      <div className="flex ac" {...props}>
+      <div className="flex items-center" {...props}>
         <Image style={{objectFit:"cover"}} src={picture} className="rounded-full mr-4" alt={name} />
-        <div className="p font-light" style={{color:COLORS.BLACKGREY}}>{name}</div>
+        <div className="text-base font-light" style={{color:COLORS.BLACKGREY}}>{name}</div>
       </div>
     )
   }

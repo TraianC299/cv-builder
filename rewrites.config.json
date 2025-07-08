@@ -405,6 +405,11 @@
         "locale": false
     },
     {
+        "source": "/ro/contact",
+        "destination": "/ro/contact",
+        "locale": false
+    },
+    {
         "source": "/en/about-us",
         "destination": "/en/despre-noi",
         "locale": false
@@ -427,6 +432,11 @@
     {
         "source": "/en/blog",
         "destination": "/en/blog",
+        "locale": false
+    },
+    {
+        "source": "/en/contact",
+        "destination": "/en/contact",
         "locale": false
     },
     {
@@ -455,6 +465,11 @@
         "locale": false
     },
     {
+        "source": "/fr/contact",
+        "destination": "/fr/contact",
+        "locale": false
+    },
+    {
         "source": "/de/uber-uns",
         "destination": "/de/despre-noi",
         "locale": false
@@ -477,6 +492,11 @@
     {
         "source": "/de/blog",
         "destination": "/de/blog",
+        "locale": false
+    },
+    {
+        "source": "/de/kontakt",
+        "destination": "/de/contact",
         "locale": false
     }
 ]

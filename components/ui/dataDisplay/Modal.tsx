@@ -35,7 +35,7 @@ const Modal = ({ children, open=false, setOpen, centered, onClose }: ModalProps)
  
   return (
     <SuccessContainer
-      className={`p-4 ${open ? 'open' : ''} ${centered ? 'flex jc ac' : ''}`}
+      className={`p-4 ${open ? 'open' : ''} ${centered ? 'flex justify-center items-center' : ''}`}
       onClick={(e) => {
         if (e.target !== e.currentTarget) return;
         setOpen && setOpen(false);

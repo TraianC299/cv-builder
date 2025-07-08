@@ -52,10 +52,10 @@ const CollapseItem = ({ children, title, subtitle, open, setOpen, onDelete }: {
 }) => {
 
   return (
-    <ListItem className='flex gap-4 ac w-full'>
+    <ListItem className='flex gap-4 items-center w-full'>
       <button type='button' className='handle'  ><MdOutlineDragIndicator /></button>
       <Container>
-        <MainContent onClick={() => setOpen((p: boolean) => !p)} className="flex ac pointer">
+        <MainContent onClick={() => setOpen((p: boolean) => !p)} className="flex items-center pointer">
           <div>
             <p className='p font-medium title'>{title}</p>
             {/* <p className='sp'>{subtitle}</p> */}

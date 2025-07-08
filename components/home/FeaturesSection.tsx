@@ -59,8 +59,8 @@ const FeaturesSection = () => {
   return (
     <FeaturesContainerStyles className='sectionPadding'>
         <TextContentStyles>
-            <h2 className='h3 md-h4 font-semibold'>{t("why-us-title")}</h2>
-            <p className='p md-h6 text-grey'>{t("why-us-subtitle")}</p>
+            <h2 className='text-4xl font-semibold'>{t("why-us-title")}</h2>
+            <p className='text-base font-normal'>{t("why-us-subtitle")}</p>
         </TextContentStyles>
         <ServicesContainerStyles>
             <Feature link="/services/dtp-and-plr" svg={<Editor/>} title={t("easy-to-use-title")} description={t("easy-to-use-subtitle")}></Feature>
