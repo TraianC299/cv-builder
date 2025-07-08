@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "production": "next build && next start",
-    "generate-rewrites": "npx tsx create-rewrites.ts"
+    "generate-rewrites": "npx tsx create-rewrites.ts",
+    "generate-sitemap": "npx tsx create-sitemap.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
