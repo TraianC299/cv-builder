@@ -17,7 +17,6 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
-    "aws-sdk": "^2.1267.0",
     "axios": "^1.4.0",
     "formidable": "^3.5.4",
     "formidable-serverless": "^1.1.1",

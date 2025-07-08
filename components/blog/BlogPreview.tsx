@@ -13,7 +13,8 @@ flex-direction: column;
 background: ${COLORS.WHITE};
 row-gap:0.5rem;
 &:hover{
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    background: ${COLORS.LIGHTGREY};
+
 }
 
 >div:first-child{

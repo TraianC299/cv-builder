@@ -81,7 +81,7 @@ const DektopNav = () => {
             </LogoContainer>
             <DesktopMenuLinksContainerStyles>
                 <div className='flex ac jc gap-8'>
-                    <DesktopMenuItem link={"/about-us"}>{t("about-us")}</DesktopMenuItem>
+                    <DesktopMenuItem link={"/despre-noi"}>{t("about-us")}</DesktopMenuItem>
                     <DesktopMenuItem link="/blog">{t("blog")}</DesktopMenuItem>
                 </div>
                 <div className='flex-1'></div>
