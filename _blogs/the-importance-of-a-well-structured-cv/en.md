@@ -6,7 +6,7 @@ date: '2023-05-29T05:35:07.322Z'
 slug: 'the-importance-of-a-well-structured-cv'
 id: 7
 author:
-  name: Simon Krasowski
+  name: Traian Ciochina
   picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/7.jpg'

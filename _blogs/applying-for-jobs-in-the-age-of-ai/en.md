@@ -70,7 +70,7 @@ Recruiters today often deal with **hundreds of applications per role**. AI helps
 
 ---
 
-## 💡 What candidates should do differently in 2025
+## What candidates should do differently in 2025
 
 - **Create multiple versions of your CV** for different types of roles  
 - Don’t overuse buzzwords like “motivated” or “hard-working” — show what you did  
@@ -90,7 +90,7 @@ Recruiters today often deal with **hundreds of applications per role**. AI helps
 
 ---
 
-## 🧭 Final thoughts
+## Final thoughts
 
 Artificial Intelligence isn’t here to replace recruiters — but it **does shape who gets seen first**.
 

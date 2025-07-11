@@ -43,5 +43,13 @@
     "terms-and-conditions": "Nutzungsbedingungen",
     "important": "Wichtig",
     "others": "Andere",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "title": "So funktioniert’s",
+    "description": "In nur drei Schritten zu deinem professionellen Lebenslauf – kostenlos und ohne Anmeldung. Danke unserer Live-Preview siehst du jede Änderung direkt.",
+    "step1.title": "1. Design wählen",
+    "step1.desc": "Stöbere in unserer Galerie mit professionellen Vorlagen. Passe Farben und Schriften in Echtzeit an – und sieh es direkt in der Vorschau.",
+    "step2.title": "2. Daten eingeben",
+    "step2.desc": "Fülle persönliche Informationen, Berufserfahrung und Fähigkeiten aus. Jede Eingabe ändert dein PDF-Preview sofort. Deine Daten sind dabei sehr sicher – wir senden nichts an einen Server. Alles passiert in deinem Browser.",
+    "step3.title": "3. PDF herunterladen",
+    "step3.desc": "Bist du zufrieden? Lade deinen fertigen Lebenslauf mit einem Klick als PDF herunter – komplett kostenlos und ohne Anmeldung."
 }

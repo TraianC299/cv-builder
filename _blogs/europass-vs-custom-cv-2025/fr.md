@@ -65,14 +65,14 @@ Un CV personnalisé est conçu selon :
 
 ---
 
-## 💡 Notre recommandation en 2025
+## Notre recommandation en 2025
 
 > Pour une **candidature dans le secteur public ou académique**, le format Europass peut convenir.  
 > Pour les **entreprises modernes, les start-ups ou les postes compétitifs**, un **CV personnalisé** est fortement recommandé.
 
 ---
 
-## 🛠️ Ce que notre générateur de CV vous propose
+## Ce que notre générateur de CV vous propose
 
 Grâce à notre plateforme :
 - Choisissez un modèle professionnel, moderne et clair

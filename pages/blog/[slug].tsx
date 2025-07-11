@@ -53,14 +53,24 @@ position: relative;
 box-sizing: border-box;
 padding: 0 1rem;
 
-
+  h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+    color: ${COLORS.BLACKGREY};
+  }
    
     p, li, div{
         line-height: 1.8rem;
         letter-spacing: 0.02em;
     }
     li{
-        margin-bottom: 20px;
+        margin-left: 20px;
+        list-style-type: disc;
+    }
+
+    hr{
+        margin: 2rem 0;
     }
 
 

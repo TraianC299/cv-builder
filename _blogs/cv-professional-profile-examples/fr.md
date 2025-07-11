@@ -68,7 +68,7 @@ Un bon profil professionnel répond brièvement à ces questions :
 
 ---
 
-## 🛠️ Ce que notre créateur de CV vous offre
+## Ce que notre créateur de CV vous offre
 
 Avec notre outil :
 - Rédigez un profil guidé, adapté à votre domaine

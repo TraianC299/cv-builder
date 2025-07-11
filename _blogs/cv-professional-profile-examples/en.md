@@ -68,7 +68,7 @@ A strong professional profile answers four key questions:
 
 ---
 
-## 🛠️ How Our CV Builder Helps
+## How Our CV Builder Helps
 
 With our platform, you can:
 - Use **guided writing** to craft a powerful profile

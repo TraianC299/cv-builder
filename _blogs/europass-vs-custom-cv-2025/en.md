@@ -64,14 +64,14 @@ A **custom CV** is tailored to:
 
 ---
 
-## 💡 2025 Recommendation
+## 2025 Recommendation
 
 > If you’re applying for **EU institutions or public sector roles**, the Europass format is acceptable.  
 > But if you’re targeting **modern companies, remote jobs, or competitive industries**, a custom CV is a much better choice.
 
 ---
 
-## 🛠️ How Our CV Builder Helps You
+## How Our CV Builder Helps You
 
 With our online CV builder:
 - Choose from **modern, professional templates**

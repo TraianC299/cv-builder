@@ -1,36 +1,79 @@
-import React, { ReactNode } from 'react'
-import styled from 'styled-components'
+import React, { useRef, useLayoutEffect, useState, useCallback } from "react";
 
-const CollapseContainer = styled.div`
-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-overflow: hidden;
-`
-const Collapse = ({children, on}:{
-    children:ReactNode,
-    on: boolean
-})=>{
-    const divRef = React.useRef<HTMLDivElement>(null);
-
-    const [height, setHeight] = React.useState(0);
-    const [overflow, setOverflow] = React.useState("hidden")
-
-
-    React.useEffect(()=>{
-        if(on && divRef.current){
-            setHeight(divRef.current.scrollHeight)
-            return
-        }
-        setHeight(0)
-        setOverflow("hidden")
-    
-    },[on])
-
-
-    return(
-        <CollapseContainer className='collapse-container' aria-hidden={on?false:true} onTransitionEnd={()=>height>0?setOverflow("visible"): null} style={{height: height, overflow:overflow}} ref={divRef}>
-            {children}
-        </CollapseContainer>
-    )
+interface CollapseProps {
+  children: React.ReactNode;
+  on: boolean;
 }
+const style = { overflow: "hidden" }
+const Collapse: React.FC<CollapseProps> = ({ children, on }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-export default Collapse
+  const animateOpen = useCallback(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    // start from 0
+    el.style.height = "0px";
+    el.style.transition = "";
+    // force a layout so the browser sees the 0px
+    el.getBoundingClientRect();
+
+    // then turn on transition and expand to scrollHeight
+    el.style.transition = "height 300ms ease";
+    setIsTransitioning(true);
+    el.style.height = `${el.scrollHeight}px`;
+
+    const handleEnd = (e: TransitionEvent) => {
+      if (e.propertyName !== "height") return;
+      // once open, switch to auto so content changes aren’t clipped
+      el.style.height = "auto";
+      setIsTransitioning(false);
+      el.removeEventListener("transitionend", handleEnd);
+    };
+    el.addEventListener("transitionend", handleEnd);
+  }, []);
+
+  const animateClose = useCallback(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    // snap to current pixel height (in case it was "auto")
+    el.style.height = `${el.scrollHeight}px`;
+    el.style.transition = "";
+    el.getBoundingClientRect();
+
+    // then animate down to 0
+    el.style.transition = "height 300ms ease";
+    setIsTransitioning(true);
+    el.style.height = "0px";
+
+    const handleEnd = (e: TransitionEvent) => {
+      if (e.propertyName !== "height") return;
+      setIsTransitioning(false);
+      el.removeEventListener("transitionend", handleEnd);
+    };
+    el.addEventListener("transitionend", handleEnd);
+  }, []);
+
+  // when `on` flips, run the appropriate animation
+  useLayoutEffect(() => {
+    if (on) {
+      animateOpen();
+    } else {
+      animateClose();
+    }
+  }, [on, animateOpen, animateClose]);
+
+  return (
+    <div
+      ref={containerRef}
+      className={isTransitioning ? "collapse--animating" : undefined}
+      style={style}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default Collapse;

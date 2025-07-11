@@ -69,7 +69,7 @@ Ein starkes Kurzprofil beantwortet folgende Fragen:
 
 ---
 
-## 🛠️ Was unser CV-Tool dir bietet
+## Was unser CV-Tool dir bietet
 
 Mit unserem CV-Builder kannst du:
 - Dein Profil strukturiert und gezielt verfassen

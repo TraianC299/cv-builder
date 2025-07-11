@@ -64,14 +64,14 @@ Un CV personalizat este creat în funcție de:
 
 ---
 
-## 💡 Recomandare pentru 2025
+## Recomandare pentru 2025
 
 > Dacă aplici la instituții publice din UE → **CV Europass** e acceptabil.  
 > Dacă vrei să te evidențiezi în fața angajatorilor moderni → alege un **CV personalizat**, adaptat jobului.
 
 ---
 
-## 🛠️ Cum te ajută platforma noastră
+## Cum te ajută platforma noastră
 
 Cu generatorul nostru de CV-uri:
 - Alegi un **șablon profesionist și modern**

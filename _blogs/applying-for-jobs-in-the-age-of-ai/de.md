@@ -70,7 +70,7 @@ Bei hunderten Bewerbungen pro Stelle setzen viele Personalabteilungen auf Algori
 
 ---
 
-## 💡 Was du 2025 anders machen solltest
+## Was du 2025 anders machen solltest
 
 - Erstelle **mehrere Versionen deines Lebenslaufs** für unterschiedliche Jobprofile  
 - Zeige echte Leistung – vermeide leere Begriffe wie „teamfähig“ oder „engagiert“  
@@ -90,7 +90,7 @@ Bei hunderten Bewerbungen pro Stelle setzen viele Personalabteilungen auf Algori
 
 ---
 
-## 🧭 Fazit
+## Fazit
 
 KI ersetzt keine Personaler – aber sie entscheidet zunehmend darüber, **wer überhaupt eingeladen wird**.
 

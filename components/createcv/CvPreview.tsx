@@ -111,7 +111,7 @@ const CvPreview = () => {
 
       // Use html2canvas to take a screenshot of the cvRef element
       const canvas = await html2canvas(cvRef.current, {
-        scale: 4, // increase for better quality
+        scale: 3, // increase for better quality
         useCORS: true, // needed if you load images with CORS issues
       });
 

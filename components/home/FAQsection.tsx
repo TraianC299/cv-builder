@@ -41,7 +41,7 @@ const FAQsection = () => {
     const { t } = useTranslation('common')
     return (
         <Container className='flex flex-col justify-center items-center gap-8'>
-            <h3 className='h2' >{t("faq")}</h3>
+            <h3 className='text-4xl font-semibold' >{t("faq")}</h3>
             <div >
                 <Question question={t("faq-free-to-use-q")} answer={t("faq-free-to-use-a")}></Question>
                 <Question question={t("faq-cutomize-q")} answer={t("faq-cutomize-a")}></Question>

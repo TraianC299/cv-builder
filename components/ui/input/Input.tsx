@@ -23,8 +23,6 @@ width: 100%;
     + div {
       opacity: 1;
       transform: scaleX(1);
-
-
     }
   }
 }

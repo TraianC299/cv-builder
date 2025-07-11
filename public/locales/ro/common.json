@@ -44,5 +44,13 @@
     "terms-and-conditions": "Termeni și condiții",
     "important": "Important",
     "others": "Altele",
-    "contact": "Contact"
+    "contact": "Contact",
+    "title": "Cum funcționează",
+    "description": "Creează-ți CV-ul profesional în doar trei pași – gratuit și fără înregistrare. Cu ajutorul previzualizării live, vezi fiecare modificare instantaneu.",
+    "step1.title": "1. Alege un design",
+    "step1.desc": "Răsfoiește galeria noastră cu șabloane profesionale. Personalizează culorile și fonturile în timp real – și vezi modificările direct în previzualizare.",
+    "step2.title": "2. Introdu datele",
+    "step2.desc": "Completează informațiile personale, experiența profesională și abilitățile. Fiecare modificare actualizează instantaneu previzualizarea PDF. Datele tale sunt foarte sigure – nu trimitem nimic către server. Totul se întâmplă în browserul tău.",
+    "step3.title": "3. Descarcă PDF-ul",
+    "step3.desc": "Ești mulțumit? Descarcă CV-ul finalizat în format PDF cu un singur click – complet gratuit și fără înregistrare."
 }

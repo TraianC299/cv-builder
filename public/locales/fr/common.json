@@ -43,5 +43,13 @@
     "terms-and-conditions": "Conditions générales",
     "important": "Important",
     "others": "Autres",
-    "contact": "Contact"
+    "contact": "Contact",
+    "title": "Comment ça marche",
+    "description": "Créez votre CV professionnel en seulement trois étapes – gratuitement et sans inscription. Grâce à l'aperçu en direct, vous voyez chaque modification instantanément.",
+    "step1.title": "1. Choisissez un design",
+    "step1.desc": "Parcourez notre galerie de modèles professionnels. Personnalisez les couleurs et les polices en temps réel – et voyez-le instantanément dans l’aperçu.",
+    "step2.title": "2. Entrez vos données",
+    "step2.desc": "Remplissez vos informations personnelles, votre expérience professionnelle et vos compétences. Chaque modification met à jour l’aperçu PDF instantanément. Vos données sont très sécurisées – rien n’est envoyé à un serveur. Tout se passe dans votre navigateur.",
+    "step3.title": "3. Téléchargez le PDF",
+    "step3.desc": "Satisfait du résultat ? Téléchargez votre CV finalisé en PDF en un clic – entièrement gratuit et sans inscription."
 }

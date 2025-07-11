@@ -83,6 +83,7 @@ const DektopNav = () => {
                 <div className='flex items-center justify-center gap-8'>
                     <DesktopMenuItem link={"/despre-noi"}>{t("about-us")}</DesktopMenuItem>
                     <DesktopMenuItem link="/blog">{t("blog")}</DesktopMenuItem>
+                    <DesktopMenuItem link="/contact">{t("contact")}</DesktopMenuItem>
                 </div>
                 <div className='flex-1'></div>
                 <div className='flex items-center justify-center gap-4'>

@@ -70,7 +70,7 @@ Avec des **centaines de candidatures par poste**, les recruteurs s’appuient su
 
 ---
 
-## 💡 Que doivent faire les candidats aujourd’hui
+## Que doivent faire les candidats aujourd’hui
 
 - Rédiger **plusieurs versions de CV**, selon le type de poste  
 - Bannir les clichés comme “dynamique” ou “polyvalent” — montrez-le  
@@ -90,7 +90,7 @@ Avec des **centaines de candidatures par poste**, les recruteurs s’appuient su
 
 ---
 
-## 🧭 Conclusion
+## Conclusion
 
 L’IA ne remplace pas encore les recruteurs — mais **elle décide qui est vu en premier**.
 

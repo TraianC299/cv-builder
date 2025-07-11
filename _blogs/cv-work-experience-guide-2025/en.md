@@ -77,7 +77,7 @@ Use verbs like: *Managed*, *Designed*, *Implemented*, *Optimized*, *Launched*, *
 
 ---
 
-## 💡 Work Experience Examples (by Role)
+## Work Experience Examples (by Role)
 
 **Marketing Specialist – TechMedia, Berlin**  
 *Mar 2022 – Apr 2024*  
@@ -112,7 +112,7 @@ Focus on:
 
 ---
 
-## 🛠️ How Our CV Builder Helps
+## How Our CV Builder Helps
 
 In our builder:
 - You can use **pre-written bullet templates** to speed up writing  

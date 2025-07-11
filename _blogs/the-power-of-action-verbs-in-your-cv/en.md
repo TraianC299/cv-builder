@@ -6,7 +6,7 @@ date: '2023-05-26T05:35:07.322Z'
 id: 3
 slug: 'the-power-of-action-verbs-in-your-cv'
 author:
-  name: Simon Krasowski
+  name: Traian Ciochina
   picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/3.jpg'

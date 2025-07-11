@@ -77,7 +77,7 @@ Exemples de verbes puissants : *Géré*, *Développé*, *Optimisé*, *Mis en pla
 
 ---
 
-## 💡 Exemples concrets d’expériences
+## Exemples concrets d’expériences
 
 **Chargé de marketing – TechMedia, Berlin**  
 *Mars 2022 – Avril 2024*  
@@ -111,7 +111,7 @@ Misez sur :
 
 ---
 
-## 🛠️ Ce que notre créateur de CV vous offre
+## Ce que notre créateur de CV vous offre
 
 Grâce à notre plateforme :
 - Utilisez des modèles de phrases adaptées à votre domaine  

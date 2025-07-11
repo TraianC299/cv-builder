@@ -6,7 +6,7 @@ date: '2023-05-24T05:35:07.322Z'
 id: 5
 slug: 'cum-sa-optimizati-cv-ul-pentru-ats'
 author:
-  name: Simon Krasowski
+  name: Traian Ciochina
   picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/5.jpg'

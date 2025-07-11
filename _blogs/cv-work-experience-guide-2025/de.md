@@ -78,7 +78,7 @@ Verben wie: *Geleitet*, *Optimiert*, *Umgesetzt*, *Analysiert*, *Automatisiert*,
 
 ---
 
-## 💡 Beispiele nach Branche
+## Beispiele nach Branche
 
 **Marketing Specialist – TechMedia, Berlin**  
 *März 2022 – April 2024*  
@@ -112,7 +112,7 @@ Nutze:
 
 ---
 
-## 🛠️ Unser Lebenslauf-Builder hilft dir
+## Unser Lebenslauf-Builder hilft dir
 
 Mit unserem Tool kannst du:
 - Vorgefertigte Stichpunkte nach Branche nutzen  

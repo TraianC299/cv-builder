@@ -237,7 +237,7 @@ const EmploymentItem = ({ title, startDate, endDate, description, employer, city
   const { t } = useTranslation("create-cv")
 
   return (
-    <div className='flex jfs  items-start gap-2'>
+    <div className='flex justify-start  items-start gap-2'>
       <GiFlowerStar className='sp w-max' color={COLORS.YELLOW} />
       <div>
         <p className='ssp'>{startDate} - {endDate}</p>
@@ -252,7 +252,7 @@ const EmploymentItem = ({ title, startDate, endDate, description, employer, city
 const ProjectItem = ({ title, startDate, endDate, description }: ProjectType) => {
 
   return (
-    <div className='flex jfs  items-start gap-2'>
+    <div className='flex justify-start  items-start gap-2'>
       <GiFlowerStar className='sp' color={COLORS.YELLOW} />
       <div>
         <p className='ssp'>{startDate} - {endDate}</p>
@@ -267,7 +267,7 @@ const EducationItem = ({ school, degree, city, startDate, endDate }: EducationTy
   const { t } = useTranslation("create-cv")
 
   return (
-    <div className='flex jfs  items-start gap-2'>
+    <div className='flex justify-start  items-start gap-2'>
       <GiFlowerStar className='sp' color={COLORS.YELLOW} />
       <div>
         <p className='ssp'>{startDate} - {endDate}</p>

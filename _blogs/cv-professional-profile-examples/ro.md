@@ -68,7 +68,7 @@ Un profil profesional bun răspunde, pe scurt, la:
 
 ---
 
-## 🛠️ Cum te ajută aplicația noastră
+## Cum te ajută aplicația noastră
 
 Generatorul nostru de CV-uri include:
 - Scriere ghidată a profilului profesional

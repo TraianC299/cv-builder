@@ -70,7 +70,7 @@ Recrutorii procesează adesea sute de aplicații pentru un singur post. AI-ul î
 
 ---
 
-## 💡 Cum să aplici diferit în 2025
+## Cum să aplici diferit în 2025
 
 - Scrie mai multe versiuni de CV, în funcție de tipul jobului  
 - Evită formulările vagi: “muncitor”, “motivat” — demonstrează prin fapte  
@@ -90,7 +90,7 @@ Recrutorii procesează adesea sute de aplicații pentru un singur post. AI-ul î
 
 ---
 
-## 🧭 Concluzie
+## Concluzie
 
 Inteligența artificială nu a înlocuit recrutorii — dar **decide cine ajunge în fața lor**.
 

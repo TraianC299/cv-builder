@@ -1,4 +1,19 @@
 /** @type {import('tailwindcss').Config} */
+const BLACK = "#000"
+const WHITE = "#ffffff"
+const BORDERCOLOR = "#D5DDE0"
+const YELLOW = "#FFE000"
+const GREY = "#636363"
+const BLACKGREY = "#323C46"
+const LIGHTGREY  = "#f5f5f5"
+const GREYWHITE = "#F5F5F5"
+const RED  = "#FF5252"
+const MAINCOLOR = "#003ae9"
+const GREEN = "#15CF74"
+const DARKGREEN = "#177256"
+const DARKBLUE = "#082a4d"
+const ORANGE = "#323C46"
+const PURPLE = "#9C27B0"
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -9,7 +24,28 @@ module.exports = {
     "./public/**/*.{html,js}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        black: BLACK,
+        white: WHITE,
+        bordercolor: BORDERCOLOR,
+        yellow: YELLOW,
+        grey: GREY,
+        blackgrey: BLACKGREY,
+        lightgrey: LIGHTGREY,
+        greyWhite: GREYWHITE,
+        red: RED,
+        maincolor: MAINCOLOR,
+        green: GREEN,
+        darkgreen: DARKGREEN,
+        darkblue: DARKBLUE,
+        orange: ORANGE,
+        purple: PURPLE
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

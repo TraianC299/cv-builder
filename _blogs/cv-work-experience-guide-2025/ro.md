@@ -77,7 +77,7 @@ Verbe utile: *Coordonat*, *Creat*, *Implementat*, *Optimizat*, *Lansat*, *Rezolv
 
 ---
 
-## 💡 Exemple de experiență (pe domenii)
+## Exemple de experiență (pe domenii)
 
 **Specialist Marketing – TechMedia, Berlin**  
 *Martie 2022 – Aprilie 2024*  
@@ -112,7 +112,7 @@ Concentrează-te pe:
 
 ---
 
-## 🛠️ Cum te ajută platforma noastră
+## Cum te ajută platforma noastră
 
 În CV Builder-ul nostru:
 - Găsești **șabloane și exemple** de bullets pentru diverse domenii  

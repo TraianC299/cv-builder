@@ -7,6 +7,7 @@ import Hero from '../components/home/Hero'
 import TemplatesSection from '../components/home/TemplatesSection'
 import { PageSEO } from '../components/utilities/SEO'
 import styles from '../styles/Home.module.css'
+import HowToSection from '@/components/home/HowToSection'
 
 
 const Container = styled.div`
@@ -30,8 +31,9 @@ export default function Home() {
         ></PageSEO>
         <Hero></Hero>
         <FeaturesSection></FeaturesSection>
-       <TemplatesSection></TemplatesSection>
+       <HowToSection/>
        <FAQsection></FAQsection>
+       <TemplatesSection></TemplatesSection>
         {/* <ThreeCVsection/> */}
 
   

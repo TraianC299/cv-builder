@@ -15,6 +15,11 @@
         "locale": false
     },
     {
+        "source": "/en/blog/computer-science-cv-skills-2025",
+        "destination": "/en/blog/computer-science-cv-skills-2025",
+        "locale": false
+    },
+    {
         "source": "/en/blog/crucial-cv-statistics-you-should-know",
         "destination": "/en/blog/crucial-cv-statistics-you-should-know",
         "locale": false
@@ -32,6 +37,11 @@
     {
         "source": "/en/blog/europass-vs-custom-cv-2025",
         "destination": "/en/blog/europass-vs-custom-cv-2025",
+        "locale": false
+    },
+    {
+        "source": "/en/blog/finance-cv-skills-2025",
+        "destination": "/en/blog/finance-cv-skills-2025",
         "locale": false
     },
     {
@@ -57,6 +67,16 @@
     {
         "source": "/en/blog/navigating-career-transitions-strategies-for-a-smooth-professional-change",
         "destination": "/en/blog/navigating-career-transitions-strategies-for-a-smooth-professional-change",
+        "locale": false
+    },
+    {
+        "source": "/en/blog/no-experience-job-what-to-do",
+        "destination": "/en/blog/no-experience-job-what-to-do",
+        "locale": false
+    },
+    {
+        "source": "/en/blog/remote-work-cv-2025",
+        "destination": "/en/blog/remote-work-cv-2025",
         "locale": false
     },
     {
@@ -110,6 +130,11 @@
         "locale": false
     },
     {
+        "source": "/ro/blog/abilitati-informatica-cv-2025",
+        "destination": "/ro/blog/computer-science-cv-skills-2025",
+        "locale": false
+    },
+    {
         "source": "/ro/blog/statistici-cruciale-despre-cv-uri-pe-care-ar-trebui-sa-le-cunosti",
         "destination": "/ro/blog/crucial-cv-statistics-you-should-know",
         "locale": false
@@ -127,6 +152,11 @@
     {
         "source": "/ro/blog/cv-europass-vs-cv-personalizat-2025",
         "destination": "/ro/blog/europass-vs-custom-cv-2025",
+        "locale": false
+    },
+    {
+        "source": "/ro/blog/abilitati-finante-cv-2025",
+        "destination": "/ro/blog/finance-cv-skills-2025",
         "locale": false
     },
     {
@@ -152,6 +182,16 @@
     {
         "source": "/ro/blog/navigarea-prin-tranzitii-de-cariera-strategii-pentru-o-schimbare-profesionala-lina",
         "destination": "/ro/blog/navigating-career-transitions-strategies-for-a-smooth-professional-change",
+        "locale": false
+    },
+    {
+        "source": "/ro/blog/fara-experienta-ce-sa-faci",
+        "destination": "/ro/blog/no-experience-job-what-to-do",
+        "locale": false
+    },
+    {
+        "source": "/ro/blog/cv-munca-remote-2025",
+        "destination": "/ro/blog/remote-work-cv-2025",
         "locale": false
     },
     {
@@ -205,6 +245,11 @@
         "locale": false
     },
     {
+        "source": "/fr/blog/competences-informatique-cv-2025",
+        "destination": "/fr/blog/computer-science-cv-skills-2025",
+        "locale": false
+    },
+    {
         "source": "/fr/blog/les-statistiques-cruciales-des-cv-que-vous-devriez-connaitre",
         "destination": "/fr/blog/crucial-cv-statistics-you-should-know",
         "locale": false
@@ -222,6 +267,11 @@
     {
         "source": "/fr/blog/cv-europass-vs-cv-personnalise-2025",
         "destination": "/fr/blog/europass-vs-custom-cv-2025",
+        "locale": false
+    },
+    {
+        "source": "/fr/blog/competences-finance-cv-2025",
+        "destination": "/fr/blog/finance-cv-skills-2025",
         "locale": false
     },
     {
@@ -247,6 +297,16 @@
     {
         "source": "/fr/blog/naviguer-a-travers-les-transitions-de-carriere-strategies-pour-une-transition-professionnelle-en-douceur",
         "destination": "/fr/blog/navigating-career-transitions-strategies-for-a-smooth-professional-change",
+        "locale": false
+    },
+    {
+        "source": "/fr/blog/aucune-experience-que-faire",
+        "destination": "/fr/blog/no-experience-job-what-to-do",
+        "locale": false
+    },
+    {
+        "source": "/fr/blog/cv-teletravail-2025",
+        "destination": "/fr/blog/remote-work-cv-2025",
         "locale": false
     },
     {
@@ -300,6 +360,11 @@
         "locale": false
     },
     {
+        "source": "/de/blog/informatik-skills-lebenslauf-2025",
+        "destination": "/de/blog/computer-science-cv-skills-2025",
+        "locale": false
+    },
+    {
         "source": "/de/blog/wichtige-cv-statistiken-die-du-kennen-solltest",
         "destination": "/de/blog/crucial-cv-statistics-you-should-know",
         "locale": false
@@ -317,6 +382,11 @@
     {
         "source": "/de/blog/europass-vs-individuelles-cv-2025",
         "destination": "/de/blog/europass-vs-custom-cv-2025",
+        "locale": false
+    },
+    {
+        "source": "/de/blog/finanz-skills-lebenslauf-2025",
+        "destination": "/de/blog/finance-cv-skills-2025",
         "locale": false
     },
     {
@@ -342,6 +412,16 @@
     {
         "source": "/de/blog/die-navigation-durch-karrieretransitionen-strategien-fuer-einen-reibungslosen-beruflichen-wandel",
         "destination": "/de/blog/navigating-career-transitions-strategies-for-a-smooth-professional-change",
+        "locale": false
+    },
+    {
+        "source": "/de/blog/keine-erfahrung-was-tun",
+        "destination": "/de/blog/no-experience-job-what-to-do",
+        "locale": false
+    },
+    {
+        "source": "/de/blog/remote-lebenslauf-2025",
+        "destination": "/de/blog/remote-work-cv-2025",
         "locale": false
     },
     {

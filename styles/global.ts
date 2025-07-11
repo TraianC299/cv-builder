@@ -25,7 +25,7 @@ padding: 0.75rem 1rem;
 
 
 export const Button = styled.button<{ background?: string }>`
-padding: 0.75rem 1rem;
+padding: 0.5rem 1rem;
 background-color: ${props => props.background ? props.background : COLORS.MAINCOLOR};
 color: white;
 border: none;

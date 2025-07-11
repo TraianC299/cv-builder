@@ -1,11 +1,9 @@
-import React, { ReactNode } from 'react'
-import styled from 'styled-components'
 import COLORS from '@/constants/COLORS'
-import Collapse from '../ui/utilities/Collapse'
+import { ReactNode } from 'react'
+import { FiChevronDown, FiChevronUp, FiTrash2 } from 'react-icons/fi'
 import { MdOutlineDragIndicator } from 'react-icons/md'
-import { FaRegTrashAlt } from 'react-icons/fa'
-import { FiChevronDown, FiTrash2 } from 'react-icons/fi'
-import { FiChevronUp } from 'react-icons/fi'
+import styled from 'styled-components'
+import Collapse from '../ui/utilities/Collapse'
 
 
 
@@ -60,7 +58,9 @@ const CollapseItem = ({ children, title, subtitle, open, setOpen, onDelete }: {
             <p className='p font-medium title'>{title}</p>
             {/* <p className='sp'>{subtitle}</p> */}
           </div>
-          <p >{open ? <FiChevronUp /> : <FiChevronDown />}</p>
+          <div className='h-6 w-6 flex items-center rounded-full justify-center cursor-pointer hover:bg-lightgrey'>
+            {open ? <FiChevronUp /> : <FiChevronDown />}
+            </div>
         </MainContent>
         <Collapse on={open}>
           {children}

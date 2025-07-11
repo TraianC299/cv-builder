@@ -64,14 +64,14 @@ Ein individuell erstellter Lebenslauf wird angepasst an:
 
 ---
 
-## 💡 Empfehlung für 2025
+## Empfehlung für 2025
 
 > Für Bewerbungen im **öffentlichen Sektor oder akademischen Bereich** ist der Europass akzeptabel.  
 > Wer sich bei **modernen Unternehmen oder international bewirbt**, sollte jedoch ein **individuell gestaltetes CV** nutzen.
 
 ---
 
-## 🛠️ Was dir unser CV-Builder bietet
+## Was dir unser CV-Builder bietet
 
 Mit unserem Online-Tool kannst du:
 - Aus mehreren modernen, professionellen Vorlagen wählen

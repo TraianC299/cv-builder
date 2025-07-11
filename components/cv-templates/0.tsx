@@ -150,8 +150,8 @@ const ProfileSection = ({name, surname, jobTitle, image}:{
   return(
     <ProfileSectionContainer className='flex'>
       <div className='image-container'><img src={image || "/user-image.png"}></img></div>
-      <div className='flex js column'>
-        <p className='h5 font-semibold' style={{color:COLORS.WHITE}}>{name} {surname}</p>
+      <div className='flex justify-start flex-col'>
+        <p className='h5 font-semibold leading-none' style={{color:COLORS.WHITE}}>{name} {surname}</p>
         <p className='sp' style={{color:COLORS.WHITE}}>{jobTitle}</p>
       </div>
     </ProfileSectionContainer>
@@ -179,7 +179,7 @@ const SkillInstance = ({title, grade}:{
   grade: SkillType["metric"] 
 }) => {
   return(
-    <SkillInstanceContainer className='flex column'>
+    <SkillInstanceContainer className='flex flex-col'>
       <p className='sp'>{title}</p>
       <div>
           <div style={{width: `${grade?grade*20:0}%`}}></div>

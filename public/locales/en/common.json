@@ -2,7 +2,7 @@
     "hero-title": "Land Your Dream Job With a Stand-Out CV",
     "hero-subtitle": "Create a professional, tailor-made CV in minutes with our user-friendly builder. No design skills needed!",
     "why-us-title": "Why would you choose us?",
-    "why-us-subtitle":"Unlock your potential with our suite of unique features, thoughtfully designed to simplify and enhance your CV creation process",
+    "why-us-subtitle": "Unlock your potential with our suite of unique features, thoughtfully designed to simplify and enhance your CV creation process",
     "easy-to-use-title": "Easy-to-use editor to customize your CV",
     "save-progess-title": "Option to save your progress and come back to it later",
     "download-pdf-title": "Download your finished CV as a PDF",
@@ -43,5 +43,13 @@
     "terms-and-conditions": "Terms and Conditions",
     "important": "Important",
     "others": "Others",
-    "contact": "Contact"
+    "contact": "Contact",
+    "title": "How it works",
+    "description": "Create your professional CV in just three steps – free and without registration. Thanks to our live preview, you can see every change instantly.",
+    "step1.title": "1. Choose a design",
+    "step1.desc": "Browse our gallery of professional templates. Customize colors and fonts in real-time – and see it instantly in the preview.",
+    "step2.title": "2. Enter your data",
+    "step2.desc": "Fill in your personal details, work experience, and skills. Every change updates the PDF preview instantly. Your data is very secure – we don’t send anything to a server. Everything happens in your browser.",
+    "step3.title": "3. Download PDF",
+    "step3.desc": "Happy with your result? Download your completed CV as a PDF with one click – completely free and no registration required."
 }
