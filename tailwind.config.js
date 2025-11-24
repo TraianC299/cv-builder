@@ -20,6 +20,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
     "./styles/**/*.{css,scss,sass}",
+    "./styles/*.{css,scss,sass}",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./public/**/*.{html,js}"
   ],

@@ -6,12 +6,12 @@ import imageFour from "@/assets/images/cv-images/4.jpg"
 import Input from '@/components/ui/input/Input'
 import COLORS from '@/constants/COLORS'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
-import { useCV } from 'contexts/AppContext'
 import Image from 'next/image'
 import React, { RefObject, useCallback, useEffect, useState } from 'react'
 import { BiCheckCircle } from 'react-icons/bi'
 import { FiChevronRight } from 'react-icons/fi'
 import styled from 'styled-components'
+import { useCV } from "../../../contexts/AppContext"
 
 
 const TemplatesContainer = styled.div`
@@ -92,7 +92,7 @@ const images = [imageZero, imageOne, imageTwo, imageThree, imageFour]
 const TemplateSelector = () => {
     const { cvObject, setCvObject } = useCV()
     const ref = React.useRef<HTMLDivElement>(null)
-    const { scrollTo, step, maxStepNumber } = useScrollWithButtons(ref)
+    const { scrollTo, step, maxStepNumber } = useScrollWithButtons(ref as RefObject<HTMLElement>)
 
 
     return (

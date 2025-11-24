@@ -1,20 +1,20 @@
 import COLORS from '@/constants/COLORS';
-import React, { useEffect } from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import useMousePosition from './useMousePosition';
 
-const useCustomCursor = (): JSX.Element => {
-  const {x, y} = useMousePosition()
+const useCustomCursor = (): ReactNode => {
+  const { x, y } = useMousePosition()
   const cursor = React.useRef<HTMLDivElement | null>(null)
 
-  return <CustomCursorStyle 
-  style={{
-    left: `${x}px`,
-    top: `${y}px`
-  }}
-  ref={cursor}
-  id="custom-cursor" 
-  className="custom-cursor"
+  return <CustomCursorStyle
+    style={{
+      left: `${x}px`,
+      top: `${y}px`
+    }}
+    ref={cursor}
+    id="custom-cursor"
+    className="custom-cursor"
   />;
 }
 

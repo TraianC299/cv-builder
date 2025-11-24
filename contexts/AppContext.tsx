@@ -1,8 +1,8 @@
 import React, { Dispatch, ReactNode, useContext } from 'react'
 import useLocalStorage from '../hooks/useLocalStorage'
 import { nanoid } from 'nanoid'
-import { CvObjectType } from 'interfaces/cv.types'
-import { initials } from 'data/initals'
+import { CvObjectType } from '../interfaces/cv.types'
+import { initials } from '../data/initals'
 
 
 export const CVcategories = [

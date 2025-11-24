@@ -5,8 +5,7 @@ import { PageSEO } from '../components/utilities/SEO'
 
 const Page = () => {
   const { t } = useTranslation("despre-noi");
-
-  const features: string[] = t("features", { returnObjects: true });
+  const features = t("features", { returnObjects: true });
 
   return (
     <>
@@ -21,7 +20,7 @@ const Page = () => {
         <p className="mb-6">{t("support")}</p>
         <h2 className="text-2xl font-semibold mb-3">{t("featuresTitle")}</h2>
         <ul className="list-disc list-inside mb-6 space-y-1">
-          {features?.map((item, index) => (
+          {(features as any[])?.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
