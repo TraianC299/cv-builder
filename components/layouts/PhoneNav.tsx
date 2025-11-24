@@ -26,9 +26,6 @@ max-width: 1400px;
 @media ${MEDIAQUERIES.laptopSmall}{
     display: none;
 }
-
-
-
 `
 
 const Container = styled.div`
@@ -93,7 +90,7 @@ const PhoneNav = () => {
 
 
     return (
-        <header className='w-full sticky flex items-center justify-center' style={{ background: "white", position: 'sticky', top: 0, zIndex: 999 }}>
+        <header className='w-full sticky flex items-center justify-center bg-white top-0 z-50'>
             <Header
                 id="header"
                 className={stuck ? "stuck transition sectionPadding" : "not-stuck transition sectionPadding"}
@@ -102,7 +99,7 @@ const PhoneNav = () => {
                     <LogoContainer href="/" id="logo">
                     <Image src={logoSvg} alt="Logo"></Image>
                     </LogoContainer>
-                    <MobileMenuButton onClick={() => setOpenMenu(previous => !previous)} className='flex justify-center items-center'><Image height={20} alt='menu button icon' src={menuSvg}/>Menu</MobileMenuButton>
+                    <MobileMenuButton onClick={() => setOpenMenu(previous => !previous)} className='flex justify-center items-center'><Image height={20} alt='menu button icon' src={menuSvg}/>{t('menu')}</MobileMenuButton>
                     <MobileMenuModal open={openMenu} setOpen={setOpenMenu}></MobileMenuModal>
                 </Container>
             </Header>

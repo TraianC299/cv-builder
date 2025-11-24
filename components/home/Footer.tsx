@@ -74,11 +74,6 @@ const {rewrite, rewriteQuery} = useRewrites()
 
     return (
       <Box>
-        {/* <h1 style={{ color: "green", 
-                     textAlign: "center", 
-                     marginTop: "-50px" }}>
-          GeeksforGeeks: A Computer Science Portal for Geeks
-        </h1> */}
         <Container id="footer">
           <Row>
             

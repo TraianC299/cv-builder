@@ -61,6 +61,7 @@ export default function HowToSection() {
   );
 }
 
+
 function Step({
   step,
   index,
@@ -72,13 +73,20 @@ function Step({
   active: boolean;
   setActive: (index: number) => void;
 }) {
+  function handleMouseEnter() {
+    // check once in every 500ms
+    if(!active){
+      setActive(index);
+    }
+  }
   return (
     <div
       className={`flex items-start gap-4 p-4 rounded-lg cursor-pointer transition-colors ${active
         ? "bg-maincolor text-white"
         : "bg-white hover:bg-gray-50"
         }`}
-      onMouseEnter={() => setActive(index)}
+      onMouseEnter={handleMouseEnter}
+      
     >
       <div className="flex items-center justify-center h-10 w-10 min-w-10 bg-maincolor rounded-full">{step.icon}</div>
       <div>

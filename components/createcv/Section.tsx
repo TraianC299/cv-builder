@@ -1,12 +1,10 @@
-import { ReactNode } from 'react'
-import styled from 'styled-components'
-import { Button } from '../../styles/global'
-import { useCV } from '../../contexts/AppContext'
-import { DefaultTFuncReturn } from 'i18next'
-import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import { CvListKey } from 'interfaces/cv.types'
+import { ReactNode } from 'react'
 import { FiTrash2 } from 'react-icons/fi'
+import styled from 'styled-components'
+import { useCV } from '../../contexts/AppContext'
+import { Button } from '../../styles/global'
 
 
 const TitleContainer = styled.div`
@@ -18,14 +16,13 @@ const TitleContainer = styled.div`
 
 const Section = ({ children, title, subtitle, onClick, objectKey, deletable }: {
   children: ReactNode, 
-  title?: string | DefaultTFuncReturn, 
-  subtitle?: string | DefaultTFuncReturn, 
+  title?: string, 
+  subtitle?: string, 
   onClick?: Function,
   objectKey?: CvListKey,
   deletable?: boolean
 }) => {
   const { cvObject, setCvObject } = useCV()
-  const { t } = useTranslation(["create-cv", "common"])
 
 
   const isPresent = (key: CvListKey) => {
