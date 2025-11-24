@@ -10,17 +10,21 @@ import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 
 const Container = styled.div`
 position: relative;
-width: 100%;`
+width: 100%;
+z-index:999999999;
+
+overflow: visible;`
 
 const Modal = styled.div`
 overflow: hidden;
 border-radius: 10px;
 background: ${COLORS.LIGHTGREY};
 position: absolute;
-top: calc(100% + 0.5rem);
+bottom: 100%;
 width: fit-content;
 padding: 0.5rem;
-z-index:99;
+z-index:999999999;
+
 `
 
 

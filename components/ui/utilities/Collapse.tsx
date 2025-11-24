@@ -4,7 +4,7 @@ interface CollapseProps {
   children: React.ReactNode;
   on: boolean;
 }
-const style = { overflow: "hidden" }
+const style = { overflow: "scroll" }
 const Collapse: React.FC<CollapseProps> = ({ children, on }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);

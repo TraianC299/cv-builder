@@ -1,52 +1,58 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { FC } from 'react';
 import METADATA from '@/constants/METADATA';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { FC } from 'react';
 
 
 interface CommonSEOProps {
-    title: string;
-    description: string;
-    ogType: string;
-    ogImage: string | { url: string }[];
-    canonicalUrl?: string;
-  }
-  
-  export const CommonSEO: FC<CommonSEOProps> = ({ title, description, ogType, ogImage, canonicalUrl }) => {
-    const router = useRouter();
-    return (
-      <Head>
-        <title>{title}</title>
-        <meta name="robots" content="follow, index" />
-        <meta name="description" content={description} />
-        <meta property="og:url" content={`${METADATA.siteUrl}${router.asPath}`} />
-        <meta property="og:type" content={ogType} />
-        <meta property="og:site_name" content={METADATA.title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:title" content={title} />
-        {Array.isArray(ogImage) ? (
-          ogImage.map(({ url }) => <meta property="og:image" content={url} key={url} />)
-        ) : (
-          <meta property="og:image" content={ogImage} key={ogImage} />
-        )}
-        <link
-          rel="canonical"
-          href={canonicalUrl ? canonicalUrl : `${METADATA.siteUrl}${router.asPath}`}
-        />
-      </Head>
-    );
-  };
+  title: string;
+  description: string;
+  ogType: string;
+  ogImage: string | { url: string }[];
+  canonicalUrl?: string;
+}
+
+export const CommonSEO: FC<CommonSEOProps> = ({ title, description, ogType, ogImage, canonicalUrl }) => {
+  const router = useRouter();
+  return (
+    <Head>
+      <title>{title}</title>
+      <meta name="robots" content="follow, index" />
+      <meta name="description" content={description} />
+      <meta property="og:url" content={`${METADATA.siteUrl}${router.asPath}`} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:site_name" content={METADATA.title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={Array.isArray(ogImage) ? ogImage[0].url : ogImage} />
+      {Array.isArray(ogImage) ? (
+        ogImage.map(({ url }) => <meta property="og:image" content={url} key={url} />)
+      ) : (
+        <meta property="og:image" content={ogImage} key={ogImage} />
+      )}
+      <link
+        rel="canonical"
+        href={canonicalUrl ? canonicalUrl : `${METADATA.siteUrl}${router.asPath}`}
+      />
+    </Head>
+  );
+};
 
 
 type PageSEOProps = {
-    title: string
-    description: string
-    }
-    
-export const PageSEO = ({ title, description }:PageSEOProps) => {
+  title: string
+  description: string,
+  canonicalUrl?: string
+}
+
+export const PageSEO = ({ title, description, canonicalUrl }: PageSEOProps) => {
   const ogImageUrl = METADATA.siteUrl + METADATA.socialBanner
   return (
     <CommonSEO
+      canonicalUrl={canonicalUrl}
       title={title}
       description={description}
       ogType="website"
@@ -58,11 +64,11 @@ export const PageSEO = ({ title, description }:PageSEOProps) => {
 
 
 type TagSEOProps = {
-    title: string
-    description: string
-    }
+  title: string
+  description: string
+}
 
-export const TagSEO = ({ title, description }:TagSEOProps) => {
+export const TagSEO = ({ title, description }: TagSEOProps) => {
   const ogImageUrl = METADATA.siteUrl + METADATA.socialBanner
   const router = useRouter()
   return (
@@ -86,18 +92,18 @@ export const TagSEO = ({ title, description }:TagSEOProps) => {
 }
 
 type BlogSEOProps = {
-    authorDetails?: {
-        name: string
-        avatar: string
-    }[]
-    title: string
-    summary: string
-    date: string
-    lastmod?: string
-    url: string
-    images?: string | { url: string }[]
-    canonicalUrl?: string
-    }
+  authorDetails?: {
+    name: string
+    avatar: string
+  }[]
+  title: string
+  summary: string
+  date: string
+  lastmod?: string
+  url: string
+  images?: string | { url: string }[]
+  canonicalUrl?: string
+}
 
 export const BlogSEO = ({
   authorDetails,
@@ -108,15 +114,15 @@ export const BlogSEO = ({
   url,
   images = [],
   canonicalUrl,
-}:BlogSEOProps) => {
+}: BlogSEOProps) => {
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
   let imagesArr =
     images.length === 0
       ? [METADATA.socialBanner]
       : typeof images === 'string'
-      ? [images]
-      : images
+        ? [images]
+        : images
 
   const featuredImages = imagesArr.map((img) => {
     return {

@@ -3,6 +3,7 @@ import Input from './Input'
 import styled from 'styled-components'
 import COLORS from '@/constants/COLORS'
 import LEVELS from '@/constants/LEVELS'
+import { useTranslation } from 'react-i18next'
 
 const values = {
     1: {
@@ -30,7 +31,7 @@ const values = {
 
 const Option = styled.button`
     width: 100%;
-    height: 2.75rem;
+    height: 2.5rem;
     border:none;
     background: ${COLORS.LIGHTGREY};
     :hover{
@@ -70,11 +71,11 @@ interface LevelSelectorProps {
     label: string,
 }
 const LevelSelector = ({ value, onChange, label }: LevelSelectorProps) => {
-
+    const {t} = useTranslation("create-cv")
 
     return (
         <Input.Wrapper>
-            <Input.Label >{label}: {values[value || 1]?.name || "..."}</Input.Label>
+            <Input.Label >{label}: {t(values[value || 1]?.name) || "..."}</Input.Label>
             <OptionsContainer className='flex rounded-sm'>
                 {Object.keys(values).map((key, index) => {
                     return <Option key={index} type='button' onClick={() => onChange(Number(key) as LevelSelectorProps["value"])} ></Option>

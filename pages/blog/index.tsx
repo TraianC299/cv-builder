@@ -1,12 +1,12 @@
-import React from 'react'
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import BlogPreview from '../../components/blog/BlogPreview'
-import BlogPostInterface from '../../interfaces/blog-post'
 import { PageSEO } from '../../components/utilities/SEO'
+import BlogPostInterface from '../../interfaces/blog-post'
 import BlogService from '../../services/BlogService'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'next-i18next'
-import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 
 const BlogsContainer = styled.main`
 display: grid;
@@ -27,41 +27,43 @@ margin:auto;
 margin-bottom: 4rem;
 
 `
-const Page = ({allPosts}:{allPosts:BlogPostInterface[]}) => {
- 
-  const {t} = useTranslation("blog")
+const Page = ({ allPosts }: { allPosts: BlogPostInterface[] }) => {
+  const router = useRouter()
+  const { locale } = router
+  const { t } = useTranslation("blog")
   return (
-  <>
-  <PageSEO
-  title={t("blog_meta_title")}
-  description={t("blog_meta_description")}
-  ></PageSEO>
-    <Container className='sectionPadding'>
-      <h1 className='text-4xl font-semibold'>{t("blogs")}:</h1>
-      <BlogsContainer>
-        { allPosts.length > 0 && allPosts.map((post) => {
-          return <BlogPreview
-          key={post.slug}
-          title={post.title}
-          coverImage={post.coverImage}
-          date={post.date}
-          author={post.author}
-          slug={post.slug}
-          excerpt={post.excerpt}
-        />
-        })}
-      </BlogsContainer>
+    <>
+      <PageSEO
+        canonicalUrl={`https://resumelio.com/${locale}/blog`}
+        title={t("blog_meta_title")}
+        description={t("blog_meta_description")}
+      ></PageSEO>
+      <Container className='sectionPadding'>
+        <h1 className='text-4xl font-semibold'>{t("blogs")}:</h1>
+        <BlogsContainer>
+          {allPosts.length > 0 && allPosts.map((post) => {
+            return <BlogPreview
+              key={post.slug}
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+              author={post.author}
+              slug={post.slug}
+              excerpt={post.excerpt}
+            />
+          })}
+        </BlogsContainer>
 
-        
-    </Container>
+
+      </Container>
     </>
   )
 }
 
 export default Page
 
-export const getStaticProps = async ({locale}:{
-  locale:string
+export const getStaticProps = async ({ locale }: {
+  locale: string
 }) => {
   const allPosts = BlogService.getAllPosts([
     'title',
@@ -74,12 +76,12 @@ export const getStaticProps = async ({locale}:{
 
 
   return {
-    props: { 
+    props: {
       allPosts,
       ...(await serverSideTranslations(locale, ["blog", "common"])),
-     },
-    
-    
+    },
+
+
   }
 }
 

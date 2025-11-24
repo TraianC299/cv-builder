@@ -17,10 +17,7 @@ align-items: flex-start;
 position:relative;
 height: fit-content;
 width: 100%;
->p{
-  font-size: 0.8rem;
-  padding: 0.1rem 0.5rem;
-}
+
 >label{
   color: ${COLORS.GREY};
   margin-bottom: 0.4rem;
@@ -69,9 +66,8 @@ const ButtonInputImage = ({image, setImage, imageError, setImageError, label, po
   return (
    <ImageInput resize={400} loading={loading} setLoading={setLoading} imageUrl={image} setImageUrl={setImage}  {...props}>
     <Container>
-      <img style={{display: "none"}} onError={()=>setImage("")} src={image}></img>
-      <label className='sp'>{t("your-photo")}</label>
-      <SelectImageLabel as="label"  style={{borderColor: imageError?COLORS.RED:loading?COLORS.GREY:COLORS.BLACK}}   className={`${image?"selected":""}`}>
+      <label className='text-base'>{t("your-photo")}</label>
+      <SelectImageLabel as="div"  style={{borderColor: imageError?COLORS.RED:loading?COLORS.GREY:COLORS.BLACK}}   className={`${image?"selected":""}`}>
       {loading &&<ImSpinner2 className='text-lg animate-spin' />}
       {image && <BiCheck className='text-lg' color='white'/>}
       {!loading && !image && <p style={{color: imageError?COLORS.RED:COLORS.BLACK}}>{imageError ? "..." : label }</p>}

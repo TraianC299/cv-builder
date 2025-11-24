@@ -1,6 +1,6 @@
 import COLORS from '@/constants/COLORS'
 import React, { MouseEventHandler, useEffect, useRef, useState } from 'react'
-import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import styled from 'styled-components'
 import { InputStyle } from 'styles/global'
 import useClickOutside from '../../../hooks/useClickOutside'
@@ -13,10 +13,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 gap: 0.25rem;
-&.small{
-  padding: 0.5rem 0.5rem;
-  font-size: 0.75rem;
-  }
+
 `
 
 
@@ -124,7 +121,7 @@ const OptionSelector = ({ options = [], value, noAddOption, label, onChange, ...
             {label && <Input.Label>{label}</Input.Label>}
             <OptionSelectorInput onClick={(e) => { e.preventDefault(); setFocus(previous => !previous) }} as="button" type='button'  {...props}>
                 {inputValue}
-                {focus ? <BiChevronUp /> : <BiChevronDown />}
+                {focus ? <FiChevronUp /> : <FiChevronDown />}
             </OptionSelectorInput>
             {/* <Input  label={label}  placeholder={label} value={inputValue}  setValue={()=>{}}  onFocusCapture={()=>setFocus(true)} {...props} ></Input> */}
             {focus ? <StyledAutocompleteContainer style={{ pointerEvents: focus ? "all" : "none", opacity: focus ? "1" : "0" }} className='shadow-md'>

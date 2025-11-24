@@ -35,6 +35,7 @@ module.exports = {
         lightgrey: LIGHTGREY,
         greyWhite: GREYWHITE,
         red: RED,
+        secondarytext: "#636363",
         maincolor: MAINCOLOR,
         green: GREEN,
         darkgreen: DARKGREEN,

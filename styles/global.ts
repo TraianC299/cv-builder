@@ -9,7 +9,7 @@ export const InputStyle = styled.input`
   justify-content: flex-start;
   /* border-radius: 0.25rem; */
   font-size: 1rem;
-padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   background: ${COLORS.LIGHTGREY};
   border:none;
   position: relative;
@@ -19,6 +19,11 @@ padding: 0.75rem 1rem;
  
   ::placeholder{
     color: #9CA9B4;
+  }
+
+  &.small{
+  padding: 0.5rem 0.5rem;
+  font-size: 0.75rem;
   }
  `
 

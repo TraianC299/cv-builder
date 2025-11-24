@@ -44,8 +44,8 @@
     "language": "Limba",
     "color": "Culoare",
     "general": "General",
-    "meta-title": "Creează un CV online gratuit",
-    "meta-description": "Creează un CV online gratuit cu CV Maker. Creează-ți CV-ul în 5 minute cu șabloanele noastre și descarcă-l în format PDF.",
+    "creeaza-cv-meta-title": "Creează-ți CV-ul în câteva minute – Șabloane gratuite care atrag angajatorii",
+    "creeaza-cv-meta-description": "Creează-ți CV-ul online în doar câteva minute. Alege un șablon, personalizează-l în timp real și descarcă-ți CV-ul profesional instant – 100% gratuit.",
     "downloading-your-cv": "Descărcăm CV-ul tău",
     "this-may-take-a-while": "Acest lucru poate dura puțin",
     "almost-there": "Aproape gata",
@@ -53,5 +53,12 @@
     "making-sure-everything-is-perfect": "Ne asigurăm că totul este perfect",
     "generating-your-cv": "Generăm CV-ul tău",
     "hold-on-tight": "Ține-te bine",
-    "your-cv-is-almost-ready": "CV-ul tău este aproape gata"
+    "your-cv-is-almost-ready": "CV-ul tău este aproape gata",
+    "custom": "Alege",
+    "level": "Nivel",
+    "levels-novice": "Începător",
+    "levels-beginner": "Începător",
+    "levels-skillful": "Îndemânatic",
+    "levels-experienced": "Experimentat",
+    "levels-expert": "Expert"
 }

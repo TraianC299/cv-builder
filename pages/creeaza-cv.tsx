@@ -11,12 +11,23 @@ import { useTranslation } from 'next-i18next'
 
 
 const MainContainer = styled.main`
-display: grid;
+display: flex;
 height: 100vh;
 overflow: hidden;
-grid-template-columns: minmax(600px,20vw) 1fr;
+>form{
+  width: 40vw;
+  max-width: 800px;
+}
+>div{
+  flex: 1;
+}
+
 @media ${MEDIAQUERIES.mobileSmallPortrait}{
-  grid-template-columns: 1fr;
+  >form{
+  width: 100%;
+  max-width: auto;
+}
+
 
 }
 `
@@ -26,8 +37,8 @@ const Main = () => {
   return (
     <>
       <PageSEO
-        title={t("meta-title")}
-        description={t("meta-description")}
+        title={t("creeaza-cv-meta-title")}
+        description={t("creeaza-cv-meta-description")}
       />
       <MainContainer className='flex'>
         <Form />

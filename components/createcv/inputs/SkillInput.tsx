@@ -18,28 +18,9 @@ flex-direction: column;
 
 const SkillInput = ({ title, metric, edit, id }: SkillType) => {
   const { t } = useTranslation(["create-cv", "common"])
-  const [open, setOpen] = useState(edit ? true : false)
-  const [titleState, setTitleState] = useState(title || "")
-  const [metricState, setMetricState] = useState<SkillType["metric"]>(metric || null)
-  const { cvObject, setCvObject } = useCV()
+  const { setCvObject, changeCvObject } = useCV()
 
-  useDidMountEffect(() => {
-    setOpen(edit)
-  }, [edit])
 
-  useDidMountEffect(() => {
-    const index = cvObject.skills.findIndex(el => el.id === id)
-    const skillsPlaceholder = [...cvObject.skills]
-    skillsPlaceholder[index] = {
-      id: id,
-      title: titleState,
-      metric: metricState,
-      edit: edit
-    }
-    setCvObject((prev) => ({
-      ...prev, skills: skillsPlaceholder
-    }))
-  }, [titleState, metricState])
 
   const onDelete = () => {
     setCvObject((prev) => ({
@@ -48,19 +29,28 @@ const SkillInput = ({ title, metric, edit, id }: SkillType) => {
   }
 
 
+  function changeSkill(key: string, value: any) {
+    changeCvObject(key, value, id, 'skills')
+  }
+
+
+
 
   return (
     <CollapseItem
       onDelete={onDelete}
-      title={titleState || t("not-specified")}
-      subtitle={metricState ? LEVELS[metricState] : t("not-specified")}
-      open={open}
-      setOpen={setOpen}>
+      title={title|| t("not-specified")}
+      subtitle={metric? LEVELS[metric] : t("not-specified")}
+      open={edit}
+      setOpen={(value) => changeSkill("edit", value)}
+      >
       <Container className='flex gap-4'>
-        <Input label="Title" value={titleState} setValue={setTitleState}></Input>
-        <LevelSelector label={"Experience level"} value={metricState} onChange={(v: SkillType["metric"]) => {
-          setMetricState(v)
-        }} />
+        <Input label={t('title')} value={title} 
+        setValue={(value) => changeSkill("title", value)}
+        ></Input>
+        <LevelSelector label={t('level')} value={metric} 
+        onChange={(v) => changeSkill("metric", v)}
+        ></LevelSelector>
       </Container>
     </CollapseItem>
   )

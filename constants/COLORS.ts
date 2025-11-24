@@ -13,6 +13,7 @@ const DARKGREEN = "#177256"
 const DARKBLUE = "#082a4d"
 const ORANGE = "#323C46"
 const PURPLE = "#9C27B0"
+const NAVY = "#012e6a"
 
 
 const COLORS = {
@@ -30,7 +31,8 @@ const COLORS = {
     DARKGREEN,
     DARKBLUE,
     ORANGE,
-    PURPLE
+    PURPLE,
+    NAVY
 }
 
 export default COLORS

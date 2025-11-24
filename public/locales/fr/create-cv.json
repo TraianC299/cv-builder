@@ -44,8 +44,8 @@
     "color": "Couleur",
     "profile-completion": "Complétion du profil",
     "general": "Général",
-    "meta-title": "Générateur de CV en ligne",
-    "meta-description": "Créez votre CV professionnel en quelques minutes, suivez les conseils d'experts et téléchargez votre CV en PDF.",
+    "creeaza-cv-meta-title": "Créez votre CV en quelques minutes – Modèles gratuits qui décrochent des entretiens",
+    "creeaza-cv-meta-description": "Créez votre CV en ligne en quelques minutes. Choisissez un modèle, personnalisez-le en direct et téléchargez instantanément votre CV professionnel – 100% gratuit.",
     "downloading-your-cv": "Téléchargement de votre CV",
     "this-may-take-a-while": "Cela peut prendre un certain temps",
     "almost-there": "Presque prêt",
@@ -53,5 +53,12 @@
     "making-sure-everything-is-perfect": "Nous nous assurons que tout est parfait",
     "generating-your-cv": "Génération de votre CV",
     "hold-on-tight": "Accrochez-vous",
-    "your-cv-is-almost-ready": "Votre CV est presque prêt"
-    }
+    "your-cv-is-almost-ready": "Votre CV est presque prêt",
+    "custom": "Personnalisé",
+    "level": "Niveau",
+    "levels-novice": "Novice",
+    "levels-beginner": "Débutant",
+    "levels-skillful": "Compétent",
+    "levels-experienced": "Expérimenté",
+    "levels-expert": "Expert"
+}

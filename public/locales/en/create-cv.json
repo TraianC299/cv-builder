@@ -44,8 +44,8 @@
     "color": "Color",
     "profile-completion": "Profile completion",
     "general": "General",
-    "meta-title": "Resume Builder - Create a professional resume quickly and for free",
-    "meta-description": "Create a professional resume quickly and for free with our online resume builder. Choose from multiple custom-built professional resume templates and entry level resume templates that have helped thousands of people to get the jobs they ever dreamt of.",
+    "creeaza-cv-meta-title": "Create Your Resume in Minutes – Free Templates That Get Interviews",
+    "creeaza-cv-meta-description": "Build your resume online in minutes. Choose a template, customize it live, and download your professional resume instantly – 100% free.",
     "downloading-your-cv": "Downloading your CV",
     "this-may-take-a-while": "This may take a while",
     "almost-there": "Almost there",
@@ -53,5 +53,12 @@
     "making-sure-everything-is-perfect": "Making sure everything is perfect",
     "generating-your-cv": "Generating your CV",
     "hold-on-tight": "Hold on tight",
-    "your-cv-is-almost-ready": "Your CV is almost ready"
+    "your-cv-is-almost-ready": "Your CV is almost ready",
+    "custom": "Custom",
+    "level": "Level",
+    "levels-novice": "Novice",
+    "levels-beginner": "Beginner",
+    "levels-skillful": "Skillful",
+    "levels-experienced": "Experienced",
+    "levels-expert": "Expert"
 }

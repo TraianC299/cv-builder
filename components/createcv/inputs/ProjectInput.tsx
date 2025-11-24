@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
-import { useCV } from '../../../contexts/AppContext'
-import { useTranslation } from 'next-i18next'
-import useDidMountEffect from 'hooks/useDidMountEffect'
-import Input from '@/components/ui/input/Input'
-import CollapseItem from '../CollapseItem'
 import AutosizeInput from '@/components/ui/input/AutosizeInput'
-import MonthYearSelector from '@/components/ui/input/MonthYearSelector'
+import Input from '@/components/ui/input/Input'
 import { ProjectType } from 'interfaces/cv.types'
+import { useTranslation } from 'next-i18next'
+import { useCV } from '../../../contexts/AppContext'
+import CollapseItem from '../CollapseItem'
 
 interface InputProps extends ProjectType {
   onDelete?: () => void,
@@ -14,52 +11,35 @@ interface InputProps extends ProjectType {
 
 const ProjectInput = ({ title, description, edit, startDate, endDate, id, onDelete }: InputProps) => {
   const { t } = useTranslation(["create-cv", "common"])
-  const { cvObject, setCvObject } = useCV()
-  const [open, setOpen] = useState(edit ? true : false)
-  const [titleState, setTitleState] = useState(title || "")
-  const [descriptionState, setDescriptionState] = useState(description || "")
-  const [startDateState, setStartDateState] = useState(startDate || "")
-  const [endDateState, setEndDateState] = useState(endDate || "")
+  const { changeCvObject } = useCV()
 
 
-  useDidMountEffect(() => {
-    setOpen(edit)
-  }, [edit])
-
-  useDidMountEffect(() => {
-    const index = cvObject.projects.findIndex(el => el.id === id)
-    const projectsPlaceholder = [...cvObject.projects]
-    projectsPlaceholder[index] = {
-      id: id,
-      title: titleState,
-      edit: edit,
-      description: descriptionState,
-      startDate: startDateState,
-      endDate: endDateState
-    }
-    setCvObject((prev) => ({
-      ...prev, projects: projectsPlaceholder
-    }))
-  }, [titleState, descriptionState, startDateState, endDateState])
-
-
+  function changeProject(key: string, value: any) {
+    changeCvObject(key, value, id, 'projects')
+  }
 
   return (
     <CollapseItem
       onDelete={onDelete}
       subtitle=''
-      title={titleState || t("not-specified")}
-      open={open}
-      setOpen={setOpen}>
+      title={title || t("not-specified")}
+      open={edit}
+      setOpen={(value) => changeProject("edit", value)}>
       <div className='flex flex-col gap-4'>
         <div className='flex gap-4'>
-          <Input label={t("job-title")} value={titleState} setValue={setTitleState}></Input>
+          <Input label={t("job-title")} value={title} setValue={(value) => changeProject("title", value)} ></Input>
         </div>
         <div className='flex gap-4'>
-          <MonthYearSelector value={startDateState} setValue={setStartDateState} label={t("start-date")}></MonthYearSelector>
-          <MonthYearSelector value={endDateState} setValue={setEndDateState} label={t("end-date")}></MonthYearSelector>
+          <Input value={startDate}
+            setValue={(value) => changeProject("startDate", value)}
+            label={t("start-date")}></Input>
+          <Input value={endDate}
+            setValue={(value) => changeProject("endDate", value)}
+            label={t("end-date")}></Input>
         </div>
-        <AutosizeInput label={t("description")} value={descriptionState} setValue={setDescriptionState}></AutosizeInput>
+        <AutosizeInput label={t("description")} value={description}
+          setValue={(value) => changeProject("description", value)}
+        ></AutosizeInput>
       </div>
     </CollapseItem>
   )

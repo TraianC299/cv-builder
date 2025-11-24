@@ -186,7 +186,7 @@ const SkillInstance = ({ title, grade }: {
 }) => {
 
   return (
-    <SkillInstanceContainer className='flex column'>
+    <SkillInstanceContainer className='flex flex-col'>
       <p className='sp'>{title}</p>
       <div>
         <div style={{ width: `${grade ? grade * 20 : 0}%` }}></div>

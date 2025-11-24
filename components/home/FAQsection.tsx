@@ -2,9 +2,9 @@ import COLORS from '@/constants/COLORS'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import { useTranslation } from 'next-i18next'
 import { useState } from 'react'
-import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 import styled from 'styled-components'
 import Collapse from '../ui/utilities/Collapse'
+import DropdownButton from '../ui/utilities/DropDownButton'
 
 const Container = styled.div`
 margin: 1rem ;
@@ -28,7 +28,7 @@ const Question = ({ question, answer }: { question: string, answer: string }) =>
             <div className='flex w-full justify-between items-center'>
                 <p className='text-xl mb-1'>{question}</p>
                 <div className='cursor-pointer transition' style={{ color: COLORS.MAINCOLOR }} onClick={() => setOpen(prev => !prev)}>
-                    {open ? <BiChevronUp className='text-xl' /> : <BiChevronDown className='text-xl' />}
+                    <DropdownButton open={open} />
                 </div>
             </div>
             <Collapse on={open}>

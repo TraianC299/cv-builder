@@ -1,9 +1,9 @@
 const LEVELS = {
-    1: "Novice",
-    2: "Beginner",
-    3: "Skillful",
-    4: "Experienced",
-    5: "Expert"
+    1: "levels-novice",
+    2: "levels-beginner",
+    3: "levels-skillful",
+    4: "levels-experienced",
+    5: "levels-expert"
 }
 
 export default LEVELS;

@@ -37,7 +37,7 @@ width: 100%;
 
 interface  InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
   value: string,
-  setValue:Function,
+  setValue:(value:string)=>void,
   label?: string | ReactNode,
   error?:string,
   setError?:Function,

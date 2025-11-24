@@ -1,78 +1,60 @@
-import React, { useState } from 'react'
-import Input from '../../ui/input/Input'
-import CollapseItem from '../CollapseItem'
-import useDidMountEffect from '../../../hooks/useDidMountEffect'
+import { CvObjectType, EmploymentType } from 'interfaces/cv.types'
+import { useTranslation } from 'next-i18next'
 import { useCV } from '../../../contexts/AppContext'
 import AutosizeInput from '../../ui/input/AutosizeInput'
-import MonthYearSelector from '../../ui/input/MonthYearSelector'
-import { useTranslation } from 'next-i18next'
-import { CvObjectType, EmploymentType } from 'interfaces/cv.types'
+import Input from '../../ui/input/Input'
+import CollapseItem from '../CollapseItem'
 
 
+const EmploymentInput = ({ title, employer, city, description, edit, startDate, endDate, id }: EmploymentType) => {
+  const { changeCvObject, setCvObject } = useCV()
+  const { t } = useTranslation(["create-cv", "common"])
 
 
-const EmploymentInput = ({title, employer,city, description, edit, startDate, endDate, id}:EmploymentType) => {
-    const {cvObject, setCvObject} = useCV()
-    const [open, setOpen] = useState(edit?true:false)
-    const [titleState, setTitleState] = useState(title || "")
-    const [employerState, setEmployerState] = useState(employer || "")
-    const [descriptionState, setDescriptionState] = useState(description || "")
-    const [cityState, setCityState] = useState(city || "")
-    const [startDateState, setStartDateState] = useState(startDate || "")
-    const [endDateState, setEndDateState] = useState(endDate || "")
-
-    const {t} = useTranslation(["create-cv", "common"])
-
-useDidMountEffect(()=>{
-  setOpen(edit)
-},[edit])
-
-useDidMountEffect(()=>{
-
-  const index = cvObject.employment.findIndex(el=>el.id===id)
-  const skillsPlaceholder = [...cvObject.employment]
-  skillsPlaceholder[index] = {
-    id:id,
-    title:titleState,
-    employer: employerState,
-    city: cityState,
-    edit: edit,
-    description:descriptionState,
-    startDate: startDateState,
-    endDate: endDateState
+  function changeSkills(key: string, value: any) {
+    changeCvObject(key, value, id, 'employment')
   }
-  setCvObject((prev)=>({
-    ...prev, employment:skillsPlaceholder
-  }))
-},[titleState, descriptionState, cityState, startDateState, endDateState, employerState])
 
-const deleteEmployment = () => {
-  setCvObject((prev: CvObjectType) => ({
-    ...prev,
-    employment: prev.employment.filter(el => el.id !== id)
-  }))
-}
+  const deleteEmployment = () => {
+    setCvObject((prev: CvObjectType) => ({
+      ...prev,
+      employment: prev.employment.filter(el => el.id !== id)
+    }))
+  }
+
 
   return (
-    <CollapseItem 
+    <CollapseItem
       onDelete={deleteEmployment}
-      title={titleState || t("not-specified")} 
-      subtitle={employerState || t("not-specified")} 
-      open={open} 
-      setOpen={setOpen}>
+      title={title || t("not-specified")}
+      subtitle={employer || t("not-specified")}
+      open={edit}
+      setOpen={(value) => changeSkills("edit", value)}>
       <div className='flex flex-col gap-4'>
-        <div  className='flex gap-4'>
-          <Input label={t("job-title")} value={titleState} setValue={setTitleState}></Input>
-          <Input label={t("employer")} value={employerState} setValue={setEmployerState} ></Input>
+        <div className='flex gap-4'>
+          <Input label={t("job-title")} value={title} setValue={(value) => changeSkills("title", value)} ></Input>
+          <Input label={t("employer")} value={employer} setValue={(value) => changeSkills("employer", value)} ></Input>
         </div>
-        <div  className='flex gap-4'>
-          <div style={{ width:"100%"}} className='flex gap-4'>
-              <MonthYearSelector  value={startDateState} setValue={setStartDateState} label="Start Date"></MonthYearSelector>
-              <MonthYearSelector value={endDateState} setValue={setEndDateState} label={t("end-date")}></MonthYearSelector>
+        <div className='flex gap-4'>
+          <div className='flex gap-4 w-full'>
+            <Input
+              value={startDate}
+              setValue={(value) => changeSkills("startDate", value)}
+              label={t('start-date')}></Input>
+            <Input value={endDate}
+              setValue={(value) => changeSkills("endDate", value)}
+              label={t("end-date")}></Input>
+
           </div>
-          <Input label={t("city")} value={cityState} setValue={setCityState} ></Input>
+          <Input label={t("city")}
+            value={city}
+            setValue={(value) => changeSkills("city", value)}
+          ></Input>
         </div>
-      <AutosizeInput label={t("description")} value={descriptionState} setValue={setDescriptionState}></AutosizeInput>
+        <AutosizeInput label={t("description")}
+          value={description}
+          setValue={(value) => changeSkills("description", value)}
+        ></AutosizeInput>
       </div>
     </CollapseItem>
   )

@@ -1,9 +1,10 @@
 import COLORS from '@/constants/COLORS'
 import { ReactNode } from 'react'
-import { FiChevronDown, FiChevronUp, FiTrash2 } from 'react-icons/fi'
+import { FiTrash2 } from 'react-icons/fi'
 import { MdOutlineDragIndicator } from 'react-icons/md'
 import styled from 'styled-components'
 import Collapse from '../ui/utilities/Collapse'
+import DropdownButton from '../ui/utilities/DropdownButton'
 
 
 
@@ -45,7 +46,7 @@ const CollapseItem = ({ children, title, subtitle, open, setOpen, onDelete }: {
   title: string,
   subtitle: string,
   open: boolean,
-  setOpen: Function,
+  setOpen: (value: boolean) => void,
   onDelete?: Function
 }) => {
 
@@ -53,14 +54,12 @@ const CollapseItem = ({ children, title, subtitle, open, setOpen, onDelete }: {
     <ListItem className='flex gap-4 items-center w-full'>
       <button type='button' className='handle'  ><MdOutlineDragIndicator /></button>
       <Container>
-        <MainContent onClick={() => setOpen((p: boolean) => !p)} className="flex items-center pointer">
+        <MainContent onClick={() => setOpen(!open)} className="flex items-center pointer">
           <div>
             <p className='p font-medium title'>{title}</p>
             {/* <p className='sp'>{subtitle}</p> */}
           </div>
-          <div className='h-6 w-6 flex items-center rounded-full justify-center cursor-pointer hover:bg-lightgrey'>
-            {open ? <FiChevronUp /> : <FiChevronDown />}
-            </div>
+          <DropdownButton open={open} />
         </MainContent>
         <Collapse on={open}>
           {children}

@@ -1,19 +1,18 @@
+import COLORS from '@/constants/COLORS'
+import LANGUAGES from '@/constants/LANGUAGES'
+import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+import useRewrites from 'hooks/useRewrites'
+import { useTranslation } from 'next-i18next'
+import Link from 'next/link'
+import { useRouter } from "next/router"
 import React, { useEffect } from 'react'
+import { GrFormClose } from 'react-icons/gr'
 import styled from 'styled-components'
 import LogoSvg from "../../assets/svg/logo.svg"
 import MenuSvg from "../../assets/svg/menu.svg"
-import MenuLogo from "../../assets/svg/menuLogo.svg"
-import Link from 'next/link'
-import { useRouter } from "next/router";
 import { Button } from '../../styles/global'
-import { useTranslation } from 'next-i18next'
-import {GrFormClose} from 'react-icons/gr'
-import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
-import COLORS from '@/constants/COLORS'
-import {BiChevronDown, BiChevronUp} from 'react-icons/bi'
 import Collapse from '../ui/utilities/Collapse'
-import LANGUAGES from '@/constants/LANGUAGES'
-import useRewrites from 'hooks/useRewrites'
+import DropdownButton from '../ui/utilities/DropDownButton'
 
 
 
@@ -64,24 +63,24 @@ const PhoneNav = () => {
     const [openMenu, setOpenMenu] = React.useState(false)
     const router = useRouter();
     const [stuck, setStuck] = React.useState(false)
-    const {t} = useTranslation("common")
+    const { t } = useTranslation("common")
 
 
     useEffect(() => {
-        if(router.asPath==="/"){
+        if (router.asPath === "/") {
             document.onscroll = (e) => {
                 //@ts-ignore
-                if(e.target.scrollingElement.scrollTop>50){
+                if (e.target.scrollingElement.scrollTop > 50) {
                     setStuck(true)
                     return
                 }
                 setStuck(false)
-    
+
             }
-        }else{
+        } else {
             setStuck(true)
         }
-        
+
     }, [])
 
 
@@ -89,28 +88,28 @@ const PhoneNav = () => {
         if (openMenu) {
             setOpenMenu(previous => !previous);
         }
-      }, [router.asPath]);
+    }, [router.asPath]);
 
 
 
 
-    
-  return (
-    <header className='w-full sticky flex items-center justify-center' style={{background:"white", position: 'sticky', top:0, zIndex:999}}>
-        <Header
-        id="header"
-        className={stuck?"stuck transition sectionPadding":"not-stuck transition sectionPadding"}
-        >
-            <Container   className='flex'>
-               <LogoContainer href="/" id="logo">
-                       <LogoSvg style={{cursor:"pointer"}} ></LogoSvg>
-               </LogoContainer>
-                <MobileMenuButton onClick={()=>setOpenMenu(previous=>!previous)} className='flex justify-center  items-center'><MenuSvg/>Menu</MobileMenuButton>
-                <MobileMenuModal open={openMenu} setOpen={setOpenMenu}></MobileMenuModal>
-            </Container>
-        </Header>
-    </header>
-  )
+
+    return (
+        <header className='w-full sticky flex items-center justify-center' style={{ background: "white", position: 'sticky', top: 0, zIndex: 999 }}>
+            <Header
+                id="header"
+                className={stuck ? "stuck transition sectionPadding" : "not-stuck transition sectionPadding"}
+            >
+                <Container className='flex'>
+                    <LogoContainer href="/" id="logo">
+                        <LogoSvg style={{ cursor: "pointer" }} ></LogoSvg>
+                    </LogoContainer>
+                    <MobileMenuButton onClick={() => setOpenMenu(previous => !previous)} className='flex justify-center  items-center'><MenuSvg />Menu</MobileMenuButton>
+                    <MobileMenuModal open={openMenu} setOpen={setOpenMenu}></MobileMenuModal>
+                </Container>
+            </Header>
+        </header>
+    )
 }
 
 
@@ -145,51 +144,52 @@ padding:0.75rem 1rem;
 interface MobileMenuModalProps {
     open: boolean,
     setOpen: React.Dispatch<React.SetStateAction<boolean>>
-} 
+}
 
 
-const  MobileMenuModal:React.FC<MobileMenuModalProps> = ({open, setOpen}) => {
+const MobileMenuModal: React.FC<MobileMenuModalProps> = ({ open, setOpen }) => {
     const [openServices, setOpenServices] = React.useState(false)
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     const router = useRouter();
-    const {rewrite} = useRewrites()
+    const { rewrite } = useRewrites()
 
-    
-    return(
-        <MobileMenuModalStyles className={open? "open transition" : 'transition'} style={{opacity: open? 1 : 0, transform: `translateY(${open?0:"-2rem"})`}}>
-            <MobileMenuModalHeaderStyles style={{position: "static"}} className='flex'>
-           <LogoContainer aria-label={"Home"} href="/" id="logo">
-           </LogoContainer>
-       <Button onClick={()=>setOpen(previous=>!previous)} className='flex justify-center  items-center' style={{columnGap:"10px", background:"white", color:COLORS.BLACKGREY}}>
-        {t("close")}<GrFormClose className='text-lg'/>
-        </Button>
-    </MobileMenuModalHeaderStyles>
-    <MobileLinkContainerStyles>
-        <MobileLinkStyles>
-            <Link href="about-us" className='main-title'>
-                {t("about-us")}
-            </Link>
-        </MobileLinkStyles>
-        <MobileLinkStyles><Link href={rewrite("/blog")} className='main-title'>{t("blog")}</Link></MobileLinkStyles>
-        <MobileLinkStyles onClick={()=>setOpenServices(previous=>!previous)}>
-            <div className='main-title'>{t("language")}{openServices?<BiChevronUp/>:<BiChevronDown/>}</div>
-            <Collapse on={openServices}>
-            <MobileSubMenuContainerStyle>
-                {LANGUAGES.map((el)=>{
-                    return(
-                        <Link href={router.pathname} locale={el.locale} key={el.locale}>
-                            {t(el.translationKey)}
-                        </Link>
-                    )
 
-                })
-                }
-            </MobileSubMenuContainerStyle>
+    return (
+        <MobileMenuModalStyles className={open ? "open transition" : 'transition'} style={{ opacity: open ? 1 : 0, transform: `translateY(${open ? 0 : "-2rem"})` }}>
+            <MobileMenuModalHeaderStyles style={{ position: "static" }} className='flex'>
+                <LogoContainer aria-label={"Home"} href="/" id="logo">
+                </LogoContainer>
+                <Button onClick={() => setOpen(previous => !previous)} className='flex justify-center  items-center' style={{ columnGap: "10px", background: "white", color: COLORS.BLACKGREY }}>
+                    {t("close")}<GrFormClose className='text-lg' />
+                </Button>
+            </MobileMenuModalHeaderStyles>
+            <MobileLinkContainerStyles>
+                <MobileLinkStyles>
+                    <Link href="about-us" className='main-title'>
+                        {t("about-us")}
+                    </Link>
+                </MobileLinkStyles>
+                <MobileLinkStyles><Link href={rewrite("/blog")} className='main-title'>{t("blog")}</Link></MobileLinkStyles>
+                <MobileLinkStyles onClick={() => setOpenServices(previous => !previous)}>
+                    <div className='main-title'>{t("language")}
+                        <DropdownButton open={openServices} /></div>
+                    <Collapse on={openServices}>
+                        <MobileSubMenuContainerStyle>
+                            {LANGUAGES.map((el) => {
+                                return (
+                                    <Link href={router.pathname} locale={el.locale} key={el.locale}>
+                                        {t(el.translationKey)}
+                                    </Link>
+                                )
 
-            </Collapse>
-        </MobileLinkStyles>
-     
-    </MobileLinkContainerStyles>
+                            })
+                            }
+                        </MobileSubMenuContainerStyle>
+
+                    </Collapse>
+                </MobileLinkStyles>
+
+            </MobileLinkContainerStyles>
         </MobileMenuModalStyles>
     )
 }

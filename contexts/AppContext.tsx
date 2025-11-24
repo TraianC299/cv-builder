@@ -38,13 +38,15 @@ const CVcontext = React.createContext<{
     cvObject: CvObjectType;
     setCvObject: React.Dispatch<React.SetStateAction<CvObjectType>>,
     progress: number,
+    changeCvObject: (key: string, value: string, id: string, category: 'employment' | 'education' | 'internships' | 'projects' | 'skills' | 'languages') => void,
     addNew: (key: keyof typeof initials) => void
 }>(
     {
         cvObject: initialCvObject,
         setCvObject: () => { },
         progress: 0,
-        addNew: () => { }
+        addNew: () => { },
+        changeCvObject: () => { }
     }
 )
 export function useCV() {
@@ -59,6 +61,19 @@ export const CVprovider = ({ children }: {
     const [cvObject, setCvObject] = useLocalStorage<CvObjectType>("cvobject", {
         ...initialCvObject,
     })
+
+     function changeCvObject(key: string, value: string, id: string, category: 'employment' | 'education' | 'internships' | 'projects' | 'skills' | 'languages') {
+    const items = cvObject[category] as { id: string; [k: string]: any }[]
+    const index = items.findIndex(el => el.id === id)
+    const itemsPlaceholder = [...items]
+    itemsPlaceholder[index] = {
+      ...itemsPlaceholder[index],
+      [key]: value
+    }
+    setCvObject((prev) => ({
+      ...prev, [category]: itemsPlaceholder
+    }))
+  }
 
     const calculateProgress = () => {
         let progress = 0
@@ -117,7 +132,8 @@ export const CVprovider = ({ children }: {
         cvObject,
         setCvObject,
         progress,
-        addNew
+        addNew,
+        changeCvObject
     }
 
 

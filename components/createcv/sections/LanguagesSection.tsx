@@ -16,7 +16,7 @@ const LanguagesSection = () => {
     title={t("languages")} onClick={()=>addNew('languages')}>
       
         <ReactSortable
-        className='flex flex-col gap-2'
+        className='flex flex-col'
         list={cvObject.languages}
         setList={(v)=>{setCvObject((prev)=>({...prev, languages:v}))}}
         handle=".handle"

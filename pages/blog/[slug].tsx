@@ -138,11 +138,10 @@ type Props = {
 
 const BlogPage = ({ post }: Props) => {
   const router = useRouter()
-
   const scrollPosition = useScrollPosition()
   const [percentageRead, setPercentageRead] = React.useState(0)
   const { t } = useTranslation('blog')
-
+  const { rewrite } = useRewrites()
   useEffect(() => {
     const scrollPercentage = Math.round((scrollPosition / (document.body.clientHeight - window.innerHeight)) * 100)
     setPercentageRead(scrollPercentage)
@@ -151,12 +150,13 @@ const BlogPage = ({ post }: Props) => {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
-  const { rewrite } = useRewrites()
+
 
 
   return (
     <article>
       <BlogSEO
+        canonicalUrl={`https://resumelio.com/${router.locale}/blog/${post.slug}`}
         title={post.title}
         summary={post.excerpt}
         images={post.coverImage}

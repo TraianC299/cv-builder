@@ -217,8 +217,7 @@ const SkillInstance = ({ title, grade }: {
     <SkillInstanceContainer className='flex items-center justify-between '>
       <p className='sp'>{title}</p>
       <div className='flex'>
-        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 < (grade || 0) ? (theme?.color || COLORS.YELLOW) : COLORS.LIGHTGREY }}></div>)}
-
+        {Array.from(Array(5).keys()).map((el, index) => <div key={el.toString()} className='circle' style={{ background: index + 1 <= (grade || 0) ? (theme?.color || COLORS.YELLOW) : COLORS.LIGHTGREY }}></div>)}
       </div>
     </SkillInstanceContainer>
   )

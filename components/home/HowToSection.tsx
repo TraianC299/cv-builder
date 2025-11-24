@@ -1,12 +1,10 @@
+import ChooseTemplate from "@/assets/svg/choose-template-step.svg";
 import DownloadButton from "@/assets/svg/download-button-step.svg";
 import PersonalInfo from "@/assets/svg/personal-information-step.svg";
-import ChooseTemplate from "@/assets/svg/choose-template-step.svg";
-import styled from "styled-components";
-import COLORS from "@/constants/COLORS";
-import { MdFormatListBulleted, MdOutlineDesignServices } from "react-icons/md";
-import { FaRegFilePdf } from "react-icons/fa";
-import { useState } from "react";
 import { useTranslation } from "next-i18next";
+import { useState } from "react";
+import { FaRegFilePdf } from "react-icons/fa";
+import { MdFormatListBulleted, MdOutlineDesignServices } from "react-icons/md";
 
 export default function HowToSection() {
   const [active, setActive] = useState(0);
@@ -40,24 +38,17 @@ export default function HowToSection() {
         <h2 className="text-4xl font-bold text-gray-900">
           {t("title")}
         </h2>
-        <p className="text-gray-600 max-w-md">
+        <p className="text-secondarytext max-w-md">
           {t("description")}
         </p>
         {steps.map((step, index) => (
-          <div
+          <Step
             key={index}
-            className={`flex items-start gap-4 p-4 rounded-lg cursor-pointer transition-colors ${active === index
-                ? "bg-blue-100"
-                : "bg-white hover:bg-gray-50"
-              }`}
-            onMouseEnter={() => setActive(index)}
-          >
-            <div className="flex items-center justify-center h-10 w-10 min-w-10 bg-maincolor rounded-full">{step.icon}</div>
-            <div>
-              <h3 className="text-lg font-semibold">{step.title}</h3>
-              <p className="text-gray-600">{step.desc}</p>
-            </div>
-          </div>
+            step={step}
+            index={index}
+            active={active === index}
+            setActive={setActive}
+          />
         ))}
       </div>
 
@@ -66,5 +57,33 @@ export default function HowToSection() {
         {steps[active].img}
       </div>
     </section>
+  );
+}
+
+function Step({
+  step,
+  index,
+  active,
+  setActive
+}: {
+  step: { icon: JSX.Element; title: string; desc: string; img: JSX.Element };
+  index: number;
+  active: boolean;
+  setActive: (index: number) => void;
+}) {
+  return (
+    <div
+      className={`flex items-start gap-4 p-4 rounded-lg cursor-pointer transition-colors ${active
+        ? "bg-maincolor text-white"
+        : "bg-white hover:bg-gray-50"
+        }`}
+      onMouseEnter={() => setActive(index)}
+    >
+      <div className="flex items-center justify-center h-10 w-10 min-w-10 bg-maincolor rounded-full">{step.icon}</div>
+      <div>
+        <h3 className="text-lg font-semibold">{step.title}</h3>
+        <p className={`${active ? "text-white" : 'text-secondarytext'}`}>{step.desc}</p>
+      </div>
+    </div>
   );
 }

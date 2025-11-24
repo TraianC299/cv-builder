@@ -44,8 +44,8 @@
     "color": "Farbe",
     "profile-completion": "Profilvollständigkeit",
     "general": "Allgemein",
-    "meta-title": "Lebenslauf-Generator | Erstellen Sie Ihren Lebenslauf in 5 Minuten",
-    "meta-description": "Erstellen Sie Ihren Lebenslauf in 5 Minuten mit unserem Lebenslauf-Generator. Erstellen Sie einen perfekten Lebenslauf und laden Sie ihn als PDF herunter.",
+    "creeaza-cv-meta-title": "Erstelle deinen Lebenslauf in Minuten – Kostenlose Vorlagen, die dir Vorstellungsgespräche bringen",
+    "creeaza-cv-meta-description": "Erstelle deinen Lebenslauf online in wenigen Minuten. Wähle eine Vorlage, passe sie live an und lade deinen professionellen Lebenslauf sofort herunter – 100 % kostenlos.",
     "downloading-your-cv": "Ihr Lebenslauf wird heruntergeladen",
     "this-may-take-a-while": "Das kann eine Weile dauern",
     "almost-there": "Fast fertig",
@@ -53,5 +53,12 @@
     "making-sure-everything-is-perfect": "Wir stellen sicher, dass alles perfekt ist",
     "generating-your-cv": "Ihr Lebenslauf wird erstellt",
     "hold-on-tight": "Halten Sie sich fest",
-    "your-cv-is-almost-ready": "Ihr Lebenslauf ist fast fertig"
-    }
+    "your-cv-is-almost-ready": "Ihr Lebenslauf ist fast fertig",
+    "custom": "Benutzerdefiniert",
+    "level": "Niveau",
+    "levels-novice": "Anfänger",
+    "levels-beginner": "Einsteiger",
+    "levels-skillful": "Versiert",
+    "levels-experienced": "Erfahren",
+    "levels-expert": "Experte"
+}
