@@ -10,7 +10,8 @@ import LANGUAGES from '@/constants/LANGUAGES'
 import OptionSelector from '../ui/input/OptionSelector'
 import useRewrites from 'hooks/useRewrites';
 import { LanguageType } from 'interfaces/lang.types';
-import  LogoSvg from '@/assets/svg/logo.svg';
+import  logoSvg from '@/assets/svg/logo.svg';
+import Image from 'next/image';
 
 
 const Header = styled.header`
@@ -77,7 +78,7 @@ const DektopNav = () => {
     return (
         <Header id="header">
             <LogoContainer href="/" id="logo">
-                <LogoSvg style={{ cursor: "pointer"}} ></LogoSvg>
+                <Image src={logoSvg} alt="Logo"></Image>
             </LogoContainer>
             <DesktopMenuLinksContainerStyles>
                 <div className='flex items-center justify-center gap-8'>

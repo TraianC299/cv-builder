@@ -4,17 +4,19 @@ const rewrites = require("./rewrites.config.json");
 
 const nextConfig = {
   i18n,
+  compiler: {
+    styledComponents: true,
+  },
+  experimental: {
+    turbo: {
+      loaders: {
+        '.svg': ['@svgr/webpack'],
+      },
+    },
+  },
   // reactStrictMode: true,
   swcMinify: true,
   productionBrowserSourceMaps: true,
-
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"]
-    });
-    return config;
-  },
   async rewrites() {
     return [...rewrites]
   },

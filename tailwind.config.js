@@ -25,24 +25,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        black: BLACK,
-        white: WHITE,
-        bordercolor: BORDERCOLOR,
-        yellow: YELLOW,
-        grey: GREY,
-        blackgrey: BLACKGREY,
-        lightgrey: LIGHTGREY,
-        greyWhite: GREYWHITE,
-        red: RED,
-        secondarytext: "#636363",
-        maincolor: MAINCOLOR,
-        green: GREEN,
-        darkgreen: DARKGREEN,
-        darkblue: DARKBLUE,
-        orange: ORANGE,
-        purple: PURPLE
-      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },

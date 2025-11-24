@@ -5,7 +5,6 @@ import { useCV } from '../../../contexts/AppContext'
 import SkillInput from '../inputs/SkillInput'
 import { useTranslation } from 'next-i18next'
 
-
 const SkillsSection = () => {
   const { cvObject, setCvObject, addNew } = useCV()
   const { t } = useTranslation(["create-cv", "common"])

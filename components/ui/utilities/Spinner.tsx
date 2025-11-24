@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import SpinnerSvg from "../../assets/svg/spinner.svg";
+import spinnerSvg from "../../assets/svg/spinner.svg";
 import COLORS from '@/constants/COLORS';
+import Image from 'next/image';
 
 
 
-const Rotation = styled(SpinnerSvg)`
+const Rotation = styled.div`
 height: 1.25rem;
 width: 1.25rem;
 *{
@@ -18,7 +19,10 @@ const Spinner = ({ className, ...props}:{
 }) => {
   return (
     
-      <Rotation {...props} className={`${className} animate-spin`}></Rotation>
+      <Rotation {...props} className={`${className} animate-spin`}>
+        <Image fill src={spinnerSvg} alt="Loading..." />
+
+      </Rotation>
    
   )
 }

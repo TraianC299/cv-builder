@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from '../../styles/global'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
 
@@ -73,12 +72,12 @@ type FeatureProps = {
     svg: React.ReactNode,
     link: string
 }
-const Feature:React.FC<FeatureProps> = ({title, description, svg, link}) => {
+const Feature:React.FC<FeatureProps> = ({title, description, svg}) => {
     return (
         <FeatureContainerStyles
 
          className='transition'>
-            <div >{svg}</div>
+            <div  className='text-sm'>{svg}</div>
             <h4 className={"text-xl font-semibold"}>{title}</h4>
             <p className='sp font-light'>{description}</p>
             {/* <Link href={link}>

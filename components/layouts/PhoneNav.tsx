@@ -8,11 +8,12 @@ import { useRouter } from "next/router"
 import React, { useEffect } from 'react'
 import { GrFormClose } from 'react-icons/gr'
 import styled from 'styled-components'
-import LogoSvg from "../../assets/svg/logo.svg"
-import MenuSvg from "../../assets/svg/menu.svg"
+import logoSvg from "../../assets/svg/logo.svg"
+import menuSvg from "../../assets/svg/menu.svg"
 import { Button } from '../../styles/global'
 import Collapse from '../ui/utilities/Collapse'
-import DropdownButton from '../ui/utilities/DropDownButton'
+import DropdownButton from '../ui/utilities/DropdownButton'
+import Image from 'next/image'
 
 
 
@@ -91,9 +92,6 @@ const PhoneNav = () => {
     }, [router.asPath]);
 
 
-
-
-
     return (
         <header className='w-full sticky flex items-center justify-center' style={{ background: "white", position: 'sticky', top: 0, zIndex: 999 }}>
             <Header
@@ -102,9 +100,9 @@ const PhoneNav = () => {
             >
                 <Container className='flex'>
                     <LogoContainer href="/" id="logo">
-                        <LogoSvg style={{ cursor: "pointer" }} ></LogoSvg>
+                    <Image src={logoSvg} alt="Logo"></Image>
                     </LogoContainer>
-                    <MobileMenuButton onClick={() => setOpenMenu(previous => !previous)} className='flex justify-center  items-center'><MenuSvg />Menu</MobileMenuButton>
+                    <MobileMenuButton onClick={() => setOpenMenu(previous => !previous)} className='flex justify-center items-center'><Image height={20} alt='menu button icon' src={menuSvg}/>Menu</MobileMenuButton>
                     <MobileMenuModal open={openMenu} setOpen={setOpenMenu}></MobileMenuModal>
                 </Container>
             </Header>

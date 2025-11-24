@@ -1,13 +1,13 @@
-import React from 'react'
 import styled from 'styled-components'
-import SaveSvg from '../../assets/svg/features/save.svg'
-import Editor from '../../assets/svg/features/editor.svg'
-import PdfSvg from '../../assets/svg/features/pdf.svg'
-import FreeSvg from '../../assets/svg/features/free.svg'
+import saveSvg from '../../assets/svg/features/save.svg'
+import editor from '../../assets/svg/features/editor.svg'
+import pdfSvg from '../../assets/svg/features/pdf.svg'
+import freeSvg from '../../assets/svg/features/free.svg'
 import Feature from './Feature'
 import {useTranslation} from 'next-i18next'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
+import Image from 'next/image'
 
 const FeaturesContainerStyles = styled.div`
 color: ${COLORS.BLACK};
@@ -63,10 +63,10 @@ const FeaturesSection = () => {
             <p className='text-base font-normal'>{t("why-us-subtitle")}</p>
         </TextContentStyles>
         <ServicesContainerStyles>
-            <Feature link="/services/dtp-and-plr" svg={<Editor/>} title={t("easy-to-use-title")} description={t("easy-to-use-subtitle")}></Feature>
-            <Feature link="/services/transcription-and-machine-learning" svg={<SaveSvg/>} title={t("save-progess-title")} description={t("save-progress-subtitle")}></Feature>
-             <Feature link="/services/subtitling-and-captioning" svg={<PdfSvg/>} title={t("download-pdf-title")} description={t("download-pdf-subtitle")}></Feature>
-            <Feature link="/services/voiceover-and-dubbing" svg={<FreeSvg/>} title={t("no-fees-title")} description={t("no-fees-subtitle")}></Feature>
+            <Feature link="/services/dtp-and-plr" svg={<Image height={20} width={20} alt='' src={editor} />} title={t("easy-to-use-title")} description={t("easy-to-use-subtitle")}></Feature>
+            <Feature link="/services/transcription-and-machine-learning" svg={<Image height={20} width={20} alt='' src={saveSvg} />} title={t("save-progess-title")} description={t("save-progress-subtitle")}></Feature>
+            <Feature link="/services/subtitling-and-captioning" svg={<Image height={20} width={20} alt='' src={pdfSvg} />} title={t("download-pdf-title")} description={t("download-pdf-subtitle")}></Feature>
+            <Feature link="/services/voiceover-and-dubbing" svg={<Image height={20} width={20} alt='' src={freeSvg} />} title={t("no-fees-title")} description={t("no-fees-subtitle")}></Feature>
         </ServicesContainerStyles>
     </FeaturesContainerStyles>
   )

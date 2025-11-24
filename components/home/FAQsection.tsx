@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next'
 import { useState } from 'react'
 import styled from 'styled-components'
 import Collapse from '../ui/utilities/Collapse'
-import DropdownButton from '../ui/utilities/DropDownButton'
+import DropdownButton from '../ui/utilities/DropdownButton'
 
 const Container = styled.div`
 margin: 1rem ;

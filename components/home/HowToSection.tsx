@@ -1,8 +1,9 @@
-import ChooseTemplate from "@/assets/svg/choose-template-step.svg";
-import DownloadButton from "@/assets/svg/download-button-step.svg";
-import PersonalInfo from "@/assets/svg/personal-information-step.svg";
+import chooseTemplate from "@/assets/svg/choose-template-step.svg";
+import downloadButton from "@/assets/svg/download-button-step.svg";
+import personalInfo from "@/assets/svg/personal-information-step.svg";
 import { useTranslation } from "next-i18next";
-import { useState } from "react";
+import Image from "next/image";
+import { ReactNode, useState } from "react";
 import { FaRegFilePdf } from "react-icons/fa";
 import { MdFormatListBulleted, MdOutlineDesignServices } from "react-icons/md";
 
@@ -15,24 +16,24 @@ export default function HowToSection() {
       icon: <MdOutlineDesignServices className="text-2xl text-white" />,
       title: t("step1.title"),
       desc: t("step1.desc"),
-      img: <ChooseTemplate />
+      img: <Image src={chooseTemplate} alt=""  />
     },
     {
       icon: <MdFormatListBulleted className="text-2xl text-white" />,
       title: t("step2.title"),
       desc: t("step2.desc"),
-      img: <PersonalInfo />
+      img: <Image src={personalInfo} alt=""  />
     },
     {
       icon: <FaRegFilePdf className="text-2xl text-white" />,
       title: t("step3.title"),
       desc: t("step3.desc"),
-      img: <DownloadButton />
+      img: <Image src={downloadButton} alt=""  />
     },
   ];
 
   return (
-    <section className="flex flex-col min-h-[40rem] rounded-lg md:grid md:grid-cols-2 bg-[#f5f5f5] ">
+    <section className="flex flex-col min-h-160 rounded-lg md:grid md:grid-cols-2 bg-[#f5f5f5] ">
       {/* Steps section */}
       <div className="flex flex-col gap-4 p-4 md:p-16">
         <h2 className="text-4xl font-bold text-gray-900">
@@ -54,7 +55,7 @@ export default function HowToSection() {
 
       {/* Image section */}
       <div className="flex items-center justify-center h-full w-full aspect-square">
-        {steps[active].img}
+        {steps[active]?.img}
       </div>
     </section>
   );
@@ -66,7 +67,7 @@ function Step({
   active,
   setActive
 }: {
-  step: { icon: JSX.Element; title: string; desc: string; img: JSX.Element };
+  step: { icon: ReactNode; title: string; desc: string; img: ReactNode };
   index: number;
   active: boolean;
   setActive: (index: number) => void;
