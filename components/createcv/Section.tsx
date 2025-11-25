@@ -1,5 +1,5 @@
 import COLORS from '@/constants/COLORS'
-import { CvListKey } from 'interfaces/cv.types'
+import { CvListKey } from '@/interfaces/cv.types'
 import { ReactNode } from 'react'
 import { FiTrash2 } from 'react-icons/fi'
 import styled from 'styled-components'

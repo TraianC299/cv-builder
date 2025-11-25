@@ -2,7 +2,7 @@ import COLORS from '@/constants/COLORS'
 import React, { MouseEventHandler, useEffect, useRef, useState } from 'react'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import styled from 'styled-components'
-import { InputStyle } from 'styles/global'
+import { InputStyle } from '@/styles/global'
 import useClickOutside from '../../../hooks/useClickOutside'
 import Input from './Input'
 

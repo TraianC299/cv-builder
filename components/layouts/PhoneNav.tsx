@@ -1,7 +1,7 @@
 import COLORS from '@/constants/COLORS'
 import LANGUAGES from '@/constants/LANGUAGES'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
-import useRewrites from 'hooks/useRewrites'
+import useRewrites from '@/hooks/useRewrites'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useRouter } from "next/router"

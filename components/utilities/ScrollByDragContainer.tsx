@@ -1,7 +1,7 @@
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
-import useCustomCursor from 'hooks/useCustomCursor'
-import useMediaQuery from 'hooks/useMediaQuery'
-import useMousePosition from 'hooks/useMousePosition'
+import useCustomCursor from '@/hooks/useCustomCursor'
+import useMediaQuery from '@/hooks/useMediaQuery'
+import useMousePosition from '@/hooks/useMousePosition'
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 

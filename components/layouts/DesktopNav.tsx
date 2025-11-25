@@ -8,8 +8,8 @@ import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
 import COLORS from '@/constants/COLORS'
 import LANGUAGES from '@/constants/LANGUAGES'
 import OptionSelector from '../ui/input/OptionSelector'
-import useRewrites from 'hooks/useRewrites';
-import { LanguageType } from 'interfaces/lang.types';
+import useRewrites from '@/hooks/useRewrites';
+import { LanguageType } from '@/interfaces/lang.types';
 import  logoSvg from '@/assets/svg/logo.svg';
 import Image from 'next/image';
 

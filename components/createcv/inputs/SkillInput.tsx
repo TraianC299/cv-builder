@@ -1,12 +1,12 @@
 import LevelSelector from '@/components/ui/input/LevelSelector'
 import LEVELS from '@/constants/LEVELS'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
-import { SkillType } from 'interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import { useCV } from '../../../contexts/AppContext'
 import Input from '../../ui/input/Input'
 import CollapseItem from '../CollapseItem'
+import { SkillType } from '@/interfaces/cv.types'
 const Container = styled.div`
 flex-direction: column;
 @media ${MEDIAQUERIES.laptopSmall}{

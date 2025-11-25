@@ -5,7 +5,7 @@ import COLORS from '@/constants/COLORS';
 import Link from 'next/link';
 import LANGUAGES from '@/constants/LANGUAGES';
 import { useRouter } from 'next/router';
-import useRewrites from 'hooks/useRewrites';
+import useRewrites from '@/hooks/useRewrites';
 
 
 

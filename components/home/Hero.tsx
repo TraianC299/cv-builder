@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Button } from '../../styles/global'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
-import useRewrites from 'hooks/useRewrites'
+import useRewrites from '@/hooks/useRewrites'
 
 
 

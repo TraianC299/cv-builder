@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from 'interfaces/cv.types'
+import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from '@/interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
 import FontScaleWrapper from '../createcv/FontScaleWrapper'

@@ -1,5 +1,5 @@
 import COLORS from '@/constants/COLORS'
-import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from 'interfaces/cv.types'
+import { CvObjectType, EducationType, EmploymentType, ProjectType, SkillType } from '@/interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
 import { ReactNode } from 'react'
 import { GiFlowerStar } from 'react-icons/gi'

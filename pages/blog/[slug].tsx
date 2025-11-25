@@ -1,6 +1,6 @@
 import COLORS from '@/constants/COLORS'
 import LANGUAGES from '@/constants/LANGUAGES'
-import useRewrites from 'hooks/useRewrites'
+import useRewrites from '@/hooks/useRewrites'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import ErrorPage from 'next/error'

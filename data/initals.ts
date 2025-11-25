@@ -1,4 +1,4 @@
-import { SkillType } from "interfaces/cv.types";
+import { SkillType } from "@/interfaces/cv.types";
 import { nanoid } from "nanoid";
 
 const skill: SkillType = {

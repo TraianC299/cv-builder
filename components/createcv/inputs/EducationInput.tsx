@@ -1,4 +1,4 @@
-import { CvObjectType, EducationType } from 'interfaces/cv.types'
+import { CvObjectType, EducationType } from '@/interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
 import { useState } from 'react'
 import { useCV } from '../../../contexts/AppContext'

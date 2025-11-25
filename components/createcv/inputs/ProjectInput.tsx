@@ -1,6 +1,6 @@
 import AutosizeInput from '@/components/ui/input/AutosizeInput'
 import Input from '@/components/ui/input/Input'
-import { ProjectType } from 'interfaces/cv.types'
+import { ProjectType } from '@/interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
 import { useCV } from '../../../contexts/AppContext'
 import CollapseItem from '../CollapseItem'

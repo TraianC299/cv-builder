@@ -1,6 +1,6 @@
 import COLORS from '@/constants/COLORS';
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES';
-import useLockBody from 'hooks/useLockBody';
+import useLockBody from '@/hooks/useLockBody';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { useTranslation } from 'next-i18next';

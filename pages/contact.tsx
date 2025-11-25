@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Button } from 'styles/global';
+import { Button } from '@/styles/global';
 
 export default function ContactPage() {
     const router = useRouter();

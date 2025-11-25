@@ -1,4 +1,4 @@
-import { CvObjectType, EmploymentType } from 'interfaces/cv.types'
+import { CvObjectType, EmploymentType } from '@/interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
 import { useCV } from '../../../contexts/AppContext'
 import AutosizeInput from '../../ui/input/AutosizeInput'

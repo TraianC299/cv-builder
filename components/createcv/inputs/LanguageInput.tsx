@@ -1,7 +1,7 @@
 import LevelSelector from '@/components/ui/input/LevelSelector'
 import LEVELS from '@/constants/LEVELS'
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
-import { LanguageType } from 'interfaces/cv.types'
+import { LanguageType } from '@/interfaces/cv.types'
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import { useCV } from '../../../contexts/AppContext'
