@@ -24,7 +24,6 @@ import useRewrites from '@/hooks/useRewrites';
  const Container = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     max-width: 1300px;
     margin: auto ;
     /* background: red; */

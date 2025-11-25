@@ -15,7 +15,7 @@ display: flex;
 height: 100vh;
 overflow: hidden;
 >form{
-  width: 40vw;
+  width: 50vw;
   max-width: 800px;
 }
 >div{

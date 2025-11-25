@@ -1,8 +1,8 @@
-import React, { Dispatch, ReactNode, useContext } from 'react'
-import useLocalStorage from '../hooks/useLocalStorage'
 import { nanoid } from 'nanoid'
-import { CvObjectType } from '../interfaces/cv.types'
+import React, { ReactNode, useContext } from 'react'
 import { initials } from '../data/initals'
+import useLocalStorage from '../hooks/useLocalStorage'
+import { CvObjectType } from '../interfaces/cv.types'
 
 
 export const CVcategories = [
@@ -62,22 +62,25 @@ export const CVprovider = ({ children }: {
         ...initialCvObject,
     })
 
-     function changeCvObject(key: string, value: string, id: string, category: 'employment' | 'education' | 'internships' | 'projects' | 'skills' | 'languages') {
-    const items = cvObject[category] as { id: string; [k: string]: any }[]
-    const index = items.findIndex(el => el.id === id)
-    const itemsPlaceholder = [...items]
-    itemsPlaceholder[index] = {
-      ...itemsPlaceholder[index],
-      [key]: value
+    function changeCvObject(key: string, value: string, id: string, category: 'employment' | 'education' | 'internships' | 'projects' | 'skills' | 'languages') {
+        const items = cvObject[category] as { id: string;[k: string]: any }[]
+        const index = items.findIndex(el => el.id === id)
+        const itemsPlaceholder = [...items]
+        itemsPlaceholder[index] = {
+            ...itemsPlaceholder[index],
+            [key]: value
+        }
+        setCvObject((prev) => ({
+            ...prev, [category]: itemsPlaceholder
+        }))
     }
-    setCvObject((prev) => ({
-      ...prev, [category]: itemsPlaceholder
-    }))
-  }
 
     const calculateProgress = () => {
         let progress = 0
-        if (cvObject.name && cvObject.surname && cvObject.jobTitle && cvObject.city && cvObject.country && cvObject.email && cvObject.phone && cvObject.profileImage) {
+        if (cvObject.name && cvObject.surname && cvObject.jobTitle && cvObject.city && cvObject.country) {
+            progress += 10
+        }
+        if (cvObject.email && cvObject.phone && cvObject.profileImage) {
             progress += 10
         }
         if (cvObject.summary) {

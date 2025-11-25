@@ -30,7 +30,7 @@ const EducationInput = ({
   }
 
 
-  function changeCV(key: string, value: string) {
+  function changeCV(key: string, value: any) {
     changeCvObject(key, value, id, 'education')
   }
 
@@ -41,7 +41,7 @@ const EducationInput = ({
       title={school ? `${school} - ${degree}` : t("not-specified")}
       subtitle={startDate ? `${startDate} - ${endDate}` : t("not-specified")}
       open={edit}
-      setOpen={(value) => changeCV("edit", value ? "true" : "false")}>
+      setOpen={(value) => changeCV("edit", value)}>
       <div className='flex flex-col gap-4'>
         <div className='flex gap-4'>
           <Input label="School" value={school} setValue={(value) => changeCV("school", value)} />

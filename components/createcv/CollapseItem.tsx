@@ -8,13 +8,7 @@ import DropdownButton from '../ui/utilities/DropdownButton'
 
 
 
-const Container = styled.div`
-border-radius: 5px;
-padding: 1rem;
-flex-grow: 1;
-.sp{
-  color: ${COLORS.GREY};
-}`
+
 
 
 const MainContent = styled.div`
@@ -41,7 +35,7 @@ height: 100%;
 `
 
 
-const CollapseItem = ({ children, title, subtitle, open, setOpen, onDelete }: {
+const CollapseItem = ({ children, title, open, setOpen, onDelete }: {
   children: ReactNode,
   title: string,
   subtitle: string,
@@ -51,20 +45,19 @@ const CollapseItem = ({ children, title, subtitle, open, setOpen, onDelete }: {
 }) => {
 
   return (
-    <ListItem className='flex gap-4 items-center w-full'>
-      <button type='button' className='handle'  ><MdOutlineDragIndicator /></button>
-      <Container>
+    <ListItem className='flex gap-4 items-center w-full p-2'>
+      <button type='button' className='handle'><MdOutlineDragIndicator /></button>
+      <div className='flex-1 p-2'>
         <MainContent onClick={() => setOpen(!open)} className="flex items-center pointer">
           <div>
             <p className='p font-medium title'>{title}</p>
-            {/* <p className='sp'>{subtitle}</p> */}
           </div>
           <DropdownButton open={open} />
         </MainContent>
         <Collapse on={open}>
           {children}
         </Collapse>
-      </Container>
+      </div>
       {onDelete && <DeleteButton className='delete' type="button" onClick={() => onDelete()}><FiTrash2 className='p' color={COLORS.RED} /></DeleteButton>}
     </ListItem>
   )
