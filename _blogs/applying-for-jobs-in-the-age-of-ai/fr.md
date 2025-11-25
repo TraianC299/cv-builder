@@ -6,8 +6,8 @@ date: "2025-07-07T20:30:00.000Z"
 id: 13
 slug: "postuler-emploi-ere-ia"
 author:
-  name: William Rodriguez
-  picture: "/assets/blog/authors/joe.jpg"
+  name: Traian Ciochina
+  picture: "/assets/blog/authors/simon.jpg"
 ogImage:
   url: "/assets/blog/preview/applying-for-jobs-in-the-age-of-ai.jpg"
 ---

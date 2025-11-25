@@ -115,6 +115,11 @@
         "locale": false
     },
     {
+        "source": "/en/blog/why-junior-jobs-are-hard-2025",
+        "destination": "/en/blog/why-junior-jobs-are-hard-2025",
+        "locale": false
+    },
+    {
         "source": "/ro/blog/5-sfaturi-pentru-un-cv-bun",
         "destination": "/ro/blog/5-tips-for-writing-a-good-cv",
         "locale": false
@@ -227,6 +232,11 @@
     {
         "source": "/ro/blog/top-10-greseli-cv-care-te-costa-interviul",
         "destination": "/ro/blog/top-10-cv-mistakes-costing-you-interviews",
+        "locale": false
+    },
+    {
+        "source": "/ro/blog/de-ce-e-greu-job-junior-2025",
+        "destination": "/ro/blog/why-junior-jobs-are-hard-2025",
         "locale": false
     },
     {
@@ -345,6 +355,11 @@
         "locale": false
     },
     {
+        "source": "/fr/blog/pourquoi-poste-junior-2025-difficile",
+        "destination": "/fr/blog/why-junior-jobs-are-hard-2025",
+        "locale": false
+    },
+    {
         "source": "/de/blog/5-tipps-fur-das-schreiben-eines-guten-lebenslaufs",
         "destination": "/de/blog/5-tips-for-writing-a-good-cv",
         "locale": false
@@ -457,6 +472,11 @@
     {
         "source": "/de/blog/top-10-lebenslauf-fehler-die-interviews-kosten",
         "destination": "/de/blog/top-10-cv-mistakes-costing-you-interviews",
+        "locale": false
+    },
+    {
+        "source": "/de/blog/warum-junior-job-2025-schwierig-ist",
+        "destination": "/de/blog/why-junior-jobs-are-hard-2025",
         "locale": false
     },
     {

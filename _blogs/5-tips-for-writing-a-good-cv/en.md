@@ -6,8 +6,8 @@ date: '2020-03-16T05:35:07.322Z'
 id: 1
 slug: '5-tips-for-writing-a-good-cv'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/1.jpg'
 ---

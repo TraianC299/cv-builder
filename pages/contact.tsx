@@ -4,14 +4,12 @@
 import AutosizeInput from '@/components/ui/input/AutosizeInput';
 import Input from '@/components/ui/input/Input';
 import { PageSEO } from '@/components/utilities/SEO';
+import { Button } from '@/styles/global';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Button } from '@/styles/global';
 
 export default function ContactPage() {
-    const router = useRouter();
     const { t } = useTranslation('contact');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');

@@ -6,8 +6,8 @@ date: '2025-07-06T20:00:00.000Z'
 id: 6
 slug: 'erfolge-lebenslauf-formulieren'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/6.jpg'
 ---

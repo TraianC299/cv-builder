@@ -6,8 +6,8 @@ date: '2025-07-06T19:00:00.000Z'
 id: 5
 slug: 'soft-skills-vs-hard-skills-lebenslauf'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/soft-skills-vs-hard-skills-cv.jpg'
 ---

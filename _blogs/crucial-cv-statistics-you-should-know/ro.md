@@ -6,8 +6,8 @@ date: '2023-05-27T05:35:07.322Z'
 id: 4
 slug: 'statistici-cruciale-despre-cv-uri-pe-care-ar-trebui-sa-le-cunosti'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/4.jpg'
 ---

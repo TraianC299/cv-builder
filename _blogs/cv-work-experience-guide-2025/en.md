@@ -6,8 +6,8 @@ date: '2025-07-06T23:00:00.000Z'
 id: 10
 slug: 'cv-work-experience-guide-2025'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/cv-work-experience-guide-2025.jpg'
 ---

@@ -1,13 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import { CVprovider } from '../contexts/AppContext'
-import CvPreview from '../components/createcv/CvPreview'
-import { NextPage } from 'next'
-import { PageSEO } from '../components/utilities/SEO'
-import Form from '../components/createcv/Form'
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES'
+import { NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import styled from 'styled-components'
+import CvPreview from '../components/createcv/CvPreview'
+import Form from '../components/createcv/Form'
+import { PageSEO } from '../components/utilities/SEO'
+import { CVprovider } from '../contexts/AppContext'
 
 
 const MainContainer = styled.main`

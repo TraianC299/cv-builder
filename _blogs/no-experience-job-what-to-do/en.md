@@ -6,8 +6,8 @@ date: "2025-07-07T22:30:00.000Z"
 id: 15
 slug: "no-experience-job-what-to-do"
 author:
-  name: William Rodriguez
-  picture: "/assets/blog/authors/joe.jpg"
+  name: Traian Ciochina
+  picture: "/assets/blog/authors/simon.jpg"
 ogImage:
   url: "/assets/blog/preview/no-experience-job-what-to-do.jpg"
 ---

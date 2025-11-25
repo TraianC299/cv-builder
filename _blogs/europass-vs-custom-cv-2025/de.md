@@ -6,8 +6,8 @@ date: '2025-07-06T21:00:00.000Z'
 id: 7
 slug: 'europass-vs-individuelles-cv-2025'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/7.jpg'
 ---

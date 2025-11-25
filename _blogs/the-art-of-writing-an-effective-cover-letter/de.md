@@ -6,8 +6,8 @@ date: '2023-05-25T05:35:07.322Z'
 slug: 'die-kunst-des-verfassens-eines-effektiven-anschreibens'
 id: 8
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/8.jpg'
 ---

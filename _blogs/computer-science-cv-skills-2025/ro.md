@@ -6,8 +6,8 @@ date: "2025-07-12T00:50:00.000Z"
 id: 17
 slug: "abilitati-informatica-cv-2025"
 author:
-  name: William Rodriguez
-  picture: "/assets/blog/authors/joe.jpg"
+  name: Traian Ciochina
+  picture: "/assets/blog/authors/simon.jpg"
 ogImage:
   url: "/assets/blog/preview/computer-science-cv-skills-2025.jpg"
 ---

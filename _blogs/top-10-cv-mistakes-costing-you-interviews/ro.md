@@ -6,8 +6,8 @@ date: '2025-07-06T15:00:00.000Z'
 id: 2
 slug: 'top-10-greseli-cv-care-te-costa-interviul'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/top-10-cv-mistakes-costing-you-interviews.jpg'
 ---

@@ -6,8 +6,8 @@ date: '2025-07-06T18:00:00.000Z'
 id: 4
 slug: 'vorbereitung-vorstellungsgespraech-tipps'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/how-to-prepare-for-a-job-interview.jpg'
 ---

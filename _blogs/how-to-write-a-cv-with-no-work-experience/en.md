@@ -6,8 +6,8 @@ date: '2025-07-06T17:00:00.000Z'
 id: 3
 slug: 'how-to-write-a-cv-with-no-work-experience'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/how-to-write-a-cv-with-no-work-experience.jpg'
 ---

@@ -6,8 +6,8 @@ date: '2023-07-01T10:00:00.000Z'
 slug: 'die-kraft-des-netzwerkens-fur-deine-karriere'
 id: 6
 author:
-    name: William Rodriguez
-    picture: '/assets/blog/authors/joe.jpg'
+    name: Traian Ciochina
+    picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/6.jpg'
 ---

@@ -6,8 +6,8 @@ date: '2023-05-28T05:35:07.322Z'
 id: 2
 slug: 'vermeidung-häufiger-fehler-im-lebenslauf'
 author:
-  name: William Rodriguez
-  picture: '/assets/blog/authors/joe.jpg'
+  name: Traian Ciochina
+  picture: '/assets/blog/authors/simon.jpg'
 ogImage:
   url: '/assets/blog/preview/2.jpg'
 ---
