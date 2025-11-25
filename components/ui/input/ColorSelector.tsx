@@ -1,5 +1,5 @@
 import COLORS from '@/constants/COLORS'
-import { useCV } from 'contexts/AppContext'
+import { useCV } from '@/contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import Input from './Input'

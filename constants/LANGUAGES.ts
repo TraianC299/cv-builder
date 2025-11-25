@@ -1,4 +1,4 @@
-import { LanguageType } from "interfaces/lang.types";
+import { LanguageType } from "@/interfaces/lang.types";
 
 const LANGUAGES:{
     locale: LanguageType;

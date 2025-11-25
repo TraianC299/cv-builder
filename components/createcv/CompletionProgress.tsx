@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'next-i18next'
 import COLORS from '@/constants/COLORS'
-import { useCV } from 'contexts/AppContext'
+import { useCV } from '@/contexts/AppContext'
 
 
 const Container = styled.div`

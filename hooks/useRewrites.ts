@@ -1,5 +1,5 @@
 import REWRITES from "@/constants/REWRITES";
-import { LanguageType } from "interfaces/lang.types";
+import { LanguageType } from "@/interfaces/lang.types";
 import { useRouter } from "next/router";
 
 const useRewrites = () => {

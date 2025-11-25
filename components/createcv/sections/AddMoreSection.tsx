@@ -4,7 +4,7 @@ import { useCV } from '../../../contexts/AppContext'
 import { useTranslation } from 'next-i18next'
 import { Button } from '../../../styles/global'
 import Section from '../Section'
-import { initials } from 'data/initals'
+import { initials } from '@/data/initals'
 import { CvListKey } from '@/interfaces/cv.types'
 
 
