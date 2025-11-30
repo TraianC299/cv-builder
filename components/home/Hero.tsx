@@ -10,10 +10,10 @@ import useRewrites from '@/hooks/useRewrites'
 
 const Container = styled.div`
 position: relative;
-height: 85vh;
+height: calc(100vh - 6.5rem);
 background: ${COLORS.LIGHTGREY};
 overflow: hidden;
-max-height: 800px;
+max-height: 900px;
 border-radius: 0.5rem;
 
 

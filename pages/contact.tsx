@@ -22,8 +22,8 @@ export default function ContactPage() {
                 title={t('meta-title')}
                 description={t('meta-description')}
             />
-            <main className="min-h-screen  flex items-center justify-center px-4">
-                <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-lg">
+            <main className="min-h-screen flex items-center justify-center px-4 bg-lightgrey">
+                <div className="bg-white rounded-2xl p-8 w-full max-w-lg">
                     <h1 className="text-2xl font-semibold text-gray-800 mb-6">{t('title')}</h1>
 
                     {submitted ? (
