@@ -16,7 +16,7 @@
 /build
 
 # misc
-# .DS_Store
+.DS_Store
 *.pem
 
 # debug
@@ -35,10 +35,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# OS generated files #
-######################
-.DS_Store
-**/.DS_Store
+# Sentry Config File
+.sentryclirc
 
-.DS_Store
-components/.DS_Store
+
+.unlighthouse
+```
