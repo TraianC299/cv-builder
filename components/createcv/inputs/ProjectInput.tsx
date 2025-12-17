@@ -27,7 +27,7 @@ const ProjectInput = ({ title, description, edit, startDate, endDate, id, onDele
       setOpen={(value) => changeProject("edit", value)}>
       <div className='flex flex-col gap-4'>
         <div className='flex gap-4'>
-          <Input label={t("job-title")} value={title} setValue={(value) => changeProject("title", value)} ></Input>
+          <Input label={t("title")} value={title} setValue={(value) => changeProject("title", value)} ></Input>
         </div>
         <div className='flex gap-4'>
           <Input value={startDate}
