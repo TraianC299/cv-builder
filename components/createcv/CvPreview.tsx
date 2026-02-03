@@ -1,10 +1,8 @@
 import COLORS from '@/constants/COLORS';
 import MEDIAQUERIES from '@/constants/MEDIAQUERIES';
 import useLockBody from '@/hooks/useLockBody';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import { exportCvElementToPdf } from '@/utils/exportCvElementToPdf';
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import { FiEye } from 'react-icons/fi';
 import { ImSpinner2 } from 'react-icons/im';
@@ -79,58 +77,19 @@ const CvPreview = () => {
   const [loading, setLoading] = useState(false)
   const { t } = useTranslation(["create-cv", "common"])
   useLockBody()
-  const router = useRouter()
   const cvRef = useRef<HTMLDivElement>(null);
 
   const generatePDF = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      // const response = await getPDF({
-      //   ...cvObject,
-      //   language: router.locale || 'en'
-      // })
-      // const something = await response.arrayBuffer()
-      // const blob = new Blob([something], { type: 'application/pdf' })
-      // const link = document.createElement('a')
-      // link.href = window.URL.createObjectURL(blob)
-      // link.download = `CV.pdf`
-      // link.click()
       if (!cvRef.current) return;
-
-      // Wait for all images to load
-      await Promise.all(
-        Array.from(cvRef.current.querySelectorAll('img')).map((img) => {
-          if (!img.complete) {
-            return new Promise((resolve) => {
-              img.onload = img.onerror = resolve;
-            });
-          }
-          return Promise.resolve();
-        })
-      );
-
-      // Use html2canvas to take a screenshot of the cvRef element
-      const canvas = await html2canvas(cvRef.current, {
-        scale: 3, // increase for better quality
-        useCORS: true, // needed if you load images with CORS issues
-      });
-
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'px',
-        format: [canvas.width, canvas.height],
-      });
-
-      pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-      pdf.save('cv.pdf');
-
+      await exportCvElementToPdf(cvRef.current, "cv.pdf");
     } catch (e) {
-      console.log(e)
+      console.error(e);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
 
   const templatesArray = [

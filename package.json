@@ -21,6 +21,7 @@
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "gray-matter": "^4.0.3",
+    "html-to-image": "^1.11.13",
     "html2canvas": "^1.4.1",
     "i18next": "^25.6.3",
     "jspdf": "^3.0.4",
