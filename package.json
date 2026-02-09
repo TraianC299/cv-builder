@@ -20,6 +20,7 @@
     "@types/node": "24.10.1",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
+    "@vercel/analytics": "^1.6.1",
     "gray-matter": "^4.0.3",
     "html-to-image": "^1.11.13",
     "html2canvas": "^1.4.1",
