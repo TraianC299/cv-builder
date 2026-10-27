@@ -1,0 +1,15 @@
+{
+  "privacy-policy-title": "Polityka prywatności",
+  "privacy-policy-content": "Niniejsza Polityka prywatności wyjaśnia, jakie dane osobowe przetwarzamy, gdy korzystasz z naszego kreatora CV, dlaczego je przetwarzamy oraz jakie masz możliwości wyboru.",
+  "privacy-policy-information-collection": "Jakie dane przetwarzamy",
+  "privacy-policy-information-collection-content": "Informacje z Twojego CV (na przykład imię, dane kontaktowe, doświadczenie zawodowe, edukacja, umiejętności oraz zdjęcie) są przetwarzane lokalnie w Twojej przeglądarce. Używamy pamięci przeglądarki (localStorage), aby zapisać wersję roboczą CV na Twoim urządzeniu, dzięki czemu możesz kontynuować edycję później. Nie wymagamy tworzenia konta, aby stworzyć CV.",
+  "privacy-policy-data-security": "Przechowywanie danych i bezpieczeństwo",
+  "privacy-policy-data-security-content": "Wersja robocza Twojego CV pozostaje na Twoim urządzeniu, chyba że zdecydujesz się ją wyeksportować lub samodzielnie nam ją przesłać. Nie przechowujemy w bazie danych na serwerze wersji roboczych CV utworzonych w kreatorze. Możesz w każdej chwili usunąć lokalnie zapisane dane, czyszcząc pamięć przeglądarki. Stosujemy odpowiednie środki techniczne i organizacyjne, jednak żadna metoda przechowywania ani przesyłania danych elektronicznych nie jest całkowicie bezpieczna.",
+  "privacy-policy-third-party-services": "Usługi stron trzecich",
+  "privacy-policy-third-party-services-content": "Nie sprzedajemy danych z Twojego CV. Niektóre funkcje strony mogą korzystać z usług zewnętrznych dostawców. Na przykład, jeśli skontaktujesz się z nami przez formularz kontaktowy, Twoja wiadomość oraz opcjonalne dane kontaktowe mogą być przetwarzane przez naszego dostawcę usług komunikacyjnych w celu dostarczenia Twojego zapytania. Ci dostawcy przetwarzają dane zgodnie ze swoimi własnymi zasadami prywatności.",
+  "privacy-policy-changes-to-this-policy": "Zmiany w niniejszej polityce",
+  "privacy-policy-changes-to-this-policy-content": "Możemy aktualizować tę Politykę prywatności, aby odzwierciedlić zmiany prawne, techniczne lub produktowe. W takim przypadku opublikujemy zaktualizowaną wersję na tej stronie oraz zaktualizujemy datę ostatniej zmiany.",
+  "privacy-policy-contact-us": "Kontakt",
+  "privacy-policy-contact-us-content": "Jeśli masz pytania dotyczące tej Polityki prywatności lub swoich danych, albo chcesz poprosić o dostęp, poprawienie lub usunięcie danych, skontaktuj się z nami za pośrednictwem strony kontaktowej.",
+  "privacy-policy-last-updated": "Ostatnia aktualizacja: 26 lutego 2026"
+}

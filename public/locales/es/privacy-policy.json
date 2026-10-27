@@ -1,0 +1,15 @@
+{
+  "privacy-policy-title": "Política de privacidad",
+  "privacy-policy-content": "Esta Política de privacidad explica qué datos personales tratamos cuando usas nuestro creador de CV, por qué los tratamos y qué opciones tienes.",
+  "privacy-policy-information-collection": "Qué datos tratamos",
+  "privacy-policy-information-collection-content": "La información de tu CV (por ejemplo, nombre, datos de contacto, experiencia laboral, formación, habilidades y foto) se procesa localmente en tu navegador. Usamos localStorage del navegador para guardar tu borrador en tu dispositivo y permitirte continuar más tarde. No necesitas crear una cuenta para hacer un CV.",
+  "privacy-policy-data-security": "Almacenamiento y seguridad de los datos",
+  "privacy-policy-data-security-content": "Tu borrador de CV permanece en tu dispositivo, salvo que decidas exportarlo o enviárnoslo tú mismo. No mantenemos una base de datos en servidor con los borradores de CV generados en el editor. Puedes eliminar los datos guardados localmente en cualquier momento borrando el almacenamiento del navegador. Aplicamos medidas técnicas y organizativas razonables, pero ningún método de almacenamiento o transmisión electrónica es completamente seguro.",
+  "privacy-policy-third-party-services": "Servicios de terceros",
+  "privacy-policy-third-party-services-content": "No vendemos los datos de tu CV. Algunas funciones del sitio pueden depender de proveedores externos. Por ejemplo, si nos contactas mediante el formulario de contacto, tu mensaje y tus datos de contacto opcionales pueden ser procesados por nuestro proveedor de mensajería para gestionar tu solicitud. Estos proveedores tratan los datos según sus propias políticas de privacidad.",
+  "privacy-policy-changes-to-this-policy": "Cambios en esta política",
+  "privacy-policy-changes-to-this-policy-content": "Podemos actualizar esta Política de privacidad para reflejar cambios legales, técnicos o del producto. Cuando lo hagamos, publicaremos la versión actualizada en esta página y revisaremos la fecha de última actualización.",
+  "privacy-policy-contact-us": "Contacto",
+  "privacy-policy-contact-us-content": "Si tienes preguntas sobre esta Política de privacidad o sobre tus datos, o quieres solicitar acceso, rectificación o eliminación, contáctanos a través de la página de contacto.",
+  "privacy-policy-last-updated": "Última actualización: 26 de febrero de 2026"
+}

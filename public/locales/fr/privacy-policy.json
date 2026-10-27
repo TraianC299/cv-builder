@@ -1,0 +1,15 @@
+{
+  "privacy-policy-title": "Politique de confidentialité",
+  "privacy-policy-content": "Cette Politique de confidentialité explique quelles données personnelles nous traitons lorsque vous utilisez notre créateur de CV, pourquoi nous les traitons et quels choix vous avez.",
+  "privacy-policy-information-collection": "Données que nous traitons",
+  "privacy-policy-information-collection-content": "Les informations de votre CV (par exemple nom, coordonnées, expérience professionnelle, formation, compétences et photo) sont traitées localement dans votre navigateur. Nous utilisons le localStorage du navigateur pour enregistrer votre brouillon sur votre appareil afin que vous puissiez continuer plus tard. La création d'un CV ne nécessite pas de compte.",
+  "privacy-policy-data-security": "Stockage et sécurité des données",
+  "privacy-policy-data-security-content": "Votre brouillon de CV reste sur votre appareil, sauf si vous choisissez de l'exporter ou de nous l'envoyer vous-même. Nous ne conservons pas de base de données serveur des brouillons générés dans l'éditeur. Vous pouvez supprimer les données stockées localement à tout moment en effaçant le stockage de votre navigateur. Nous appliquons des mesures techniques et organisationnelles raisonnables, mais aucun mode de stockage ou de transmission électronique n'est totalement sécurisé.",
+  "privacy-policy-third-party-services": "Services de tiers",
+  "privacy-policy-third-party-services-content": "Nous ne vendons pas les données de votre CV. Certaines fonctionnalités du site peuvent dépendre de prestataires tiers. Par exemple, si vous nous contactez via le formulaire de contact, votre message et vos coordonnées facultatives peuvent être traités par notre prestataire de messagerie afin de répondre à votre demande. Ces prestataires traitent les données selon leurs propres règles de confidentialité.",
+  "privacy-policy-changes-to-this-policy": "Modifications de cette politique",
+  "privacy-policy-changes-to-this-policy-content": "Nous pouvons mettre à jour cette Politique de confidentialité pour refléter des évolutions juridiques, techniques ou produit. Lorsque c'est le cas, nous publions la version mise à jour sur cette page et modifions la date de dernière mise à jour.",
+  "privacy-policy-contact-us": "Contactez-nous",
+  "privacy-policy-contact-us-content": "Si vous avez des questions sur cette Politique de confidentialité ou sur vos données, ou si vous souhaitez demander l'accès, la rectification ou la suppression, contactez-nous via la page de contact.",
+  "privacy-policy-last-updated": "Dernière mise à jour : 26 février 2026"
+}

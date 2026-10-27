@@ -1,0 +1,15 @@
+{
+  "privacy-policy-title": "Privacy Policy",
+  "privacy-policy-content": "This Privacy Policy explains what personal data we process when you use our CV builder, why we process it, and what choices you have.",
+  "privacy-policy-information-collection": "What Data We Process",
+  "privacy-policy-information-collection-content": "Your CV information (for example name, contact details, work history, education, skills, and photo) is processed locally in your browser. We use browser localStorage to save your draft on your device so you can continue editing later. We do not require an account to create a CV.",
+  "privacy-policy-data-security": "Data Storage and Security",
+  "privacy-policy-data-security-content": "Your CV draft remains on your device unless you choose to export it or send it to us yourself. We do not keep a server-side database of CV drafts generated in the builder. You can delete locally stored data at any time by clearing your browser storage. We use reasonable technical and organizational measures, but no method of electronic storage or transmission is completely secure.",
+  "privacy-policy-third-party-services": "Third-Party Services",
+  "privacy-policy-third-party-services-content": "We do not sell your CV data. Some website features may rely on third-party providers. For example, if you contact us through the contact form, your message and optional contact details may be processed by our messaging provider to deliver your request. These providers process data under their own privacy terms.",
+  "privacy-policy-changes-to-this-policy": "Changes to this Policy",
+  "privacy-policy-changes-to-this-policy-content": "We may update this Privacy Policy to reflect legal, technical, or product changes. When we do, we will publish the updated version on this page and revise the last updated date.",
+  "privacy-policy-contact-us": "Contact Us",
+  "privacy-policy-contact-us-content": "If you have questions about this Privacy Policy or your data, or if you want to request access, correction, or deletion, please contact us through the contact page.",
+  "privacy-policy-last-updated": "Last updated: February 26, 2026"
+}

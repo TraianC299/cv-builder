@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    /* Next.js Core Settings */
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ] /* Target browser DOM and modern ECMAScript features */,
+    "allowJs": true /* Allow importing .js and .jsx files */,
+    "skipLibCheck": true /* Skip type checking of declaration files */,
+    "strict": true /* Enable all strict type-checking options */,
+    "noEmit": true /* Next.js handles compilation, so we don't need to emit files */,
+    "esModuleInterop": true /* Enables compatibility with CommonJS and ES Modules */,
+    "module": "esnext" /* Use the latest module system */,
+    "moduleResolution": "bundler" /* Optimized resolution strategy for bundlers (like Webpack/Turbopack) */,
+    "resolveJsonModule": true /* Allow importing .json files */,
+    "isolatedModules": true /* Ensures every file can be safely transpiled without referencing other files */,
+    "jsx": "react-jsx" /* Preserve JSX for the Next.js/React runtime */,
+    "incremental": true /* Enable incremental compilation for faster rebuilds */ /* Path Aliases (Optional but Recommended) */,
+    "paths": {
+      "@/*": [
+        "./*"
+      ] /* Map "@/*" to the "src" directory (if you use one) */
+    },
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

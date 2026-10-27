@@ -1,0 +1,96 @@
+.container {
+    position: relative;
+    height: calc(100vh - 6.5rem);
+    background: #f5f5f5;
+    overflow: hidden;
+    max-height: 800px;
+    border-radius: 0.5rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: radial-gradient(
+            ellipse 55% 65% at 50% 50%,
+            #f5f5f5 0%,
+            rgba(245, 245, 245, 0.85) 35%,
+            rgba(245, 245, 245, 0.3) 65%,
+            transparent 100%
+        );
+        pointer-events: none;
+    }
+}
+
+.card {
+    opacity: 0.5;
+    z-index: 0;
+    background: url("/assets/images/hero-card.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 210px;
+    width: 140px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.grid > div {
+    animation: scrollUp 28s linear infinite;
+}
+
+.grid > div:nth-child(even) {
+    animation-delay: -14s;
+}
+
+.grid > div:nth-child(3n) {
+    animation-duration: 32s;
+}
+
+.grid > div:nth-child(4n) {
+    animation-duration: 24s;
+    animation-delay: -8s;
+}
+
+.text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    z-index: 2;
+    padding: 0 1rem;
+
+    > *:nth-child(1) {
+        animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0ms both;
+    }
+    > *:nth-child(2) {
+        animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+    }
+    > *:nth-child(3) {
+        animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 240ms both;
+    }
+}
+
+@keyframes scrollUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        /* 6 cards × (210px height + 16px gap) = 1356px — one full repeat */
+        transform: translateY(-1356px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

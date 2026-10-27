@@ -1,0 +1,15 @@
+{
+  "privacy-policy-title": "Informativa sulla privacy",
+  "privacy-policy-content": "Questa Informativa sulla privacy spiega quali dati personali trattiamo quando usi il nostro CV builder, perche li trattiamo e quali scelte hai a disposizione.",
+  "privacy-policy-information-collection": "Quali Dati Trattiamo",
+  "privacy-policy-information-collection-content": "Le informazioni del tuo CV (ad esempio nome, contatti, esperienza lavorativa, formazione, competenze e foto) vengono elaborate localmente nel tuo browser. Usiamo il localStorage del browser per salvare la bozza sul tuo dispositivo cosi puoi continuare a modificarla in seguito. Non richiediamo un account per creare un CV.",
+  "privacy-policy-data-security": "Archiviazione e Sicurezza dei Dati",
+  "privacy-policy-data-security-content": "La bozza del tuo CV rimane sul tuo dispositivo a meno che tu non scelga di esportarla o inviarcela direttamente. Non manteniamo un database lato server delle bozze CV generate nell'editor. Puoi eliminare i dati salvati localmente in qualsiasi momento cancellando lo spazio di archiviazione del browser. Adottiamo misure tecniche e organizzative ragionevoli, ma nessun metodo di archiviazione o trasmissione elettronica e completamente sicuro.",
+  "privacy-policy-third-party-services": "Servizi di Terze Parti",
+  "privacy-policy-third-party-services-content": "Non vendiamo i dati del tuo CV. Alcune funzionalita del sito possono dipendere da fornitori terzi. Ad esempio, se ci contatti tramite il modulo di contatto, il tuo messaggio e i dettagli di contatto facoltativi possono essere trattati dal nostro provider di messaggistica per consegnare la tua richiesta. Questi fornitori trattano i dati secondo le loro condizioni sulla privacy.",
+  "privacy-policy-changes-to-this-policy": "Modifiche a questa Informativa",
+  "privacy-policy-changes-to-this-policy-content": "Possiamo aggiornare questa Informativa sulla privacy per riflettere cambiamenti legali, tecnici o di prodotto. Quando lo facciamo, pubblicheremo la versione aggiornata su questa pagina e aggiorneremo la data di ultima modifica.",
+  "privacy-policy-contact-us": "Contattaci",
+  "privacy-policy-contact-us-content": "Se hai domande su questa Informativa sulla privacy o sui tuoi dati, oppure vuoi richiedere accesso, correzione o cancellazione, contattaci tramite la pagina contatti.",
+  "privacy-policy-last-updated": "Ultimo aggiornamento: 26 febbraio 2026"
+}

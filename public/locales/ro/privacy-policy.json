@@ -1,0 +1,15 @@
+{
+  "privacy-policy-title": "Politica de confidențialitate",
+  "privacy-policy-content": "Această Politică de confidențialitate explică ce date personale prelucrăm când utilizați CV builder-ul nostru, de ce le prelucrăm și ce opțiuni aveți.",
+  "privacy-policy-information-collection": "Ce date prelucrăm",
+  "privacy-policy-information-collection-content": "Informațiile din CV-ul dvs. (de exemplu nume, date de contact, experiență profesională, educație, competențe și fotografie) sunt prelucrate local în browserul dvs. Folosim localStorage din browser pentru a salva draftul pe dispozitivul dvs., astfel încât să puteți continua editarea mai târziu. Nu este necesar un cont pentru a crea un CV.",
+  "privacy-policy-data-security": "Stocarea și securitatea datelor",
+  "privacy-policy-data-security-content": "Draftul CV-ului rămâne pe dispozitivul dvs., cu excepția cazului în care alegeți să îl exportați sau să ni-l trimiteți dvs. Nu păstrăm o bază de date pe server cu drafturile de CV generate în editor. Puteți șterge oricând datele stocate local prin golirea spațiului de stocare al browserului. Aplicăm măsuri tehnice și organizatorice rezonabile, dar nicio metodă de stocare sau transmitere electronică nu este complet sigură.",
+  "privacy-policy-third-party-services": "Servicii de la terți",
+  "privacy-policy-third-party-services-content": "Nu vindem datele din CV-ul dvs. Unele funcționalități ale site-ului pot depinde de furnizori terți. De exemplu, dacă ne contactați prin formularul de contact, mesajul dvs. și datele opționale de contact pot fi prelucrate de furnizorul nostru de mesagerie pentru a soluționa solicitarea. Acești furnizori prelucrează datele conform propriilor politici de confidențialitate.",
+  "privacy-policy-changes-to-this-policy": "Modificări ale acestei politici",
+  "privacy-policy-changes-to-this-policy-content": "Putem actualiza această Politică de confidențialitate pentru a reflecta modificări legale, tehnice sau de produs. Când facem acest lucru, publicăm versiunea actualizată pe această pagină și modificăm data ultimei actualizări.",
+  "privacy-policy-contact-us": "Contactați-ne",
+  "privacy-policy-contact-us-content": "Dacă aveți întrebări despre această Politică de confidențialitate sau despre datele dvs., sau doriți să solicitați acces, rectificare ori ștergere, vă rugăm să ne contactați prin pagina de contact.",
+  "privacy-policy-last-updated": "Ultima actualizare: 26 februarie 2026"
+}

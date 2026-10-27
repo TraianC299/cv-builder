@@ -1,0 +1,15 @@
+{
+  "privacy-policy-title": "Datenschutzerklärung",
+  "privacy-policy-content": "Diese Datenschutzerklärung erklärt, welche personenbezogenen Daten wir bei der Nutzung unseres CV-Builders verarbeiten, warum wir sie verarbeiten und welche Möglichkeiten Sie haben.",
+  "privacy-policy-information-collection": "Welche Daten wir verarbeiten",
+  "privacy-policy-information-collection-content": "Ihre CV-Daten (z. B. Name, Kontaktdaten, Berufserfahrung, Ausbildung, Fähigkeiten und Foto) werden lokal in Ihrem Browser verarbeitet. Wir verwenden den Browser-Speicher localStorage, um Ihren Entwurf auf Ihrem Gerät zu speichern, damit Sie später weiterbearbeiten können. Für die Erstellung eines CV ist kein Konto erforderlich.",
+  "privacy-policy-data-security": "Datenspeicherung und Sicherheit",
+  "privacy-policy-data-security-content": "Ihr CV-Entwurf bleibt auf Ihrem Gerät, sofern Sie ihn nicht selbst exportieren oder an uns senden. Wir führen keine serverseitige Datenbank mit CV-Entwürfen aus dem Builder. Lokal gespeicherte Daten können Sie jederzeit löschen, indem Sie den Browser-Speicher leeren. Wir treffen angemessene technische und organisatorische Maßnahmen, jedoch ist keine elektronische Speicherung oder Übertragung vollständig sicher.",
+  "privacy-policy-third-party-services": "Dienste von Drittanbietern",
+  "privacy-policy-third-party-services-content": "Wir verkaufen Ihre CV-Daten nicht. Einige Funktionen der Website können auf Drittanbieter zurückgreifen. Wenn Sie uns z. B. über das Kontaktformular schreiben, können Ihre Nachricht und optionale Kontaktdaten durch unseren Messaging-Anbieter zur Bearbeitung Ihrer Anfrage verarbeitet werden. Für diese Anbieter gelten eigene Datenschutzbedingungen.",
+  "privacy-policy-changes-to-this-policy": "Änderungen an dieser Richtlinie",
+  "privacy-policy-changes-to-this-policy-content": "Wir können diese Datenschutzerklärung aufgrund rechtlicher, technischer oder produktbezogener Änderungen aktualisieren. In diesem Fall veröffentlichen wir die aktualisierte Version auf dieser Seite und passen das Datum der letzten Aktualisierung an.",
+  "privacy-policy-contact-us": "Kontaktieren Sie uns",
+  "privacy-policy-contact-us-content": "Wenn Sie Fragen zu dieser Datenschutzerklärung oder zu Ihren Daten haben oder Auskunft, Berichtigung oder Löschung anfordern möchten, kontaktieren Sie uns bitte über die Kontaktseite.",
+  "privacy-policy-last-updated": "Zuletzt aktualisiert: 26. Februar 2026"
+}
