@@ -85,5 +85,6 @@
   "step2.title": "2. Introduce tus datos",
   "step2.desc": "Completa tus datos personales, experiencia laboral y habilidades. Cada cambio actualiza automáticamente la vista previa en PDF. Tus datos están seguros — todo ocurre en tu navegador.",
   "step3.title": "3. Descarga en PDF",
-  "step3.desc": "¿Listo con tu currículum? Descárgalo en PDF con un solo clic — completamente gratis y sin necesidad de registro."
+  "step3.desc": "¿Listo con tu currículum? Descárgalo en PDF con un solo clic — completamente gratis y sin necesidad de registro.",
+  "open-source-github": "Código abierto en GitHub"
 }

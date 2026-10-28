@@ -85,5 +85,6 @@
     "step2.title": "2. Introduza os seus dados",
     "step2.desc": "Preencha os seus dados pessoais, experiência profissional e competências. Cada alteração atualiza instantaneamente a pré-visualização em PDF. Os seus dados são totalmente seguros — não enviamos nada para um servidor. Tudo acontece no seu navegador.",
     "step3.title": "3. Descarregue o PDF",
-    "step3.desc": "Satisfeito com o resultado? Descarregue o seu CV completo em PDF com um clique — totalmente gratuito e sem necessidade de registo."
+    "step3.desc": "Satisfeito com o resultado? Descarregue o seu CV completo em PDF com um clique — totalmente gratuito e sem necessidade de registo.",
+    "open-source-github": "Código aberto no GitHub"
 }

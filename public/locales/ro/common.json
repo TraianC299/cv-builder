@@ -86,5 +86,6 @@
   "step2.title": "2. Introdu datele",
   "step2.desc": "Completează informațiile personale, experiența profesională și abilitățile. Fiecare modificare actualizează instantaneu previzualizarea PDF. Datele tale sunt foarte sigure – nu trimitem nimic către server. Totul se întâmplă în browserul tău.",
   "step3.title": "3. Descarcă PDF-ul",
-  "step3.desc": "Ești mulțumit? Descarcă CV-ul finalizat în format PDF cu un singur click – complet gratuit și fără înregistrare."
+  "step3.desc": "Ești mulțumit? Descarcă CV-ul finalizat în format PDF cu un singur click – complet gratuit și fără înregistrare.",
+  "open-source-github": "Open source pe GitHub"
 }

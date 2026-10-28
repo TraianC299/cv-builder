@@ -85,5 +85,6 @@
   "step2.title": "2. Entrez vos données",
   "step2.desc": "Remplissez vos informations personnelles, votre expérience professionnelle et vos compétences. Chaque modification met à jour l’aperçu PDF instantanément. Vos données sont très sécurisées – rien n’est envoyé à un serveur. Tout se passe dans votre navigateur.",
   "step3.title": "3. Téléchargez le PDF",
-  "step3.desc": "Satisfait du résultat ? Téléchargez votre CV finalisé en PDF en un clic – entièrement gratuit et sans inscription."
+  "step3.desc": "Satisfait du résultat ? Téléchargez votre CV finalisé en PDF en un clic – entièrement gratuit et sans inscription.",
+  "open-source-github": "Open source sur GitHub"
 }

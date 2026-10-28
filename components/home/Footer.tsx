@@ -4,6 +4,8 @@ import instagramLogo from "@/assets/svg/instagram-logo.svg";
 import productHuntLogo from "@/assets/svg/product-hunt-logo.svg";
 import threadsLogo from "@/assets/svg/threads-logo.svg";
 import { Button } from "@/components/ui/button";
+import GitHubIcon from "@/components/other/GitHubIcon";
+import GITHUB_URL from "@/constants/GITHUB_URL";
 import LANGUAGES from "@/constants/LANGUAGES";
 import useRewrites from "@/hooks/useRewrites";
 import { useTranslation } from "next-i18next";
@@ -80,6 +82,12 @@ const Footer = () => {
             <p className="text-xl font-semibold text-blackgrey">
               {t("links")}
             </p>
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="link" className={linkClassName}>
+                <GitHubIcon className="h-6 w-6 text-black" />
+                {t("open-source-github")}
+              </Button>
+            </a>
             <a
               href="https://www.instagram.com/resumelio_cv_builder"
               target="_blank"

@@ -85,5 +85,6 @@
   "step2.title": "2. Inserisci i tuoi dati",
   "step2.desc": "Compila i tuoi dati personali, l'esperienza lavorativa e le competenze. Ogni modifica aggiorna subito l'anteprima PDF. I tuoi dati sono molto sicuri: non inviamo nulla a un server. Tutto avviene nel tuo browser.",
   "step3.title": "3. Scarica il PDF",
-  "step3.desc": "Soddisfatto del risultato? Scarica il tuo CV completo in PDF con un clic, completamente gratis e senza registrazione."
+  "step3.desc": "Soddisfatto del risultato? Scarica il tuo CV completo in PDF con un clic, completamente gratis e senza registrazione.",
+  "open-source-github": "Open source su GitHub"
 }

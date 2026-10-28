@@ -85,5 +85,6 @@
     "step2.title": "2. Wprowadź swoje dane",
     "step2.desc": "Wprowadź dane osobowe, doświadczenie zawodowe i umiejętności. Każda zmiana natychmiast aktualizuje podgląd PDF. Twoje dane są bardzo bezpieczne — nic nie wysyłamy na serwer. Wszystko dzieje się w Twojej przeglądarce.",
     "step3.title": "3. Pobierz PDF",
-    "step3.desc": "Zadowolony z efektu? Pobierz gotowe CV jako PDF jednym kliknięciem — całkowicie za darmo i bez rejestracji."
+    "step3.desc": "Zadowolony z efektu? Pobierz gotowe CV jako PDF jednym kliknięciem — całkowicie za darmo i bez rejestracji.",
+    "open-source-github": "Open source na GitHubie"
 }

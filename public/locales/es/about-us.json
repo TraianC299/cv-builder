@@ -13,5 +13,8 @@
   ],
   "closing": "Resumelio fue creado por desarrolladores que saben lo difícil que es destacar en el mercado laboral — y estamos aquí para hacer ese camino más sencillo.",
   "about_us_meta_title": "Sobre nosotros | Creador de Currículum Online Gratis",
-  "about_us_meta_description": "Conoce más sobre Resumelio, nuestro creador de currículum online gratis. Ayudamos a quienes buscan empleo a crear currículums profesionales con plantillas modernas y descarga en PDF."
+  "about_us_meta_description": "Conoce más sobre Resumelio, nuestro creador de currículum online gratis. Ayudamos a quienes buscan empleo a crear currículums profesionales con plantillas modernas y descarga en PDF.",
+  "openSourceTitle": "Código abierto",
+  "openSourceText": "Resumelio es gratuito y de código abierto. Todo el código es público en GitHub, así que cualquiera puede ver cómo funciona, reportar errores, sugerir mejoras o contribuir con nuevas plantillas y traducciones.",
+  "openSourceLink": "Ver el código en GitHub"
 }

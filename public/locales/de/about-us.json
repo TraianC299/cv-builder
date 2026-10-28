@@ -13,5 +13,8 @@
   ],
   "closing": "Resumelio wurde von Entwicklern erstellt, die wissen, wie schwer es ist, sich abzuheben – wir sind hier, um diesen Weg zu erleichtern.",
   "about_us_meta_title": "Über uns | Kostenloser Online-Lebenslauf-Ersteller - Stärkung von Jobsuchenden",
-  "about_us_meta_description": "Erfahren Sie mehr über uns beim Kostenloser Online-Lebenslauf-Ersteller. Wir widmen uns der Unterstützung von Jobsuchenden bei der Erstellung professioneller Lebensläufe, die herausstechen. Entdecken Sie noch heute unsere Mission, Vision und Werte."
+  "about_us_meta_description": "Erfahren Sie mehr über uns beim Kostenloser Online-Lebenslauf-Ersteller. Wir widmen uns der Unterstützung von Jobsuchenden bei der Erstellung professioneller Lebensläufe, die herausstechen. Entdecken Sie noch heute unsere Mission, Vision und Werte.",
+  "openSourceTitle": "Open Source",
+  "openSourceText": "Resumelio ist kostenlos und Open Source. Der gesamte Code ist öffentlich auf GitHub verfügbar, sodass jeder sehen kann, wie es funktioniert, Fehler melden, Verbesserungen vorschlagen oder neue Vorlagen und Übersetzungen beitragen kann.",
+  "openSourceLink": "Code auf GitHub ansehen"
 }

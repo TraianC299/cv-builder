@@ -13,5 +13,8 @@
   ],
   "closing": "Resumelio was built by developers who know how hard it is to stand out — and we’re here to make that journey easier.",
   "about_us_meta_title": "About Us | Free Online CV Builder - Empowering Job Seekers",
-  "about_us_meta_description": "Learn more about us at Free Online CV Builder. We're dedicated to helping job seekers create professional CVs that stand out. Discover our mission, vision, and values today."
+  "about_us_meta_description": "Learn more about us at Free Online CV Builder. We're dedicated to helping job seekers create professional CVs that stand out. Discover our mission, vision, and values today.",
+  "openSourceTitle": "Open source",
+  "openSourceText": "Resumelio is free and open source. The full code is public on GitHub, so anyone can see how it works, report bugs, suggest improvements or contribute new templates and translations.",
+  "openSourceLink": "View the code on GitHub"
 }

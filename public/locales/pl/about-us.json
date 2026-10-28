@@ -13,5 +13,8 @@
     ],
     "closing": "Resumelio zostało stworzone przez deweloperów, którzy wiedzą, jak trudno jest się wyróżnić — dlatego jesteśmy tutaj, aby ułatwić tę drogę.",
     "about_us_meta_title": "O nas | Darmowy kreator CV online – wsparcie dla osób poszukujących pracy",
-    "about_us_meta_description": "Dowiedz się więcej o nas w Darmowym Kreatorze CV Online. Naszym celem jest pomoc osobom poszukującym pracy w tworzeniu profesjonalnych CV, które się wyróżniają. Poznaj naszą misję, wizję i wartości."
+    "about_us_meta_description": "Dowiedz się więcej o nas w Darmowym Kreatorze CV Online. Naszym celem jest pomoc osobom poszukującym pracy w tworzeniu profesjonalnych CV, które się wyróżniają. Poznaj naszą misję, wizję i wartości.",
+    "openSourceTitle": "Open source",
+    "openSourceText": "Resumelio jest darmowe i open source. Cały kod jest publicznie dostępny na GitHubie, więc każdy może zobaczyć, jak działa, zgłaszać błędy, proponować ulepszenia lub dodawać nowe szablony i tłumaczenia.",
+    "openSourceLink": "Zobacz kod na GitHubie"
 }

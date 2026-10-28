@@ -1,5 +1,7 @@
 import H1Tag from "@/components/other/H1Tag";
+import GitHubIcon from "@/components/other/GitHubIcon";
 import { PageSEO } from "@/components/other/SEO";
+import GITHUB_URL from "@/constants/GITHUB_URL";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -45,6 +47,24 @@ const Page = () => {
               </div>
             ))}
           </div>
+
+          <div className="my-12 h-px bg-bordercolor" />
+
+          <h2 id="open-source" className="text-xl font-semibold text-black">
+            {t("openSourceTitle")}
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-blackgrey md:text-lg">
+            {t("openSourceText")}
+          </p>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-md border border-bordercolor px-4 py-2 text-sm font-medium text-black transition-colors hover:border-maincolor hover:text-maincolor"
+          >
+            <GitHubIcon className="h-5 w-5" />
+            {t("openSourceLink")}
+          </a>
 
           <div className="my-12 h-px bg-bordercolor" />
 

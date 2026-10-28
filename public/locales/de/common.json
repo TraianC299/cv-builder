@@ -85,5 +85,6 @@
   "step2.title": "2. Daten eingeben",
   "step2.desc": "Fülle persönliche Informationen, Berufserfahrung und Fähigkeiten aus. Jede Eingabe ändert dein PDF-Preview sofort. Deine Daten sind dabei sehr sicher – wir senden nichts an einen Server. Alles passiert in deinem Browser.",
   "step3.title": "3. PDF herunterladen",
-  "step3.desc": "Bist du zufrieden? Lade deinen fertigen Lebenslauf mit einem Klick als PDF herunter – komplett kostenlos und ohne Anmeldung."
+  "step3.desc": "Bist du zufrieden? Lade deinen fertigen Lebenslauf mit einem Klick als PDF herunter – komplett kostenlos und ohne Anmeldung.",
+  "open-source-github": "Open Source auf GitHub"
 }

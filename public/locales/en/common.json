@@ -85,5 +85,6 @@
   "step2.title": "2. Enter your data",
   "step2.desc": "Fill in your personal details, work experience, and skills. Every change updates the PDF preview instantly. Your data is very secure – we don’t send anything to a server. Everything happens in your browser.",
   "step3.title": "3. Download PDF",
-  "step3.desc": "Happy with your result? Download your completed CV as a PDF with one click – completely free and no registration required."
+  "step3.desc": "Happy with your result? Download your completed CV as a PDF with one click – completely free and no registration required.",
+  "open-source-github": "Open source on GitHub"
 }
